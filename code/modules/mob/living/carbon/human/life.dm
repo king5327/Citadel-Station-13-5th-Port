@@ -52,9 +52,16 @@
 	dna.species.spec_life(src) // for mutantraces
 
 
-/mob/living/carbon/human/calculate_affecting_pressure(pressure)
+/mob/living/carbon/human/calculate_affecting_pressure(var/pressure)
 	if((wear_suit && (wear_suit.flags & STOPSPRESSUREDMAGE)) && (head && (head.flags & STOPSPRESSUREDMAGE)))
 		return ONE_ATMOSPHERE
+
+	if(istype(loc, /mob/living/carbon/human))
+		return ONE_ATMOSPHERE || STOPSPRESSUREDMAGE
+
+	if(istype(loc, /mob/living/carbon/alien))
+		return ONE_ATMOSPHERE || STOPSPRESSUREDMAGE
+
 	else
 		return pressure
 
@@ -78,11 +85,12 @@
 				if(1)
 					say(pick("IM A PONY NEEEEEEIIIIIIIIIGH", "without oxigen blob don't evoluate?", "CAPTAINS A COMDOM", "[pick("", "that faggot traitor")] [pick("joerge", "george", "gorge", "gdoruge")] [pick("mellens", "melons", "mwrlins")] is grifing me HAL;P!!!", "can u give me [pick("telikesis","halk","eppilapse","kamelien","eksrey","glowey skin")]?", "THe saiyans screwed", "Bi is THE BEST OF BOTH WORLDS>", "I WANNA PET TEH monkeyS", "stop grifing me!!!!", "SOTP IT#", "shiggey diggey!!", "A PIRATE APPEAR"))
 				if(2)
-					say(pick("FUS RO DAH","fucking 4rries!", "stat me", ">my face", "roll it easy!", "waaaaaagh!!!", "red wonz go fasta", "FOR TEH EMPRAH", "lol2cat", "dem dwarfs man, dem dwarfs", "SPESS MAHREENS", "hwee did eet fhor khayosss", "lifelike texture ;_;", "luv can bloooom", "PACKETS!!!", "port ba[pick("y", "i", "e")] med!!!!", "REVIRT GON CHEM!!!!!!!!", "youed call her a toeugh bithc", "closd for merbegging", "pray can u [pick("spawn", "MAke me", "creat")] [pick("zenomorfs", "ayleins", "treaitors", "sheadow linkgs", "ubdoocters")]???"))
+					say(pick("FUS RO DAH","fucking 4rries!", "stat me", ">my face", "roll it easy!", "waaaaaagh!!!", "red wonz go fasta", "FOR TEH EMPRAH", "lol2cat", "dem dwarfs man, dem dwarfs", "SPESS MAHREENS", "hwee did eet fhor khayosss", "lifelike texture ;_;", "luv can bloooom", "PACKETS!!!", "port ba[pick("y", "i", "e")] med!!!!", "REVIRT GON CHEM!!!!!!!!", "youed call her a toeugh bithc", "closd for merbegging", "pray can u [pick("spawn", "MAke me", "creat")] [pick("zenomorfs", "ayleins", "treaitors", "sheadow linkgs", "ubdoocters")]???", "FUCK U IM WAY MORE ROBUST u bITCH!!1!!", "iS tHis bay?", "NO PRED CAN eVER CATCH MI", "SCIENCE GIB SHINK RAY PLS", "KILL PUNPUN 4 FUN xDD", "ooc wow rly?", "aI state dem1!", "SINGULO eNGINE 2 DANGER, SOLARS PLS!", "nerf blob!1", "iM NOT A FUWRRYY!!", "FOURTEEN INCHES SOFT"))
 				if(3)
-					say(pick("GEY AWAY FROM ME U GREIFING PRICK!!!!", "ur a fuckeing autist!", ";HELP SHITECIRTY MURDERIN  MEE!!!", "hwat dose tha [pick("g", "squid", "r")] mean?????", "CAL; TEH SHUTTLE!!!!!", "wearnig siNGUARLTY IS .... FIne xDDDDDDDDD", "AI laW 22 Open door", "this SI mY stATIon......", "who the HELL do u thenk u r?!!!!", "geT THE FUCK OUTTTT", "H U G B O X", ";;CRAGING THIS STTAYTION WITH NIO SURVIVROS", "[pick("bager", "syebl")] is down11!!!!!!!!!!!!!!!!!", "PSHOOOM"))
+					say(pick("GEY AWAY FROM ME U GREIFING PRICK!!!!", "ur a fuckeing autist!", ";HELP SHITECIRTY MURDERIN  MEE!!!", "hwat dose tha [pick("g", "squid", "r")] mean?????", "CAL; TEH SHUTTLE!!!!!", "wearnig siNGUARLTY IS .... FIne xDDDDDDDDD", "AI laW 22 Open door", "this SI mY stATIon......", "who the HELL do u thenk u r?!!!!", "geT THE FUCK OUTTTT", "H U G B O X", ";;CRAGING THIS STTAYTION WITH NIO SURVIVROS", "[pick("bager", "syebl")] is down11!!!!!!!!!!!!!!!!!", "PSHOOOM", "i shure hop dere are no PRED arund!!!!", "i play [pick("heds", "ceptin", "hop")] to only ORDER not DO", "erp?", "i want to digest u!!!", "CRAGO ORDER [pick("GUNS", "HATS", "GLOWY CYSTAL")] PLS", "NOM!1!", "iF it COMPILES it werks!", "LYNCH RObOTIKS NOT GIBING ME MECH WTF?/?", "GWURGLE!!", "ahelp kan i b [pick("ert", "shadowlig", "ninja", "admen", "wizzerd")]", "balid saled!", "LINCH VIRO", "VIRO GIB SuPR VIrUS!!", "Ai plai vxtest2!"))
 				if(4)
-					emote("drool")
+					say(pick(";taitor trie to make meh malk/?!1!1", ";ENGIE TATOR HE SET UP SINGULO!!11", "WHEN NAGAS ADdED?/?", "SINDYIE ON SAtIONS GiB gUNS PLISE", "CcLOWN IV SlIPPING MI, SEc t BAR@", "ahelp iT's RP vALiDZ!", "HYDROBONIX PLS WEED PLIESe PLIsE BLAzE IT1!!!", "HALP GOLIATH TENETCAL RAPPPP!!!!111", "DudSE it'S 4:20 LmAO BLAZZ IT xDDDDD", "ahelp DUDE I JUT LOST MY JOBB!!", "looc dude rly", "pray can i heff spells"))
+
 				if(5)
 					say(pick("REMOVE SINGULARITY", "INSTLL TEG", "TURBIN IS BEST ENGIENE", "SOLIRS CAN POWER THE HOLE STATION ANEWAY", "parasteng was best"))
 
@@ -139,6 +147,11 @@
 //This proc returns a number made up of the flags for body parts which you are protected on. (such as HEAD, CHEST, GROIN, etc. See setup.dm for the full list)
 /mob/living/carbon/human/proc/get_heat_protection_flags(temperature) //Temperature is the temperature you're being exposed to.
 	var/thermal_protection_flags = 0
+	if(istype(loc, /mob/living/carbon/human))
+		return 1
+
+	if(istype(loc, /mob/living/carbon/alien))
+		return 1
 	//Handle normal clothing
 	if(head)
 		if(head.max_heat_protection_temperature && head.max_heat_protection_temperature >= temperature)
@@ -224,6 +237,12 @@
 		return 1 //Fully protected from the cold.
 
 	if(dna && COLDRES in dna.species.specflags)
+		return 1
+
+	if(istype(loc, /mob/living/carbon/human))
+		return 1
+
+	if(istype(loc, /mob/living/carbon/alien))
 		return 1
 
 	temperature = max(temperature, 2.7) //There is an occasional bug where the temperature is miscalculated in ares with a small amount of gas on them, so this is necessary to ensure that that bug does not affect this calculation. Space's temperature is 2.7K and most suits that are intended to protect against any cold, protect down to 2.0K.

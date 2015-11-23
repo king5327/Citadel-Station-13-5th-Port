@@ -203,6 +203,7 @@ var/const/VORE_SIZEDIFF_ANY=5
 					owner.stomach_contents.Remove(M)
 					contents.Remove(M)
 					qdel(M)
+					owner.nutrition+=400
 					digestion_count+=1
 					//owner.updateappearance
 					owner.update_body()
