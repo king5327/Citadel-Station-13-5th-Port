@@ -176,6 +176,11 @@ datum
 			generic="rodent"
 			adjective="squeaky"
 			tail=1
+		moth
+			name="moth"
+			id="moth"
+			generic="insect"
+			adjective="fluttery"
 		naga
 			name="naga"
 			id="naga"
@@ -376,6 +381,7 @@ datum
 			generic="plasmaman"
 			adjective="toxic"
 			restricted=2
+
 
 
 

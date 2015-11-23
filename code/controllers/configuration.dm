@@ -44,6 +44,8 @@
 	var/popup_admin_pm = 0				//adminPMs to non-admins show in a pop-up 'reply' window when set to 1.
 	var/fps = 10
 	var/allow_holidays = 0				//toggles whether holiday-specific content should be used
+	var/joblist = 0
+	var/paniclist = 0
 
 	var/hostedby = null
 	var/respawn = 1
@@ -60,9 +62,9 @@
 	var/server
 	var/banappeals
 	var/wikiurl = "http://www.tgstation13.org/wiki" // Default wiki link.
-	var/forumurl = "http://tgstation13.org/phpBB/index.php" //default forums
+	var/forumurl = "http://citadelstation13.4umotion.com/" //default forums
 	var/rulesurl = "http://www.tgstation13.org/wiki/Rules" // default rules
-	var/githuburl = "https://www.github.com/tgstation/-tg-station" //default github
+	var/githuburl = "http://citadelstation13.4umotion.com/t82-citadel-station-rules-8-28-2015" //default github
 
 	var/forbid_singulo_possession = 0
 	var/useircbot = 0
@@ -306,6 +308,10 @@
 					config.githuburl = value
 				if("guest_jobban")
 					config.guest_jobban = 1
+				if("usewhitelist")
+					config.usewhitelist = 1
+				if("joblist")
+					config.joblist = 1
 				if("guest_ban")
 					guests_allowed = 0
 				if("usewhitelist")
@@ -385,6 +391,9 @@
 						protected_config.autoadmin_rank = ckeyEx(value)
 				else
 					diary << "Unknown setting in configuration: '[name]'"
+
+		else if(type == "whitelist")
+			whitelist_keys.Add(name)
 
 		else if(type == "game_options")
 			switch(name)
