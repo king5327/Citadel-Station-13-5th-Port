@@ -179,6 +179,38 @@
 	W.registered_name = H.real_name
 	W.update_label(H.real_name)
 
+/datum/outfit/commissar
+	name = "Centcom Commissar"
+
+	uniform = /obj/item/clothing/under/rank/commissar
+	suit = /obj/item/clothing/suit/armor/hos/commissar
+	shoes = /obj/item/clothing/shoes/combat/swat/commissar
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/device/radio/headset/headset_cent/commander
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
+	head = /obj/item/clothing/head/HoS/commissar
+	belt = /obj/item/weapon/gun/projectile/automatic/pistol/m1911
+	r_pocket = /obj/item/weapon/lighter
+	back = /obj/item/weapon/storage/backpack/satchel
+	id = /obj/item/weapon/card/id
+
+	backpack_contents = list(/obj/item/weapon/storage/box=1,\
+		/obj/item/ammo_box/magazine/m45=1,\
+		/obj/item/weapon/storage/firstaid/tactical=1,\
+		/obj/item/ammo_box/c45=1,\
+		/obj/item/device/flashlight/seclite=1,\
+		/obj/item/weapon/c4=1)
+
+/datum/outfit/commissar/post_equip(mob/living/carbon/human/H)
+	var/obj/item/weapon/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Centcom Commander")
+	W.assignment = "Centcom Commissar"
+	W.registered_name = H.real_name
+	W.update_label()
+
 /datum/outfit/centcom_commander
 	name = "Centcom Commander"
 
