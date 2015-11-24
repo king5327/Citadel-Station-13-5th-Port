@@ -166,7 +166,7 @@
 	icon_state = "45-8"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
-	max_ammo = 15
+	max_ammo = 8
 
 /obj/item/ammo_box/magazine/m45/update_icon()
 	..()
@@ -177,7 +177,7 @@
 	icon_state = "46x30mmt-20"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4x6x30mm"
-	max_ammo = 40
+	max_ammo = 20
 
 /obj/item/ammo_box/magazine/wt550m9/update_icon()
 	..()

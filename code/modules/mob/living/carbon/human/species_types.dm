@@ -56,7 +56,7 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	say_mod = "hisses"
 	default_color = "00FF00"
 	roundstart = 1
-	specflags = list(MUTCOLORS,EYECOLOR,LIPS,HAIR)
+	specflags = list(MUTCOLORS,EYECOLOR,LIPS)
 	mutant_bodyparts = list("tail_lizard", "snout", "spines", "horns", "frills", "body_markings")
 	default_features = list("mcolor" = "0F0", "tail" = "Smooth", "snout" = "Round", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None")
 	attack_verb = "slash"
@@ -101,7 +101,7 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	name = "Podperson"
 	id = "pod"
 	default_color = "59CE00"
-	specflags = list(MUTCOLORS,EYECOLOR,HAIR)
+	specflags = list(MUTCOLORS,EYECOLOR)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slice.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -190,7 +190,7 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	default_color = "00FF90"
 	say_mod = "chirps"
 	eyes = "jelleyes"
-	specflags = list(MUTCOLORS,EYECOLOR,NOBLOOD,HAIR)
+	specflags = list(MUTCOLORS,EYECOLOR,NOBLOOD)
 	meat = /obj/item/weapon/reagent_containers/food/snacks/meat/slab/human/mutant/slime
 	exotic_blood = /datum/reagent/toxin/slimejelly
 	var/recently_changed = 1

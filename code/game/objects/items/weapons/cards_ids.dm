@@ -56,13 +56,6 @@
 /*
  * ID CARDS
  */
-/obj/item/weapon/card/emag_broken
-	desc = "It's a card with a magnetic strip attached to some circuitry. It looks too busted to be used for anything but salvage."
-	name = "broken cryptographic sequencer"
-	icon_state = "emag"
-	item_state = "card-id"
-	origin_tech = "magnets=2;syndicate=2"
-
 /obj/item/weapon/card/emag
 	desc = "It's a card with a magnetic strip attached to some circuitry."
 	name = "cryptographic sequencer"
@@ -70,7 +63,6 @@
 	item_state = "card-id"
 	origin_tech = "magnets=2;syndicate=2"
 	flags = NOBLUDGEON
-	var/uses = 5
 
 /obj/item/weapon/card/emag/attack()
 	return
@@ -79,17 +71,6 @@
 	var/atom/A = target
 	if(!proximity) return
 	A.emag_act(user)
-	uses--
-
-	if(uses<1)
-		user.visible_message("[src] fizzles and sparks - it seems it's been used once too often. it is now burned out.")
-		user.drop_item()
-		var/obj/item/weapon/card/emag_broken/junk = new(user.loc)
-		junk.add_fingerprint(user)
-		del(src)
-		return
-
-	..()
 
 /obj/item/weapon/card/id
 	name = "identification card"

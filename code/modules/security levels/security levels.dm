@@ -32,8 +32,6 @@
 				else
 					minor_announce(config.alert_desc_blue_downto, "Attention! Security level lowered to blue:")
 				security_level = SEC_LEVEL_BLUE
-				for(var/mob/M in player_list)
-					M << 'sound/misc/voybluealert.ogg'
 				for(var/obj/machinery/firealarm/FA in machines)
 					if(FA.z == ZLEVEL_STATION)
 						FA.update_icon()
@@ -43,8 +41,6 @@
 				else
 					minor_announce(config.alert_desc_red_downto, "Attention! Code red!")
 				security_level = SEC_LEVEL_RED
-				for(var/mob/M in player_list)
-					M << 'sound/misc/voyalert.ogg'
 
 				/*	- At the time of commit, setting status displays didn't work properly
 				var/obj/machinery/computer/communications/CC = locate(/obj/machinery/computer/communications,world)
@@ -57,9 +53,7 @@
 				for(var/obj/machinery/computer/shuttle/pod/pod in machines)
 					pod.admin_controlled = 0
 			if(SEC_LEVEL_DELTA)
-				minor_announce(config.alert_desc_delta, "Attention! Delta security level reached!")
-				for(var/mob/M in player_list)
-					M << 'sound/misc/tas_red_alert.ogg'
+				minor_announce(config.alert_desc_delta, "Attention! Delta security level reached!",1)
 				security_level = SEC_LEVEL_DELTA
 				for(var/obj/machinery/firealarm/FA in machines)
 					if(FA.z == ZLEVEL_STATION)

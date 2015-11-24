@@ -6,12 +6,6 @@
 	if(stat)
 		return
 
-	var/verbs_use = pick_list("npc_chatter.txt","verbs_use")
-	var/verbs_touch = pick_list("npc_chatter.txt","verbs_touch")
-	var/nouns_insult = pick_list("npc_chatter.txt","nouns_insult")
-	var/nouns_body = pick_list("npc_chatter.txt","nouns_body")
-	var/adjective_insult = pick_list("npc_chatter.txt","adjective_insult")
-	var/curse_words = pick_list("npc_chatter.txt","curse_words")
 	var/param = null
 
 	if (findtext(act, "-", 1, null)) //Removes dashes for npcs "EMOTE-PLAYERNAME" or something like that, I ain't no AI coder. It's not for players. -Sum99
@@ -128,14 +122,6 @@
 
 		if ("jump","jumps")
 			message = "<B>[src]</B> jumps!"
-			m_type = 1
-
-		if ("insult")
-
-			message = pick("<B>[src]</B> yells, 'I'm going to [verbs_use] you, you [adjective_insult] [nouns_insult]!'",
-			"<B>[src]</B> yells, 'Rend and [verbs_touch], Rend and [verbs_use]!'",
-			"<B>[src]</B> yells, 'You [nouns_insult], I'm going to [verbs_use] you right in the [nouns_body]. <B>JUST YOU WAIT!</B>'",
-			"<B>[src]</B> yells, '<B>You [curse_words]!!</B>'")
 			m_type = 1
 
 		if ("laugh","laughs")

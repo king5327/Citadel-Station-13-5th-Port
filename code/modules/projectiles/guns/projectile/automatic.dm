@@ -115,10 +115,9 @@
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	pin = /obj/item/device/firing_pin/implant/loyalty
 	fire_delay = 2
 	can_suppress = 0
-	burst_size = 3
+	burst_size = 0
 
 /obj/item/weapon/gun/projectile/automatic/wt550/ui_action_click()
 	return

@@ -161,8 +161,6 @@ Thus, the two variables affect pump operation are set in New():
 	if(href_list["power"])
 		on = !on
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", "atmos")
-		message_admins("Pump manipulated by [key_name(usr)] at [x], [y], [z], [loc.loc]")
-		log_admin("[key_name(usr)] manipulated a pump at [x], [y], [z]")
 	if(href_list["set_press"])
 		switch(href_list["set_press"])
 			if ("max")
@@ -170,8 +168,6 @@ Thus, the two variables affect pump operation are set in New():
 			if ("set")
 				target_pressure = max(0, min(MAX_OUTPUT_PRESSURE, safe_input("Pressure control", "Enter new output pressure (0-[MAX_OUTPUT_PRESSURE] kPa)", target_pressure)))
 		investigate_log("was set to [target_pressure] kPa by [key_name(usr)]", "atmos")
-		message_admins("was set to [target_pressure] kPa by [key_name(usr)] at [loc.loc]")
-		log_admin("[key_name(usr)] manipulated a pump at [x], [y], [z]")
 	usr.set_machine(src)
 	src.update_icon()
 	src.updateUsrDialog()
