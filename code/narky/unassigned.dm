@@ -2097,6 +2097,10 @@ var/list/traitor_test_list = null
 	if(istype(src,/mob/living/carbon))
 		//updateappearance(mutcolor_update=0)
 		src.update_body()
+
+	if(istype(src,/mob/living/carbon))
+		//updateappearance(mutcolor_update=0)
+		src.update_body()
 /mob/living/kpcode_mob_offset()
 	if(istype(src,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H=src

@@ -229,3 +229,6 @@ ANNOUNCE_ADMIN_LOGOUT
 ##AUTOADMIN
 ##Uncomment to automatically give that admin rank to all players
 #AUTOADMIN Game Admin
+
+## Job whitelist head ban
+JOBLIST
