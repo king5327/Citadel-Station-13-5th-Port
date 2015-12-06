@@ -23,7 +23,8 @@
 	pin = /obj/item/device/firing_pin/implant/loyalty
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 4
-
+	pin = /obj/item/device/firing_pin/implant/loyalty
+	
 /obj/item/weapon/gun/energy/gun/dragnet
 	name = "\improper DRAGnet"
 	desc = "The \"Dynamic Rapid-Apprehension of the Guilty\" net is a revolution in law enforcement technology."
