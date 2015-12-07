@@ -70,7 +70,11 @@
 	icon_state = "riotshotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
-
+	pin = /obj/item/device/firing_pin/implant/loyalty
+	
+/obj/item/weapon/gun/projectile/shotgun/riot/unrestricted
+	pin = /obj/item/device/firing_pin
+	
 /obj/item/weapon/gun/projectile/shotgun/riot/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/weapon/circular_saw) || istype(A, /obj/item/weapon/gun/energy/plasmacutter))
@@ -300,3 +304,9 @@
 	origin_tech = "combat=5;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
 	w_class = 5
+	pin = /obj/item/device/firing_pin/implant/loyalty
+	
+/obj/item/weapon/gun/projectile/shotgun/automatic/combat/unrestricted
+	pin = /obj/item/device/firing_pin
+	
+	
