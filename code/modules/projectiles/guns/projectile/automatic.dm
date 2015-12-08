@@ -7,6 +7,7 @@
 	burst_size = 3
 	fire_delay = 2
 	action_button_name = "Toggle Firemode"
+	fire_sound = 'sound/weapons/rifle.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/proto
 	name = "\improper NanoTrasen Saber SMG"
@@ -86,7 +87,6 @@
 	item_state = "c20r"
 	origin_tech = "combat=5;materials=2;syndicate=8"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
-	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	fire_delay = 2
 	burst_size = 2
 	pin = /obj/item/device/firing_pin/implant/pindicate
@@ -111,16 +111,17 @@
 
 /obj/item/weapon/gun/projectile/automatic/wt550
 	name = "security auto rifle"
-	desc = "A outdated personal defence weapon. Uses 9mm rounds and is designated the WT-550 Automatic Rifle."
+	desc = "An outdated personal defence weapon. Uses 4.6mm rounds and is designated the WT-550 Automatic Rifle."
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 	pin = /obj/item/device/firing_pin/implant/loyalty
 	fire_delay = 2
 	can_suppress = 0
-	burst_size = 3
+	burst_size = 2
 
 /obj/item/weapon/gun/projectile/automatic/wt550/ui_action_click()
+	burst_select()
 	return
 
 /obj/item/weapon/gun/projectile/automatic/wt550/update_icon()
@@ -143,9 +144,8 @@
 	item_state = "l6closedmag"
 	w_class = 5
 	slot_flags = 0
-	origin_tech = "combat=5;materials=1;syndicate=2"
+	origin_tech = "combat=5;materials=1;syndicate=5"
 	mag_type = /obj/item/ammo_box/magazine/m762
-	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	var/cover_open = 0
 	can_suppress = 0
 	burst_size = 5
@@ -203,7 +203,6 @@
 	item_state = "m90"
 	origin_tech = "combat=5;materials=2;syndicate=8"
 	mag_type = /obj/item/ammo_box/magazine/m556
-	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	can_suppress = 0
 	var/obj/item/weapon/gun/projectile/revolver/grenadelauncher/underbarrel
 	burst_size = 3
@@ -279,7 +278,6 @@
 	slot_flags = 0
 	origin_tech = "combat=5;materials=1;syndicate=2"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
-	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	can_suppress = 0
 	burst_size = 4
 	fire_delay = 1
@@ -292,7 +290,6 @@
 	slot_flags = 0
 	origin_tech = "combat=5;materials=1"
 	mag_type = /obj/item/ammo_box/magazine/m556
-	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1

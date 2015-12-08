@@ -10,7 +10,8 @@
 	origin_tech = "combat=4;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	var/recentpump = 0 // to prevent spammage
-
+	fire_sound = 'sound/weapons/shotgun.ogg'
+	
 /obj/item/weapon/gun/projectile/shotgun/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
@@ -93,10 +94,11 @@
 	desc = "This piece of junk looks like something that could have been used 700 years ago. It feels slightly moist."
 	icon_state = "moistnugget"
 	item_state = "moistnugget"
-	slot_flags = 0 //no SLOT_BACK sprite, alas
+	slot_flags = SLOT_BACK //no SLOT_BACK sprite, alas
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	var/bolt_open = 0
-
+	fire_sound = 'sound/weapons/sniper.ogg'
+	
 /obj/item/weapon/gun/projectile/shotgun/boltaction/pump(mob/M)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
 	if(bolt_open)
@@ -135,7 +137,8 @@
 	sawn_desc = "Omar's coming!"
 	unique_rename = 1
 	unique_reskin = 1
-
+	fire_sound = 'sound/weapons/shotgun.ogg'
+	
 /obj/item/weapon/gun/projectile/revolver/doublebarrel/New()
 	..()
 	options["Default"] = "dshotgun"
@@ -259,13 +262,13 @@
 	w_class = 3
 	origin_tech = "combat=5;materials=4;syndicate=6"
 	mag_type = /obj/item/ammo_box/magazine/m12g
-	fire_sound = 'sound/weapons/Gunshot.ogg'
 	can_suppress = 0
 	burst_size = 1
 	fire_delay = 0
 	pin = /obj/item/device/firing_pin/implant/pindicate
 	action_button_name = null
-
+	fire_sound = 'sound/weapons/shotgun.ogg'
+	
 /obj/item/weapon/gun/projectile/automatic/shotgun/bulldog/unrestricted
 	pin = /obj/item/device/firing_pin
 
@@ -305,6 +308,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
 	w_class = 5
 	pin = /obj/item/device/firing_pin/implant/loyalty
+	fire_sound = 'sound/weapons/shotgun.ogg'
 	
 /obj/item/weapon/gun/projectile/shotgun/automatic/combat/unrestricted
 	pin = /obj/item/device/firing_pin
