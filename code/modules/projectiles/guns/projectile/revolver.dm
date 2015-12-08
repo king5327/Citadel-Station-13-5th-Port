@@ -93,7 +93,8 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	unique_rename = 1
 	unique_reskin = 1
-
+	pin = /obj/item/device/firing_pin/implant/loyalty
+	
 /obj/item/weapon/gun/projectile/revolver/detective/New()
 	..()
 	options["Default"] = "detective"
@@ -102,7 +103,7 @@
 	options["Gold Trim"] = "detective_gold"
 	options["The Peacemaker"] = "detective_peacemaker"
 	options["Cancel"] = null
-
+/*
 /obj/item/weapon/gun/projectile/revolver/detective/process_fire(atom/target as mob|obj|turf, mob/living/user as mob|obj, message = 1, params, zone_override = "")
 	if(magazine.caliber != initial(magazine.caliber))
 		if(prob(70 - (magazine.ammo_count() * 10)))	//minimum probability of 10, maximum of 60
@@ -112,7 +113,7 @@
 			user.unEquip(src)
 			return 0
 	..()
-
+*/
 /obj/item/weapon/gun/projectile/revolver/detective/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/weapon/screwdriver))

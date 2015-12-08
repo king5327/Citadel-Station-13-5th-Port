@@ -33,7 +33,8 @@
 	origin_tech = null
 	var/charge_tick = 0
 	ammo_x_offset = 3
-
+	pin = /obj/item/device/firing_pin/implant/loyalty
+	
 /obj/item/weapon/gun/energy/laser/captain/New()
 	..()
 	SSobj.processing |= src
