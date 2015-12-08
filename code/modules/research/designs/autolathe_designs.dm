@@ -547,6 +547,14 @@
 	build_path = /obj/item/ammo_box/c9mm
 	category = list("hacked", "Security")
 
+/datum/design/c46x30mm
+	name = "Ammo box (4.6x30mm)"
+	id = "c46x30mm"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/c46x30mm
+	category = list("hacked", "Security")
+
 /datum/design/spraycan
 	name = "Spraycan"
 	id = "spraycan"
