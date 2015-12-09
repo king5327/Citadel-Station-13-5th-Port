@@ -284,15 +284,12 @@ obj/item/ammo_box/magazine/tommygunm45
 
 /obj/item/ammo_box/magazine/m110
 	name = "sniper magazine (7.62mm)"
-	icon_state = "m110-10"
+	icon_state = "m110"
 	origin_tech = "combat=2"
 	ammo_type = /obj/item/ammo_casing/a762
 	caliber = "a762"
 	max_ammo = 10
-
-/obj/item/ammo_box/magazine/m110/update_icon()
-	..()
-	icon_state = "m110-[round(ammo_count(),10)]"
+	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m12g
 	name = "shotgun magazine (12g slugs)"
