@@ -306,12 +306,13 @@
 	slot_flags = SLOT_BACK
 	origin_tech = "combat=4;materials=3"
 	mag_type = /obj/item/ammo_box/magazine/m110
-	can_suppress = 0
 	burst_size = 1
 	fire_delay = 17
 	recoil = 2
 	heavy_weapon = 1
 	fire_sound = "sound/weapons/sniper.ogg"
+	action_button_name = "Do Nothing"
+	can_suppress = 1
 
 /obj/item/weapon/gun/projectile/automatic/m110/ui_action_click()
 	...()
