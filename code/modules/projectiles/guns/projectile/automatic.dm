@@ -301,7 +301,7 @@
 /obj/item/weapon/gun/projectile/automatic/m110
 	name = "\improper NT-M110 Marksman Rifle"
 	desc = "A robust bullpup marksman rifle used by Nanotrasen specialist forces."
-	icon_state = "m110-10"
+	icon_state = "m110"
 	item_state = "l6closednomag"
 	slot_flags = SLOT_BACK
 	origin_tech = "combat=4;materials=3"
