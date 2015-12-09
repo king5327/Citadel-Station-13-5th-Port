@@ -153,6 +153,7 @@
 	can_suppress = 0
 	burst_size = 5
 	fire_delay = 3
+	heavy_weapon = 1
 	pin = /obj/item/device/firing_pin/implant/pindicate
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw/unrestricted
@@ -296,3 +297,22 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1
+
+/obj/item/weapon/gun/projectile/automatic/m110
+	name = "\improper NT-M110 Marksman Rifle"
+	desc = "A robust bullpup marksman rifle used by Nanotrasen specialist forces."
+	icon_state = "m110-10"
+	item_state = "l6closednomag"
+	slot_flags = SLOT_BACK
+	origin_tech = "combat=4;materials=3"
+	mag_type = /obj/item/ammo_box/magazine/m110
+	can_suppress = 0
+	burst_size = 1
+	fire_delay = 17
+	recoil = 2
+	heavy_weapon = 1
+	fire_sound = "sound/weapons/sniper.ogg"
+
+/obj/item/weapon/gun/projectile/automatic/m110/ui_action_click()
+	...()
+	return

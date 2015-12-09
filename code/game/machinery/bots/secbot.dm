@@ -6,8 +6,8 @@
 	layer = 5
 	density = 0
 	anchored = 0
-	health = 50
-	maxhealth = 50
+	health = 75
+	maxhealth = 75
 	fire_dam_coeff = 0.7
 	brute_dam_coeff = 0.5
 //	weight = 1.0E7
@@ -19,8 +19,8 @@
 	var/last_found //There's a delay
 //	var/emagged = 0 //Emagged Secbots view everyone as a criminal
 	var/declare_arrests = 1 //When making an arrest, should it notify everyone on the security channel?
-	var/idcheck = 0 //If true, arrest people with no IDs
-	var/weaponscheck = 0 //If true, arrest people for weapons if they lack access
+	var/idcheck = 1 //If true, arrest people with no IDs
+	var/weaponscheck = 1 //If true, arrest people for weapons if they lack access
 	var/check_records = 1 //Does it check security records?
 	var/arrest_type = 0 //If true, don't handcuff
 	radio_frequency = SEC_FREQ //Security channel
