@@ -46,6 +46,14 @@
 	flags_inv = 0
 	strip_delay = 80
 
+/obj/item/clothing/suit/armor/hos/tasald
+	name = "tasald jacket"
+	desc = "A jacket in exceptional finery. If they will not serve on the front, then they'll serve in permabrig!"
+	icon_state = "tasald"
+	item_state = "tasald"
+	flags_inv = 0
+	strip_delay = 80
+
 
 /obj/item/clothing/suit/armor/vest/warden
 	name = "warden's jacket"
