@@ -306,14 +306,18 @@
 	slot_flags = SLOT_BACK
 	origin_tech = "combat=4;materials=3"
 	mag_type = /obj/item/ammo_box/magazine/m110
-	burst_size = 1
 	fire_delay = 17
 	recoil = 2
 	heavy_weapon = 1
 	fire_sound = "sound/weapons/sniper.ogg"
-	action_button_name = "Do Nothing"
+	action_button_name = "Change Firemode"
 	can_suppress = 1
+	suppressed = 0
+	w_class = 4
+	burst_size = 1
 
-/obj/item/weapon/gun/projectile/automatic/m110/ui_action_click()
-	...()
+/obj/item/weapon/gun/projectile/automatic/m110/burst_select()
+	var/mob/living/carbon/human/user = usr
+	user << "<span class='danger'>The [src.name] only has one firing mode.</span>"
+	update_icon()
 	return
