@@ -174,9 +174,9 @@
 
 /obj/item/ammo_box/magazine/wt550m9
 	name = "wt550 magazine (4.6x30mm)"
-	icon_state = "46x30mmt-20"
+	icon_state = "46x30mmt-40"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
-	caliber = "4x6x30mm"
+	caliber = "4.6x30mm"
 	max_ammo = 40
 
 /obj/item/ammo_box/magazine/wt550m9/update_icon()
@@ -282,7 +282,14 @@ obj/item/ammo_box/magazine/tommygunm45
 	..()
 	icon_state = "a762-[round(ammo_count(),10)]"
 
-
+/obj/item/ammo_box/magazine/m110
+	name = "sniper magazine (7.62mm)"
+	icon_state = "m110"
+	origin_tech = "combat=2"
+	ammo_type = /obj/item/ammo_casing/a762
+	caliber = "a762"
+	max_ammo = 10
+	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m12g
 	name = "shotgun magazine (12g slugs)"
