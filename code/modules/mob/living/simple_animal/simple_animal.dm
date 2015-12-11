@@ -68,6 +68,9 @@
 	var/mob/living/simple_animal/hostile/spawner/nest
 
 /mob/living/simple_animal/New()
+	verbs += /mob/living/proc/lay_down
+
+/mob/living/simple_animal/New()
 	..()
 	verbs -= /mob/verb/observe
 	if(!real_name)
@@ -525,3 +528,5 @@
 		nest.spawned_mobs -= src
 	nest = null
 	return ..()
+
+
