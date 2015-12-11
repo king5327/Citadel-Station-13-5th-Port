@@ -1,6 +1,5 @@
 /mob/living/simple_animal/dragon
 	name = "\improper dragon"
-	real_name = "dragon"
 	desc = "You're not sure why there's a dragon in space, but there is."
 	icon = 'icons/mob/dragon.dmi'
 	icon_state = "dragongreen"
@@ -18,7 +17,7 @@
 	pixel_x = -8
 	layer = 7
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 9)
-	mob_size = MOB_SIZE_LARGE
+	speak_emote = list("roars","grumbles","growls")
 
 /mob/living/simple_animal/dragon/green
 /mob/living/simple_animal/dragon/red
