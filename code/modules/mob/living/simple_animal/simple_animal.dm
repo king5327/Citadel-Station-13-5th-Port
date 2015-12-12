@@ -9,6 +9,7 @@
 	var/icon_living = ""
 	var/icon_dead = "" //icon when the animal is dead. Don't use animated icons for this.
 	var/icon_gib = null	//We only try to show a gibbing animation if this exists.
+	var/icon_rest = null
 
 	var/list/speak = list()
 	var/list/speak_emote = list()//	Emotes while speaking IE: Ian [emote], [text] -- Ian barks, "WOOF!". Spoken text is generated from the speak variable.
@@ -67,8 +68,23 @@
 
 	var/mob/living/simple_animal/hostile/spawner/nest
 
+/mob/living/simple_animal/proc/simple_lay_down()
+	set name = "Rest"
+	set category = "IC"
+
+	resting = !resting
+	src << "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>"
+	update_canmove()
+	update_icon()
+
+/mob/living/simple_animal/proc/update_icon()
+	if(lying || resting || sleeping)
+		icon_state = "[icon_state]_rest"
+	else
+		icon_state = "[icon_living]"
+
 /mob/living/simple_animal/New()
-	verbs += /mob/living/proc/lay_down
+	verbs += /mob/living/simple_animal/proc/simple_lay_down
 
 /mob/living/simple_animal/New()
 	..()
