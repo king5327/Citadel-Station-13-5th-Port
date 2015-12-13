@@ -9,6 +9,7 @@
 	layer = 5
 	response_help   = "pets"
 	wander = 1
+	turns_per_move = 5
 	pass_flags = PASSTABLE | PASSMOB
 /* /////TEMPLATE/////
 /mob/living/simple_animal/pokemon/
@@ -23,7 +24,7 @@
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 12)
 
 /mob/living/simple_animal/pokemon/leg/articuno
-	name = "articuno"
+	name = "Articuno"
 	icon_state = "articuno"
 	icon_living = "articuno"
 	icon_dead = "articuno_d"
