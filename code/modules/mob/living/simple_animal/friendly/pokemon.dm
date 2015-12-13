@@ -8,6 +8,7 @@
 	maxHealth = 50
 	layer = 5
 	response_help   = "pets"
+	wander = 1
 	pass_flags = PASSTABLE | PASSMOB
 /* /////TEMPLATE/////
 /mob/living/simple_animal/pokemon/
@@ -20,6 +21,13 @@
 	icon = 'icons/mob/legendary.dmi'
 	pixel_x = -32
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 12)
+
+/mob/living/simple_animal/pokemon/leg/articuno
+	name = "articuno"
+	icon_state = "articuno"
+	icon_living = "articuno"
+	icon_dead = "articuno_d"
+	flying = 1
 
 /mob/living/simple_animal/pokemon/leg/rayquaza
 	name = "Rayquaza"
@@ -114,10 +122,22 @@
 	name = "vulpix"
 	icon_state = "vulpix"
 	icon_living = "vulpix"
-	icon_dead = "vulpix_dead"
+	icon_dead = "vulpix_d"
 
 /mob/living/simple_animal/pokemon/larvitar
 	name = "larvitar"
 	icon_state = "larvitar"
 	icon_living = "larvitar"
 	icon_dead = "larvitar_d"
+
+/mob/living/simple_animal/pokemon/ditto
+	name = "ditto"
+	icon_state = "ditto"
+	icon_living = "ditto"
+	icon_dead = "ditto_d"
+
+/mob/living/simple_animal/pokemon/charmander
+	name = "charmander"
+	icon_state = "charmander"
+	icon_living = "charmander"
+	icon_dead = "charmander_d"
