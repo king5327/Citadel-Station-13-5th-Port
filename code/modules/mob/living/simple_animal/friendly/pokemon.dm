@@ -6,7 +6,7 @@
 	ventcrawler = 2
 	health = 50
 	maxHealth = 50
-	layer = 5
+	layer = 4.05
 	response_help   = "pets"
 	wander = 1
 	turns_per_move = 5
