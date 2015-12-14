@@ -84,6 +84,7 @@ Shaft Miner
 		/obj/item/weapon/storage/bag/ore=1,\
 		/obj/item/weapon/mining_voucher=1)
 
+	shoes = /obj/item/clothing/shoes/workboots
 	backpack = /obj/item/weapon/storage/backpack/industrial
 	satchel = /obj/item/weapon/storage/backpack/satchel_eng
 	box = /obj/item/weapon/storage/box/engineer

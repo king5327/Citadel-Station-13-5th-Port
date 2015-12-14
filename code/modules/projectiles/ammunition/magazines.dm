@@ -161,12 +161,20 @@
 	max_ammo = 8
 	multiple_sprites = 2
 
+/obj/item/ammo_box/magazine/m9mm
+	name = "pistol magazine (9mm)"
+	icon_state = "9mmp-15"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 15
+	multiple_sprites = 2
+
 /obj/item/ammo_box/magazine/m45
 	name = "handgun magazine (.45)"
 	icon_state = "45-8"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
-	max_ammo = 15
+	max_ammo = 8
 
 /obj/item/ammo_box/magazine/m45/update_icon()
 	..()

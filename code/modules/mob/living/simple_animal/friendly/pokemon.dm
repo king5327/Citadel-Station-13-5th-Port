@@ -22,6 +22,8 @@
 	icon = 'icons/mob/legendary.dmi'
 	pixel_x = -32
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 12)
+	health = 150
+	maxHealth = 150
 
 /mob/living/simple_animal/pokemon/leg/articuno
 	name = "Articuno"
