@@ -144,3 +144,9 @@
 	icon_state = "charmander"
 	icon_living = "charmander"
 	icon_dead = "charmander_d"
+
+/mob/living/simple_animal/pokemon/aggron
+	name = "aggron"
+	icon_state = "aggron"
+	icon_living = "aggron"
+	icon_dead = "aggron_d"
