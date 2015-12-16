@@ -41,7 +41,7 @@
 
 	var/emergency_issued = 0
 
-	var/explosion_power = 32
+	var/explosion_power = 12
 
 	var/lastwarning = 0				// Time in 1/10th of seconds since the last sent warning
 	var/power = 0
