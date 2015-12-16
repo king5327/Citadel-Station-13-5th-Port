@@ -100,8 +100,8 @@
 /mob/living/simple_animal/pokemon/eevee/espeon
 	name = "espeon"
 	icon_state = "espeon"
-	icon_dead = "espeon_d"
 	icon_living = "espeon"
+	icon_dead = "espeon_d"
 
 /mob/living/simple_animal/pokemon/eevee/umbreon
 	name = "umbreon"
