@@ -9,7 +9,7 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
 	damtype = "stamina"
-	force = 15
+	force = 10
 	throwforce = 7
 	w_class = 3
 	origin_tech = "combat=4"
