@@ -477,7 +477,7 @@
 "ji" = (/obj/structure/table,/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/plasteel/floorgrime,/area/derelict/teleporter)
 "jj" = (/obj/structure/table,/obj/item/weapon/storage/toolbox/electrical,/turf/simulated/floor/plasteel/floorgrime,/area/derelict/teleporter)
 "jk" = (/obj/structure/table,/obj/item/weapon/stock_parts/cell{charge = 100; maxcharge = 15000},/turf/simulated/floor/plasteel/floorgrime,/area/derelict/teleporter)
-"jl" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/bluespace_beacon,/turf/simulated/floor/plasteel/floorgrime,/area/derelict/teleporter)
+"jl" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/item/device/radio/beacon,/turf/simulated/floor/plasteel/floorgrime,/area/derelict/teleporter)
 "jm" = (/obj/structure/table,/obj/effect/spawner/lootdrop{loot = list("/obj/item/weapon/cigbutt","/obj/item/trash/cheesie","/obj/item/trash/candy","/obj/item/trash/chips","/obj/item/trash/deadmouse","/obj/item/trash/pistachios","/obj/item/trash/plate","/obj/item/trash/popcorn","/obj/item/trash/raisins","/obj/item/trash/sosjerky","/obj/item/trash/syndi_cakes"); name = "trash spawner"},/turf/simulated/floor/plasteel/floorgrime,/area/derelict/teleporter)
 "jn" = (/obj/structure/grille,/turf/space,/area/space)
 "jo" = (/obj/machinery/light,/turf/simulated/floor/plasteel/floorgrime,/area/derelict/teleporter)
