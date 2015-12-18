@@ -67,6 +67,24 @@
 
 	var/mob/living/simple_animal/hostile/spawner/nest
 
+/mob/living/simple_animal/pokemon/proc/simple_lay_down()
+	set name = "Rest"
+	set category = "IC"
+
+	resting = !resting
+	src << "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>"
+	update_canmove()
+	update_icon()
+
+/mob/living/simple_animal/pokemon/proc/update_icon()
+	if(lying || resting || sleeping)
+		icon_state = "[icon_state]_rest"
+	else
+		icon_state = "[icon_living]"
+
+/mob/living/simple_animal/pokemon/New()
+	verbs += /mob/living/simple_animal/pokemon/proc/simple_lay_down
+
 /mob/living/simple_animal/New()
 	..()
 	verbs -= /mob/verb/observe
@@ -525,3 +543,5 @@
 		nest.spawned_mobs -= src
 	nest = null
 	return ..()
+
+

@@ -310,14 +310,8 @@
 	recoil = 2
 	heavy_weapon = 1
 	fire_sound = "sound/weapons/sniper.ogg"
-	action_button_name = "Change Firemode"
+	action_button_name = null
 	can_suppress = 1
 	suppressed = 0
 	w_class = 4
 	burst_size = 1
-
-/obj/item/weapon/gun/projectile/automatic/m110/burst_select()
-	var/mob/living/carbon/human/user = usr
-	user << "<span class='danger'>The [src.name] only has one firing mode.</span>"
-	update_icon()
-	return

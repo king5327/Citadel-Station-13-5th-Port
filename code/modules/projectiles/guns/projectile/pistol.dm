@@ -44,3 +44,20 @@
 	desc = "A Deagle brand Deagle for operators operating operationally. Uses .50 AE ammo."
 	icon_state = "deaglecamo"
 	item_state = "deagleg"
+
+/////////////////////////////////
+/////////SECURITY PISTOL/////////
+/////////////////////////////////
+
+/obj/item/weapon/gun/projectile/automatic/pistol/secpistol
+	name = "security pistol"
+	desc = "A small, easily concealable 9mm handgun for members of security who mean business."
+	icon_state = "secpistol"
+	pin = /obj/item/device/firing_pin/implant/loyalty
+	w_class = 2
+	origin_tech = "combat=2;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	can_suppress = 0
+	burst_size = 1
+	fire_delay = 0
+	action_button_name = null

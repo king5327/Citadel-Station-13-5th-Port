@@ -776,7 +776,7 @@ datum
 	id = "healnomchem"
 	result = "healnomchem"
 	required_reagents = list("omnizine" = 2, "vorechem" = 1)
-	result_amount = 3
+	result_amount = 1
 
 /datum/chemical_reaction/hurtnomchem
 	name = "HurtNomchem"
