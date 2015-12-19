@@ -530,8 +530,9 @@ var/list/cock_list = list(
 	"human",
 	"canine",
 	"feline",
-	"murid",
-	"leporid",
+//	"murid",
+//	"leporid",
+	"reptilian",
 	//"custom",
 	)
 
