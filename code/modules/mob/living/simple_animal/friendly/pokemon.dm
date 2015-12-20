@@ -11,7 +11,27 @@
 	wander = 1
 	turns_per_move = 5
 	pass_flags = PASSTABLE | PASSMOB
-/* /////TEMPLATE/////
+
+/mob/living/simple_animal/pokemon/proc/simple_lay_down()
+	set name = "Rest"
+	set category = "IC"
+
+	resting = !resting
+	src << "<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>"
+	update_canmove()
+	update_icon()
+
+/mob/living/simple_animal/pokemon/proc/update_icon()
+	if(lying || resting || sleeping)
+		icon_state = "[icon_state]_rest"
+	else
+		icon_state = "[icon_living]"
+
+/mob/living/simple_animal/pokemon/New()
+	verbs += /mob/living/simple_animal/pokemon/proc/simple_lay_down
+
+/*
+/////TEMPLATE/////
 /mob/living/simple_animal/pokemon/
 	name = ""
 	icon_state = ""
@@ -71,10 +91,7 @@
 	icon_dead = "eevee_d"
 	speak = list("Eevee!", "Ee-Eevee!")
 	response_help  = "pets"
-	response_disarm = "gently moves aside"
 	response_harm   = "hits"
-	turns_per_move = 5
-	pass_flags = PASSTABLE | PASSMOB
 
 /mob/living/simple_animal/pokemon/eevee/glaceon
 	name = "glaceon"
@@ -150,3 +167,9 @@
 	icon_state = "aggron"
 	icon_living = "aggron"
 	icon_dead = "aggron_d"
+
+/mob/living/simple_animal/pokemon/miltank
+	name = "miltank"
+	icon_state = "miltank"
+	icon_living = "miltank"
+	icon_dead = "miltank_d"
