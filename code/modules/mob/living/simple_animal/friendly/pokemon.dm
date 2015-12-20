@@ -15,7 +15,6 @@
 	wander = 1
 	turns_per_move = 5
 	pass_flags = PASSTABLE | PASSMOB
-	gold_core_spawnable = 2
 
 /mob/living/simple_animal/pokemon/proc/simple_lay_down()
 	set name = "Rest"
@@ -51,7 +50,6 @@
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 12)
 	health = 150
 	maxHealth = 150
-	gold_core_spawnable = 0
 
 
 /mob/living/simple_animal/pokemon/leg/articuno
