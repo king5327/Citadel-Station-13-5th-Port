@@ -1,16 +1,21 @@
 /mob/living/simple_animal/pokemon
+	name = "eevee"
+	icon_state = "eevee"
+	icon_living = "eevee"
+	icon_dead = "eevee_d"
 	desc = "Gotta catch 'em all!"
 	icon = 'icons/mob/pokemon.dmi'
 	pixel_x = -16
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 4)
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 5)
 	ventcrawler = 2
 	health = 50
 	maxHealth = 50
 	layer = 4
-	response_help   = "pets"
+	response_help = "pets"
 	wander = 1
 	turns_per_move = 5
 	pass_flags = PASSTABLE | PASSMOB
+	gold_core_spawnable = 2
 
 /mob/living/simple_animal/pokemon/proc/simple_lay_down()
 	set name = "Rest"
@@ -32,18 +37,22 @@
 
 /*
 /////TEMPLATE/////
+
 /mob/living/simple_animal/pokemon/
 	name = ""
 	icon_state = ""
 	icon_living = ""
 	icon_dead = ""
 */
+
 /mob/living/simple_animal/pokemon/leg/
 	icon = 'icons/mob/legendary.dmi'
 	pixel_x = -32
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 12)
 	health = 150
 	maxHealth = 150
+	gold_core_spawnable = 0
+
 
 /mob/living/simple_animal/pokemon/leg/articuno
 	name = "Articuno"
@@ -173,3 +182,21 @@
 	icon_state = "miltank"
 	icon_living = "miltank"
 	icon_dead = "miltank_d"
+
+/mob/living/simple_animal/pokemon/mareep
+	name = "mareep"
+	icon_state = "mareep"
+	icon_living = "mareep"
+	icon_dead = "mareep_d"
+
+/mob/living/simple_animal/pokemon/flaaffy
+	name = "flaaffy"
+	icon_state = "flaaffy"
+	icon_living = "flaaffy"
+	icon_dead = "flaaffy_d"
+
+/mob/living/simple_animal/pokemon/ampharos
+	name = "ampharos"
+	icon_state = "ampharos"
+	icon_living = "ampharos"
+	icon_dead = "ampharos_d"
