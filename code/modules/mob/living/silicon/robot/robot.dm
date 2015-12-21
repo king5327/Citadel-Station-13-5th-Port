@@ -156,7 +156,7 @@
 /mob/living/silicon/robot/proc/pick_module()
 	if(module)
 		return
-	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering", "Medical", "Miner", "Janitor","Service", "Security")
+	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security")
 	var/animation_length=0
 	if(module)
 		return
@@ -226,6 +226,14 @@
 			modtype = "Eng"
 			feedback_inc("cyborg_engineering",1)
 			magpulse = 1
+
+		if("Science")
+			module = new /obj/item/weapon/robot_module/science(src)
+			hands.icon_state = "science"
+			icon_state = "sciborg"
+			modtype = "Sci"
+			animation_length = 45
+			feedback_inc("cyborg_science",1)
 
 		if("Janitor")
 			module = new /obj/item/weapon/robot_module/janitor(src)
@@ -779,6 +787,8 @@
 				overlays += "eyes-secborg"
 			if("engiborg")
 				overlays += "eyes-engiborg"
+			if("sciborg")
+				overlays += "eyes-sciborg"
 			if("janiborg")
 				overlays += "eyes-janiborg"
 			if("minerborg")
