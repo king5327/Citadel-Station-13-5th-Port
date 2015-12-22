@@ -315,3 +315,25 @@
 	suppressed = 0
 	w_class = 4
 	burst_size = 1
+	var/zoom = 0
+/*
+/obj/item/weapon/gun/projectile/automatic/m110/ui_action_click()
+	rifle_zoom()
+
+/obj/item/weapon/gun/projectile/automatic/m110/proc/rifle_zoom()
+	if(!usr.unEquip(zoom))
+		usr.client.view = world.view
+		return
+	if(usr.inHand())
+		zoom = !zoom
+		if(zoom)
+			recoil = 5
+			usr.client.view = 14
+			usr.canmove = 0
+			usr << sound('sound/mecha/imag_enh.ogg',volume=50)
+		else
+			recoil = 2
+			usr.canmove = 1
+			usr.client.view = world.view
+			..()
+			*/

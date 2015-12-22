@@ -292,7 +292,6 @@
 	item_color = "owl"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
 
-
 	//Wizard hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/wizard
 	name = "gem-encrusted hardsuit helmet"
