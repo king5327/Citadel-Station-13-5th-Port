@@ -302,7 +302,7 @@
 	name = "\improper NT-M110 Marksman Rifle"
 	desc = "A robust bullpup marksman rifle used by Nanotrasen specialist forces."
 	icon_state = "m110"
-	item_state = "l6closednomag"
+	item_state = "m110"
 	slot_flags = SLOT_BACK
 	origin_tech = "combat=4;materials=3"
 	mag_type = /obj/item/ammo_box/magazine/m110
@@ -316,6 +316,11 @@
 	w_class = 4
 	burst_size = 1
 	var/zoom = 0
+	pin = /obj/item/device/firing_pin/implant/loyalty
+
+/obj/item/weapon/gun/projectile/automatic/m110/unrestricted
+	pin = /obj/item/device/firing_pin/
+
 /*
 /obj/item/weapon/gun/projectile/automatic/m110/ui_action_click()
 	rifle_zoom()
