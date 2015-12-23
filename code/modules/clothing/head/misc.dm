@@ -233,3 +233,9 @@
 	name = "rice hat"
 	desc = "Welcome to the rice fields, motherfucker."
 	icon_state = "rice_hat"
+
+/obj/item/clothing/head/hunter
+	name = "hunter's hat"
+	desc = "A fashionable wide-brimmed hat. Blood sticks to it easily."
+	icon_state = "hunter"
+	item_state = "hunter"
