@@ -306,7 +306,7 @@
 	item_color = "mant-w"
 
 /obj/item/clothing/tie/mantelet/cc // everything's better with centcomm.
-	name = "white mantelet"
+	name = "centcomm officer mantelet"
 	desc = "A Centcomm. mantelet with gold buttons. Great for asserting oneself at important meetings, or costume parties."
 	icon_state = "mant-c"
 	item_color = "mant-c"

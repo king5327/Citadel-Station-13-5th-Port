@@ -319,7 +319,7 @@
 "gg" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "25"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gh" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "26"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gi" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "27"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
-"gj" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "28"},/obj/machinery/artillerycontrol,/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
+"gj" = (/obj/machinery/computer,/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gk" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "29"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gl" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "30"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gm" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "31"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
@@ -741,4 +741,3 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-
