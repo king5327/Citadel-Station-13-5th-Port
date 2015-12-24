@@ -213,3 +213,21 @@
 	shard.Consume()
 	T.ChangeTurf(/turf/space)
 	T.CalculateAdjacentTurfs()
+
+/obj/item/weapon/hatchet/viking
+	name = "viking hatchet"
+	desc = "TO VALHALLA!"
+	icon_state = "waraxe"
+	item_state = "waraxe"
+	force = 24
+	throwforce = 30
+	throw_speed = 3
+	throw_range = 7
+	w_class = 3
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+
+/obj/item/weapon/hatchet/viking/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is chopping \his own head off with the [src.name]! It looks like \he's trying to commit suicide.</span>")
+	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
+	return (BRUTELOSS)

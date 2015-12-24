@@ -114,3 +114,9 @@
 		slot_flags = null
 		user << "<span class='notice'>[src] can now be concealed.</span>"
 	add_fingerprint(user)
+
+/obj/item/weapon/shield/riot/viking
+	name = "viking shield"
+	desc = "TO VALHALLA!"
+	icon_state = "buckler"
+	item_state = "buckler"

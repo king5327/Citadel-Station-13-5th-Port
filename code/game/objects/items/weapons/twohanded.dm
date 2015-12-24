@@ -374,6 +374,14 @@
 		desc = "A makeshift spear with [C42] attached to it. Alt+click on the spear to set your war cry!"
 	update_icon()
 
+
+//VIKING SPEAR
+/obj/item/weapon/twohanded/spear/viking
+	name = "viking spear"
+	desc = "TO VALHALLA!"
+	icon_state = "spearviking"
+	item_state = "spearviking"
+
 // CHAINSAW
 /obj/item/weapon/twohanded/required/chainsaw
 	name = "chainsaw"

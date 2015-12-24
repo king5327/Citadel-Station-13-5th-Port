@@ -180,6 +180,16 @@
 	icon_state = "miltank"
 	icon_living = "miltank"
 	icon_dead = "miltank_d"
+	var/obj/udder/udder = null
+
+/mob/living/simple_animal/pokemon/miltank/New()
+	udder = new()
+	..()
+/mob/living/simple_animal/pokemon/miltank/Destroy()
+	qdel(udder)
+	udder = null
+	return ..()
+
 
 /mob/living/simple_animal/pokemon/mareep
 	name = "mareep"
