@@ -315,6 +315,7 @@
 	else
 		icon_state = "spearglass[wielded]"
 
+
 /obj/item/weapon/twohanded/spear/afterattack(atom/movable/AM, mob/user, proximity)
 	if(!proximity)
 		return
@@ -379,8 +380,8 @@
 /obj/item/weapon/twohanded/spear/viking
 	name = "viking spear"
 	desc = "TO VALHALLA!"
-	icon_state = "spearviking"
-	item_state = "spearviking"
+	icon_state = "vikingspear"
+	item_state = "vikingspear"
 
 // CHAINSAW
 /obj/item/weapon/twohanded/required/chainsaw
