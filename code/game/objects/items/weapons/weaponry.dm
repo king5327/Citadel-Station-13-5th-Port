@@ -298,6 +298,11 @@
 	throwforce = 0
 	attack_verb = list("penetrated", "probed", "slapped", "poked")
 
+/obj/item/weapon/dildo/New()
+	if(item_color == null)
+		item_color = pick("r", "bl", "gr", "pr", "p", "yw", "or", "b")
+		icon_state = "[icon_state][item_color]"
+
 /obj/item/weapon/dildo/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is shoving the [src.name] up \his ass! It looks like \he's trying to commit suicide!</span>")
 	return(BRUTELOSS)
