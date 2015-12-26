@@ -279,7 +279,8 @@
 	ears = /obj/item/device/radio/headset
 	mask = /obj/item/clothing/mask/gas
 	belt = /obj/item/weapon/storage/belt/security
-	back = /obj/item/weapon/gun/projectile/automatic/m110
+	back = /obj/item/weapon/tank/jetpack/carbondioxide
+	r_hand = /obj/item/weapon/gun/projectile/automatic/m110
 	id = /obj/item/weapon/card/id
 
 /datum/outfit/ranger/post_equip(mob/living/carbon/human/H)
