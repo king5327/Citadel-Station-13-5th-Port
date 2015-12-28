@@ -10,7 +10,7 @@
 "aj" = (/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate2)
 "ak" = (/obj/machinery/door/airlock/external,/turf/simulated/floor/plasteel/shuttle{icon_state = "floor4"},/area/awaymission/spacebattle/syndicate2)
 "al" = (/mob/living/simple_animal/hostile/syndicate/ranged,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate2)
-"am" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/space/hardsuit/syndi,/obj/item/clothing/head/helmet/space/hardsuit/syndi,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate2)
+"am" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/space/hardsuit/syndi,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate2)
 "an" = (/obj/structure/table/reinforced,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate2)
 "ao" = (/obj/machinery/sleeper,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate2)
 "ap" = (/obj/effect/landmark{name = "awaystart"},/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate2)
@@ -57,7 +57,7 @@
 "be" = (/obj/effect/landmark{name = "awaystart"},/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate1)
 "bf" = (/obj/machinery/porta_turret{dir = 8; emagged = 1; installation = /obj/item/weapon/gun/energy/lasercannon},/turf/simulated/floor/plating,/area/awaymission/spacebattle/syndicate2)
 "bg" = (/obj/machinery/door/unpowered/shuttle,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate3)
-"bh" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/space/hardsuit/syndi,/obj/item/clothing/head/helmet/space/hardsuit/syndi,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate1)
+"bh" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/space/hardsuit/syndi,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate1)
 "bi" = (/obj/structure/table/reinforced,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate1)
 "bj" = (/obj/structure/table/reinforced,/obj/item/clothing/gloves/combat,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate1)
 "bk" = (/obj/machinery/sleeper,/turf/simulated/floor/plasteel/shuttle/red/syndicate,/area/awaymission/spacebattle/syndicate1)
@@ -319,7 +319,7 @@
 "gg" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "25"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gh" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "26"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gi" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "27"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
-"gj" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "28"},/obj/machinery/artillerycontrol,/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
+"gj" = (/obj/machinery/computer,/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gk" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "29"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gl" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "30"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
 "gm" = (/obj/structure/artilleryplaceholder/decorative{icon_state = "31"},/turf/simulated/floor/plating/airless,/area/awaymission/spacebattle/cruiser)
@@ -741,4 +741,3 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-

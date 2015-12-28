@@ -133,6 +133,11 @@
 	MASK_TYPE = /obj/item/clothing/mask/breath
 	STORAGE_TYPE = /obj/item/weapon/tank/internals/emergency_oxygen/double
 
+/obj/machinery/suit_storage_unit/ranger
+	SUIT_TYPE = /obj/item/clothing/suit/space/hardsuit/ranger
+	MASK_TYPE = /obj/item/clothing/mask/breath
+	STORAGE_TYPE = /obj/item/weapon/tank/internals/emergency_oxygen/double
+
 /obj/machinery/suit_storage_unit/New()
 	src.update_icon()
 	if(SUIT_TYPE)

@@ -266,6 +266,38 @@
 	R.set_frequency(CENTCOM_FREQ)
 	R.freqlock = 1
 
+/datum/outfit/ranger
+	name = "Ranger"
+
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/space/hardsuit/ranger
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	glasses = /obj/item/clothing/glasses/sunglasses
+	r_pocket = /obj/item/weapon/tank/internals/emergency_oxygen/double
+	l_pocket = /obj/item/ammo_box/magazine/m110
+	ears = /obj/item/device/radio/headset
+	mask = /obj/item/clothing/mask/gas
+	belt = /obj/item/weapon/storage/belt/security
+	back = /obj/item/weapon/tank/jetpack/carbondioxide
+	r_hand = /obj/item/weapon/gun/projectile/automatic/m110
+	id = /obj/item/weapon/card/id
+
+/datum/outfit/ranger/post_equip(mob/living/carbon/human/H)
+	var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(H)
+	L.imp_in = H
+	L.implanted = 1
+	H.sec_hud_set_implants()
+
+	var/obj/item/weapon/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Ranger")
+	W.assignment = "Ranger"
+	W.registered_name = H.real_name
+	W.update_label()
+
+
 /datum/outfit/wizard
 	name = "Blue Wizard"
 

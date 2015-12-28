@@ -292,3 +292,21 @@
 /obj/item/clothing/tie/petcollar/attack_self(mob/user)
 	tagname = copytext(sanitize(input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot") as null|text),1,MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
+
+/obj/item/clothing/tie/mantelet // i had to look the name of this thing up
+	name = "black mantelet"
+	desc = "A short cloak that ends at the midriff. Very distinguished-looking. This one is black."
+	icon_state = "mant-b"
+	item_color = "mant-b"
+
+/obj/item/clothing/tie/mantelet/white
+	name = "white mantelet"
+	desc = "A short cloak that ends at the midriff. Very distinguished-looking. This one is white."
+	icon_state = "mant-w"
+	item_color = "mant-w"
+
+/obj/item/clothing/tie/mantelet/cc // everything's better with centcomm.
+	name = "centcomm officer mantelet"
+	desc = "A Centcomm. mantelet with gold buttons. Great for asserting oneself at important meetings, or costume parties."
+	icon_state = "mant-c"
+	item_color = "mant-c"

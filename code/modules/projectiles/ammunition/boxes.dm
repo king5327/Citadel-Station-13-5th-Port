@@ -33,6 +33,20 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 20
 
+/obj/item/ammo_box/a762box
+	name = "ammo box (7.62mm)"
+	icon_state = "762mmbox"
+	origin_tech = "combat=2"
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 20
+
+/obj/item/ammo_box/a556box
+	name = "ammo box (5.56mm)"
+	icon_state = "556mmbox"
+	origin_tech = "combat=2"
+	max_ammo = 30
+	ammo_type = /obj/item/ammo_casing/a556
+
 /obj/item/ammo_box/c45
 	name = "ammo box (.45)"
 	icon_state = "45box"

@@ -69,6 +69,8 @@ var/global/list/datum/stack_recipe/diamond_recipes = list ( \
 	new/datum/stack_recipe("AI Core Statue", /obj/structure/statue/diamond/ai2, 5, one_per_turf = 1, on_floor = 1), \
 	)
 
+/obj/item/stack/sheet/mineral/diamond/cyborg
+
 /obj/item/stack/sheet/mineral/diamond/New(var/loc, var/amount=null)
 	recipes = diamond_recipes
 	pixel_x = rand(0,4)-4

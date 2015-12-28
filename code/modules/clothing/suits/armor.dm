@@ -229,3 +229,15 @@
 	desc = "Pukish armor."	//classy.
 	icon_state = "tdgreen"
 	item_state = "tdgreen"
+
+/obj/item/clothing/suit/armor/viking
+	name = "viking garb"
+	desc = "TO VALHALLA!"
+	icon_state = "viking_garb"
+	item_state = "viking_garb"
+	armor = list(melee = 60, bullet = 60, laser = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS
+	strip_delay = 80
+	flags = THICKMATERIAL

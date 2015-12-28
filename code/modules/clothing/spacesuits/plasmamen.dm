@@ -7,7 +7,7 @@
 	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_casing,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/restraints/handcuffs,/obj/item/weapon/tank)
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 0)
 	icon_state = "plasmaman_suit"
-	item_state = "plasmaman_suit"
+	item_state = "plasmaman"
 	var/next_extinguish = 0
 	var/extinguish_cooldown = 100
 	var/extinguishes_left = 10
@@ -37,11 +37,10 @@
 /obj/item/clothing/head/helmet/plasmaman
 	name = "plasmaman helmet"
 	desc = "A special containment helmet designed to protect a plasmaman's volatile body from outside exposure and quickly extinguish it in emergencies."
-	icon_state = "plasmaman-helm"
+	icon_state = "hardsuit0-plasma"
 	item_color = "plasma" //needed for the helmet lighting
-	item_state = "plasmaman-helm"
+	item_state = "hardsuit-plasma"
 	flags = BLOCKHAIR | STOPSPRESSUREDMAGE | THICKMATERIAL
 	strip_delay = 80
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-

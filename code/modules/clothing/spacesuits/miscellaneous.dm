@@ -171,7 +171,7 @@ Contains:
 	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/restraints/handcuffs,/obj/item/weapon/tank/internals)
 	armor = list(melee = 65, bullet = 50, laser = 50, energy = 50, bomb = 100, bio = 100, rad = 100)
 	slowdown = 0
-	max_heat_protection_temperature = FIRE_IMMUNITY_HELM_MAX_TEMP_PROTECT
+	max_heat_protection_temperature = FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT
 	strip_delay = 130
 
 	//ERT Security
@@ -272,3 +272,32 @@ Contains:
 	armor = list(melee = -20, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 75) //As whimpy whimpy whoo
 	allowed = list(/obj/item/weapon/tank/internals, /obj/item/weapon/gun/projectile/automatic/speargun)	//I'm giving you a hint here
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/carp
+
+/obj/item/clothing/head/helmet/space/hardsuit/ranger
+	name = "ranger helmet"
+	desc = "A helmet designed to handle the rigors of hostile wildlife and operatives. It offers excellent protection and ease of movement."
+	icon_state = "hardsuit0-ranger"
+	item_state = "hardsuit0-ranger"
+	item_color = "ranger"
+	armor = list(melee = 65, bullet = 50, laser = 50, energy = 50, bomb = 100, bio = 100, rad = 100)
+	strip_delay = 130
+	flags = BLOCKHAIR | STOPSPRESSUREDMAGE | THICKMATERIAL | NODROP
+	brightness_on = 7
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	max_heat_protection_temperature = FIRE_IMMUNITY_HELM_MAX_TEMP_PROTECT
+
+/obj/item/clothing/suit/space/hardsuit/ranger
+	name = "ranger hardsuit"
+	desc = "A space suit designed to handle the rigors of hostile wildlife and operatives. It offers excellent protection and ease of movement."
+	icon_state = "hardsuit-ranger"
+	item_state = "hardsuit-ranger"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ranger
+	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/restraints/handcuffs,/obj/item/weapon/tank/internals)
+	armor = list(melee = 65, bullet = 50, laser = 50, energy = 50, bomb = 100, bio = 100, rad = 100)
+	slowdown = 0
+	max_heat_protection_temperature = FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT
+	strip_delay = 130
+
+/obj/item/clothing/suit/space/hardsuit/ranger/New()
+	jetpack = new /obj/item/weapon/tank/jetpack/suit(src)
+	..()
