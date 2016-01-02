@@ -30,8 +30,8 @@ Bonus
 		var/mob/living/M = A.affected_mob
 		switch(A.stage)
 			if(5)
-				if (M.reagents.get_reagent_amount("hornychem") < 20)
-					M.reagents.add_reagent("hornychem", 20)
+				if (M.reagents.get_reagent_amount("hornychem") < 15)
+					M.reagents.add_reagent("hornychem", 15)
 			else
 				if(prob(SYMPTOM_ACTIVATION_PROB * 5))
 					M << "<span class='notice'>[pick("You feel horny.", "You want to fuck everyone on the station...", "Your sexual desires are overwhelming!", "You want to relieve your sexual tension...", "You feel aroused.", "Your groin feels nice and warm...")]</span>"
