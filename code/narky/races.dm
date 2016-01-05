@@ -323,7 +323,6 @@ datum
 			generic="fox"
 			adjective="glowing"
 			tail=1
-			restricted=2
 		fly
 			//name="fly"
 			generic="insect"
