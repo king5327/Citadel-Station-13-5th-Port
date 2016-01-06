@@ -319,7 +319,7 @@ datum
 			restricted=1
 		runac
 			name="glowfen"
-			id="runac"
+			id="glowfen"
 			generic="fox"
 			adjective="glowing"
 			tail=1
