@@ -299,8 +299,16 @@
 	modules += new /obj/item/weapon/gun/energy/kinetic_accelerator(src)
 	fix_modules()
 
+/obj/item/weapon/robot_module/pleasure
+	name = "pleasure robot module"
 
-
+/obj/item/weapon/robot_module/pleasure/New()
+	..()
+	modules += new /obj/item/weapon/reagent_containers/borghypo/pleasure(src)
+	modules += new /obj/item/weapon/dildo(src)
+	modules += new /obj/item/weapon/rsf{matter = 30}(src)
+	emag = new /obj/item/weapon/dildo/psych(src)
+	fix_modules()
 /obj/item/weapon/robot_module/syndicate
 	name = "syndicate assault robot module"
 

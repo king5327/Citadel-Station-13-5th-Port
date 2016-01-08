@@ -855,7 +855,7 @@ datum
 	result = "narkychem"
 	required_reagents = list("vorechem" = 1, "spacemountainwind" = 1, "femjuice" = 2)
 	//required_catalysts = list("femjuice" = 2)
-	result_amount=2
+	result_amount=4
 
 /datum/chemical_reaction/narkychem/on_reaction(var/datum/reagents/holder, var/created_volume, var/data_send)
 

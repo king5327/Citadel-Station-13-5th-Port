@@ -367,22 +367,48 @@ datum
 			generic="zombie"
 			adjective="morerotten"
 			restricted=2
-
 		plasmaman
 			//name="Plasmabone"
 			id="plasmaman"
 			generic="plasmaman"
 			adjective="toxic"
-			restricted=2
+			//restricted=2
 		plasmaman/skin
 			//name="Skinbone"
 			id="plasmaman"
 			generic="plasmaman"
 			adjective="toxic"
-			restricted=2
-
-
-
+			//restricted=2
+		turtle
+			name="turtle"
+			id="turtle"
+			generic="turtle"
+			adjective="hard"
+			tail=1
+		boar
+			name="boar"
+			id="boar"
+			generic="boar"
+			adjective="wild curly"
+			tail=1
+		kangaroo
+			name="kangaroo"
+			id="kangaroo"
+			generic="kangaroo"
+			adjective="bouncy"
+			tail=1
+		roorat
+			name="kangaroo rat"
+			id="roorat"
+			generic="roorat"
+			adjective="bouncy rat"
+			tail=1
+		smilodon
+			name="smilodon"
+			id="smilodon"
+			generic="smilodon"
+			adjective="toothy"
+			tail=1
 
 /*var/list/kpcode_race_list
 
@@ -517,6 +543,8 @@ var/list/mutant_tails = list(
 	"panda"="ailurus",
 	"pig"="pig",
 	"cow"="cow",
+	"kangaroo"="kangaroo",
+	"kangaroo"="kangaroo",
 	)
 
 var/list/mutant_wings = list(
@@ -538,7 +566,7 @@ var/list/cock_list = list(
 
 proc/kpcode_hastail(var/S)
 	//switch(S)
-		//if("jordy","husky","squirrel","lizard","narky","tajaran","otter","murid","fox","fennec","wolf","leporid","shark","panther","ailurus","runac","hawk")
+		//if("jordy","husky","squirrel","lizard","narky","tajaran","otter","murid","fox","fennec","wolf","leporid","shark","panther","ailurus","glowfen","hawk")
 	if(kpcode_race_tail(S)==1)
 		return S
 	if(kpcode_race_tail(S))
