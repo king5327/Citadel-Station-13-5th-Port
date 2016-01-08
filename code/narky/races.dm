@@ -409,7 +409,12 @@ datum
 			generic="smilodon"
 			adjective="toothy"
 			tail=1
-
+		seaslug
+			name="sea slug"
+			id="seaslug"
+			generic="slug"
+			adjective="salty"
+			tail=1
 /*var/list/kpcode_race_list
 
 proc/kpcode_race_genlist()
