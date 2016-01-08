@@ -77,6 +77,7 @@
 
 /obj/item/clothing/under/color/aqua
 	name = "aqua jumpsuit"
+	desc = "<i>Under the sea!</i>"
 	icon_state = "aqua"
 	item_state = "b_suit"
 	item_color = "aqua"
