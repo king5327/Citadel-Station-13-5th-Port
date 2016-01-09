@@ -75,6 +75,7 @@
 #define FILE_DIR "sound/spookoween"
 #define FILE_DIR "sound/violin"
 #define FILE_DIR "sound/voice"
+#define FILE_DIR "sound/voice/bane"
 #define FILE_DIR "sound/voice/complionator"
 #define FILE_DIR "sound/vox_fem"
 #define FILE_DIR "sound/weapons"
