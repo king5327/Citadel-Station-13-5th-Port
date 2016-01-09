@@ -197,9 +197,9 @@
 	set src in usr
 	if(!istype(usr, /mob/living))
 		return
-	if(!can_use(usr))
-		return
-	var/phrase = 0
+//	if(!can_use(usr))
+//		return
+	var/phrase = rand(1,7)
 	var/phrase_text = null
 	var/phrase_sound = null
 
@@ -227,7 +227,7 @@
 				phrase_sound = "bane6"
 			if(7)
 				phrase_text = "Then, I will break you."
-				phrase_sound = "bane6"
+				phrase_sound = "bane7"
 
 
 		usr.visible_message("[usr]'s mask: <font color='red' size='4'><b>[phrase_text]</b></font>")
