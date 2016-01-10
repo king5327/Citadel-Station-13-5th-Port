@@ -486,6 +486,18 @@
 				icon_state = "gibbfloats"
 				name = "Gibbfloat"
 				desc = "Dr. Gibb with ice cream on top."
+			if("hornychem")
+				icon_state = "aphro"
+				name = "glass of aphrodisiac"
+				desc = "Smells lovely."
+			if("semen")
+				icon_state = "semen"
+				name = "glass of semen"
+				desc = "A glass of warm, sticky splooge."
+			if("femjuice")
+				icon_state = "femjuice"
+				name = "glass of female ejaculate"
+				desc = "A glass of warm femjuice."
 			else
 				icon_state ="glass_brown"
 				var/image/I = image(icon, "glassoverlay")

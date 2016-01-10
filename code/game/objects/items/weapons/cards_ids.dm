@@ -70,7 +70,7 @@
 	item_state = "card-id"
 	origin_tech = "magnets=2;syndicate=2"
 	flags = NOBLUDGEON
-	var/uses = 5
+	var/uses = 10
 
 /obj/item/weapon/card/emag/attack()
 	return

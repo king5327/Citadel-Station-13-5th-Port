@@ -3,7 +3,7 @@
 
 Hallucigen
 
-	Very noticable.
+	Stealthy
 	Lowers resistance considerably.
 	Decreases stage speed.
 	Reduced transmittable.
@@ -18,7 +18,7 @@ Bonus
 /datum/symptom/hallucigen
 
 	name = "Hallucigen"
-	stealth = -2
+	stealth = 2
 	resistance = -3
 	stage_speed = -3
 	transmittable = -1

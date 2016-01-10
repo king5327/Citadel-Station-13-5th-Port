@@ -499,7 +499,7 @@
 	can_adjust = 0
 
 /obj/item/clothing/under/plasmaman
-	name = "Plasma-man Jumpsuit"
+	name = "plasma-man Jumpsuit"
 	desc = "A specially designed suit that allows Plasma based life forms to exist in an oxygenated environment."
 	icon_state = "plasmaman"
 	item_state = "plasmaman"
@@ -548,7 +548,7 @@
 	return
 
 /obj/item/device/extinguisher_refill
-	name = "Plasma-man jumpsuit refill pack"
+	name = "plasma-man jumpsuit refill pack"
 	desc = "A compressed water pack used to refill plasma-man jumpsuit auto-extinguishers."
 	icon_state = "multitool"
 

@@ -156,7 +156,7 @@
 /mob/living/silicon/robot/proc/pick_module()
 	if(module)
 		return
-	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security")
+	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security", "Pleasure")
 	var/animation_length=0
 	if(module)
 		return
@@ -190,6 +190,26 @@
 					animation_length=43
 			modtype = "Butler"
 			feedback_inc("cyborg_service",1)
+
+		if("Pleasure")
+			module = new /obj/item/weapon/robot_module/pleasure(src)
+			hands.icon_state = "service"
+			var/icontype = input("Select an icon!", "Robot", null, null) in list("Male", "Female", "Herm")
+			switch(icontype)
+				if("Male")
+					icon_state = "p_female"
+					animation_length=45
+				if("Male")
+					icon_state = "p_male"
+					animation_length=45
+				if("Herm")
+					icon_state = "p_herm"
+					animation_length=45
+				else
+					icon_state = "p_female"
+					animation_length=45
+			modtype = "Pleasure"
+			feedback_inc("cyborg_pleasure",1)
 
 		if("Miner")
 			module = new /obj/item/weapon/robot_module/miner(src)

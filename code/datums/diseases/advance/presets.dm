@@ -41,3 +41,11 @@
 		name = "Reality Impairment"
 		symptoms = list(new/datum/symptom/hallucigen)
 	..(process, D, copy)
+
+// Horniness
+
+/datum/disease/advance/horniness/New(var/process = 1, var/datum/disease/advance/D, var/copy = 0)
+	if(!D)
+		name = "Arousal Serum"
+		symptoms = list(new/datum/symptom/horniness)
+	..(process, D, copy)

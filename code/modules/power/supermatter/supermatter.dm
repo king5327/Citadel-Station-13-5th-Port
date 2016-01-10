@@ -10,15 +10,15 @@
 
 
 //These would be what you would get at point blank, decreases with distance
-#define DETONATION_RADS 200
+#define DETONATION_RADS 1000
 #define DETONATION_HALLUCINATION 600
 
 
 #define WARNING_DELAY 30 		//seconds between warnings.
 
 /obj/machinery/power/supermatter_shard
-	name = "supermatter shard"
-	desc = "A strangely translucent and iridescent crystal that looks like it used to be part of a larger structure. <span class='danger'>You get headaches just from looking at it.</span>"
+	name = "supermatter crystal"
+	desc = "A strangely translucent and iridescent crystal. <span class='danger'>You get headaches just from looking at it.</span>"
 	icon = 'icons/obj/supermatter.dmi'
 	icon_state = "darkmatter"
 	density = 1
@@ -76,6 +76,7 @@
 
 /obj/machinery/power/supermatter_shard/proc/explode()
 	investigate_log("has exploded.", "supermatter")
+	radiation_pulse(get_turf(src), 256, 512, 1000, 1)
 	explosion(get_turf(src), explosion_power, explosion_power * 2, explosion_power * 3, explosion_power * 4, 1)
 	qdel(src)
 	return
@@ -292,7 +293,7 @@
 	power += 200
 
 	//Some poor sod got eaten, go ahead and irradiate people nearby.
-	radiation_pulse(get_turf(src), 4, 10, 500, 1)
+	radiation_pulse(get_turf(src), 16, 32, 500, 1)
 	for(var/mob/living/L in range(10))
 		investigate_log("has irradiated [L] after consuming [AM].", "supermatter")
 		if(L in view())
