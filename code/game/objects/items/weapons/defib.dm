@@ -10,7 +10,7 @@
 	force = 5
 	throwforce = 6
 	w_class = 4
-	origin_tech = "biotech=4"
+	origin_tech = "materials=2;biotech=4;powerstorage=3"
 	action_button_name = "Toggle Paddles"
 
 	var/on = 0 //if the paddles are equipped (1) or on the defib (0)
@@ -228,7 +228,7 @@
 	item_state = "defibcompact"
 	w_class = 3
 	slot_flags = SLOT_BELT
-	origin_tech = "biotech=4"
+	origin_tech = "materials=4;biotech=6;powerstorage=5"
 
 /obj/item/weapon/defibrillator/compact/ui_action_click()
 	if(usr.get_item_by_slot(slot_belt) == src)
@@ -249,6 +249,7 @@
 	desc = "A belt-equipped blood-red defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
 	combat = 1
 	safety = 0
+	origin_tech = "materials=4;biotech=6;powerstorage=5;syndicate=4"
 
 /obj/item/weapon/defibrillator/compact/combat/loaded/New()
 	..()
