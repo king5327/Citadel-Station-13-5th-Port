@@ -144,3 +144,37 @@
 
 /obj/item/ammo_casing/energy/plasma/adv
 	projectile_type = /obj/item/projectile/plasma/adv
+
+/obj/item/projectile/energy/arc
+	name = "unstable arc"
+	icon_state = "arc"
+	damage = 25
+	stun = 20
+	weaken = 2
+	stutter = 10
+	jitter = 20
+	hitsound = 'sound/magic/LightningShock.ogg'
+	range = 7
+	var/shock_range = 4
+	var/shock_damage = 19
+
+/obj/item/projectile/energy/arc/on_hit(atom/target, blocked = 0)
+	. = ..()
+	if(!ismob(target) || blocked >= 2)
+		var/datum/effect_system/spark_spread/sparks = new /datum/effect_system/spark_spread
+		sparks.set_up(1, 1, src)
+		sparks.start()
+	else if(iscarbon(target))
+		var/mob/living/carbon/C = target
+		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+		s.set_up(4, 0, C)
+		s.start()
+		for(var/mob/living/carbon/human/M in view(shock_range, C))
+			if(M == C)
+				continue
+				C.Beam(M,icon_state="purple_lightning",icon='icons/effects/effects.dmi',time=3)
+				M.electrocute_act(shock_damage, "[C.name]", safety=1)
+				var/datum/effect_system/spark_spread/z = new /datum/effect_system/spark_spread
+				z.set_up(4, 0, M)
+				z.start()
+				playsound(M, 'sound/machines/defib_zap.ogg', 50, 1, -1)
