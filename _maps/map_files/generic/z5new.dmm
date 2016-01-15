@@ -106,7 +106,7 @@
 "cb" = (/obj/effect/decal/cleanable/xenoblood/xsplatter,/obj/structure/alien/weeds,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
 "cc" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/structure/alien/weeds,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
 "cd" = (/obj/structure/bed/chair{dir = 4},/obj/structure/alien/weeds,/obj/effect/gibspawner/human,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
-"ce" = (/obj/structure/alien/weeds/node,/obj/effect/decal/cleanable/xenoblood/xsplatter,/mob/living/carbon/alien/humanoid/hunter{bruteloss = 235; health = 125; icon_state = "alienh_dead"; lying = 1; name = "alien hunter"; unique_name = 0},/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
+"ce" = (/obj/structure/alien/weeds/node,/obj/effect/decal/cleanable/xenoblood/xsplatter,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
 "cf" = (/obj/structure/bed/chair{dir = 8},/obj/structure/alien/weeds,/obj/effect/gibspawner/human,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
 "cg" = (/obj/structure/alien/weeds,/obj/structure/table,/obj/item/weapon/scalpel,/obj/item/weapon/hemostat,/obj/item/weapon/retractor,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
 "ch" = (/obj/structure/alien/weeds,/obj/structure/table,/obj/item/weapon/surgicaldrill,/obj/item/weapon/cautery,/obj/item/weapon/surgical_drapes,/obj/item/weapon/circular_saw,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
