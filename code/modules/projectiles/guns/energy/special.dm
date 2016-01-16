@@ -334,3 +334,13 @@
 	select_fire(user)
 	update_icon()
 	return
+
+
+/obj/item/weapon/gun/energy/arcrifle
+	name = "arc rifle"
+	icon_state = "arcrifle"
+	item_state = "arcrifle"
+	desc = "A high-tech crowd control weapon which shoots bolts of unstable electricity to stun and burn large groups of hostiles."
+	origin_tech = "combat=6;materials=5;powerstorage=6;magnets=5"
+	cell_type = "/obj/item/weapon/stock_parts/cell/high"
+	ammo_type = list(/obj/item/ammo_casing/energy/arc)

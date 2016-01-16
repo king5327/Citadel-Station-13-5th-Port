@@ -160,3 +160,10 @@ obj/item/ammo_casing/energy/net
 /obj/item/ammo_casing/energy/trap
 	projectile_type = /obj/item/projectile/energy/trap
 	select_name = "snare"
+
+/obj/item/ammo_casing/energy/arc
+	projectile_type = /obj/item/projectile/energy/arc
+	select_name = "arc burst"
+	fire_sound = 'sound/magic/lightningbolt.ogg'
+	delay = 20
+	e_cost = 750
