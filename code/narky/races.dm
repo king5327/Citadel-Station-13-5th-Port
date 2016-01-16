@@ -557,6 +557,7 @@ var/list/mutant_wings = list(
 	"bat"="bat",
 	"feathery"="feathery",
 	"moth"="moth",
+	"fairy"="fairy",
 	)
 
 var/list/cock_list = list(
