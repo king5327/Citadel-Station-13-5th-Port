@@ -408,6 +408,7 @@
 	modules += new /obj/item/weapon/storage/bag/sheetsnatcher/borg(src)
 	modules += new /obj/item/weapon/storage/part_replacer(src)
 	modules += new /obj/item/device/assembly/signaler(src)
+	modules += new /obj/item/weapon/sciencefab(src)
 
 	add_module(new /obj/item/stack/cable_coil/cyborg(src,MAXCOIL,"red"))
 	add_module(new /obj/item/stack/sheet/metal/cyborg())

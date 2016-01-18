@@ -211,7 +211,7 @@
 				else
 					icon_state = "p_female"
 				//	animation_length=45
-			modtype = "Pleasure"
+			modtype = "p_"
 			feedback_inc("cyborg_pleasure",1)
 
 		if("Miner")
