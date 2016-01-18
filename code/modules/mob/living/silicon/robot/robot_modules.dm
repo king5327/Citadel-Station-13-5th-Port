@@ -406,6 +406,8 @@
 	modules += new /obj/item/device/t_scanner(src)
 	modules += new /obj/item/device/analyzer(src)
 	modules += new /obj/item/weapon/storage/bag/sheetsnatcher/borg(src)
+	modules += new /obj/item/weapon/storage/part_replacer(src)
+	modules += new /obj/item/device/assembly/signaler(src)
 
 	add_module(new /obj/item/stack/cable_coil/cyborg(src,MAXCOIL,"red"))
 	add_module(new /obj/item/stack/sheet/metal/cyborg())
