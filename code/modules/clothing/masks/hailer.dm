@@ -211,7 +211,7 @@
 				phrase_text = "Do you feel in charge?"
 				phrase_sound = "bane1"
 			if(2)
-				phrase_text = "We both know that I have to kill you know."
+				phrase_text = "We both know that I have to kill you now."
 				phrase_sound = "bane2"
 			if(3)
 				phrase_text = "Oooh, you think darkness is your ally. You merely adopted the dark. I was born in it; molded by it."
