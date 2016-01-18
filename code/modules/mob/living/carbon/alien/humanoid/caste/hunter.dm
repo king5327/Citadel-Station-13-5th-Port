@@ -1,8 +1,8 @@
 /mob/living/carbon/alien/humanoid/hunter
 	name = "alien hunter"
 	caste = "h"
-	maxHealth = 125
-	health = 125
+	maxHealth = 150
+	health = 150
 	icon_state = "alienh_s"
 
 /mob/living/carbon/alien/humanoid/hunter/New()
@@ -119,3 +119,11 @@
 	..()
 
 
+/mob/living/carbon/alien/humanoid/hunter/lusty
+	name = "xenomorph maid"
+	caste = "lusty"
+	maxHealth = 150
+	health = 150
+	icon_state = "alienlusty_s"
+	unique_name = 0
+	languages = 35

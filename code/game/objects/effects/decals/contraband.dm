@@ -1,7 +1,7 @@
 
 //########################## POSTERS ##################################
 
-#define NUM_OF_POSTER_DESIGNS 36 // contraband posters
+#define NUM_OF_POSTER_DESIGNS 40 // contraband posters
 
 #define NUM_OF_POSTER_DESIGNS_LEGIT 35 // corporate approved posters
 
@@ -54,7 +54,10 @@ list(name = "- Punch Shit", desc = " Fight things for no reason, like a man!"),
 list(name = "- The Griffin", desc = " The Griffin commands you to be the worst you can be. Will you?"),
 list(name = "- Lizard", desc = " This lewd poster depicts a lizard preparing to mate."),
 list(name = "- Free Drone", desc = " This poster commemorates the bravery of the rogue drone banned by CentComm."),
-list(name = "- Busty Backdoor Xeno Babes 6", desc = " Get a load, or give, of these all natural Xenos!") )
+list(name = "- Busty Backdoor Xeno Babes 3", desc = " Get a load, or give, of these all natural Xenos!"),
+list(name = "- Busty Backdoor Xeno Babes 1", desc = " Get a load, or give, of these all natural Xenos! This one has a cool holographic 3D effect!"),
+list(name = "- Busty Backdoor Xeno Babes 2", desc = " Get a load, or give, of these all natural Xenos!") ,
+list(name = "- Busty Backdoor Xeno Babes 4", desc = " Get a load, or give, of these all natural Xenos! This one has a cool holographic 3D effect! <b>ULTRA RARE FOURTH EDITION</b>") )
 
 // LEGIT
 
@@ -173,7 +176,7 @@ list(name = "- Carbon Dioxide", desc = " This informational poster teaches the v
 
 /obj/structure/sign/poster
 	name = "poster"
-	desc = "A large piece of space-resistant printed paper."
+	desc = null
 	icon = 'icons/obj/contraband.dmi'
 	anchored = 1
 	var/serial_number	//Will hold the value of src.loc if nobody initialises it

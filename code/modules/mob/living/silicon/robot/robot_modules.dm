@@ -308,6 +308,7 @@
 	modules += new /obj/item/weapon/dildo(src)
 	modules += new /obj/item/weapon/rsf{matter = 30}(src)
 	emag = new /obj/item/weapon/dildo/psych(src)
+
 	fix_modules()
 /obj/item/weapon/robot_module/syndicate
 	name = "syndicate assault robot module"

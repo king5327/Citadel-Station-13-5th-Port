@@ -209,9 +209,10 @@ Borg Shaker
 	name = "Pleasure Injector"
 	desc = "For all your devious needs."
 	reagent_ids = list("hornychem", "semen", "femjuice")
-	charge_cost = 20
+	charge_cost = 5
 	amount_per_transfer_from_this = 15
-	volume = 60
+	volume = 240
+	recharge_time = 2
 
 /obj/item/weapon/reagent_containers/borghypo/pleasure/hacked
 	desc = "For all your devious needs and more."
