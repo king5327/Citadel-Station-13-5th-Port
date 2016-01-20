@@ -18,7 +18,7 @@ z7 = empty space
         #include "map_files\MetaStation\MetaStation.v41HC5.dmm"
         #include "map_files\generic\z2.dmm"
         #include "map_files\generic\z3.dmm"
-        #include "map_files\generic\z4.dmm"
+        #include "map_files\generic\z4sh.dmm"
         #include "map_files\generic\z5new.dmm"
         #include "map_files\generic\z6.dmm"
         #include "map_files\generic\z7.dmm"

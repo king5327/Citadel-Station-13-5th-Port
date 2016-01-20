@@ -146,3 +146,34 @@
 /obj/item/queenpromote/attack_self(mob/user)
 	user << "<span class='noticealien'>You discard [src].</span>"
 	qdel(src)
+
+/*
+
+/obj/effect/proc_holder/alien/royal/queen/screech
+	name = "Screech"
+	desc = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+	action_icon_state = "alien_screech"
+	plasma_cost = 250
+
+/obj/effect/proc_holder/alien/royal/queen/screech/fire(mob/living/carbon/alien/humanoid/royal/queen/user)
+	user.visible_message("<span class='alertalien'>[user] emits an ear-splitting screech!!</span>")
+	for(var/mob/living/M in get_hearers_in_view(4, user))
+		if(ishuman(M))
+			M.adjustEarDamage(0,30)
+			M.confused += 25
+			M.Jitter(50)
+		else
+			M << sound('sound/voice/screech.ogg')
+
+		if(issilicon(M))
+			M << sound('sound/weapons/flash.ogg')
+			M.Weaken(rand(5,10))
+	for(var/obj/machinery/light/L in range(4, user))
+		L.on = 1
+		L.broken()
+	for(var/obj/machinery/light/L in range(5, usr))
+		L.on = 1
+		L.broken()
+	empulse(get_turf(user), 2, 5, 1)
+	return 1
+*/

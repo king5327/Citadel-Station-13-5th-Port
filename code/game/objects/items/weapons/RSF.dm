@@ -232,3 +232,92 @@ RSF
 				user << "The RSF now holds [matter]/30 fabrication-units."
 				desc = "A RSF. It currently holds [matter]/30 fabrication-units."
 		return
+
+/obj/item/weapon/sciencefab
+	name = "\improper Rapid-Science-Fabricator"
+	desc = "A device used to rapidly deploy science items."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "rcd"
+	opacity = 0
+	density = 0
+	anchored = 0
+	var/matter = 0
+	var/mode = 1
+	w_class = 3
+
+
+/obj/item/weapon/sciencefab/New()
+	desc = "A RSF. It currently holds [matter]/30 fabrication-units."
+	return
+
+/obj/item/weapon/sciencefab/attackby(obj/item/weapon/W, mob/user, params)
+	..()
+	if (istype(W, /obj/item/weapon/rcd_ammo))
+		if ((matter + 10) > 30)
+			user << "The RSF can't hold any more matter."
+			return
+		qdel(W)
+		matter += 10
+		playsound(src.loc, 'sound/machines/click.ogg', 10, 1)
+		user << "The RSF now holds [matter]/30 fabrication-units."
+		desc = "A RSF. It currently holds [matter]/30 fabrication-units."
+		return
+
+/obj/item/weapon/sciencefab/attack_self(mob/user)
+	playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
+	if (mode == 1)
+		mode = 2
+		user << "Changed dispensing mode to 'Monkey Cubes'"
+		return
+	if (mode == 2)
+		mode = 1
+		user << "Changed dispensing mode to 'Beakers'"
+		return
+
+
+/obj/item/weapon/sciencefab/afterattack(atom/A, mob/user, proximity)
+	if(!proximity) return
+	if (!(istype(A, /obj/structure/table) || istype(A, /turf/simulated/floor)))
+		return
+
+	if (istype(A, /obj/structure/table) && mode == 1)
+		if (istype(A, /obj/structure/table) && matter >= 1)
+			user << "Dispensing Monkey Cube..."
+			playsound(src.loc, 'sound/machines/click.ogg', 10, 1)
+			new /obj/item/weapon/reagent_containers/food/snacks/monkeycube( A.loc )
+			if (isrobot(user))
+				var/mob/living/silicon/robot/engy = user
+				engy.cell.charge -= 200
+			else
+				matter--
+				user << "The RSF now holds [matter]/30 fabrication-units."
+				desc = "A RSF. It currently holds [matter]/30 fabrication-units."
+		return
+
+	else if (istype(A, /turf/simulated/floor) && mode == 1)
+		if (istype(A, /turf/simulated/floor) && matter >= 1)
+			user << "Dispensing Monkey Cube..."
+			playsound(src.loc, 'sound/machines/click.ogg', 10, 1)
+			new /obj/item/weapon/reagent_containers/food/snacks/monkeycube( A )
+			if (isrobot(user))
+				var/mob/living/silicon/robot/engy = user
+				engy.cell.charge -= 200
+			else
+				matter--
+				user << "The RSF now holds [matter]/30 fabrication-units."
+				desc = "A RSF. It currently holds [matter]/30 fabrication-units."
+		return
+
+	else if (istype(A, /turf/simulated/floor) && mode == 2)
+		if (istype(A, /turf/simulated/floor) && matter >= 1)
+			user << "Dispensing Beaker..."
+			playsound(src.loc, 'sound/machines/click.ogg', 10, 1)
+			new /obj/item/weapon/reagent_containers/glass/beaker( A )
+			if (isrobot(user))
+				var/mob/living/silicon/robot/engy = user
+				engy.cell.charge -= 50
+			else
+				matter--
+				user << "The RSF now holds [matter]/30 fabrication-units."
+				desc = "A RSF. It currently holds [matter]/30 fabrication-units."
+		return
