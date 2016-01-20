@@ -193,22 +193,25 @@
 
 		if("Pleasure")
 			module = new /obj/item/weapon/robot_module/pleasure(src)
-			hands.icon_state = "service"
-			var/icontype = input("Select an icon!", "Robot", null, null) in list("Male", "Female", "Herm")
+			hands.icon_state = "pleasure"
+			var/icontype = input("Select an icon!", "Robot", null, null) in list("Male", "Female", "Herm", "Xenomorph")
 			switch(icontype)
-				if("Male")
+				if("Female")
 					icon_state = "p_female"
-					animation_length=45
+				//	animation_length=45
 				if("Male")
 					icon_state = "p_male"
-					animation_length=45
+				//	animation_length=45
 				if("Herm")
 					icon_state = "p_herm"
-					animation_length=45
+				//	animation_length=45
+				if("Xenomorph")
+					icon_state = "p_xeno"
+				//	animation_length=45
 				else
 					icon_state = "p_female"
-					animation_length=45
-			modtype = "Pleasure"
+				//	animation_length=45
+			modtype = "p_"
 			feedback_inc("cyborg_pleasure",1)
 
 		if("Miner")

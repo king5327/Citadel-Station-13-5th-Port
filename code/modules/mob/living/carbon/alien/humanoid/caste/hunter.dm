@@ -1,8 +1,8 @@
 /mob/living/carbon/alien/humanoid/hunter
 	name = "alien hunter"
 	caste = "h"
-	maxHealth = 125
-	health = 125
+	maxHealth = 150
+	health = 150
 	icon_state = "alienh_s"
 
 /mob/living/carbon/alien/humanoid/hunter/New()
@@ -31,7 +31,7 @@
 			healths.icon_state = "health7"
 
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
-	. = -1		//hunters are sanic
+	. = -0.5		//hunters are sanic, but not super sanic.
 	. += ..()	//but they still need to slow down on stun
 
 
@@ -119,3 +119,12 @@
 	..()
 
 
+/mob/living/carbon/alien/humanoid/hunter/lusty
+	name = "xenomorph maid"
+	caste = "lusty"
+	maxHealth = 150
+	health = 150
+	icon_state = "alienlusty_s"
+	unique_name = 0
+	languages = 35
+	has_fine_manipulation = 1
