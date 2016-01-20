@@ -308,6 +308,7 @@
 	modules += new /obj/item/weapon/dildo(src)
 	modules += new /obj/item/weapon/rsf{matter = 30}(src)
 	emag = new /obj/item/weapon/dildo/psych(src)
+
 	fix_modules()
 /obj/item/weapon/robot_module/syndicate
 	name = "syndicate assault robot module"
@@ -405,6 +406,9 @@
 	modules += new /obj/item/device/t_scanner(src)
 	modules += new /obj/item/device/analyzer(src)
 	modules += new /obj/item/weapon/storage/bag/sheetsnatcher/borg(src)
+	modules += new /obj/item/weapon/storage/part_replacer(src)
+	modules += new /obj/item/device/assembly/signaler(src)
+	modules += new /obj/item/weapon/sciencefab(src)
 
 	add_module(new /obj/item/stack/cable_coil/cyborg(src,MAXCOIL,"red"))
 	add_module(new /obj/item/stack/sheet/metal/cyborg())

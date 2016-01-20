@@ -19,8 +19,11 @@
 			playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
 			visible_message("<span class='danger'>[M] has slashed at [src]!</span>", \
 				"<span class='userdanger'>[M] has slashed at [src]!</span>")
+			if (isalienravager(M))
+				damage = 40
 
 			apply_damage(damage, BRUTE, affecting, armor_block)
+
 			if (prob(30))
 				visible_message("<span class='danger'>[M] has wounded [src]!</span>", \
 					"<span class='userdanger'>[M] has wounded [src]!</span>")

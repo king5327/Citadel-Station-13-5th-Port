@@ -163,7 +163,10 @@
 /obj/structure/window/attack_alien(mob/living/user)
 	user.do_attack_animation(src)
 	if(islarva(user)) return
-	attack_generic(user, 15)
+	if(isalienravager(user))
+		attack_generic(user, 35)
+	else
+		attack_generic(user, 15)
 	update_nearby_icons()
 
 /obj/structure/window/attack_animal(mob/living/user)

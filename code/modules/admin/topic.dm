@@ -385,6 +385,7 @@
 			if("hunter")			M.change_mob_type( /mob/living/carbon/alien/humanoid/hunter , null, null, delmob )
 			if("queen")				M.change_mob_type( /mob/living/carbon/alien/humanoid/royal/queen , null, null, delmob )
 			if("praetorian")		M.change_mob_type( /mob/living/carbon/alien/humanoid/royal/praetorian , null, null, delmob )
+			if("ravager")			M.change_mob_type( /mob/living/carbon/alien/humanoid/ravager , null, null, delmob )
 			if("sentinel")			M.change_mob_type( /mob/living/carbon/alien/humanoid/sentinel , null, null, delmob )
 			if("larva")				M.change_mob_type( /mob/living/carbon/alien/larva , null, null, delmob )
 			if("human")				M.change_mob_type( /mob/living/carbon/human , null, null, delmob )
