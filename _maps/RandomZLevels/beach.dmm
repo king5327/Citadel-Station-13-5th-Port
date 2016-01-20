@@ -57,7 +57,7 @@
 "be" = (/obj/structure/table,/obj/structure/window/reinforced{dir = 8; pixel_x = 0},/turf/simulated/floor/plating/beach/sand,/area/awaymission/beach)
 "bf" = (/obj/structure/bed,/obj/item/weapon/bedsheet/blue,/obj/item/weapon/dildo,/turf/simulated/floor/wood,/area/awaymission/beach)
 "bg" = (/turf/simulated/floor/plating/beach/sand,/obj/machinery/gateway{dir = 8},/turf/simulated/floor/plasteel/sandeffect/warning{tag = "icon-warningsandeffect (WEST)"; icon_state = "warningsandeffect"; dir = 8},/area/awaymission/beach)
-"bh" = (/turf/simulated/floor/plating/beach/sand,/obj/machinery/gateway/centeraway{density = 0},/turf/simulated/floor/plasteel/sandeffect,/area/awaymission/beach)
+"bh" = (/turf/simulated/floor/plating/beach/sand,/obj/machinery/gateway/centeraway{density = 1},/turf/simulated/floor/plasteel/sandeffect,/area/awaymission/beach)
 "bi" = (/turf/simulated/floor/plating/beach/sand,/obj/machinery/gateway{dir = 4},/turf/simulated/floor/plasteel/sandeffect/warning{tag = "icon-warningsandeffect (EAST)"; icon_state = "warningsandeffect"; dir = 4},/area/awaymission/beach)
 "bj" = (/obj/structure/table,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 8; pixel_x = 0},/turf/simulated/floor/plating/beach/sand,/area/awaymission/beach)
 "bk" = (/obj/structure/table,/obj/structure/window/reinforced,/turf/simulated/floor/plating/beach/sand,/area/awaymission/beach)

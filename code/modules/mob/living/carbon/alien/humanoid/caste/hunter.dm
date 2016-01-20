@@ -31,7 +31,7 @@
 			healths.icon_state = "health7"
 
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
-	. = -1		//hunters are sanic
+	. = -0.5		//hunters are sanic, but not super sanic.
 	. += ..()	//but they still need to slow down on stun
 
 
@@ -127,3 +127,4 @@
 	icon_state = "alienlusty_s"
 	unique_name = 0
 	languages = 35
+	has_fine_manipulation = 1
