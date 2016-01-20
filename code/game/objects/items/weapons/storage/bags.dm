@@ -113,6 +113,15 @@
 	can_hold = list(/obj/item/weapon/reagent_containers/food/snacks/grown,/obj/item/seeds,/obj/item/weapon/grown)
 	burn_state = 0 //Burnable
 
+/obj/item/weapon/storage/bag/plants/holding
+	name = "plant bag of holding"
+	icon = 'icons/obj/hydroponics/equipment.dmi'
+	icon_state = "plantbag_holding"
+	storage_slots = INFINITY
+	max_combined_w_class = INFINITY
+	max_w_class = 3
+	w_class = 1
+
 ////////
 
 /obj/item/weapon/storage/bag/plants/portaseeder
