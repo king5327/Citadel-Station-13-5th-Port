@@ -20,7 +20,7 @@
 			visible_message("<span class='danger'>[M] has slashed at [src]!</span>", \
 				"<span class='userdanger'>[M] has slashed at [src]!</span>")
 			if (isalienravager(M))
-				damage = 30
+				damage = (rand(10,25))
 
 			apply_damage(damage, BRUTE, affecting, armor_block)
 

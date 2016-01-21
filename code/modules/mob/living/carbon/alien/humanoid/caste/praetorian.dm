@@ -72,13 +72,16 @@
 	action_icon_state = "alien_evolve_praetorian_ravager"
 
 /obj/effect/proc_holder/alien/royal/praetorian/evolveravager/fire(mob/living/carbon/alien/user)
-	if(alien_type_present(/mob/living/carbon/alien/humanoid/royal/queen))
+	if(alien_type_present(/mob/living/carbon/alien/humanoid/ravager))
+		user << "<span class='noticealien'>You cannot evolve into a ravager because there is already an alive ravager.</span>"
+		return 0
+	if(!alien_type_present(/mob/living/carbon/alien/humanoid/royal/queen))
+		user << "<span class='notice'>You cannot evolve into a ravager unless there is already an alive queen.</span>"
+		return 0
+	else
 		user << "<span class='noticealien'>You begin to evolve!</span>"
 		user.visible_message("<span class='alertalien'>[user] begins to twist and contort!</span>")
 		var/mob/living/carbon/alien/humanoid/ravager/new_xeno = new (user.loc)
 		user.mind.transfer_to(new_xeno)
 		qdel(user)
 		return 1
-	else
-		user << "<span class='notice'>You cannot evolve into a ravager unless there is already an alive queen.</span>"
-		return 0

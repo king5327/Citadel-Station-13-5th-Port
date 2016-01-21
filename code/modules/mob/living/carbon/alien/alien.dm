@@ -207,11 +207,13 @@ Des: Removes all infected images from the alien.
 				playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
 				user.do_attack_animation(src)
 				user << text("<span class='notice'>You smash into the wall.</span>")
+/*
 	else
 		user << text("<span class='notice'>This wall is too strong for you to smash through. You smash it anyway.</span>")
 		playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
 		user.do_attack_animation(src)
 	return 1
+*/
 
 /obj/structure/falsewall/attack_alien(mob/living/carbon/alien/humanoid/user)
 	..(user, 1)

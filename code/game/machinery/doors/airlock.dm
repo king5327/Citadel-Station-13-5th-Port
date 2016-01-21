@@ -1172,3 +1172,15 @@ About the new airlock wires panel:
 		locked = 1
 		loseMainPower()
 		loseBackupPower()
+
+
+/obj/machinery/door/airlock/attack_alien(mob/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(isalienadult(user))
+		if(!locked && !welded && density)
+			user << text("<span class='notice'>You begin prying open [src].</span>")
+			playsound(src, 'sound/machines/airlockforced_alien.ogg', 100, 1)
+			sleep(50)
+			if(density)
+				open()
+	return

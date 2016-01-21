@@ -319,3 +319,14 @@
 				constructionStep = CONSTRUCTION_GUTTED
 				update_icon()
 				return
+
+/obj/machinery/door/firedoor/attack_alien(mob/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(isalienadult(user))
+		if(!blocked && density)
+			user << text("<span class='notice'>You begin prying open the [src].</span>")
+			playsound(src, 'sound/machines/airlockforced_alien.ogg', 100, 1)
+			sleep(50)
+			if(density)
+				open()
+	return

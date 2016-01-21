@@ -1,8 +1,8 @@
 /mob/living/carbon/alien/humanoid/ravager
 	name = "alien ravager"
 	caste = "rav"
-	maxHealth = 350
-	health = 350
+	maxHealth = 300
+	health = 300
 	icon = 'icons/mob/alienqueen.dmi'
 	icon_state = "alienrav"
 	heat_protection = 2 //the only fire resistant caste
@@ -12,6 +12,11 @@
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 3)
 	pressure_resistance = 200
 	layer = 6
+	move_delay_add = 1
+
+/mob/living/carbon/alien/humanoid/ravager/movement_delay()
+	. = ..()
+	. += 1
 
 /mob/living/carbon/alien/humanoid/ravager/New()
 
@@ -25,17 +30,17 @@
 	if (healths)
 		if(stat != DEAD)
 			switch(health)
-				if(350 to INFINITY)
+				if(300 to INFINITY)
 					healths.icon_state = "health0"
-				if(300 to 350)
+				if(250 to 300)
 					healths.icon_state = "health1"
-				if(200 to 300)
+				if(200 to 250)
 					healths.icon_state = "health2"
-				if(100 to 200)
+				if(150 to 200)
 					healths.icon_state = "health3"
-				if(50 to 100)
+				if(100 to 150)
 					healths.icon_state = "health4"
-				if(0 to 50)
+				if(0 to 100)
 					healths.icon_state = "health5"
 				else
 					healths.icon_state = "health6"
