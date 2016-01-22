@@ -57,6 +57,12 @@ datum
 			attack_verb = "gazes balefully"
 			attack_sound = 'sound/magic/MM_Hit.ogg'
 			restricted=1
+		boar
+			name="boar"
+			id="boar"
+			generic="boar"
+			adjective="wild curly"
+			tail=1
 		capra
 			name="caprine"
 			id="capra"
@@ -109,6 +115,13 @@ datum
 			adjective = "Deer-ee"
 			attack_verb = "gores"
 			attack_sound = 'sound/weapons/bladeslice.ogg'
+		drider
+			name="drider"
+			id="drider"
+			generic="human"
+			adjective="big and hairy"
+			taur=1
+			tail=1
 		fennec
 			name="fennec"
 			id="fennec"
@@ -121,6 +134,12 @@ datum
 			adjective="foxy"
 			tail=1
 			taur=1
+		runac
+			name="glowfen"
+			id="glowfen"
+			generic="fox"
+			adjective="glowing"
+			tail=1
 		hawk
 			name="hawk"
 			id="hawk"
@@ -148,6 +167,12 @@ datum
 			id="jelly"
 			generic="jelly"
 			adjective="jelly"
+		kangaroo
+			name="kangaroo"
+			id="kangaroo"
+			generic="kangaroo"
+			adjective="bouncy"
+			tail=1
 		lab
 			name="lab"
 			id="lab"
@@ -240,6 +265,18 @@ datum
 			generic="raccoon"
 			adjective="stripy"
 			tail=1
+		roorat
+			name="kangaroo rat"
+			id="roorat"
+			generic="roorat"
+			adjective="bouncy rat"
+			tail=1
+		seaslug
+			name="sea slug"
+			id="seaslug"
+			generic="slug"
+			adjective="salty"
+			tail=1
 		shark
 			name="shark"
 			id="shark"
@@ -266,6 +303,12 @@ datum
 			id="slime"
 			generic="slime"
 			adjective="slimy"
+		smilodon
+			name="smilodon"
+			id="smilodon"
+			generic="smilodon"
+			adjective="toothy"
+			tail=1
 		squirrel
 			name="squirrel"
 			id="squirrel"
@@ -281,6 +324,12 @@ datum
 			taur=1
 			attack_verb = "claw"
 			attack_sound = 'sound/weapons/bladeslice.ogg'
+		turtle
+			name="turtle"
+			id="turtle"
+			generic="turtle"
+			adjective="hard"
+			tail=1
 		wolf
 			name="wolf"
 			id="wolf"
@@ -317,12 +366,6 @@ datum
 			adjective="hyper"
 			//tail=1
 			restricted=1
-		runac
-			name="glowfen"
-			id="glowfen"
-			generic="fox"
-			adjective="glowing"
-			tail=1
 		fly
 			//name="fly"
 			generic="insect"
@@ -379,42 +422,6 @@ datum
 			generic="plasmaman"
 			adjective="toxic"
 			//restricted=2
-		turtle
-			name="turtle"
-			id="turtle"
-			generic="turtle"
-			adjective="hard"
-			tail=1
-		boar
-			name="boar"
-			id="boar"
-			generic="boar"
-			adjective="wild curly"
-			tail=1
-		kangaroo
-			name="kangaroo"
-			id="kangaroo"
-			generic="kangaroo"
-			adjective="bouncy"
-			tail=1
-		roorat
-			name="kangaroo rat"
-			id="roorat"
-			generic="roorat"
-			adjective="bouncy rat"
-			tail=1
-		smilodon
-			name="smilodon"
-			id="smilodon"
-			generic="smilodon"
-			adjective="toothy"
-			tail=1
-		seaslug
-			name="sea slug"
-			id="seaslug"
-			generic="slug"
-			adjective="salty"
-			tail=1
 /*var/list/kpcode_race_list
 
 proc/kpcode_race_genlist()

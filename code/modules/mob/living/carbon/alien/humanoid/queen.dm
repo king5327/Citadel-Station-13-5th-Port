@@ -19,7 +19,6 @@
 	health = 400
 	icon_state = "alienq"
 
-
 /mob/living/carbon/alien/humanoid/royal/queen/New()
 	//there should only be one queen
 	for(var/mob/living/carbon/alien/humanoid/royal/queen/Q in living_mob_list)
