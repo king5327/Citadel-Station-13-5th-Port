@@ -33,14 +33,14 @@
 
 		if(M.a_intent == "disarm")
 			var/randn = rand(1, 100)
-			if (randn <= 50)
+			if (randn <= 40)
 				playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 				Weaken(rand(1.5,2.5))
 				add_logs(M, src, "tackled")
 				visible_message("<span class='danger'>[M] has tackled down [src]!</span>", \
 					"<span class='userdanger'>[M] has tackled down [src]!</span>")
 			else
-				if (randn <= 99)
+				if (randn <= 80)
 					playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
 					drop_item()
 					visible_message("<span class='danger'>[M] disarmed [src]!</span>", \

@@ -1180,7 +1180,8 @@ About the new airlock wires panel:
 		if(!locked && !welded && density)
 			user << text("<span class='notice'>You begin prying open [src].</span>")
 			playsound(src, 'sound/machines/airlockforced_alien.ogg', 100, 1)
-			sleep(50)
-			if(density)
-				open()
+			sleep(40)
+			if(!locked && !welded && density && in_range(src, user))
+				open(2)
+
 	return

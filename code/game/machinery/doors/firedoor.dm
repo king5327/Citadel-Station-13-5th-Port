@@ -326,7 +326,7 @@
 		if(!blocked && density)
 			user << text("<span class='notice'>You begin prying open the [src].</span>")
 			playsound(src, 'sound/machines/airlockforced_alien.ogg', 100, 1)
-			sleep(50)
-			if(density)
-				open()
+			sleep(40)
+			if(density && in_range(src, user))
+				open(2)
 	return
