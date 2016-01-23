@@ -223,7 +223,6 @@ Doesn't work on other aliens/AI.*/
 
 	return 1
 
-
 /obj/effect/proc_holder/alien/resin
 	name = "Secrete Resin"
 	desc = "Secrete tough malleable resin."

@@ -84,4 +84,5 @@
 		var/mob/living/carbon/alien/humanoid/ravager/new_xeno = new (user.loc)
 		user.mind.transfer_to(new_xeno)
 		qdel(user)
+		new_xeno << "<span class='userdanger'>As a ravager, you boast increased health, strength, and your thick exoskeleton rends you resistant to burns; However you lack the ability to lay weeds and pick up facehuggers.</span>"
 		return 1

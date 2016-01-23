@@ -175,3 +175,17 @@ var/const/SIZEPLAY_MACRO=4
 	name="growth ray"
 	icon_state = "redtag"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/growthray)
+
+
+///////////////////////
+//PIXEL_Y UPDATE PROC//
+///////////////////////
+
+/mob/living/proc/update_pixel_y()
+	if(src.sizeplay_size=SIZEPLAY_TINY)
+		pixel_y = -8
+	else if(src.sizeplay_size=SIZEPLAY_MICRO)
+		pixel_y = -4
+	else if(src.sizeplay_size=SIZEPLAY_LARGE)
+		pixel_y = 16
+	return

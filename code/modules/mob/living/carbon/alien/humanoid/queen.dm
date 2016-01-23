@@ -161,7 +161,7 @@
 			M.adjustEarDamage(0,30)
 			M.confused += 6
 			M.Jitter(rand(5,15))
-			M.Weaken(rand(2,4))
+			M.Weaken(rand(2,3))
 			shake_camera(M, 1, strength=3)
 		else
 			M << sound('sound/voice/screech.ogg')

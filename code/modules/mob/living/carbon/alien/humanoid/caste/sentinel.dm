@@ -36,3 +36,9 @@
 
 /mob/living/carbon/alien/humanoid/sentinel/movement_delay()
 	. = ..()
+
+/mob/living/carbon/alien/humanoid/sentinel/MiddleClickOn(atom/A, params, mob/living/carbon/alien/humanoid/user)
+	..()
+	var/obj/item/projectile/bullet/neurotoxin/N = new /obj/item/projectile/bullet/neurotoxin(user.loc)
+	N.throw_at(A)
+	return

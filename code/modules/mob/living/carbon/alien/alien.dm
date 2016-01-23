@@ -6,7 +6,7 @@
 	name = "alien"
 	voice_name = "alien"
 	icon = 'icons/mob/alien.dmi'
-	gender = NEUTER
+	gender = FEMALE
 	dna = null
 	faction = list("alien")
 	ventcrawler = 2
@@ -183,7 +183,7 @@ Des: Removes all infected images from the alien.
 /turf/simulated/wall/attack_alien(mob/user)
 	..(user, 1)
 	if(isalienravager(user))
-		if(prob(hardness))
+		if(hardness > 10 && prob(hardness))
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
 			user.do_attack_animation(src)
 			user << text("<span class='notice'>You smash through the wall.</span>")
@@ -194,26 +194,26 @@ Des: Removes all infected images from the alien.
 			playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
 			user.do_attack_animation(src)
 			user << text("<span class='notice'>You smash into the wall.</span>")
-	if(isalienroyal(user))
-		if(hardness > 15)
-			if(prob(hardness))
-				playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
-				user.do_attack_animation(src)
-				user << text("<span class='notice'>You smash through the wall.</span>")
-				user.say("*roar")
-				dismantle_wall(1)
 
-			else
-				playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
-				user.do_attack_animation(src)
-				user << text("<span class='notice'>You smash into the wall.</span>")
-/*
+	if(isalienroyal(user))
+		if(hardness > 15 && prob(hardness))
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
+			user.do_attack_animation(src)
+			user << text("<span class='notice'>You smash through the wall.</span>")
+			user.say("*roar")
+			dismantle_wall(1)
+
+		else
+			playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
+			user.do_attack_animation(src)
+			user << text("<span class='notice'>You smash into the wall.</span>")
+
 	else
-		user << text("<span class='notice'>This wall is too strong for you to smash through. You smash it anyway.</span>")
 		playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
 		user.do_attack_animation(src)
-	return 1
-*/
+		user << text("<span class='notice'>You smash into the wall.</span>")
+		return
+
 
 /obj/structure/falsewall/attack_alien(mob/living/carbon/alien/humanoid/user)
 	..(user, 1)

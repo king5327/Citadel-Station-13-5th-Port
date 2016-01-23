@@ -55,6 +55,10 @@
 	else
 		..()
 
+/mob/living/carbon/alien/humanoid/hunter/MiddleClickOn(atom/A, params)
+	face_atom(A)
+	leap_at(A)
+
 
 #define MAX_ALIEN_LEAP_DIST 7
 
