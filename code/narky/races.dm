@@ -134,7 +134,7 @@ datum
 			adjective="foxy"
 			tail=1
 			taur=1
-		runac
+		glowfen
 			name="glowfen"
 			id="glowfen"
 			generic="fox"

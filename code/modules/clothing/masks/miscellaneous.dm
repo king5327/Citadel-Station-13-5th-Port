@@ -150,37 +150,3 @@
 	name = "skull bandana"
 	desc = "A fine black bandana with nanotech lining and a skull emblem."
 	icon_state = "bandskull"
-
-/obj/item/clothing/mask/chompers //cue ahelps and salt
-	name = "set of experimental omnomnichompers"
-	desc = "Experimental new technology that apparently makes garbage edible. Is it magic or just condiments? All we know is that science went too far this time. Warning: Keep away from valuables and do not hand these to the clown or assistant. Look at me. Now look at you. Now look back at me. I'm the dumpster now."
-	icon_state = "chompers"
-	item_state = "chompers"
-	flags = MASKINTERNALS
-	w_class = 2
-	gas_transfer_coefficient = 0.90
-	put_on_delay = 20
-
-/obj/item/clothing/mask/chompers/attack_hand(mob/user)
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		if(src == C.wear_mask)
-			user << "<span class='warning'>It's stuck! You'll need help taking this off!</span>"
-			return
-	..()
-
-/obj/item/clothing/mask/chompers/attackby(obj/item/W, mob/user)
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		if(src == C.wear_mask)
-			user.visible_message("<span class='warning'>[user] dangles the [W] above their maw, soon dropping it in and swallowing it whole!</span>", \
-								 "<span class='notice'>You dangle the [W] above your maw, soon dropping it in and swallowing it whole!</span>")
-			playsound(src.loc, 'sound/magic/enter_blood.ogg', 30, 1)
-			user.reagents.add_reagent("nutriment", 1)
-			if(W == /obj/item/weapon/disk/nuclear)
-				qdel(W)
-				return
-			C.stomach_contents.Add(W)
-			qdel(W)
-			return
-	..()

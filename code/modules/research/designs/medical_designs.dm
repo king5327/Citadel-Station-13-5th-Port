@@ -210,17 +210,6 @@
 	build_path = /obj/item/organ/internal/cyberimp/chest/nutriment
 	category = list("Medical Designs")
 
-/datum/design/omnichompers
-	name = "Experimental Omnichompers"
-	desc = "Experimental new technology that apparently makes garbage edible. Is it magic or just condiments? All we know is that science went too far this time."
-	id = "ci-omnichompers"
-	req_tech = list("materials" = 6, "programming" = 4, "biotech" = 5)
-	build_type = PROTOLATHE | MECHFAB
-	construction_time = 40
-	materials = list(MAT_METAL = 200, MAT_GLASS = 200, MAT_SILVER = 500, MAT_URANIUM = 500, MAT_BANANIUM = 200)
-	build_path = /obj/item/clothing/mask/chompers
-	category = list("Medical Designs")
-
 /datum/design/cyberimp_nutriment_plus
 	name = "Nutriment pump implant PLUS"
 	desc = "This implant with synthesize and pump into your bloodstream a small amount of nutriment when you are hungry."
