@@ -1183,5 +1183,8 @@ About the new airlock wires panel:
 			sleep(40)
 			if(!locked && !welded && density && in_range(src, user))
 				open(2)
+		return
 
-	return
+	else
+
+		return

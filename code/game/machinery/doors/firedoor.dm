@@ -20,6 +20,7 @@
 	var/nextstate = null
 	sub_door = 1
 	closingLayer = 3.11
+	layer = 2.69
 
 /obj/machinery/door/firedoor/Bumped(atom/AM)
 	if(p_open || operating)

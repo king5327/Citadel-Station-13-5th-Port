@@ -15,7 +15,7 @@
 				M.confused += 25
 				M.Jitter(50)
 			else
-				M << sound('sound/effects/screech.ogg')
+				M << sound('sound/voice/screech.ogg')
 
 		if(issilicon(M))
 			M << sound('sound/weapons/flash.ogg')
