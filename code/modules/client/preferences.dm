@@ -930,7 +930,7 @@ var/list/preferences_datums = list()
 							special_color[text2num(index_tc)]=null
 
 				if("character_size")
-					var/new_size = input(user, "Choose your character's size:", "Character Preference")  in list("big", "normal", "small", "tiny")
+					var/new_size = input(user, "Choose your character's size:", "Character Preference")  in list("huge", "large", "normal", "small", "tiny")
 					if(new_size)
 						character_size=new_size
 
@@ -1201,8 +1201,10 @@ var/list/preferences_datums = list()
 			character.sizeplay_set(SIZEPLAY_MICRO)
 		else if(character_size=="tiny")
 			character.sizeplay_set(SIZEPLAY_TINY)
-		else
+		else if(character_size=="large")
 			character.sizeplay_set(SIZEPLAY_MACRO)
+		else
+			character.sizeplay_set(SIZEPLAY_HUGE)
 
 	character.eye_color = eye_color
 	character.hair_color = hair_color

@@ -276,3 +276,27 @@
 	materials = list(MAT_METAL = 50, MAT_GLASS = 500, MAT_GOLD = 500, MAT_URANIUM = 100, MAT_DIAMOND = 200)
 	build_path = /obj/item/weapon/implantcase/adrenaline
 	category = list("Medical Designs")
+
+/////////////////////////////////////////
+//////////////Defibrilators//////////////
+/////////////////////////////////////////
+
+/datum/design/defibrillator
+	name = "Defibrillator"
+	desc = "A device that delivers powerful shocks to detachable paddles that resuscitate incapacitated patients. Batteries not included."
+	id = "defib"
+	req_tech = list("materials" = 2, "biotech" = 4, "powerstorage" = 3)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 2500, MAT_GLASS = 1000)
+	build_path = /obj/item/weapon/defibrillator
+	category = list("Medical Designs")
+
+/datum/design/compactdefibrillator
+	name = "Compact Defibrillator"
+	desc = "A belt-equipped defibrillator that can be rapidly deployed. Batteries not included."
+	id = "compactdefib"
+	req_tech = list("materials" = 4, "biotech" = 6, "powerstorage" = 5)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 500, MAT_GOLD = 200, MAT_URANIUM = 100)
+	build_path = /obj/item/weapon/defibrillator/compact
+	category = list("Medical Designs")
