@@ -45,19 +45,12 @@
 	icon_state = "deaglecamo"
 	item_state = "deagleg"
 
-/////////////////////////////////
-/////////SECURITY PISTOL/////////
-/////////////////////////////////
-
 /obj/item/weapon/gun/projectile/automatic/pistol/secpistol
-	name = "security pistol"
-	desc = "A small, easily concealable 9mm handgun for members of security who mean business."
+	name = "\improper M95 pistol"
+	desc = "An aging firearm that fires 9mm rounds. Good for civilian, security, and military use."
 	icon_state = "secpistol"
-	pin = /obj/item/device/firing_pin/implant/loyalty
-	w_class = 2
+//	pin = /obj/item/device/firing_pin/implant/loyalty
+	w_class = 3
 	origin_tech = "combat=2;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	can_suppress = 0
-	burst_size = 1
-	fire_delay = 0
-	action_button_name = null

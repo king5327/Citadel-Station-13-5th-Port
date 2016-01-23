@@ -163,7 +163,7 @@
 
 /obj/item/ammo_box/magazine/m9mm
 	name = "pistol magazine (9mm)"
-	icon_state = "9mmp-15"
+	icon_state = "9mmp"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 15
