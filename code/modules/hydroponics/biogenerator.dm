@@ -156,6 +156,7 @@
 			dat += "<h3>Leather and Cloth:</h3>"
 			dat += "<div class='statusDisplay'>"
 			dat += "Wallet: <A href='?src=\ref[src];create=wallet;amount=1'>Make</A> ([100/efficiency])<BR>"
+			dat += "Collar: <A href='?src=\ref[src];create=collar;amount=1'>Make</A> ([150/efficiency])<BR>"
 			dat += "Book bag: <A href='?src=\ref[src];create=bkbag;amount=1'>Make</A> ([200/efficiency])<BR>"
 			dat += "Plant bag: <A href='?src=\ref[src];create=ptbag;amount=1'>Make</A> ([200/efficiency])<BR>"
 			dat += "Rag: <A href='?src=\ref[src];create=rag;amount=1'>Make</A> ([200/efficiency])<BR>"
@@ -313,6 +314,9 @@
 		if("rice_hat")
 			if (check_cost(300/efficiency)) return 0
 			else new/obj/item/clothing/head/rice_hat(src.loc)
+		if("collar")
+			if (check_cost(150/efficiency)) return 0
+			else new/obj/item/clothing/tie/petcollar(src.loc)
 	processing = 0
 	menustat = "complete"
 	update_icon()
