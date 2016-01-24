@@ -595,13 +595,5 @@ proc/kpcode_hastail(var/S)
 		return mutant_tails[S]
 	return 0
 
-proc/kpcode_tail_offset(var/S)
-	S=kpcode_hastail(S)
-	switch(S)
-		if("leporid")
-			return 8
-		else
-			return 0
-
 proc/kpcode_cantaur(var/S)
 	return kpcode_race_taur(S)
