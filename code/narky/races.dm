@@ -574,7 +574,8 @@ var/list/cock_list = list(
 //	"murid",
 //	"leporid",
 	"reptilian",
-	//"custom",
+	"equine",
+	"custom",
 	)
 
 

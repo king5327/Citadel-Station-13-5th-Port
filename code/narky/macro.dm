@@ -189,26 +189,32 @@ var/const/SIZEPLAY_HUGE=5
 ///////////////////////
 //PIXEL_Y UPDATE PROC//
 ///////////////////////
-
-/mob/living/proc/update_pixel_y(mob/living/user)
+/*
+/mob/update_pixel_y(mob/living/user)
 	..()
+	var/final_pixel_y = null
 	var/matrix/mtrx=new()
 	if(mtrx.Scale(0.5))
 		pixel_y = -8
+		final_pixel_y = -8
 		return
 	if(mtrx.Scale(0.7))
 		pixel_y = -4
+		final_pixel_y = -4
 		return
 	if(mtrx.Scale(1))
 		pixel_y = 0
+		final_pixel_y = 0
 		return
 	if(mtrx.Scale(1.5))
 		pixel_y = 8
+		final_pixel_y = 8
 		return
 	if(mtrx.Scale(2))
 		pixel_y = 16
+		final_pixel_y = 16
 		return
 	else
 		pixel_y = 0 //just in case you somehow ended up with some other size we'll put you back to normal
 		return
-	return
+*/
