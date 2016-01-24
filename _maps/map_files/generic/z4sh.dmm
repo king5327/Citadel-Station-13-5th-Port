@@ -65,7 +65,7 @@
 "bm" = (/obj/structure/lattice,/obj/structure/grille,/turf/space,/area/space)
 "bn" = (/obj/structure/lattice/catwalk,/obj/structure/cable{icon_state = "0-2"; d2 = 2},/obj/machinery/power/tracker{id = "derelictsolar"},/turf/space,/area/space)
 "bo" = (/obj/structure/lattice/catwalk,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/space,/area/space)
-"bp" = (/obj/structure/cable{icon_state = "0-2"; d2 = 2},/obj/machinery/power/solar{id = "derelictsolar"; name = "Derelict Fore Solar Array"},/turf/simulated/floor/plasteel/solarpanel,/area/space)
+"bp" = (/obj/structure/cable{icon_state = "0-2"; d2 = 2},/obj/machinery/power/solar{id = "derelictsolar"; name = "Derelict Fore Solar Array"},/turf/simulated/floor/plasteel/airless{icon_state = "solarpanel"},/area/space)
 "bq" = (/obj/structure/lattice/catwalk,/obj/structure/cable,/turf/space,/area/space)
 "br" = (/obj/structure/lattice/catwalk,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"; tag = ""},/turf/space,/area/space)
 "bs" = (/obj/structure/lattice/catwalk,/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"; tag = ""},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_y = 0; tag = ""},/turf/space,/area/space)
