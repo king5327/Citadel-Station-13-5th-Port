@@ -551,7 +551,7 @@ var/list/mutant_tails = list(
 	"wolf"="wolf",
 	"fox"="fox",
 	"mouse"="murid",
-	"leporid"="leporid",
+	"leporid"="lep",
 	"panda"="ailurus",
 	"pig"="pig",
 	"cow"="cow",
@@ -593,6 +593,10 @@ proc/kpcode_hastail(var/S)
 			return "ailurus"*/
 	if(S in mutant_tails)
 		return mutant_tails[S]
+	return 0
+
+proc/kpcode_tail_offset(var/S)
+	S=kpcode_hastail(S)
 	return 0
 
 proc/kpcode_cantaur(var/S)
