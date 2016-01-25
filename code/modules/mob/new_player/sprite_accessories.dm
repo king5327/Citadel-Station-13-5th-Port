@@ -15,6 +15,8 @@
 	to the point where you may completely corrupt a server's savefiles. Please refrain
 	from doing this unless you absolutely know what you are doing, and have defined a
 	conversion in savefile.dm
+
+	you're fuckin' kidding me the file was all the way in /here/? jesus it took a while for me to find this place -- iska
 */
 /proc/init_sprite_accessory_subtypes(prototype, list/L, list/male, list/female)
 	if(!istype(L))		L = list()
@@ -296,6 +298,10 @@
 	name = "Spiky 3"
 	icon_state = "hair_spiky2"
 
+/datum/sprite_accessory/hair/spikycurl // gotta go fast -- Iska
+	name = "Sweeping Spikes"
+	icon_state = "hair_spikycurl"
+
 /datum/sprite_accessory/hair/protagonist
 	name = "Slightly long"
 	icon_state = "hair_protagonist"
@@ -340,7 +346,7 @@
 	name = "Low Braid"
 	icon_state = "hair_hbraid"
 
-/datum/sprite_accessory/hair/not_floorlength_braid
+/datum/sprite_accessory/hair/not_floorlength_braid // oh, thanks, i was confused there for a moment
 	name = "High Braid"
 	icon_state = "hair_braid2"
 
@@ -472,7 +478,7 @@
 	name = "Long Ponytail"
 	icon_state = "hair_longstraightponytail"
 
-/datum/sprite_accessory/hair/sidepartlongalt
+/datum/sprite_accessory/hair/sidepartlongalt // JOEL ARE YOU DOWNLOADING BOOBS AGAIN
 	name = "Long Side Part"
 	icon_state = "hair_longsidepart"
 
