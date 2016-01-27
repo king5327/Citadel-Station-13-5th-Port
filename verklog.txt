@@ -1,5 +1,34 @@
 The ways a verk has been mangling these files.
 
+V. Taur and sizeplay scaled nitpickery.
+-Hunger rate for non-taurs is now " Size(1-5) / 3 * Hunger " (0.33-1.66)
+-Hunger rate on taurs " 1.5 * Hunger * Size(1-5) / 3 ". Gotta feed dat fluffy butt.
+-Metabolism efficiency for small people now ranges between 0.6 and 1. (WILL ADD RIDICULOUS LOW OD TRESHOLDS NEXT IF YOU USE THIS SHIT FOR UR POOBER GAYM BULLSHIT)
+-For normal people and small taurs between 0.8 and 1.25. (default rate)
+-For taurs and big people between 1.2 and 1.4.
+-For big taurs between 1.3 and 1.5.
+-Move speed delay is now " 1 - Size / 3 ". (0.66 to -0.66) Tiny leg? Big leg?
+-Unarmed melee damage scales now " ( Rand(0-9) + Special ) * Size / 3 ". (0.33x - 1.66x. Max base damage 3 - 15.) Tiny fist? Big fist?
+-PREPARE YOUR TOOLS KITCHEN MAN.
+-YOUR JOB IS TO HAPPEN BEFORE THE WHOLE CREW IS ATE.
+-Relax, we're still a vore server. For now. Right?
+
+//Openin' up a rant time okay.//
+Inb4 muh powergames, muh balances, muh meta, muh uninvited shitlers who come here just because they can't afford fucking call of duty or whatever.
+I didn't join this server for valids or robusts or high scores or the toughest e-peen back whenever. I was lured in by RPs, lewds, character building, chill admins, vorings, and to play the "what could go wrong in space simulator".
+It's been seeming that since the place got public, the focus has been uncontrollably swerwing towards the former categories. Instead of having shit for giggles, we're just going towards stamping out everything this server was originally made for.
+Instead of giving repeat offenders boot, do we just bend over and suck the metabullshit up and now everything is about powergaming here, isnt it?
+Should we just go ahead and remove all our custom shit here? Hell, let's remove all the non-combat oriented bullshit as well. Why even have different departments and jobs when we could just turn every room into an additional armory? Why even be in space in the first place?
+Let's turn this shit into a 2D version of the most generic FPS game imaginable to cater for those crap gobblers who only come here because their microwaves can't run 3D.
+We're not supposed to rip our rectals sore from sucking up, through, and in all those shitlers who are in just to abuse our shit.
+
+"But it's just a spess man game chill ur srs ass just a prank bro games are made to be aboosed ur all just npcs to pew for funs my mom keeps a high score for me"
+Go play literally anything else for that. This indeed is just a spess man game. Not some 12 year old's ebin haax Gmod server.
+:v
+
+Still love ya guys.
+Just gonna toss this up on the hub I don't even care if ya want it or not.
+</salt>
 
 4th fart, driders and blatant adminbus edition. (shame on you dirty enablers)
 -Finished driders after so many months of hardly touching anything at all. Requires taur form same way the nagas do.
