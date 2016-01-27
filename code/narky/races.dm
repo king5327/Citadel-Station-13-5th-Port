@@ -34,7 +34,7 @@ datum
 			id="armadillo"
 			say_mod = "drawls"
 			generic = "protected"
-			adjective = "varmint on a halfshell"
+			adjective = "varmint on a halfshell" // that's not an adjective
 			tail=1
 			attack_verb = "noms"
 			attack_sound = 'sound/weapons/bite.ogg'
@@ -42,38 +42,38 @@ datum
 			name="beaver"
 			id="beaver"
 			say_mod = "chitters"
-			generic="Woody"
-			adjective="Damnable"
+			generic="woody" // that's not a generic
+			adjective="damnable"
 			tail=1
-			attack_verb = "tail slaps"
+			attack_verb = "tailslaps"
 			attack_sound = 'sound/items/dodgeball.ogg'
 		beholder
 			name="beholder"
 			id="beholder"
 			say_mod = "jibbers"
-			generic="eyelike"
-			adjective="eyebally"
+			generic="body part"
+			adjective="all-seeing"
 			tail=0
 			attack_verb = "gazes balefully"
-			attack_sound = 'sound/magic/MM_Hit.ogg'
+			attack_sound = 'sound/magic/MM_Hit.ogg' // MAGIC MISSILE! MAGIC MISSILE!
 			restricted=1
 		boar
 			name="boar"
 			id="boar"
-			generic="boar"
-			adjective="wild curly"
+			generic="pig"
+			adjective="wild and curly"
 			tail=1
 		capra
 			name="caprine"
 			id="capra"
 			generic="goat"
-			adjective="irratable"
+			adjective="irritable"
 		carp
 			name="carp"
 			id="carp"
 			say_mod = "glubs"
 			generic = "abomination"
-			adjective = "carp-ee"
+			adjective = "violently fishy"
 			tail=1
 			attack_verb = "noms"
 			attack_sound = 'sound/weapons/bite.ogg'
@@ -89,7 +89,7 @@ datum
 			id="corvid"
 			say_mod = "caws"
 			generic="bird"
-			adjective="mask piercing"
+			adjective="mask-piercing"
 			tail=1
 			attack_verb = "whack"
 		cow
@@ -112,34 +112,47 @@ datum
 			id="deer"
 			say_mod = "grunts"
 			generic = "open season"
-			adjective = "Deer-ee"
+			adjective = "skittish"
+			tail=1 // that's better
 			attack_verb = "gores"
 			attack_sound = 'sound/weapons/bladeslice.ogg'
+		drake
+			name="drake"
+			id="drake"
+			say_mod = "growls"
+			generic = "reptile"
+			adjective = "frilly"
+			tail=1 // i'd use lizard tails but drakes have frills included on the icons
 		drider
 			name="drider"
 			id="drider"
-			generic="human"
+			generic="humanoid"
 			adjective="big and hairy"
 			taur=1
 			tail=1
 		fennec
 			name="fennec"
 			id="fennec"
-			generic="fox"
+			generic="vulpine"
 			adjective="foxy"
 			tail=1
 		fox
 			name="fox"
 			id="fox"
-			adjective="foxy"
+			generic="vulpine"
+			adjective="foxy" // open and shut with this one, huh
 			tail=1
 			taur=1
 		glowfen
 			name="glowfen"
 			id="glowfen"
-			generic="fox"
+			generic="vulpine"
 			adjective="glowing"
 			tail=1
+		gremlin
+			name="gremlin"
+			id="gremlin"
+			generic="creature"
 		hawk
 			name="hawk"
 			id="hawk"
@@ -147,7 +160,7 @@ datum
 			generic="bird"
 			adjective="feathery"
 			tail=1
-			attack_verb = "whack"
+			attack_verb = "whacks"
 		hippo
 			name="hippo"
 			id="hippo"
@@ -162,6 +175,13 @@ datum
 			adjective="derpy"
 			tail=1
 			taur=1
+		jackalope
+			name="jackalope"
+			id="jackalope"
+			generic="leporid"
+			adjective="hoppy and horny" //hue
+			attack_verb = "kicks"
+			tail=1
 		jelly
 			name="jelly"
 			id="jelly"
@@ -187,6 +207,7 @@ datum
 			generic="leporid"
 			adjective="hoppy"
 			tail=1
+			attack_verb = "kicks"
 		lizard
 			name="lizard"
 			id="lizard"
@@ -309,6 +330,15 @@ datum
 			generic="smilodon"
 			adjective="toothy"
 			tail=1
+		snarby
+			name="snarby"
+			id="snarby"
+			generic="beast"
+			adjective="snippy and snarly"
+			tail=1
+			attack_verb = "chomps"
+			attack_sound = 'sound/weapons/bite.ogg'
+			//restricted=2 // so that the choice is there whether you want it more snowflakey
 		squirrel
 			name="squirrel"
 			id="squirrel"
@@ -328,7 +358,7 @@ datum
 			name="turtle"
 			id="turtle"
 			generic="turtle"
-			adjective="hard"
+			adjective="hard-shelled"
 			tail=1
 		wolf
 			name="wolf"
@@ -353,19 +383,19 @@ datum
 			//name="narwhal kitty"
 			id="narky"
 			say_mod="nyars"
-			generic="narwhal"
+			generic="abomination"
 			adjective="fluffy"
 			restricted=2
 			tail=1
 			taur=1
 			attack_verb = "whack"
-		husky/jordy
-			name="husky"
-			id="jordy"
+		//husky/jordy  // obsolete with the addition of overlay sprites
+			//name="husky"
+			//id="jordy"
 			//generic="canine"
-			adjective="hyper"
+			//adjective="hyper"
 			//tail=1
-			restricted=1
+			//restricted=1
 		fly
 			//name="fly"
 			generic="insect"
@@ -386,7 +416,7 @@ datum
 		shadow
 			//name="shadow"
 			generic="darkness"
-			adjective="shady"
+			adjective="shady" // Jokes
 			restricted=2
 		golem
 			//name="golem"
@@ -401,27 +431,33 @@ datum
 		zombie
 			//name="zombie"
 			id="zombie"
-			generic="zombie"
+			generic="undead"
 			adjective="rotten"
 			restricted=2
-		cosmetic_zombie
+		cosmetic_zombie // considering renaming to zombie/cosmetic
 			//name="zombie"
 			id="zombie"
-			generic="zombie"
-			adjective="morerotten"
+			generic="undead"
+			adjective="particularly rotten"
 			restricted=2
 		plasmaman
 			//name="Plasmabone"
 			id="plasmaman"
 			generic="plasmaman"
 			adjective="toxic"
-			//restricted=2
+			restricted=2 // don't comment these out if you don't want the world to burn
 		plasmaman/skin
 			//name="Skinbone"
 			id="plasmaman"
 			generic="plasmaman"
 			adjective="toxic"
-			//restricted=2
+			restricted=2 // but if you do want the world to burn then please, by all means
+		pepsiman
+			//name="PEPSI MAAAAAN"
+			id="PEPSIMAAAN"
+			generic="beverage"
+			adjective="refreshing"
+			restricted=2 // don't want half the station to be running around with soda cans on their heads
 /*var/list/kpcode_race_list
 
 proc/kpcode_race_genlist()
@@ -551,7 +587,7 @@ var/list/mutant_tails = list(
 	"wolf"="wolf",
 	"fox"="fox",
 	"mouse"="murid",
-	"leporid"="lep",
+	"leporid"="leporid",
 	"panda"="ailurus",
 	"pig"="pig",
 	"cow"="cow",
@@ -574,8 +610,7 @@ var/list/cock_list = list(
 //	"murid",
 //	"leporid",
 	"reptilian",
-	"equine",
-	"custom",
+	//"custom",
 	)
 
 
@@ -594,10 +629,6 @@ proc/kpcode_hastail(var/S)
 			return "ailurus"*/
 	if(S in mutant_tails)
 		return mutant_tails[S]
-	return 0
-
-proc/kpcode_tail_offset(var/S)
-	S=kpcode_hastail(S)
 	return 0
 
 proc/kpcode_cantaur(var/S)
