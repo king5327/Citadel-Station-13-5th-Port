@@ -47,10 +47,16 @@
 	user.changeNext_move(CLICK_CD_MELEE) //Now stompy alien killer mechs are actually scary to aliens!
 	user.do_attack_animation(src)
 	if(isalienravager(user)) //ravagers are counters to mechs
-		take_damage(75)
-		check_for_internal_damage(list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST))
-		playsound(src.loc, 'sound/weapons/slash.ogg', 50, 1, -1)
-		visible_message("<span class='danger'>The [user]'s huge scythe-like claws cut through [src.name]'s armor like butter!</span>")
+		if(!prob(src.deflect_chance))
+			take_damage(rand(40,60))
+			check_for_internal_damage(list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST))
+			playsound(src.loc, 'sound/weapons/slash.ogg', 50, 1, -1)
+			visible_message("<span class='danger'>The [user]'s huge scythe-like claws cut through [src.name]'s armor!</span>")
+		else
+			src.log_append_to_last("Armor saved.")
+			playsound(src.loc, 'sound/weapons/slash.ogg', 50, 1, -1)
+			user << "\green Your claws had no effect!"
+			visible_message("<span class='notice'>The [user] rebounds off [src.name]'s armor!</span>")
 	else
 		if(!prob(src.deflect_chance))
 			take_damage(20)

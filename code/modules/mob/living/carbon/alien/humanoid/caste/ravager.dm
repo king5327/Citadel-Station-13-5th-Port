@@ -1,8 +1,8 @@
 /mob/living/carbon/alien/humanoid/ravager
 	name = "alien ravager"
 	caste = "rav"
-	maxHealth = 350
-	health = 350
+	maxHealth = 250
+	health = 250
 	icon = 'icons/mob/alienqueen.dmi'
 	icon_state = "alienrav"
 	heat_protection = 2 //the only fire resistant caste
@@ -12,12 +12,17 @@
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 3)
 	pressure_resistance = 200
 	layer = 6
-
+	unique_name = 0
+/*
+/mob/living/carbon/alien/humanoid/ravager/movement_delay()
+	. = ..()
+	. += 1
+*/
 /mob/living/carbon/alien/humanoid/ravager/New()
 
 	real_name = name
 
-	internal_organs += new /obj/item/organ/internal/alien/plasmavessel
+	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/ravager
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno(src))
 	..()
 
@@ -25,13 +30,13 @@
 	if (healths)
 		if(stat != DEAD)
 			switch(health)
-				if(350 to INFINITY)
+				if(250 to INFINITY)
 					healths.icon_state = "health0"
-				if(300 to 350)
+				if(200 to 250)
 					healths.icon_state = "health1"
-				if(200 to 300)
+				if(150 to 200)
 					healths.icon_state = "health2"
-				if(100 to 200)
+				if(100 to 150)
 					healths.icon_state = "health3"
 				if(50 to 100)
 					healths.icon_state = "health4"
@@ -48,48 +53,3 @@
 	else
 		..(amount)
 	return
-/*
-/mob/living/carbon/alien/humanoid/ravager/adjustBruteLoss(amount) // Resistant to Brute
-	if(amount > 0)
-		..(amount * 0.75)
-	else
-		..(amount)
-	return
-*/
-
-/turf/simulated/wall/attack_alien(mob/user)
-	..(user, 1)
-	if(isalienravager(user))
-		if(prob(hardness))
-			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
-			user.do_attack_animation(src)
-			user << text("<span class='notice'>You smash through the wall.</span>")
-			user.say("*roar")
-			dismantle_wall(1)
-
-		else
-			playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
-			user.do_attack_animation(src)
-			user << text("<span class='notice'>You smash into the wall.</span>")
-	else
-		user << text("<span class='notice'>This wall is too strong for you to smash through. You smash it anyway.</span>")
-		playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
-		user.do_attack_animation(src)
-	return 1
-
-obj/structure/falsewall/attack_alien(mob/living/carbon/alien/humanoid/user)
-	..(user, 1)
-	playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
-	user.do_attack_animation(src)
-	user << text("<span class='notice'>You easily smash through and destroy the false wall.</span>")
-	user.say("*roar")
-	qdel(src)
-
-/obj/structure/girder/attack_alien(mob/living/carbon/alien/humanoid/user)
-	..(user, 1)
-	playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
-	user.do_attack_animation(src)
-	user << text("<span class='notice'>You easily smash through and destroy the flimsy girder.</span>")
-	state = GIRDER_DISASSEMBLED
-	user.say("*roar")
-	qdel(src)

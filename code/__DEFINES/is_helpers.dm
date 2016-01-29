@@ -16,6 +16,8 @@
 
 #define isalienadult(A) (istype(A, /mob/living/carbon/alien/humanoid))
 
+#define isalienroyal(A) (istype(A, /mob/living/carbon/alien/humanoid/royal))
+
 #define isalienravager(A) (istype(A, /mob/living/carbon/alien/humanoid/ravager))
 
 #define islarva(A) (istype(A, /mob/living/carbon/alien/larva))

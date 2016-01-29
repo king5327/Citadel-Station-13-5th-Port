@@ -977,7 +977,139 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	contraband = list(/obj/item/clothing/under/syndicate/tacticool=1,/obj/item/clothing/mask/balaclava=1,/obj/item/clothing/head/ushanka=1,/obj/item/clothing/under/soviet=1,/obj/item/weapon/storage/belt/fannypack/black=2)
 	premium = list(/obj/item/clothing/under/suit_jacket/checkered=1,/obj/item/clothing/head/mailman=1,/obj/item/clothing/under/rank/mailman=1,/obj/item/clothing/suit/jacket/leather=1,/obj/item/clothing/suit/jacket/leather/overcoat=1,/obj/item/clothing/under/pants/mustangjeans=1)
 	refill_canister = /obj/item/weapon/vending_refill/clothing
+/*
 
+/obj/machinery/sec/equipment_vendor
+	name = "security equipment vendor"
+	desc = "An equipment vendor for security personnel, points collected at a security redemption machine can be spent here."
+	icon = 'icons/obj/vending.dmi'
+	icon_state = "robustation"
+	density = 1
+	anchored = 1
+	var/obj/item/weapon/card/id/inserted_id
+	var/list/prize_list = list(
+		new /datum/data/sec_equipment("Stimpack",			/obj/item/weapon/reagent_containers/hypospray/medipen/stimpack,	    50),
+		new /datum/data/sec_equipment("Stimpack Bundle",		/obj/item/weapon/storage/box/medipens/utility,	 			   200),
+		)
+
+/datum/data/sec_equipment/
+	var/equipment_name = "generic"
+	var/equipment_path = null
+	var/cost = 0
+
+/datum/data/sec_equipment/New(name, path, cost)
+	src.equipment_name = name
+	src.equipment_path = path
+	src.cost = cost
+
+/obj/machinery/sec/equipment_vendor/New()
+	..()
+	component_parts = list()
+	component_parts += new /obj/item/weapon/circuitboard/security_equipment_vendor(null)
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin(null)
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin(null)
+	component_parts += new /obj/item/weapon/stock_parts/matter_bin(null)
+	component_parts += new /obj/item/weapon/stock_parts/console_screen(null)
+	RefreshParts()
+
+/obj/machinery/sec/equipment_vendor/attack_hand(mob/user)
+	if(..())
+		return
+	interact(user)
+
+/obj/machinery/sec/equipment_vendor/interact(mob/user)
+	var/dat
+	dat +="<div class='statusDisplay'>"
+	if(istype(inserted_id))
+		dat += "You have [inserted_id.sec_points] security points collected. <A href='?src=\ref[src];choice=eject'>Eject ID.</A><br>"
+	else
+		dat += "No ID inserted.  <A href='?src=\ref[src];choice=insert'>Insert ID.</A><br>"
+	dat += "</div>"
+	dat += "<br><b>Equipment point cost list:</b><BR><table border='0' width='200'>"
+	for(var/datum/data/sec_equipment/prize in prize_list)
+		dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=\ref[src];purchase=\ref[prize]'>Purchase</A></td></tr>"
+	dat += "</table>"
+
+	var/datum/browser/popup = new(user, "secvendor", "Security Equipment Vendor", 400, 350)
+	popup.set_content(dat)
+	popup.open()
+	return
+
+/obj/machinery/sec/equipment_vendor/Topic(href, href_list)
+	if(..())
+		return
+	if(href_list["choice"])
+		if(istype(inserted_id))
+			if(href_list["choice"] == "eject")
+				inserted_id.loc = loc
+				inserted_id.verb_pickup()
+				inserted_id = null
+		else if(href_list["choice"] == "insert")
+			var/obj/item/weapon/card/id/I = usr.get_active_hand()
+			if(istype(I))
+				if(!usr.drop_item())
+					return
+				I.loc = src
+				inserted_id = I
+			else usr << "<span class='danger'>No valid ID.</span>"
+	if(href_list["purchase"])
+		if(istype(inserted_id))
+			var/datum/data/security_equipment/prize = locate(href_list["purchase"])
+			if (!prize || !(prize in prize_list))
+				return
+			if(prize.cost > inserted_id.sec_points)
+			else
+				inserted_id.sec_points -= prize.cost
+				new prize.equipment_path(src.loc)
+	updateUsrDialog()
+	return
+
+/obj/machinery/sec/equipment_vendor/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/weapon/sec_voucher))
+		RedeemVoucher(I, user)
+		return
+	if(istype(I,/obj/item/weapon/card/id))
+		var/obj/item/weapon/card/id/C = usr.get_active_hand()
+		if(istype(C) && !istype(inserted_id))
+			if(!usr.drop_item())
+				return
+			C.loc = src
+			inserted_id = C
+			interact(user)
+		return
+	if(default_deconstruction_screwdriver(user, "robustation-open", "robustation", I))
+		updateUsrDialog()
+		return
+	if(panel_open)
+		if(istype(I, /obj/item/weapon/crowbar))
+			default_deconstruction_crowbar(I)
+		return 1
+	..()
+
+/obj/machinery/sec/equipment_vendor/proc/RedeemVoucher(obj/item/weapon/sec_voucher/voucher, mob/redeemer)
+	var/selection = input(redeemer, "Pick your equipment", "Security Voucher Redemption") as null|anything in list("Kinetic Accelerator", "Resonator", "Mining Drone", "Advanced Scanner")
+	if(!selection || !Adjacent(redeemer) || voucher.gc_destroyed || voucher.loc != redeemer)
+		return
+	switch(selection)
+		if("Kinetic Accelerator")
+			new /obj/item/weapon/gun/energy/kinetic_accelerator(src.loc)
+		if("Resonator")
+			new /obj/item/weapon/resonator(src.loc)
+		if("Mining Drone")
+			new /mob/living/simple_animal/hostile/mining_drone(src.loc)
+			new /obj/item/weapon/weldingtool/hugetank(src.loc)
+		if("Advanced Scanner")
+			new /obj/item/device/t_scanner/adv_mining_scanner(src.loc)
+	qdel(voucher)
+
+/obj/machinery/sec/equipment_vendor/ex_act(severity, target)
+	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+	s.set_up(5, 1, src)
+	s.start()
+	if(prob(50 / severity) && severity < 3)
+		qdel(src)
+
+*/
 #undef STANDARD_CHARGE
 #undef CONTRABAND_CHARGE
 #undef COIN_CHARGE

@@ -50,12 +50,6 @@ var/global/list/datum/stack_recipe/monkey_recipes = list ( \
 	icon_state = "sheet-lizard"
 	origin_tech = null
 
-/obj/item/stack/sheet/animalhide/xeno
-	name = "alien hide"
-	desc = "The skin of a terrible creature."
-	singular_name = "alien hide piece"
-	icon_state = "sheet-xeno"
-	origin_tech = null
 
 var/global/list/datum/stack_recipe/xeno_recipes = list ( \
 	new/datum/stack_recipe("alien helmet", /obj/item/clothing/head/xenos, 1, on_floor = 1), \
@@ -73,13 +67,6 @@ var/global/list/datum/stack_recipe/xeno_recipes = list ( \
 	singular_name = "alien hide piece"
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "chitin"
-	origin_tech = null
-
-/obj/item/xenos_claw
-	name = "alien claw"
-	desc = "The claw of a terrible creature."
-	icon = 'icons/mob/alien.dmi'
-	icon_state = "claw"
 	origin_tech = null
 
 /obj/item/weed_extract

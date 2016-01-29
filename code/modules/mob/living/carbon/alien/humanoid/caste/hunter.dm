@@ -4,6 +4,7 @@
 	maxHealth = 150
 	health = 150
 	icon_state = "alienh_s"
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1, /obj/item/xeno_skull/h = 1)
 
 /mob/living/carbon/alien/humanoid/hunter/New()
 	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/small
@@ -31,7 +32,7 @@
 			healths.icon_state = "health7"
 
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
-	. = -0.5		//hunters are sanic, but not super sanic.
+	. = -5	//hunters are sanic, but not super sanic.
 	. += ..()	//but they still need to slow down on stun
 
 
@@ -54,6 +55,10 @@
 		leap_at(A)
 	else
 		..()
+
+/mob/living/carbon/alien/humanoid/hunter/MiddleClickOn(atom/A, params)
+	face_atom(A)
+	leap_at(A)
 
 
 #define MAX_ALIEN_LEAP_DIST 7
@@ -128,3 +133,5 @@
 	unique_name = 0
 	languages = 35
 	has_fine_manipulation = 1
+
+/mob/living/carbon/alien/humanoid/hunter/royale/megaegg
