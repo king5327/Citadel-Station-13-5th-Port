@@ -209,9 +209,6 @@ Des: Removes all infected images from the alien.
 			user << text("<span class='notice'>You smash into the wall.</span>")
 
 	else
-		playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
-		user.do_attack_animation(src)
-		user << text("<span class='notice'>You smash into the wall.</span>")
 		return
 
 
@@ -232,6 +229,54 @@ Des: Removes all infected images from the alien.
 	user.say("*roar")
 	qdel(src)
 
+//XENO CRAFTING STUFF//
+
+/obj/item/xeno_skull
+	name = "alien skull"
+	desc = "The skull from some unfortunate alien. It's been hollowed out."
+	icon = 'icons/mob/alien.dmi'
+	icon_state = "skull_h"
+	origin_tech = "materials=3"
+	w_class = 3
+
+/obj/item/xeno_skull/h
+	name = "alien hunter skull"
+	icon_state = "skull_h"
+/obj/item/xeno_skull/d
+	name = "alien drone skull"
+	icon_state = "skull_d"
+/obj/item/xeno_skull/s
+	name = "alien sentinel skull"
+	icon_state = "skull_s"
+
+/obj/item/xenos_claw
+	name = "alien claw"
+	desc = "The claw of a terrible creature."
+	icon = 'icons/mob/alien.dmi'
+	icon_state = "claw"
+	origin_tech = "materials=3"
+	force = 10
+	throwforce = 10
+	w_class = 2
+
+/obj/item/xenos_tail
+	name = "alien tail barb"
+	desc = "The sharp end of a xenomorph's tail."
+	icon = 'icons/mob/alien.dmi'
+	icon_state = "tail"
+	origin_tech = "materials=3"
+	force = 10
+	throwforce = 10
+	w_class = 2
+
+/obj/item/stack/sheet/animalhide/xeno
+	name = "alien hide"
+	icon = 'icons/mob/alien.dmi'
+	desc = "The skin of a terrible creature."
+	singular_name = "alien hide piece"
+	icon_state = "hide"
+	origin_tech = "materials=3"
+	w_class = 3
 
 #undef HEAT_DAMAGE_LEVEL_1
 #undef HEAT_DAMAGE_LEVEL_2
