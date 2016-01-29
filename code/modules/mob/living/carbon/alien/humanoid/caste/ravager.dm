@@ -13,11 +13,11 @@
 	pressure_resistance = 200
 	layer = 6
 	unique_name = 0
-
+/*
 /mob/living/carbon/alien/humanoid/ravager/movement_delay()
 	. = ..()
 	. += 1
-
+*/
 /mob/living/carbon/alien/humanoid/ravager/New()
 
 	real_name = name
