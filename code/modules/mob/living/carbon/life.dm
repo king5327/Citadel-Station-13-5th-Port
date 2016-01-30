@@ -480,6 +480,33 @@
 				damageoverlay.overlays += I
 				damageoverlay.overlays += black
 
+			//vore overlays //commented out for now. waiting for a working toggle switch because someone's gonna be hatin' on this for sure.
+			/*var/datum/vore_organ/container = src.get_last_organ_in()
+			if(istype(container, /datum/vore_organ))
+				if(istype(container, /datum/vore_organ/insuit || /datum/vore_organ/insole))
+					return
+				var/image/I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "gutflesh")
+				damageoverlay.overlays += I
+				if(container.digestion_factor==VORE_DIGESTION_SPEED_SLOW)
+					if(istype(container, /datum/vore_organ/stomach || /datum/vore_organ/tail))
+						I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "acid1")
+						I.blend_mode = BLEND_ADD
+						damageoverlay.overlays += I
+					else
+						I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "whitefluid1")
+						I.blend_mode = BLEND_ADD
+						damageoverlay.overlays += I
+				else if(container.digestion_factor)
+					if(istype(container, /datum/vore_organ/stomach || /datum/vore_organ/tail))
+						I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "acid2")
+						I.blend_mode = BLEND_ADD
+						damageoverlay.overlays += I
+					else
+						I = image("icon" = 'icons/mob/screen_full.dmi', "icon_state" = "whitefluid2")
+						I.blend_mode = BLEND_ADD
+						damageoverlay.overlays += I
+						*/
+
 	..()
 
 	return 1

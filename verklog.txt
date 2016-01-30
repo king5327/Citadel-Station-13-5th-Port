@@ -1,6 +1,23 @@
 The ways a verk has been mangling these files.
 
-V. Taur and sizeplay scaled nitpickery.
+Blast number 6. SEVERE CLEANUPS AND MESSUPS.
+-Fixed secret room list on asteroid.dm (Caused error spam at startup.)
+-Fixed return.air flipping shit on pipes.dm (Caused error spam at startup.)
+-Fixed shuttle docking errors on shuttle.dm (Uncommented some stuff. I hope it worked. At least the startup spam is gone most of times.)
+-Barf release now includes vomit if a victim was digested. (Backdoor release is still clean for ya snob noses lmao)
+-Xeno barf ability also makes a mess.
+-Vore remains are now slightly juicier and cleanable. (Cleanbots give no shit tho as with other custom mess for now.)
+-Unprotected food stays ate. (No second-hand food dropped by prey.)
+-Sickness induced vomiting now spews out prey and their stuff. (Currently seems to affect a couple other vore types as well. BLAME CRAMPS.)
+-Fixed the Werenerd. No more stacked hunter speed. No longer bleeds Mutation Dew.
+-Werenerd's dorked up object vore quirk now functions correctly.
+-Vore prey inside overlays. Fleshy wall and bubbling pukey/white fluid for different digestion types. (HOW BLISSFULLY AWFUL)
+-Prey overlays currently commented out at life.dm row 483 down. Waiting for a working toggle setting because someone's gonna be hatin on it for sure.
+-Gonna be pushing this sorta nasty fluff as much as I feel like before the server goes full on competitive gamer mode.
+-Inb4 NO ITEMS GREYTIDE ONLY FINAL DESTINATION STATION 13
+-Sweg
+
+V. Taur and sizeplay scaled nitpickery. OLD
 -Hunger rate for non-taurs is now " Size(1-5) / 3 * Hunger " (0.33-1.66)
 -Hunger rate on taurs " 1.5 * Hunger * Size(1-5) / 3 ". Gotta feed dat fluffy butt.
 -Metabolism efficiency for small people now ranges between 0.6 and 1. (WILL ADD RIDICULOUS LOW OD TRESHOLDS NEXT IF YOU USE THIS SHIT FOR UR POOBER GAYM BULLSHIT)
@@ -13,24 +30,7 @@ V. Taur and sizeplay scaled nitpickery.
 -YOUR JOB IS TO HAPPEN BEFORE THE WHOLE CREW IS ATE.
 -Relax, we're still a vore server. For now. Right?
 
-//Openin' up a rant time okay.//
-Inb4 muh powergames, muh balances, muh meta, muh uninvited shitlers who come here just because they can't afford fucking call of duty or whatever.
-I didn't join this server for valids or robusts or high scores or the toughest e-peen back whenever. I was lured in by RPs, lewds, character building, chill admins, vorings, and to play the "what could go wrong in space simulator".
-It's been seeming that since the place got public, the focus has been uncontrollably swerwing towards the former categories. Instead of having shit for giggles, we're just going towards stamping out everything this server was originally made for.
-Instead of giving repeat offenders boot, do we just bend over and suck the metabullshit up and now everything is about powergaming here, isnt it?
-Should we just go ahead and remove all our custom shit here? Hell, let's remove all the non-combat oriented bullshit as well. Why even have different departments and jobs when we could just turn every room into an additional armory? Why even be in space in the first place?
-Let's turn this shit into a 2D version of the most generic FPS game imaginable to cater for those crap gobblers who only come here because their microwaves can't run 3D.
-We're not supposed to rip our rectals sore from sucking up, through, and in all those shitlers who are in just to abuse our shit.
-
-"But it's just a spess man game chill ur srs ass just a prank bro games are made to be aboosed ur all just npcs to pew for funs my mom keeps a high score for me"
-Go play literally anything else for that. This indeed is just a spess man game. Not some 12 year old's ebin haax Gmod server.
-:v
-
-Still love ya guys.
-Just gonna toss this up on the hub I don't even care if ya want it or not.
-</salt>
-
-4th fart, driders and blatant adminbus edition. (shame on you dirty enablers)
+4th fart, driders and blatant adminbus edition. (shame on you dirty enablers) OLD
 -Finished driders after so many months of hardly touching anything at all. Requires taur form same way the nagas do.
 -Restored the race list alphabetical order.
 -Bigass werenerd mob. Please try not to abuse her too much when I'm off. Not that I care, I just don't wanna miss a chance to bear witness if it ever happens lmao.
