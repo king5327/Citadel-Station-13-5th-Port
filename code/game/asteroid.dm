@@ -47,6 +47,7 @@ var/global/max_secret_rooms = 6
 
 	var/areapoints = 0
 	var/theme = "organharvest"
+	var/list/possiblethemes = list("organharvest", "cult", "wizden", "cavein", "xenoden", "hitech", "speakeasy", "plantlab")
 	var/list/walltypes = list(/turf/simulated/wall=3, /turf/simulated/mineral/random=1)
 	var/list/floortypes = list(/turf/simulated/floor/plasteel)
 	var/list/treasureitems = list()//good stuff. only 1 is created per room.
@@ -58,6 +59,7 @@ var/global/max_secret_rooms = 6
 
 	switch(pick(possiblethemes))//what kind of room is this gonna be?
 		if("organharvest")
+			theme = "organharvest"
 			walltypes = list(/turf/simulated/wall/r_wall=2,/turf/simulated/wall=2,/turf/simulated/mineral/random/high_chance=1)
 			floortypes = list(/turf/simulated/floor/plasteel,/turf/simulated/floor/engine)
 			treasureitems = list(/obj/machinery/bot/medbot/mysterious=1, /obj/item/weapon/circular_saw=1, /obj/structure/closet/critter/cat=2)
@@ -136,7 +138,7 @@ var/global/max_secret_rooms = 6
 			treasureitems = list(/obj/item/weapon/spellbook=1,/obj/mecha/combat/marauder=1,/obj/machinery/wish_granter=1)
 			fluffitems = list(/obj/item/weapon/melee/energy/axe)*/
 
-	possiblethemes -= theme //once a theme is selected, it's out of the running!
+	possiblethemes = theme //once a theme is selected, it's out of the running!
 	var/floor = pick(floortypes)
 
 	turfs = get_area_turfs(/area/mine/unexplored)
