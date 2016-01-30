@@ -1,7 +1,36 @@
 The ways a verk has been mangling these files.
 
+Blast number 6. SEVERE CLEANUPS AND MESSUPS.
+-Fixed secret room list on asteroid.dm (Caused error spam at startup.)
+-Fixed return.air flipping shit on pipes.dm (Caused error spam at startup.)
+-Fixed shuttle docking errors on shuttle.dm (Uncommented some stuff. I hope it worked. At least the startup spam is gone most of times.)
+-Barf release now includes vomit if a victim was digested. (Backdoor release is still clean for ya snob noses lmao)
+-Xeno barf ability also makes a mess.
+-Vore remains are now slightly juicier and cleanable. (Cleanbots give no shit tho as with other custom mess for now.)
+-Unprotected food stays ate. (No second-hand food dropped by prey.)
+-Sickness induced vomiting now spews out prey and their stuff. (Currently seems to affect a couple other vore types as well. BLAME CRAMPS.)
+-Fixed the Werenerd. No more stacked hunter speed. No longer bleeds Mutation Dew.
+-Werenerd's dorked up object vore quirk now functions correctly.
+-Vore prey inside overlays. Fleshy wall and bubbling pukey/white fluid for different digestion types. (HOW BLISSFULLY AWFUL)
+-Prey overlays currently commented out at life.dm row 483 down. Waiting for a working toggle setting because someone's gonna be hatin on it for sure.
+-Gonna be pushing this sorta nasty fluff as much as I feel like before the server goes full on competitive gamer mode.
+-Inb4 NO ITEMS GREYTIDE ONLY FINAL DESTINATION STATION 13
+-Sweg
 
-4th fart, driders and blatant adminbus edition. (shame on you dirty enablers)
+V. Taur and sizeplay scaled nitpickery. OLD
+-Hunger rate for non-taurs is now " Size(1-5) / 3 * Hunger " (0.33-1.66)
+-Hunger rate on taurs " 1.5 * Hunger * Size(1-5) / 3 ". Gotta feed dat fluffy butt.
+-Metabolism efficiency for small people now ranges between 0.6 and 1. (WILL ADD RIDICULOUS LOW OD TRESHOLDS NEXT IF YOU USE THIS SHIT FOR UR POOBER GAYM BULLSHIT)
+-For normal people and small taurs between 0.8 and 1.25. (default rate)
+-For taurs and big people between 1.2 and 1.4.
+-For big taurs between 1.3 and 1.5.
+-Move speed delay is now " 1 - Size / 3 ". (0.66 to -0.66) Tiny leg? Big leg?
+-Unarmed melee damage scales now " ( Rand(0-9) + Special ) * Size / 3 ". (0.33x - 1.66x. Max base damage 3 - 15.) Tiny fist? Big fist?
+-PREPARE YOUR TOOLS KITCHEN MAN.
+-YOUR JOB IS TO HAPPEN BEFORE THE WHOLE CREW IS ATE.
+-Relax, we're still a vore server. For now. Right?
+
+4th fart, driders and blatant adminbus edition. (shame on you dirty enablers) OLD
 -Finished driders after so many months of hardly touching anything at all. Requires taur form same way the nagas do.
 -Restored the race list alphabetical order.
 -Bigass werenerd mob. Please try not to abuse her too much when I'm off. Not that I care, I just don't wanna miss a chance to bear witness if it ever happens lmao.

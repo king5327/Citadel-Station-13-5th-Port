@@ -670,14 +670,16 @@
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !H.dna.species.need_nutrition)
-		var/hunger_rate = HUNGER_FACTOR
+		var/hunger_rate = H.sizeplay_size / 3 * HUNGER_FACTOR // character size multiplier tiny=.33 normal=1 huge=1.66
 		if(H.satiety > 0)
 			H.satiety--
 		if(H.satiety < 0)
 			H.satiety++
 			if(prob(round(-H.satiety/40)))
 				H.Jitter(5)
-			hunger_rate = 3 * HUNGER_FACTOR
+			hunger_rate = H.sizeplay_size * HUNGER_FACTOR
+		if(H.dna.taur == 1) // taurs kinda gotta eat for 2 bods right?
+			hunger_rate = 1.5 * HUNGER_FACTOR * H.sizeplay_size / 3
 		H.nutrition = max (0, H.nutrition - hunger_rate)
 
 
@@ -689,20 +691,69 @@
 			H.overeatduration -= 2 //doubled the unfat rate
 
 	//metabolism change
-	if(H.nutrition > NUTRITION_LEVEL_FAT)
-		H.metabolism_efficiency = 1
-	else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
-		if(H.metabolism_efficiency != 1.25)
-			H << "<span class='notice'>You feel vigorous.</span>"
-			H.metabolism_efficiency = 1.25
-	else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
-		if(H.metabolism_efficiency != 0.8)
-			H << "<span class='notice'>You feel sluggish.</span>"
-		H.metabolism_efficiency = 0.8
-	else
-		if(H.metabolism_efficiency == 1.25)
-			H << "<span class='notice'>You no longer feel vigorous.</span>"
-		H.metabolism_efficiency = 1
+	if(H.sizeplay_size < 3) // tiny peeps
+		if(H.nutrition > NUTRITION_LEVEL_FAT)
+			H.metabolism_efficiency = 0.8
+		else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
+			if(H.metabolism_efficiency != 1)
+				H << "<span class='notice'>You feel vigorous.</span>"
+				H.metabolism_efficiency = 1
+		else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
+			if(H.metabolism_efficiency != 0.6)
+				H << "<span class='notice'>You feel sluggish.</span>"
+			H.metabolism_efficiency = 0.6
+		else
+			if(H.metabolism_efficiency == 1)
+				H << "<span class='notice'>You no longer feel vigorous.</span>"
+			H.metabolism_efficiency = 0.8
+
+	if(H.sizeplay_size == 3 || H.sizeplay_size < 3 && H.dna.taur == 1) // normal peeps and tiny taurs
+		if(H.nutrition > NUTRITION_LEVEL_FAT)
+			H.metabolism_efficiency = 1
+		else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
+			if(H.metabolism_efficiency != 1.25)
+				H << "<span class='notice'>You feel vigorous.</span>"
+				H.metabolism_efficiency = 1.25
+		else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
+			if(H.metabolism_efficiency != 0.8)
+				H << "<span class='notice'>You feel sluggish.</span>"
+			H.metabolism_efficiency = 0.8
+		else
+			if(H.metabolism_efficiency == 1.25)
+				H << "<span class='notice'>You no longer feel vigorous.</span>"
+			H.metabolism_efficiency = 1
+
+	if(H.sizeplay_size > 3 || H.sizeplay_size == 3 && H.dna.taur == 1) // taurs and big peeps
+		if(H.nutrition > NUTRITION_LEVEL_FAT)
+			H.metabolism_efficiency = 1.2
+		else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
+			if(H.metabolism_efficiency != 1.4)
+				H << "<span class='notice'>You feel vigorous.</span>"
+				H.metabolism_efficiency = 1.4
+		else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
+			if(H.metabolism_efficiency != 1)
+				H << "<span class='notice'>You feel sluggish.</span>"
+			H.metabolism_efficiency = 1
+		else
+			if(H.metabolism_efficiency == 1.4)
+				H << "<span class='notice'>You no longer feel vigorous.</span>"
+			H.metabolism_efficiency = 1.2
+
+	if(H.sizeplay_size > 3 && H.dna.taur == 1) // shit pronto you're quite a big taur
+		if(H.nutrition > NUTRITION_LEVEL_FAT)
+			H.metabolism_efficiency = 1.3
+		else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
+			if(H.metabolism_efficiency != 1.5)
+				H << "<span class='notice'>You feel vigorous.</span>"
+				H.metabolism_efficiency = 1.5
+		else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
+			if(H.metabolism_efficiency != 1.2)
+				H << "<span class='notice'>You feel sluggish.</span>"
+			H.metabolism_efficiency = 1.2
+		else
+			if(H.metabolism_efficiency == 1.5)
+				H << "<span class='notice'>You no longer feel vigorous.</span>"
+			H.metabolism_efficiency = 1.3
 
 	H.updatehealth()
 
@@ -877,7 +928,7 @@
 ////////////////
 
 /datum/species/proc/movement_delay(mob/living/carbon/human/H)
-	. = 0
+	. = 1 - H.sizeplay_size / 3
 
 	if(!(H.status_flags & IGNORESLOWDOWN))
 
@@ -972,7 +1023,7 @@
 				if(H.lying)
 					atk_verb = "kick"
 
-				var/damage = rand(0, 9) + M.dna.species.punchmod
+				var/damage = (rand(0, 9) + M.dna.species.punchmod) * H.sizeplay_size / 3
 
 				if(H.stat==DEAD && damage >= 4)
 					if(H.stomach_contents.len)

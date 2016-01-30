@@ -55,6 +55,8 @@
 		air_update_turf()
 
 /obj/machinery/atmospherics/pipe/return_air()
+	if(!parent)
+		parent = new /datum/pipeline()
 	return parent.air
 
 /obj/machinery/atmospherics/pipe/build_network()
