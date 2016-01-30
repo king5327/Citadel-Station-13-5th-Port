@@ -248,10 +248,22 @@ Des: Removes all infected images from the alien.
 /obj/item/xeno_skull/s
 	name = "alien sentinel skull"
 	icon_state = "skull_s"
+/obj/item/xeno_skull/r
+	name = "alien ravager skull"
+	icon_state = "skull_r"
+	w_class = 4
+/obj/item/xeno_skull/p
+	name = "alien praetorian skull"
+	icon_state = "skull_p"
+	w_class = 4
+/obj/item/xeno_skull/q
+	name = "alien queen skull"
+	icon_state = "skull_q"
+	w_class = 5
 
 /obj/item/xenos_claw
-	name = "alien claw"
-	desc = "The claw of a terrible creature."
+	name = "alien claws"
+	desc = "The claws of a terrible creature."
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "claw"
 	origin_tech = "materials=3"
@@ -278,6 +290,23 @@ Des: Removes all infected images from the alien.
 	origin_tech = "materials=3"
 	w_class = 3
 
+//CRAFTABLES//
+
+/obj/item/weapon/twohanded/spear/xeno
+	name = "xenomorph spear"
+	desc = "A simple metal rod with the sharp end of a xenomorph tail on the end of it. Deceivingly effective."
+	force = 15
+	force_wielded = 22
+	embedded_impact_pain_multiplier = 4
+	icon = 'icons/mob/alien.dmi'
+	icon_state = "spearxeno0"
+	item_state = "spearxeno0"
+
+/obj/item/weapon/twohanded/spear/xeno/update_icon()
+	if(explosive)
+		icon_state = "spearxeno_bomb[wielded]"
+	else
+		icon_state = "spearxeno[wielded]"
 #undef HEAT_DAMAGE_LEVEL_1
 #undef HEAT_DAMAGE_LEVEL_2
 #undef HEAT_DAMAGE_LEVEL_3

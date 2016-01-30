@@ -4,7 +4,7 @@
 	maxHealth = 250
 	health = 250
 	icon_state = "alienp"
-
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 25, /obj/item/stack/sheet/animalhide/xeno = 6, /obj/item/xeno_skull/q = 1, /obj/item/xenos_claw = 2, /obj/item/xenos_tail = 1,)
 
 
 /mob/living/carbon/alien/humanoid/royal/praetorian/New()
@@ -84,5 +84,5 @@
 		var/mob/living/carbon/alien/humanoid/ravager/new_xeno = new (user.loc)
 		user.mind.transfer_to(new_xeno)
 		qdel(user)
-		new_xeno << "<span class='userdanger'>As a ravager, you boast increased health, strength, and your thick exoskeleton rends you resistant to burns; However you lack the ability to lay weeds and pick up facehuggers.</span>"
+		new_xeno << "<span class='userdanger'>As a ravager you boast increased health, strength, and your thick exoskeleton rends you resistant to burns; However you lack the ability to lay weeds and pick up facehuggers.</span>"
 		return 1

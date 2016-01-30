@@ -4,7 +4,7 @@
 	maxHealth = 100
 	health = 100
 	icon_state = "aliend_s"
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1, /obj/item/xeno_skull/d = 1)
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1, /obj/item/xeno_skull/d = 1, /obj/item/xenos_tail = 1, /obj/item/xenos_claw = 1)
 
 /mob/living/carbon/alien/humanoid/drone/New()
 	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/large

@@ -9,7 +9,7 @@
 	ventcrawler = 0
 	pixel_x = -16
 	mob_size = MOB_SIZE_LARGE
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 3)
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 4, /obj/item/xeno_skull/r = 1, /obj/item/xenos_claw = 2, /obj/item/xenos_tail = 1,)
 	pressure_resistance = 200
 	layer = 6
 	unique_name = 0

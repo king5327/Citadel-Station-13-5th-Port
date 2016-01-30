@@ -4,7 +4,7 @@
 	maxHealth = 150
 	health = 150
 	icon_state = "alienh_s"
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1, /obj/item/xeno_skull/h = 1)
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1, /obj/item/xeno_skull/h = 1, /obj/item/xenos_tail = 1, /obj/item/xenos_claw = 1)
 
 /mob/living/carbon/alien/humanoid/hunter/New()
 	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/small
@@ -32,7 +32,7 @@
 			healths.icon_state = "health7"
 
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
-	. = -5	//hunters are sanic, but not super sanic.
+	. -= 0.25	//hunters are sanic, but not super sanic.
 	. += ..()	//but they still need to slow down on stun
 
 
@@ -56,10 +56,9 @@
 	else
 		..()
 
-/mob/living/carbon/alien/humanoid/hunter/MiddleClickOn(atom/A, params)
+/mob/living/carbon/alien/humanoid/hunter/MiddleClickOn(atom/A, params,)
 	face_atom(A)
 	leap_at(A)
-
 
 #define MAX_ALIEN_LEAP_DIST 7
 
@@ -85,7 +84,7 @@
 		leaping = 0
 		update_icons()
 
-/mob/living/carbon/alien/humanoid/hunter/throw_impact(atom/A)
+/mob/living/carbon/alien/humanoid/hunter/throw_impact(atom/A, params)
 
 	if(!leaping)
 		return ..()
@@ -100,7 +99,7 @@
 					blocked = 1
 			if(!blocked)
 				L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
-				L.Weaken(5)
+				L.Weaken(4)
 				sleep(2)//Runtime prevention (infinite bump() calls on hulks)
 				step_towards(src,L)
 

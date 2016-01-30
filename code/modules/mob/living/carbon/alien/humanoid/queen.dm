@@ -157,11 +157,10 @@
 	user.visible_message("<span class='alertalien'>[user] emits an ear-splitting screech!!</span>")
 	for(var/mob/living/M in get_hearers_in_view(4, user))
 		if(ishuman(M))
-			M.adjustEarDamage(0,30)
 			M.confused += 6
-			M.Jitter(rand(5,15))
+			M.Jitter(rand(5,10))
 			M.Weaken(rand(2,3))
-			shake_camera(M, 1, strength=3)
+			shake_camera(M, 3, strength=2)
 		else
 			M << sound('sound/voice/screech.ogg')
 
