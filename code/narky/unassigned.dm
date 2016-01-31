@@ -2110,9 +2110,12 @@ var/list/traitor_test_list = null
 /mob/proc/kpcode_mob_offset()
 	return
 /mob/proc/update_body()
-	if(istype(src,/mob/living/carbon))
+	if(istype(src,/mob/living/carbon/human))
 		//updateappearance(mutcolor_update=0)
 		src.update_body()
+	/*if(istype(src,/mob/living/carbon)) //Endless loop for nonhuman mobs. base proc is /human only so nonhumans would get stuck with this being their only option.
+		//updateappearance(mutcolor_update=0)
+		src.update_body()*/
 
 /mob/living/kpcode_mob_offset()
 	if(istype(src,/mob/living/carbon/human))
