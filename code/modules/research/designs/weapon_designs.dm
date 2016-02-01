@@ -136,7 +136,7 @@
 	materials = list(MAT_METAL = 8000, MAT_SILVER = 2000, MAT_DIAMOND = 1000)
 	build_path = /obj/item/weapon/gun/projectile/automatic/proto
 	category = list("Weapons")
-
+/*
 /datum/design/xray
 	name = "Xray Laser Gun"
 	desc = "Not quite as menacing as it sounds"
@@ -146,7 +146,7 @@
 	materials = list(MAT_GOLD = 5000,MAT_URANIUM = 10000, MAT_METAL = 4000)
 	build_path = /obj/item/weapon/gun/energy/xray
 	category = list("Weapons")
-
+*/
 /datum/design/ioncarbine
 	name = "Ion Carbine"
 	desc = "How to dismantle a cyborg : The gun."

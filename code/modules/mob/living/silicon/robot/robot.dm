@@ -156,7 +156,7 @@
 /mob/living/silicon/robot/proc/pick_module()
 	if(module)
 		return
-	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security", "Pleasure")
+	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security", "Pleasure", "Loader")
 	var/animation_length=0
 	if(module)
 		return
@@ -193,22 +193,25 @@
 
 		if("Pleasure")
 			module = new /obj/item/weapon/robot_module/pleasure(src)
-			hands.icon_state = "service"
-			var/icontype = input("Select an icon!", "Robot", null, null) in list("Male", "Female", "Herm")
+			hands.icon_state = "pleasure"
+			var/icontype = input("Select an icon!", "Robot", null, null) in list("Male", "Female", "Herm", "Xenomorph")
 			switch(icontype)
-				if("Male")
+				if("Female")
 					icon_state = "p_female"
-					animation_length=45
+				//	animation_length=45
 				if("Male")
 					icon_state = "p_male"
-					animation_length=45
+				//	animation_length=45
 				if("Herm")
 					icon_state = "p_herm"
-					animation_length=45
+				//	animation_length=45
+				if("Xenomorph")
+					icon_state = "p_xeno"
+				//	animation_length=45
 				else
 					icon_state = "p_female"
-					animation_length=45
-			modtype = "Pleasure"
+				//	animation_length=45
+			modtype = "p_"
 			feedback_inc("cyborg_pleasure",1)
 
 		if("Miner")
@@ -262,6 +265,14 @@
 			animation_length = 22
 			modtype = "Jan"
 			feedback_inc("cyborg_janitor",1)
+
+		if("Loader")
+			module = new /obj/item/weapon/robot_module/loader(src)
+			hands.icon_state = "loader"
+			icon_state = "loaderborg"
+			animation_length = 29
+			modtype = "Loader"
+			feedback_inc("cyborg_loader",1)
 
 	transform_animation(animation_length)
 	notify_ai(2)
@@ -815,6 +826,16 @@
 				overlays += "eyes-minerborg"
 			if("syndie_bloodhound")
 				overlays += "eyes-syndie_bloodhound"
+			if("p_male")
+				overlays += "eyes-p_male"
+			if("p_female")
+				overlays += "eyes-p_female"
+			if("p_herm")
+				overlays += "eyes-p_herm"
+			if("p_xeno")
+				overlays += "eyes-p_xeno"
+			if("loaderborg")
+				overlays += "eyes-loaderborg"
 			else
 				overlays += "eyes"
 				state_name = "serviceborg"

@@ -6,7 +6,7 @@
 	name = "alien"
 	voice_name = "alien"
 	icon = 'icons/mob/alien.dmi'
-	gender = NEUTER
+	gender = FEMALE
 	dna = null
 	faction = list("alien")
 	ventcrawler = 2
@@ -14,6 +14,7 @@
 	verb_say = "hisses"
 	type_of_meat = /obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno
 	var/nightvision = 1
+
 
 	var/obj/item/weapon/card/id/wear_id = null // Fix for station bounced radios -- Skie
 	var/has_fine_manipulation = 0
@@ -29,6 +30,9 @@
 /mob/living/carbon/alien/New()
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
+
+//	create_dna(src)
+//	dna.initialize_dna()
 
 	internal_organs += new /obj/item/organ/internal/brain/alien
 	internal_organs += new /obj/item/organ/internal/alien/hivenode
@@ -174,6 +178,105 @@ Des: Removes all infected images from the alien.
 /mob/living/carbon/alien/get_standard_pixel_y_offset(lying = 0)
 	return initial(pixel_y)
 
+//SMASHY SMASHY//
+
+/turf/simulated/wall/attack_alien(mob/user)
+	..(user, 1)
+	if(isalienravager(user))
+		if(hardness > 10 && prob(hardness))
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
+			user.do_attack_animation(src)
+			user << text("<span class='notice'>You smash through the wall.</span>")
+			user.say("*roar")
+			dismantle_wall(1)
+
+		else
+			playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
+			user.do_attack_animation(src)
+			user << text("<span class='notice'>You smash into the wall.</span>")
+
+	if(isalienroyal(user))
+		if(hardness > 15 && prob(hardness))
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
+			user.do_attack_animation(src)
+			user << text("<span class='notice'>You smash through the wall.</span>")
+			user.say("*roar")
+			dismantle_wall(1)
+
+		else
+			playsound(src, 'sound/effects/wallbang.ogg', 100, 1)
+			user.do_attack_animation(src)
+			user << text("<span class='notice'>You smash into the wall.</span>")
+
+	else
+		return
+
+
+/obj/structure/falsewall/attack_alien(mob/living/carbon/alien/humanoid/user)
+	..(user, 1)
+	playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
+	user.do_attack_animation(src)
+	user << text("<span class='notice'>You easily smash through and destroy the false wall.</span>")
+	user.say("*roar")
+	qdel(src)
+
+/obj/structure/girder/attack_alien(mob/living/carbon/alien/humanoid/user)
+	..(user, 1)
+	playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
+	user.do_attack_animation(src)
+	user << text("<span class='notice'>You easily smash through and destroy the flimsy girder.</span>")
+	state = GIRDER_DISASSEMBLED
+	user.say("*roar")
+	qdel(src)
+
+//XENO CRAFTING STUFF//
+
+/obj/item/xeno_skull
+	name = "alien skull"
+	desc = "The skull from some unfortunate alien. It's been hollowed out."
+	icon = 'icons/mob/alien.dmi'
+	icon_state = "skull_h"
+	origin_tech = "materials=3"
+	w_class = 3
+
+/obj/item/xeno_skull/h
+	name = "alien hunter skull"
+	icon_state = "skull_h"
+/obj/item/xeno_skull/d
+	name = "alien drone skull"
+	icon_state = "skull_d"
+/obj/item/xeno_skull/s
+	name = "alien sentinel skull"
+	icon_state = "skull_s"
+
+/obj/item/xenos_claw
+	name = "alien claw"
+	desc = "The claw of a terrible creature."
+	icon = 'icons/mob/alien.dmi'
+	icon_state = "claw"
+	origin_tech = "materials=3"
+	force = 10
+	throwforce = 10
+	w_class = 2
+
+/obj/item/xenos_tail
+	name = "alien tail barb"
+	desc = "The sharp end of a xenomorph's tail."
+	icon = 'icons/mob/alien.dmi'
+	icon_state = "tail"
+	origin_tech = "materials=3"
+	force = 10
+	throwforce = 10
+	w_class = 2
+
+/obj/item/stack/sheet/animalhide/xeno
+	name = "alien hide"
+	icon = 'icons/mob/alien.dmi'
+	desc = "The skin of a terrible creature."
+	singular_name = "alien hide piece"
+	icon_state = "hide"
+	origin_tech = "materials=3"
+	w_class = 3
 
 #undef HEAT_DAMAGE_LEVEL_1
 #undef HEAT_DAMAGE_LEVEL_2

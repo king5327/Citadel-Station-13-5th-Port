@@ -20,6 +20,7 @@
 	var/nextstate = null
 	sub_door = 1
 	closingLayer = 3.11
+	layer = 2.69
 
 /obj/machinery/door/firedoor/Bumped(atom/AM)
 	if(p_open || operating)
@@ -319,3 +320,14 @@
 				constructionStep = CONSTRUCTION_GUTTED
 				update_icon()
 				return
+
+/obj/machinery/door/firedoor/attack_alien(mob/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(isalienadult(user))
+		if(!blocked && density)
+			user << text("<span class='notice'>You begin prying open the [src].</span>")
+			playsound(src, 'sound/machines/airlockforced_alien.ogg', 100, 1)
+			sleep(40)
+			if(density && in_range(src, user))
+				open(2)
+	return

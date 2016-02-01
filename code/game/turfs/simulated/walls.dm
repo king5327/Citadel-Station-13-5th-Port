@@ -109,6 +109,8 @@
 		dismantle_wall(1)
 		return
 
+
+
 /turf/simulated/wall/attack_hulk(mob/user)
 	..(user, 1)
 	if(prob(hardness))
@@ -123,11 +125,16 @@
 	return 1
 
 /turf/simulated/wall/attack_hand(mob/user)
-	user.changeNext_move(CLICK_CD_MELEE)
-	user << "<span class='notice'>You push the wall but nothing happens!</span>"
-	playsound(src, 'sound/weapons/Genhit.ogg', 25, 1)
-	src.add_fingerprint(user)
-	..()
+	if (!user.IsAdvancedToolUser())
+		src.add_fingerprint(user)
+		return
+
+	else
+		user.changeNext_move(CLICK_CD_MELEE)
+		user << "<span class='notice'>You push the wall but nothing happens!</span>"
+		playsound(src, 'sound/weapons/Genhit.ogg', 25, 1)
+		src.add_fingerprint(user)
+		..()
 	return
 
 

@@ -1,9 +1,9 @@
 //IMPORTANT: Multiple animate() calls do not stack well, so try to do them all at once if you can.
 /mob/living/carbon/update_transform()
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
-	var/final_pixel_y = pixel_y
 	var/final_dir = dir
 	var/changed = 0
+	var/final_pixel_y = pixel_y
 	if(lying != lying_prev && rotate_on_lying)
 		changed++
 		ntransform.TurnTo(lying_prev,lying)
@@ -23,9 +23,9 @@
 		resize = RESIZE_DEFAULT_SIZE
 
 	if(changed)
+//		src.update_pixel_y()
 		animate(src, transform = ntransform, time = 2, pixel_y = final_pixel_y, dir = final_dir, easing = EASE_IN|EASE_OUT)
 		floating = 0  // If we were without gravity, the bouncing animation got stopped, so we make sure we restart it in next life().
-
 
 /mob/living/carbon
 	var/list/overlays_standing[TOTAL_LAYERS]

@@ -160,11 +160,18 @@
 		playsound(loc, 'sound/effects/Glasshit.ogg', 100, 1)
 
 
-/obj/structure/window/attack_alien(mob/living/user)
-	user.do_attack_animation(src)
-	if(islarva(user)) return
-	attack_generic(user, 15)
-	update_nearby_icons()
+/obj/structure/window/attack_alien(var/mob/living/carbon/alien/user)
+	if(isalienravager(user))
+		user.do_attack_animation(src)
+		attack_generic(user, 35)
+		update_nearby_icons()
+	else if(isalienadult(user))
+		user.do_attack_animation(src)
+		attack_generic(user, 15)
+		update_nearby_icons()
+	else
+		return
+	return
 
 /obj/structure/window/attack_animal(mob/living/user)
 	if(!isanimal(user))

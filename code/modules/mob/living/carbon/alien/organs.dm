@@ -73,6 +73,12 @@
 	max_plasma = 100
 	alien_powers = list(/obj/effect/proc_holder/alien/transfer)
 
+/obj/item/organ/internal/alien/plasmavessel/ravager
+	storedPlasma = 50
+	max_plasma = 100
+	plasma_rate = 5
+	alien_powers = list(/obj/effect/proc_holder/alien/transfer)
+
 /obj/item/organ/internal/alien/plasmavessel/on_life()
 	//If there are alien weeds on the ground then heal if needed or give some plasma
 	if(locate(/obj/structure/alien/weeds) in owner.loc)

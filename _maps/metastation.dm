@@ -18,12 +18,12 @@ z7 = empty space
         #include "map_files\MetaStation\MetaStation.v41HC5.dmm"
         #include "map_files\generic\z2.dmm"
         #include "map_files\generic\z3.dmm"
-        #include "map_files\generic\z4.dmm"
+        #include "map_files\generic\z4sh.dmm"
         #include "map_files\generic\z5new.dmm"
         #include "map_files\generic\z6.dmm"
         #include "map_files\generic\z7.dmm"
 
-        #define MAP_FILE "MetaStation.v41HC4.dmm"
+        #define MAP_FILE "MetaStation.v41HC5.dmm"
         #define MAP_NAME "MetaStation"
 
         #define MAP_TRANSITION_CONFIG	list(MAIN_STATION = CROSSLINKED, CENTCOMM = SELFLOOPING, ABANDONED_SATELLITE = CROSSLINKED, DERELICT = CROSSLINKED, MINING = CROSSLINKED, EMPTY_AREA_1 = CROSSLINKED, EMPTY_AREA_2 = CROSSLINKED)

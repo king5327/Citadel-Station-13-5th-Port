@@ -2,6 +2,7 @@ var/const/SIZEPLAY_TINY=1
 var/const/SIZEPLAY_MICRO=2
 var/const/SIZEPLAY_NORMAL=3
 var/const/SIZEPLAY_MACRO=4
+var/const/SIZEPLAY_HUGE=5
 
 /mob/living
 	var/sizeplay_size=SIZEPLAY_NORMAL
@@ -20,7 +21,7 @@ var/const/SIZEPLAY_MACRO=4
 				else if(newsize>initial(src.sizeplay_size))
 					//src.transform=get_matrix_large()
 					//src.pixel_y=16
-					stable_matrix(get_matrix_large(),16)
+					stable_matrix(get_matrix_large(),8)
 					src.sizeplay_size=newsize
 					return
 				return //Paranoid returns
@@ -38,7 +39,12 @@ var/const/SIZEPLAY_MACRO=4
 			else if(newsize==SIZEPLAY_MACRO)
 				//src.transform=get_matrix_large()
 				//src.pixel_y=16
-				stable_matrix(get_matrix_large(),16)
+				stable_matrix(get_matrix_large(),8)
+				src.sizeplay_size=newsize
+			else if(newsize==SIZEPLAY_HUGE) // Huge should be the largest size
+				// removed these comments
+				// not being used anyway
+				stable_matrix(get_matrix_largest(),16)
 				src.sizeplay_size=newsize
 			else
 				//src.transform=get_matrix_norm()
@@ -56,7 +62,7 @@ var/const/SIZEPLAY_MACRO=4
 		sizeplay_grow()
 			//if(!istype(src,/mob/living/carbon))
 			//	return
-			if(sizeplay_size<SIZEPLAY_MACRO)
+			if(sizeplay_size<SIZEPLAY_HUGE)
 				src.sizeplay_set(sizeplay_size+1)
 				for(var/mob/living/M in src.stomach_contents)
 					M.sizeplay_grow()
@@ -77,9 +83,12 @@ var/const/SIZEPLAY_MACRO=4
 //var/matrix/transform_small=new().Scale(0.5)
 //var/matrix/transform_norm=new()
 //var/matrix/transform_large=new().Scale(2)
-/proc/get_matrix_large()
+/proc/get_matrix_largest()
 	var/matrix/mtrx=new()
 	return mtrx.Scale(2)
+/proc/get_matrix_large()
+	var/matrix/mtrx=new()
+	return mtrx.Scale(1.5)
 /proc/get_matrix_norm()
 	var/matrix/mtrx=new()
 	return mtrx
@@ -175,3 +184,37 @@ var/const/SIZEPLAY_MACRO=4
 	name="growth ray"
 	icon_state = "redtag"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/growthray)
+
+
+///////////////////////
+//PIXEL_Y UPDATE PROC//
+///////////////////////
+/*
+/mob/update_pixel_y(mob/living/user)
+	..()
+	var/final_pixel_y = null
+	var/matrix/mtrx=new()
+	if(mtrx.Scale(0.5))
+		pixel_y = -8
+		final_pixel_y = -8
+		return
+	if(mtrx.Scale(0.7))
+		pixel_y = -4
+		final_pixel_y = -4
+		return
+	if(mtrx.Scale(1))
+		pixel_y = 0
+		final_pixel_y = 0
+		return
+	if(mtrx.Scale(1.5))
+		pixel_y = 8
+		final_pixel_y = 8
+		return
+	if(mtrx.Scale(2))
+		pixel_y = 16
+		final_pixel_y = 16
+		return
+	else
+		pixel_y = 0 //just in case you somehow ended up with some other size we'll put you back to normal
+		return
+*/

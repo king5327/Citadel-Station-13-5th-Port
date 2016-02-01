@@ -97,6 +97,7 @@
 	icon_state = "id"
 	item_state = "card-id"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
+	var/sec_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
 	var/registered_name = null // The name registered_name on the card
 	slot_flags = SLOT_ID
@@ -114,6 +115,8 @@
 	..()
 	if(mining_points)
 		user << "There's [mining_points] mining equipment redemption point\s loaded onto this card."
+	if(sec_points)
+		user << "There's [sec_points] security equipment redemption point\s loaded onto this card."
 
 /obj/item/weapon/card/id/GetAccess()
 	return access

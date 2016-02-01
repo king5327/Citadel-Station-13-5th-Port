@@ -11,6 +11,7 @@ Contains:
  - EVA spacesuit
  - Freedom's spacesuit (freedom from vacuum's oppression)
  - Carp hardsuit
+ - HEV Suit
 */
 
 	//Captain's space suit, not hardsuits because no flashlight!
@@ -301,3 +302,17 @@ Contains:
 /obj/item/clothing/suit/space/hardsuit/ranger/New()
 	jetpack = new /obj/item/weapon/tank/jetpack/suit(src)
 	..()
+
+//HEV//Half-Life 2 suit
+/obj/item/clothing/head/helmet/space/hev
+	name = "HEV Helmet"
+	desc = "Black-Mesa issue Hazardous Environment suit helmet, for protecting that smart brain of yours."
+	icon_state = "hev"
+	item_state = "space"
+
+/obj/item/clothing/suit/space/hev
+	name = "HEV Suit"
+	icon_state = "hev"
+	item_state = "space"
+	desc = "Black-Mesa issue Hazardous Environment suit, for looking cool while you robust aliens with a crowbar."
+	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/internals,/obj/item/device/multitool)

@@ -260,7 +260,7 @@ var/const/VORE_SIZEDIFF_ANY=5
 		//BEGIN REMAINS
 		if(remains.len&&owner.vore_remains_mode&&!(remembered_bans&VORE_EXTRA_REMAINS))
 			var/already_messy=0
-			for(var/obj/effect/decal/remains/vore/alreadybones in owner.loc)
+			for(var/obj/effect/decal/cleanable/remains/vore/alreadybones in owner.loc)
 				already_messy=1
 				break
 			if(!already_messy)
@@ -270,7 +270,7 @@ var/const/VORE_SIZEDIFF_ANY=5
 					if(name_to_bone&&!who_is_bones.Find(name_to_bone))
 						who_is_bones.Add(name_to_bone)
 				//Make bones
-				var/obj/bones=new/obj/effect/decal/remains/vore()
+				var/obj/bones=new/obj/effect/decal/cleanable/remains/vore()
 				bones.loc=owner.loc
 				//Pile 'em up
 				if(remains.len>1)
@@ -295,11 +295,17 @@ var/const/VORE_SIZEDIFF_ANY=5
 		digestion_count=0
 		remembered_bans=0
 		if(!contents.len)return 0
-		for(var/obj/relea in contents)
+		/*for(var/obj/relea in contents) //somehow failed to release prey's gear.
 			place_in_next(relea)
 		for(var/mob/living/relea in contents)
 			//message_admins("[owner.real_name] has released [relea.real_name] from [type]. Code [style].",owner,relea)
-			place_in_next(relea)
+			place_in_next(relea)*/
+		if(owner.stomach_contents.len)
+			for(var/atom/movable/A in owner.stomach_contents)
+				owner.stomach_contents.Remove(A)
+				A.loc = owner.loc
+				if(istype(A, /obj/item/weapon/reagent_containers/food/snacks))
+					qdel(A)
 		//owner.updateappearance()
 		owner.update_body()
 		return 1
@@ -337,13 +343,18 @@ var/const/VORE_SIZEDIFF_ANY=5
 			if(digestion_count&&!live_people)
 				if(extra_info==VORE_EXTRA_FULLTOUR)
 					owner.visible_message("<span class='notice'>[owner] squats down and releases the remains of those inside them.</span>")
+					//I'd add something akin those barf additions here too but I'm p sure you wanna keep it clean lmao
 				else
 					owner.visible_message("<span class='notice'>[owner] hacks and coughs, spewing forth the remains of those inside them.</span>")
+					playsound(owner.loc, 'sound/effects/splat.ogg', 50, 1)
+					owner.loc.add_vomit_floor(src, 1)
 			if(digestion_count&&live_people)
 				if(extra_info==VORE_EXTRA_FULLTOUR)
 					owner.visible_message("<span class='notice'>[owner] squats down and releases those still inside them.</span>")
 				else
 					owner.visible_message("<span class='notice'>[owner] hacks and coughs, spewing forth those that had still remained inside.</span>")
+					playsound(owner.loc, 'sound/effects/splat.ogg', 50, 1)
+					owner.loc.add_vomit_floor(src, 1)
 			if(!digestion_count&&live_people)
 				if(extra_info==VORE_EXTRA_FULLTOUR)
 					owner.visible_message("<span class='notice'>[owner] squats down and releases those inside them.</span>")
@@ -356,8 +367,12 @@ var/const/VORE_SIZEDIFF_ANY=5
 				break
 			if(digestion_count&&!live_people)
 				owner.visible_message("<span class='notice'>[owner] half-keels and gags, spewing forth the remains of those inside them.</span>")
+				playsound(owner.loc, 'sound/effects/splat.ogg', 50, 1)
+				owner.loc.add_vomit_floor(src, 1)
 			if(digestion_count&&live_people)
 				owner.visible_message("<span class='notice'>[owner] half-keels and gags, spewing forth those that had still remained inside.</span>")
+				playsound(owner.loc, 'sound/effects/splat.ogg', 50, 1)
+				owner.loc.add_vomit_floor(src, 1)
 			if(!digestion_count&&live_people)
 				owner.visible_message("<span class='notice'>[owner] half-keels and gags, spewing forth those inside.</span>")
 		else if(source==FLAVOUR_ESCAPE&&prey)
@@ -1230,7 +1245,7 @@ var/const/VORE_SIZEDIFF_ANY=5
 		src.contents.Remove(M)
 		conta.add(M)
 	for(var/obj/item/W in src)
-		if(istype(W, /obj/item/weapon/implant))
+		if(istype(W, /obj/item/weapon/implant || /obj/item/weapon/disk/nuclear || /obj/item/weapon/reagent_containers/food))
 			qdel(W)
 			continue
 		W.layer = initial(W.layer)
@@ -1795,11 +1810,11 @@ var/list/traitor_test_list = null
 		src << "Will not transform people."
 		VO.tf_factor=VORE_TRANSFORM_SPEED_NONE
 		return
-	selection = input("What do you want to turn people into?") in list("No Change", "Human", "Monkey", "Corgi", "Cat", "Chicken", "Cow", "Lizard", "Mouse", "Pug", "Crab", "Fox")
+	selection = input("What do you want to turn people into?") in list("No Change", "Human", "Monkey", "Cat", "Chicken", "Cow", "Lizard", "Mouse", "Crab", "Fox")
 	switch(selection)
 		if("Human")VO.tf_path=/mob/living/carbon/human
 		if("Monkey")VO.tf_path=/mob/living/carbon/monkey
-		//if("Corgi")VO.tf_path=/mob/living/simple_animal/pet/corgi
+		//if("Corgi")VO.tf_path=/mob/living/simple_animal/pet/corgi //abused for the traitor objective too many times, right? ^removed from the list above
 		if("Cat")VO.tf_path=/mob/living/simple_animal/pet/cat
 		if("Chiken")VO.tf_path=/mob/living/simple_animal/chicken
 		if("Cow")VO.tf_path=/mob/living/simple_animal/cow
@@ -2095,13 +2110,13 @@ var/list/traitor_test_list = null
 /mob/proc/kpcode_mob_offset()
 	return
 /mob/proc/update_body()
-	if(istype(src,/mob/living/carbon))
+	if(istype(src,/mob/living/carbon/human))
 		//updateappearance(mutcolor_update=0)
 		src.update_body()
+	/*if(istype(src,/mob/living/carbon)) //Endless loop for nonhuman mobs. base proc is /human only so nonhumans would get stuck with this being their only option.
+		//updateappearance(mutcolor_update=0)
+		src.update_body()*/
 
-	if(istype(src,/mob/living/carbon))
-		//updateappearance(mutcolor_update=0)
-		src.update_body()
 /mob/living/kpcode_mob_offset()
 	if(istype(src,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H=src
@@ -2125,6 +2140,7 @@ var/list/traitor_test_list = null
 
 
 
-/obj/effect/decal/remains/vore
-	desc = "They look like the remains of someone that was digested."
+/obj/effect/decal/cleanable/remains/vore
+	desc = "Looks like someone met a horrible fate getting digested. Gosh how unpleasant. You start thinking about kittens instead." //spicee
+	icon = 'icons/effects/blood.dmi'
 	icon_state = "remainsvore"

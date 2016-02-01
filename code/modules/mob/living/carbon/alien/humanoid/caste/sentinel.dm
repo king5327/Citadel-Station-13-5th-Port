@@ -4,7 +4,7 @@
 	maxHealth = 150
 	health = 150
 	icon_state = "aliens_s"
-
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1, /obj/item/xeno_skull/s = 1)
 
 /mob/living/carbon/alien/humanoid/sentinel/New()
 	internal_organs += new /obj/item/organ/internal/alien/plasmavessel
@@ -36,3 +36,9 @@
 
 /mob/living/carbon/alien/humanoid/sentinel/movement_delay()
 	. = ..()
+
+/mob/living/carbon/alien/humanoid/sentinel/MiddleClickOn(atom/A, params, mob/user)
+	..()
+	var/obj/item/projectile/bullet/neurotoxin/N = new/obj/item/projectile/bullet/neurotoxin(user.loc)
+	N.throw_at(A,spin=0)
+	return

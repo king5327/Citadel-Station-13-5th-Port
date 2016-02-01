@@ -42,7 +42,7 @@
 	var/del_new_on_log = 1				// del's new players if they log before they spawn in
 	var/allow_Metadata = 0				// Metadata is supported.
 	var/popup_admin_pm = 0				//adminPMs to non-admins show in a pop-up 'reply' window when set to 1.
-	var/fps = 10
+	var/fps = 25
 	var/allow_holidays = 0				//toggles whether holiday-specific content should be used
 	var/joblist = 0
 	var/paniclist = 0
@@ -141,8 +141,8 @@
 
 	//Used for modifying movement speed for mobs.
 	//Unversal modifiers
-	var/run_speed = 0
-	var/walk_speed = 0
+	var/run_speed = 1
+	var/walk_speed = 1
 
 	//Mob specific modifiers. NOTE: These will affect different mob types in different ways
 	var/human_delay = 0

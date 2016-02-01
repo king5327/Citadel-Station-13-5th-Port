@@ -277,3 +277,11 @@
 		if(F.on)
 			user.AddLuminosity(-F.brightness_on)
 			SetLuminosity(F.brightness_on)
+
+
+/obj/item/clothing/head/helmet/viking
+	name = "viking helmet"
+	icon_state = "viking"
+	item_state = "viking"
+	desc = "TO VALHALLA!"
+	armor = list(melee = 60, bullet = 60, laser = 50, energy = 30, bomb = 50, bio = 0, rad = 0)

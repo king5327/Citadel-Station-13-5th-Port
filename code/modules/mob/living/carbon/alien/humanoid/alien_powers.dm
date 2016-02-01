@@ -223,7 +223,6 @@ Doesn't work on other aliens/AI.*/
 
 	return 1
 
-
 /obj/effect/proc_holder/alien/resin
 	name = "Secrete Resin"
 	desc = "Secrete tough malleable resin."
@@ -261,8 +260,12 @@ Doesn't work on other aliens/AI.*/
 		for(var/atom/movable/A in user.stomach_contents)
 			user.stomach_contents.Remove(A)
 			A.loc = user.loc
+			if(istype(A, /obj/item/weapon/reagent_containers/food/snacks))
+				qdel(A)
 			A.update_pipe_vision()
 		user.visible_message("<span class='alertealien'>[user] hurls out the contents of their stomach!</span>")
+		playsound(user.loc, 'sound/effects/splat.ogg', 50, 1)
+		user.loc.add_vomit_floor(src, 1)
 	return
 
 /obj/effect/proc_holder/alien/nightvisiontoggle
