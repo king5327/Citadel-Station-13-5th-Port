@@ -32,6 +32,11 @@ Bonus
 			if(5)
 				if (M.reagents.get_reagent_amount("ephedrine") < 10)
 					M.reagents.add_reagent("ephedrine", 10)
+				if(prob(20))
+					M.visible_message("<span class ='danger'>[M] spasms!</span>", "<span class ='danger'>Your hands spasm!</span>")
+					M.drop_r_hand()
+					M.drop_l_hand()
+					M.Jitter(5)
 			else
 				if(prob(SYMPTOM_ACTIVATION_PROB * 5))
 					M << "<span class='notice'>[pick("You feel restless.", "You feel like running laps around the station.")]</span>"

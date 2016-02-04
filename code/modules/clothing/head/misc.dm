@@ -160,7 +160,7 @@
 	item_state = "bearpelt"
 
 /obj/item/clothing/head/xenos
-	name = "xenos helmet"
+	name = "xenos hat"
 	icon_state = "xenos"
 	item_state = "xenos_helm"
 	desc = "A helmet made out of chitinous alien hide."

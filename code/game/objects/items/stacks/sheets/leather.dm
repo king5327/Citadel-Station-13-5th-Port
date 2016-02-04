@@ -52,7 +52,7 @@ var/global/list/datum/stack_recipe/monkey_recipes = list ( \
 
 
 var/global/list/datum/stack_recipe/xeno_recipes = list ( \
-	new/datum/stack_recipe("alien helmet", /obj/item/clothing/head/xenos, 1, on_floor = 1), \
+	new/datum/stack_recipe("alien hat", /obj/item/clothing/head/xenos, 1, on_floor = 1), \
 	new/datum/stack_recipe("alien suit", /obj/item/clothing/suit/xenos, 2, on_floor = 1), \
 	)
 

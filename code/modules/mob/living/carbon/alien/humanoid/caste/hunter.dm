@@ -4,10 +4,14 @@
 	maxHealth = 150
 	health = 150
 	icon_state = "alienh_s"
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5, /obj/item/stack/sheet/animalhide/xeno = 1, /obj/item/xeno_skull/h = 1)
+	butcher_results = list(/obj/item/weapon/xeno_skull/h = 1,
+	/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5,
+	/obj/item/stack/sheet/animalhide/xeno = 1,
+	/obj/item/weapon/xenos_tail = 1,
+	/obj/item/weapon/xenos_claw = 1)
 
 /mob/living/carbon/alien/humanoid/hunter/New()
-	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/small
+	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/small/tiny
 	..()
 
 /mob/living/carbon/alien/humanoid/hunter/handle_hud_icons_health()
@@ -32,8 +36,8 @@
 			healths.icon_state = "health7"
 
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
-	. = -5	//hunters are sanic, but not super sanic.
 	. += ..()	//but they still need to slow down on stun
+	. += 0
 
 
 //Hunter verbs
@@ -56,14 +60,14 @@
 	else
 		..()
 
-/mob/living/carbon/alien/humanoid/hunter/MiddleClickOn(atom/A, params)
+/mob/living/carbon/alien/humanoid/hunter/MiddleClickOn(atom/A, params,)
 	face_atom(A)
 	leap_at(A)
-
 
 #define MAX_ALIEN_LEAP_DIST 7
 
 /mob/living/carbon/alien/humanoid/hunter/proc/leap_at(atom/A)
+	var/plasma_cost = 25
 	if(pounce_cooldown)
 		src << "<span class='alertalien'>You are too fatigued to pounce right now!</span>"
 		return
@@ -78,14 +82,24 @@
 	if(lying)
 		return
 
-	else //Maybe uses plasma in the future, although that wouldn't make any sense...
+	if(getPlasma() < plasma_cost)
+		if(!silent)
+			src << "<span class='noticealien'>Not enough plasma stored.</span>"
+		return
+
+	else
+		adjustPlasma(-plasma_cost)
 		leaping = 1
 		update_icons()
 		throw_at(A,MAX_ALIEN_LEAP_DIST,1, spin=0, diagonals_first = 1)
 		leaping = 0
 		update_icons()
+		leap_on_click = 0
+		pounce_cooldown = !pounce_cooldown
+		spawn(pounce_cooldown_time) //5s by default
+			pounce_cooldown = !pounce_cooldown
 
-/mob/living/carbon/alien/humanoid/hunter/throw_impact(atom/A)
+/mob/living/carbon/alien/humanoid/hunter/throw_impact(atom/A, params)
 
 	if(!leaping)
 		return ..()
@@ -100,14 +114,10 @@
 					blocked = 1
 			if(!blocked)
 				L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
-				L.Weaken(5)
+				L.Weaken(2)
 				sleep(2)//Runtime prevention (infinite bump() calls on hulks)
 				step_towards(src,L)
 
-			toggle_leap(0)
-			pounce_cooldown = !pounce_cooldown
-			spawn(pounce_cooldown_time) //3s by default
-				pounce_cooldown = !pounce_cooldown
 		else if(A.density && !A.CanPass(src))
 			visible_message("<span class ='danger'>[src] smashes into [A]!</span>", "<span class ='alertalien'>[src] smashes into [A]!</span>")
 			weakened = 2

@@ -65,7 +65,7 @@ var/const/ALIEN_AFK_BRACKET = 450 // 45 seconds
 
 
 
-/obj/item/organ/internal/body_egg/alien_embryo/proc/AttemptGrow(gib_on_success = 1)
+/obj/item/organ/internal/body_egg/alien_embryo/proc/AttemptGrow(gib_on_success = 0)
 	if(!owner) return
 	var/list/candidates = get_candidates(ROLE_ALIEN, ALIEN_AFK_BRACKET, "alien candidate")
 	var/client/C = null
@@ -101,7 +101,7 @@ var/const/ALIEN_AFK_BRACKET = 450 // 45 seconds
 		if(gib_on_success)
 			owner.gib()
 		else
-			owner.adjustBruteLoss(40)
+			owner.adjustBruteLoss(400)
 			owner.overlays -= overlay
 		qdel(src)
 
