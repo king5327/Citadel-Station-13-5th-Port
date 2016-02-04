@@ -415,3 +415,21 @@
 	add_module(new /obj/item/stack/sheet/glass/cyborg())
 //	add_module(new /obj/item/stack/sheet/metal/plasteel/cyborg())
 	fix_modules()
+
+/obj/item/weapon/robot_module/loader
+	name = "loader robot module"
+/obj/item/weapon/robot_module/loader/New()
+	..()
+	emag = new /obj/item/borg/stun(src)
+	modules += new /obj/item/weapon/extinguisher(src)
+	modules += new /obj/item/weapon/weldingtool/largetank/cyborg(src)
+	modules += new /obj/item/weapon/screwdriver(src)
+	modules += new /obj/item/weapon/wrench(src)
+	modules += new /obj/item/weapon/crowbar(src)
+	modules += new /obj/item/weapon/wirecutters(src)
+	modules += new /obj/item/device/multitool(src)
+	modules += new /obj/item/device/t_scanner(src)
+	modules += new /obj/item/device/analyzer(src)
+	modules += new /obj/item/weapon/soap/nanotrasen(src)
+
+	fix_modules()

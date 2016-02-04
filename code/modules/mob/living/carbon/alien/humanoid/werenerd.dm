@@ -20,7 +20,7 @@
 	alt_icon = 'icons/mob/werenerdleap.dmi'
 	maxHealth = 500
 	health = 500
-	icon_state = "alienegg"
+	icon_state = "alienegg" //Spook that Iska~
 	faction = list("human")
 	languages = 35
 	dna = null

@@ -310,11 +310,6 @@
 
 				nutrition -= 20
 				adjustToxLoss(-3)
-				if(src.stomach_contents.len)
-					for(var/atom/movable/A in src.stomach_contents)
-						src.stomach_contents.Remove(A)
-						A.loc = src.loc
-
 				// make it so you can only puke so fast
 				lastpuke = 0
 
