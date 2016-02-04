@@ -691,69 +691,20 @@
 			H.overeatduration -= 2 //doubled the unfat rate
 
 	//metabolism change
-	if(H.sizeplay_size < 3) // tiny peeps
-		if(H.nutrition > NUTRITION_LEVEL_FAT)
-			H.metabolism_efficiency = 0.8
-		else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
-			if(H.metabolism_efficiency != 1)
-				H << "<span class='notice'>You feel vigorous.</span>"
-				H.metabolism_efficiency = 1
-		else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
-			if(H.metabolism_efficiency != 0.6)
-				H << "<span class='notice'>You feel sluggish.</span>"
-			H.metabolism_efficiency = 0.6
-		else
-			if(H.metabolism_efficiency == 1)
-				H << "<span class='notice'>You no longer feel vigorous.</span>"
-			H.metabolism_efficiency = 0.8
-
-	if(H.sizeplay_size == 3 || H.sizeplay_size < 3 && H.dna.taur == 1) // normal peeps and tiny taurs
-		if(H.nutrition > NUTRITION_LEVEL_FAT)
-			H.metabolism_efficiency = 1
-		else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
-			if(H.metabolism_efficiency != 1.25)
-				H << "<span class='notice'>You feel vigorous.</span>"
-				H.metabolism_efficiency = 1.25
-		else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
-			if(H.metabolism_efficiency != 0.8)
-				H << "<span class='notice'>You feel sluggish.</span>"
-			H.metabolism_efficiency = 0.8
-		else
-			if(H.metabolism_efficiency == 1.25)
-				H << "<span class='notice'>You no longer feel vigorous.</span>"
-			H.metabolism_efficiency = 1
-
-	if(H.sizeplay_size > 3 || H.sizeplay_size == 3 && H.dna.taur == 1) // taurs and big peeps
-		if(H.nutrition > NUTRITION_LEVEL_FAT)
-			H.metabolism_efficiency = 1.2
-		else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
-			if(H.metabolism_efficiency != 1.4)
-				H << "<span class='notice'>You feel vigorous.</span>"
-				H.metabolism_efficiency = 1.4
-		else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
-			if(H.metabolism_efficiency != 1)
-				H << "<span class='notice'>You feel sluggish.</span>"
-			H.metabolism_efficiency = 1
-		else
-			if(H.metabolism_efficiency == 1.4)
-				H << "<span class='notice'>You no longer feel vigorous.</span>"
-			H.metabolism_efficiency = 1.2
-
-	if(H.sizeplay_size > 3 && H.dna.taur == 1) // shit pronto you're quite a big taur
-		if(H.nutrition > NUTRITION_LEVEL_FAT)
-			H.metabolism_efficiency = 1.3
-		else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
-			if(H.metabolism_efficiency != 1.5)
-				H << "<span class='notice'>You feel vigorous.</span>"
-				H.metabolism_efficiency = 1.5
-		else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
-			if(H.metabolism_efficiency != 1.2)
-				H << "<span class='notice'>You feel sluggish.</span>"
-			H.metabolism_efficiency = 1.2
-		else
-			if(H.metabolism_efficiency == 1.5)
-				H << "<span class='notice'>You no longer feel vigorous.</span>"
-			H.metabolism_efficiency = 1.3
+	if(H.nutrition > NUTRITION_LEVEL_FAT)
+		H.metabolism_efficiency = 1
+	else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
+		if(H.metabolism_efficiency != 1.25)
+			H << "<span class='notice'>You feel vigorous.</span>"
+			H.metabolism_efficiency = 1.25
+	else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
+		if(H.metabolism_efficiency != 0.8)
+			H << "<span class='notice'>You feel sluggish.</span>"
+		H.metabolism_efficiency = 0.8
+	else
+		if(H.metabolism_efficiency == 1.25)
+			H << "<span class='notice'>You no longer feel vigorous.</span>"
+		H.metabolism_efficiency = 1
 
 	H.updatehealth()
 

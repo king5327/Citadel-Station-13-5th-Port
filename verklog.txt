@@ -1,6 +1,15 @@
 The ways a verk has been mangling these files.
 
-Blast number 6. SEVERE CLEANUPS AND MESSUPS.
+7. Just some minor fixes and borg stuff.
+-Removed earlier metabolism tweaks. (Bad behavior with anti-hunger supervirus.)
+-Removed sickness prey puke. (Useless if it already existed.)
+-Made update_body proc on unassigned.dm require /human mob type. (Endless loop and error spam on nonhuman mobs. Base ingame proc referred here is human only.)
+-Loaderborg is back. Now with headlight and hud icon.
+-Fixed pleasureborg eyes and headlights.
+-Such a minor thing I'll just add it here.
+-Fixed character extra colors on sec huds and abductor experimentation thingy. (Now works and doesn't cause error spam.)
+
+Blast number 6. SEVERE CLEANUPS AND MESSUPS. OLD
 -Fixed secret room list on asteroid.dm (Caused error spam at startup.)
 -Fixed return.air flipping shit on pipes.dm (Caused error spam at startup.)
 -Fixed shuttle docking errors on shuttle.dm (Uncommented some stuff. I hope it worked. At least the startup spam is gone most of times.)
