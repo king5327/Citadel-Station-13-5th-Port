@@ -8,8 +8,11 @@
 	mob_size = MOB_SIZE_LARGE
 	layer = 6
 	pressure_resistance = 200 //Because big, stompy xenos should not be blown around like paper.
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 3)
-
+	butcher_results = list(/obj/item/weapon/xeno_skull/q = 1,
+	/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20,
+	/obj/item/stack/sheet/animalhide/xeno = 5,
+	/obj/item/weapon/xenos_tail = 1,
+	/obj/item/weapon/xenos_claw = 2)
 	var/alt_inhands_file = 'icons/mob/alienqueen.dmi'
 
 /mob/living/carbon/alien/humanoid/royal/queen

@@ -2,16 +2,6 @@
 	. = ..()
 	if(!. || !I)
 		return
-	if(r_store)
-		unEquip(r_store, 1)
-	if(l_store)
-		unEquip(l_store, 1)
-	if(I == r_store)
-		r_store = null
-		update_inv_pockets()
-	if(I == l_store)
-		l_store = null
-		update_inv_pockets()
 /mob/living/carbon/alien/humanoid/get_item_by_slot(slot_id)
 	switch(slot_id)
 		if(slot_back)

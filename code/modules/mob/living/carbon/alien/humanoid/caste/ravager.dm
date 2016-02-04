@@ -9,21 +9,23 @@
 	ventcrawler = 0
 	pixel_x = -16
 	mob_size = MOB_SIZE_LARGE
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 4, /obj/item/xeno_skull/r = 1, /obj/item/xenos_claw = 2, /obj/item/xenos_tail = 1,)
+	butcher_results = list(/obj/item/weapon/xeno_skull/r = 1,
+	/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 5,
+	/obj/item/stack/sheet/animalhide/xeno = 3,
+	/obj/item/weapon/xenos_tail = 1,
+	/obj/item/weapon/xenos_claw = 2)
 	pressure_resistance = 200
 	layer = 6
 	unique_name = 0
-/*
+	var/alt_inhands_file = 'icons/mob/alienqueen.dmi'
+
 /mob/living/carbon/alien/humanoid/ravager/movement_delay()
 	. = ..()
 	. += 1
-*/
+
 /mob/living/carbon/alien/humanoid/ravager/New()
-
 	real_name = name
-
 	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/ravager
-	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno(src))
 	..()
 
 /mob/living/carbon/alien/humanoid/ravager/handle_hud_icons_health()
@@ -47,9 +49,9 @@
 		else
 			healths.icon_state = "health7"
 
-/mob/living/carbon/alien/humanoid/ravager/adjustFireLoss(amount) // Resistant to Fire
+/mob/living/carbon/alien/humanoid/ravager/adjustFireLoss(amount)
 	if(amount > 0)
-		..(amount * 0.25) //half normal damage; 1/4 of the double damage it already gets normally
+		..(amount * 0.5) //normal fire damage, 1/2 double damage
 	else
 		..(amount)
 	return

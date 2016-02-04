@@ -16,7 +16,11 @@
 		icon_state = "alien[caste]_unconscious"
 	else if(leap_on_click)
 		icon_state = "alien[caste]_pounce"
-
+	else if(crawling)
+		icon_state = "alien[caste]_crawling"
+		custom_pixel_x_offset = -16
+		drop_r_hand()
+		drop_l_hand()
 	else if(lying || resting || sleeping)
 		icon_state = "alien[caste]_sleep"
 	else if(mob_size == MOB_SIZE_LARGE)
@@ -67,6 +71,32 @@
 		apply_overlay(R_HAND_LAYER)
 
 /mob/living/carbon/alien/humanoid/royal/update_inv_l_hand()
+	..()
+	remove_overlay(L_HAND_LAYER)
+	if(l_hand)
+		var/itm_state = l_hand.item_state
+		if(!itm_state)
+			itm_state = l_hand.icon_state
+
+		var/image/I = image("icon" = alt_inhands_file , "icon_state"="[itm_state][caste]_l", "layer"=-L_HAND_LAYER)
+		overlays_standing[L_HAND_LAYER] = I
+
+		apply_overlay(L_HAND_LAYER)
+
+/mob/living/carbon/alien/humanoid/ravager/update_inv_r_hand()
+	..()
+	remove_overlay(R_HAND_LAYER)
+	if(r_hand)
+		var/itm_state = r_hand.item_state
+		if(!itm_state)
+			itm_state = r_hand.icon_state
+
+		var/image/I = image("icon" = alt_inhands_file , "icon_state"="[itm_state][caste]_r", "layer"=-R_HAND_LAYER)
+		overlays_standing[R_HAND_LAYER] = I
+
+		apply_overlay(R_HAND_LAYER)
+
+/mob/living/carbon/alien/humanoid/ravager/update_inv_l_hand()
 	..()
 	remove_overlay(L_HAND_LAYER)
 	if(l_hand)
