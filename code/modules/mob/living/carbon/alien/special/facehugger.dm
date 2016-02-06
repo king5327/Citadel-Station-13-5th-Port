@@ -2,8 +2,8 @@
 
 //TODO: Make these simple_animals
 
-var/const/MIN_IMPREGNATION_TIME = 200 //time it takes to impregnate someone
-var/const/MAX_IMPREGNATION_TIME = 300
+var/const/MIN_IMPREGNATION_TIME = 500 //time it takes to impregnate someone
+var/const/MAX_IMPREGNATION_TIME = 600
 
 var/const/MIN_ACTIVE_TIME = 200 //time between being dropped and going idle
 var/const/MAX_ACTIVE_TIME = 400
@@ -30,8 +30,12 @@ var/const/MAX_ACTIVE_TIME = 400
 	var/attached = 0
 
 /obj/item/clothing/mask/facehugger/attack_alien(mob/user) //can be picked up by aliens
+	var/mob/living/carbon/alien/humanoid/A
 	if(isalienravager(user)) //can't be picked up by ravagers
 		user << text("<span class='warning'>Your claws are too sharp to safely pick this up.</span>")
+		return
+	if(A.crawling)
+		user << text("<span class='warning'>You can't carry this while crawling!</span>")
 		return
 	else
 		attack_hand(user)

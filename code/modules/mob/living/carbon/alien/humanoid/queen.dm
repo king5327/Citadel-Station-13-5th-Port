@@ -8,8 +8,11 @@
 	mob_size = MOB_SIZE_LARGE
 	layer = 6
 	pressure_resistance = 200 //Because big, stompy xenos should not be blown around like paper.
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20, /obj/item/stack/sheet/animalhide/xeno = 3)
-
+	butcher_results = list(/obj/item/weapon/xeno_skull/q = 1,
+	/obj/item/weapon/reagent_containers/food/snacks/meat/slab/xeno = 20,
+	/obj/item/stack/sheet/animalhide/xeno = 5,
+	/obj/item/weapon/xenos_tail = 1,
+	/obj/item/weapon/xenos_claw = 2)
 	var/alt_inhands_file = 'icons/mob/alienqueen.dmi'
 
 /mob/living/carbon/alien/humanoid/royal/queen
@@ -157,11 +160,10 @@
 	user.visible_message("<span class='alertalien'>[user] emits an ear-splitting screech!!</span>")
 	for(var/mob/living/M in get_hearers_in_view(4, user))
 		if(ishuman(M))
-			M.adjustEarDamage(0,30)
 			M.confused += 6
-			M.Jitter(rand(5,15))
+			M.Jitter(rand(5,10))
 			M.Weaken(rand(2,3))
-			shake_camera(M, 1, strength=3)
+			shake_camera(M, 3, strength=2)
 		else
 			M << sound('sound/voice/screech.ogg')
 

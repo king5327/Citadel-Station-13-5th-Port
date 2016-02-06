@@ -116,7 +116,6 @@ Doesn't work on other aliens/AI.*/
 	else
 		return 0
 	return 1
-
 /obj/effect/proc_holder/alien/transfer
 	name = "Transfer Plasma"
 	desc = "Transfer Plasma to another alien"
@@ -287,6 +286,35 @@ Doesn't work on other aliens/AI.*/
 		user.hud_used.nightvisionicon.icon_state = "nightvision0"
 
 	return 1
+/obj/effect/proc_holder/alien/toggleCrawl
+	name = "Toggle Crawling"
+	desc = "If you're not crawling, start crawling. If you're crawling, stop crawling. Got it? Good."
+	plasma_cost = 0
+	action_icon_state  = "alien_crawl"
+	var/active = 0
+/obj/effect/proc_holder/alien/toggleCrawl/fire(mob/living/carbon/alien/humanoid/user)
+	active = !active
+	if(active)
+		user << "<span class='noticealien'>You get down on all fours, ready to sprint.</span>"
+		user.crawling = 1
+		user.drop_r_hand()
+		user.drop_l_hand()
+		user.icon = 'icons/mob/aliencrawl.dmi'
+		user.custom_pixel_x_offset = -16
+		if(isalienhunter(user))
+			user.icon_state = "alienh_crawling"
+		if(isaliendrone(user))
+			user.icon_state = "aliend_crawling"
+		if(isaliensentinel(user))
+			user.icon_state = "aliens_crawling"
+		else
+			user.icon_state = "[icon_state]_crawling"
+	else
+		user << "<span class='noticealien'>You stand on your hind legs, freeing up your hands.</span>"
+		user.crawling = 0
+		user.icon = 'icons/mob/alien.dmi'
+		user.icon_state = initial(user.icon_state)
+		user.custom_pixel_x_offset = 0
 
 /obj/effect/proc_holder/alien/sneak
 	name = "Sneak"
@@ -298,7 +326,6 @@ Doesn't work on other aliens/AI.*/
 /obj/effect/proc_holder/alien/sneak/fire(mob/living/carbon/alien/humanoid/user)
 	if(!active)
 		user.alpha = 75 //Still easy to see in lit areas with bright tiles, almost invisible on resin.
-		user.sneaking = 1
 		active = 1
 		user << "<span class='noticealien'>You blend into the shadows...</span>"
 	else
