@@ -51,7 +51,8 @@ var/list/preferences_datums = list()
 	"16"=0,
 	"32"=0,
 	"64"=1,
-	"128"=0) //BAAAAD way to do this
+	"128"=0,
+	"256"=2) //BAAAAD way to do this
 	var/character_size="normal"
 	var/be_taur=0
 
