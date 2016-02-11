@@ -34,6 +34,8 @@
 			else
 //				src << "threw alert not in need of update [category] [type] [severity]"
 				return 0
+		else
+			alert = PoolOrNew(type) // Ya moronic double dingus completely forgot to add something for same-category-different-type stuff!
 //		src << "updating alert [category] [type] [severity]"
 	else
 		alert = PoolOrNew(type)

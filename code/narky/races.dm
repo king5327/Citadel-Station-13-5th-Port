@@ -38,6 +38,12 @@ datum
 			tail=1
 			attack_verb = "noms"
 			attack_sound = 'sound/weapons/bite.ogg'
+		anubis
+			name="Anubis"
+			id="anubis"
+			generic="slighy creepy"
+			adjective="cold"
+			attack_verb = "claws"
 		beaver
 			name="beaver"
 			id="beaver"
