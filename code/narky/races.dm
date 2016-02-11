@@ -39,9 +39,10 @@ datum
 			attack_verb = "noms"
 			attack_sound = 'sound/weapons/bite.ogg'
 		anubis
-			name="Anubis"
+			name="anubis"
 			id="anubis"
-			generic="slighy creepy"
+			say_mod = "intones"
+			generic="jackal"
 			adjective="cold"
 			attack_verb = "claws"
 		beaver
@@ -82,6 +83,7 @@ datum
 			generic = "abomination"
 			adjective = "violently fishy"
 			tail=1
+			eyes=0
 			attack_verb = "noms"
 			attack_sound = 'sound/weapons/bite.ogg'
 		corgi
@@ -235,6 +237,7 @@ datum
 			id="moth"
 			generic="insect"
 			adjective="fluttery"
+			eyes=0
 		naga
 			name="naga"
 			id="naga"
@@ -346,6 +349,7 @@ datum
 			tail=1
 			attack_verb = "chomps"
 			attack_sound = 'sound/weapons/bite.ogg'
+			eyes=0
 			//restricted=2 // so that the choice is there whether you want it more snowflakey
 		squirrel
 			name="squirrel"
@@ -482,6 +486,14 @@ datum
 			adjective="little"
 			tail=1
 			attack_verb= "kicks"
+		hylotl
+			name="hylotl"
+			id="hylotl"
+			say_mod = "glubs"
+			generic="amphibian"
+			adjective="fishy"
+			tail=0
+			eyes="jelleyes"
 /*var/list/kpcode_race_list
 
 proc/kpcode_race_genlist()
