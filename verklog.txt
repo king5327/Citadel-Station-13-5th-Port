@@ -1,5 +1,18 @@
 The ways a verk has been mangling these files.
 
+#OCTODONG. Debuffs for biggies and air lag fixes etc.
+-Removed hunger related sizeplay tweaks.
+-Removed sizeplay related negative speed and damage nerfs.
+-Changed atmos N2O canister to a right type. (Roundstart AT offender.)
+-Switched space plating underneath mining outpost disposal outlet and cargo shuttle thrusters to airless plating. (Roundstart AT offenders)
+-Corrected air values at mining outpost conveyor belt end tile and 2 other tiles in the air pump room of the same building. (Roundstart AT offenders.)
+-ROUNSTART AT ISSUES AT ZERO HOLY SHIT I DUN DONE IT!
+-Okay AI sat side transit tube exit seems to have a luck-based chance to cause an AT issue report for reasons unknown.
+-Supermatter Chamber APC now powers the entire room instead of just the radiation collector area. (Gotta be in there now to sabotage the filter power now.)
+-Hunger HUD icon now actually works again! Now goes properly from orange to red instead of another twitchy orange.
+-That double dingus who rewrote the alert code completely forgot about same-category-different-type stuff lmao.
+-Thanks for wasting over 6 hours of my weekend, jackass. :V
+
 7. Just some minor fixes and borg stuff.
 -Removed earlier metabolism tweaks. (Bad behavior with anti-hunger supervirus.)
 -Removed sickness prey puke. (Useless if it already existed.)
