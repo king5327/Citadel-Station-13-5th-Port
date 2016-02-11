@@ -19,8 +19,8 @@
 
 			else
 				if(prob(SYMPTOM_ACTIVATION_PROB * 10))
-					M.say(pick("AEIOU", "John Madden!", "AND HIS NAME IS JOHN CENA!!", "You're a big guy.", "Get out of here, stalker!"))
+					M.say(pick("AEIOU", "John Madden!", "AND HIS NAME IS JOHN CENA!!", "You're a big guy.", "Get out of here, stalker!", "BENIS!", "Raw toast.", "Don't let your memes be dreams!"))
 				if(prob(SYMPTOM_ACTIVATION_PROB * 2))
-					M.adjustBrainLoss(2)
+					M.adjustBrainLoss(5)
 
 	return

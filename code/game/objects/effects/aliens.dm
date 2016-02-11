@@ -95,6 +95,7 @@
 
 /obj/structure/alien/resin/blob_act()
 	health -= 50
+	playsound(src.loc, pick('sound/alien/Effects/resinHit1.ogg', 'sound/alien/Effects/resinHit2.ogg', 'sound/alien/Effects/resinHit3.ogg'), 100, 1)
 	healthcheck()
 
 
@@ -106,7 +107,7 @@
 	else
 		var/obj/O = AM
 		tforce = O.throwforce
-	playsound(loc, 'sound/effects/attackblob.ogg', 100, 1)
+	playsound(src.loc, pick('sound/alien/Effects/resinHit1.ogg', 'sound/alien/Effects/resinHit2.ogg', 'sound/alien/Effects/resinHit3.ogg'), 100, 1)
 	health -= tforce
 	healthcheck()
 
@@ -127,7 +128,7 @@
 	if(islarva(user))
 		return
 	user.visible_message("<span class='danger'>[user] claws at the resin!</span>")
-	playsound(loc, 'sound/effects/attackblob.ogg', 100, 1)
+	playsound(src.loc, pick('sound/alien/Effects/resinHit1.ogg', 'sound/alien/Effects/resinHit2.ogg', 'sound/alien/Effects/resinHit3.ogg'), 100, 1)
 	health -= 50
 	if(health <= 0)
 		user.visible_message("<span class='danger'>[user] slices the [name] apart!</span>")
@@ -137,7 +138,7 @@
 /obj/structure/alien/resin/attackby(obj/item/I, mob/living/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
 	health -= I.force
-	playsound(loc, 'sound/effects/attackblob.ogg', 100, 1)
+	playsound(src.loc, pick('sound/alien/Effects/resinHit1.ogg', 'sound/alien/Effects/resinHit2.ogg', 'sound/alien/Effects/resinHit3.ogg'), 100, 1)
 	healthcheck()
 	..()
 
@@ -327,7 +328,7 @@
 		switch(status)
 			if(BURST)
 				user << "<span class='notice'>You clear the hatched egg.</span>"
-				playsound(loc, 'sound/effects/attackblob.ogg', 100, 1)
+				playsound(src.loc, pick('sound/alien/Effects/resinHit1.ogg', 'sound/alien/Effects/resinHit2.ogg', 'sound/alien/Effects/resinHit3.ogg'), 100, 1)
 				qdel(src)
 				return
 			if(GROWING)
@@ -355,6 +356,7 @@
 		icon_state = "egg_hatched"
 		flick("egg_opening", src)
 		status = BURSTING
+		playsound(src.loc, pick('sound/alien/Effects/hatch1.ogg', 'sound/alien/Effects/hatch2.ogg', 'sound/alien/Effects/hatch3.ogg', 'sound/alien/Effects/hatch4.ogg'), 100, 1)
 		spawn(15)
 			status = BURST
 			var/obj/item/clothing/mask/facehugger/child = GetFacehugger()
