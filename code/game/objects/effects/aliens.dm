@@ -356,7 +356,7 @@
 		icon_state = "egg_hatched"
 		flick("egg_opening", src)
 		status = BURSTING
-		playsound(src.loc, pick('sound/alien/Effects/hatch1.ogg', 'sound/alien/Effects/hatch2.ogg', 'sound/alien/Effects/hatch3.ogg', 'sound/alien/Effects/hatch4.ogg'), 100, 1)
+		playsound(src.loc, pick('sound/alien/Effects/hatch1.ogg', 'sound/alien/Effects/hatch2.ogg', 'sound/alien/Effects/hatch3.ogg', 'sound/alien/Effects/hatch4.ogg'), 200, 1)
 		spawn(15)
 			status = BURST
 			var/obj/item/clothing/mask/facehugger/child = GetFacehugger()
