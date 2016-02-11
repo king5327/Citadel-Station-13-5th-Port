@@ -171,6 +171,7 @@
 /obj/structure/alien/weeds/New(pos, node)
 	..()
 	linked_node = node
+	playsound(src.loc, pick('sound/alien/Effects/weeds1.ogg', 'sound/alien/Effects/weeds2.ogg', 'sound/alien/Effects/weeds3.ogg'), 100, 1)
 	if(istype(loc, /turf/space))
 		qdel(src)
 		return
