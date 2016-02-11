@@ -82,6 +82,7 @@
 		user << "There's already an egg here."
 		return 0
 	user.visible_message("<span class='alertalien'>[user] has laid an egg!</span>")
+	playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
 	new /obj/structure/alien/egg(user.loc)
 	return 1
 
