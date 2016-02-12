@@ -39,9 +39,10 @@ datum
 			attack_verb = "noms"
 			attack_sound = 'sound/weapons/bite.ogg'
 		anubis
-			name="Anubis"
+			name="anubis"
 			id="anubis"
-			generic="slighy creepy"
+			say_mod = "intones"
+			generic="jackal"
 			adjective="cold"
 			attack_verb = "claws"
 		beaver
@@ -53,7 +54,7 @@ datum
 			tail=1
 			attack_verb = "tailslaps"
 			attack_sound = 'sound/items/dodgeball.ogg'
-		beholder
+		/*beholder // commented out until I fix up the sprites -- Iska
 			name="beholder"
 			id="beholder"
 			say_mod = "jibbers"
@@ -63,6 +64,7 @@ datum
 			attack_verb = "gazes balefully"
 			attack_sound = 'sound/magic/MM_Hit.ogg' // MAGIC MISSILE! MAGIC MISSILE!
 			restricted=1
+			*/
 		boar
 			name="boar"
 			id="boar"
@@ -81,6 +83,7 @@ datum
 			generic = "abomination"
 			adjective = "violently fishy"
 			tail=1
+			eyes=0
 			attack_verb = "noms"
 			attack_sound = 'sound/weapons/bite.ogg'
 		corgi
@@ -159,6 +162,7 @@ datum
 			name="gremlin"
 			id="gremlin"
 			generic="creature"
+			tail=1
 		hawk
 			name="hawk"
 			id="hawk"
@@ -233,6 +237,7 @@ datum
 			id="moth"
 			generic="insect"
 			adjective="fluttery"
+			eyes=0
 		naga
 			name="naga"
 			id="naga"
@@ -296,7 +301,7 @@ datum
 			name="kangaroo rat"
 			id="roorat"
 			generic="roorat"
-			adjective="bouncy rat"
+			adjective="bouncy"
 			tail=1
 		seaslug
 			name="sea slug"
@@ -344,6 +349,7 @@ datum
 			tail=1
 			attack_verb = "chomps"
 			attack_sound = 'sound/weapons/bite.ogg'
+			eyes=0
 			//restricted=2 // so that the choice is there whether you want it more snowflakey
 		squirrel
 			name="squirrel"
@@ -464,6 +470,30 @@ datum
 			generic="beverage"
 			adjective="refreshing"
 			restricted=2 // don't want half the station to be running around with soda cans on their heads
+		cutebold
+			name="cutebold"
+			id="cutebold"
+			say_mod = "yips"
+			generic = "kobo"
+			adjective = "cute"
+			tail=1
+			attack_verb = "noms"
+			attack_sound = 'sound/weapons/bite.ogg'
+		pony // of the "my little" variety
+			name="pony"
+			id="pony"
+			generic="equine"
+			adjective="little"
+			tail=1
+			attack_verb= "kicks"
+		hylotl
+			name="hylotl"
+			id="hylotl"
+			say_mod = "glubs"
+			generic="amphibian"
+			adjective="fishy"
+			tail=0
+			eyes="jelleyes"
 /*var/list/kpcode_race_list
 
 proc/kpcode_race_genlist()
