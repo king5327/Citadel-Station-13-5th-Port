@@ -83,16 +83,16 @@ var/const/VORE_SIZEDIFF_ANY=5
 	VORE_METHOD_INSOLE=VORE_SIZEDIFF_TINY,
 	VORE_METHOD_ABSORB=VORE_SIZEDIFF_DISABLED)*/
 
-	var/list/vore_ability=list(
-	"1"=2,
-	"2"=0,
-	"4"=0,
-	"8"=0,
-	"16"=0,
-	"32"=0,
-	"64"=1,
-	"128"=0,
-	"256"=1) //BAAAAD way to do this
+	var/list/vore_ability=list( // This list is the initial list of what size differences people can vore at.
+	"1"=2, // Oral starts at one-size smaller.
+	"2"=0, // Anal starts disabled.
+	"4"=0, // Cock starts disabled.
+	"8"=0, // Unbirth starts disabled.
+	"16"=0, // Breast starts disabled.
+	"32"=0, // Tail starts disabled.
+	"64"=1, // Insole is 2 size differences.
+	"128"=0, // Absorption... isn't a thing.
+	"256"=2) // Insuit is 1 size difference. Previous comment = BAAAAD way to do this.
 
 	var/vore_datums_initialized=0
 	var/datum/vore_organ/stomach/vore_stomach_datum=new()
