@@ -329,6 +329,7 @@ Doesn't work on other aliens/AI.*/
 /obj/effect/proc_holder/alien/sneak/fire(mob/living/carbon/alien/humanoid/user)
 	if(!active)
 		user.alpha = 75 //Still easy to see in lit areas with bright tiles, almost invisible on resin.
+		user.sneaking = 1
 		active = 1
 		user << "<span class='noticealien'>You blend into the shadows...</span>"
 	else
