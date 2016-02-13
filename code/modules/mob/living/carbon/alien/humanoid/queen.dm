@@ -67,7 +67,8 @@
 /mob/living/carbon/alien/humanoid/royal/queen/movement_delay()
 	. = ..()
 	. += 4
-
+	if(locate(/obj/structure/alien/weeds) in src.loc)
+		. += -1
 
 //Queen verbs
 /obj/effect/proc_holder/alien/lay_egg

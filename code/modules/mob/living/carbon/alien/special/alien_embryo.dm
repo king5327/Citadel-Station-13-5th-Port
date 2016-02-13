@@ -82,14 +82,13 @@ var/const/ALIEN_AFK_BRACKET = 450 // 45 seconds
 	else
 		stage = 4 // Let's try again later.
 		return
-	playsound(src.loc, 'sound/alien/Effects/burst.ogg', 100, 1, 1, 1)
+	playsound(src.loc, 'sound/alien/Effects/burst.ogg', 100, 0, 5)
 	var/overlay = image('icons/mob/alien.dmi', loc = owner, icon_state = "burst_lie")
 	owner.overlays += overlay
 
 	var/atom/xeno_loc = get_turf(owner)
 	var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
 	new_xeno.key = C.key
-	playsound(new_xeno.loc, 'sound/alien/Effects/burst.ogg', 100, 1, 1, 1)
 //	new_xeno << sound('sound/voice/hiss5.ogg',0,0,0,100)	//To get the player's attention
 	new_xeno.canmove = 0 //so we don't move during the bursting animation
 	new_xeno.notransform = 1

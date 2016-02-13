@@ -114,7 +114,7 @@
 				var/mob/living/carbon/human/H = A
 				if(H.check_shields(90, "the [name]", src, 1))
 					blocked = 1
-			if(!blocked)
+			if(!blocked && L.paralysis < 2)
 				L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
 				playsound(L.loc, pick('sound/alien/Effects/step1.ogg', 'sound/alien/Effects/step2.ogg', 'sound/alien/Effects/step3.ogg', 'sound/alien/Effects/step4.ogg', 'sound/alien/Effects/step5.ogg', 'sound/alien/Effects/step6.ogg', 'sound/alien/Effects/step7.ogg'), 300, 0, 4)
 				L.Weaken(3)

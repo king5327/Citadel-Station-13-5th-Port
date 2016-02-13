@@ -22,6 +22,9 @@
 			if(!muzzled)
 				message = "<span class='name'>[src]</span> hisses."
 				m_type = 2
+		if ("hurt")
+			message = "<span class='name'>[src]</span> screeches and recoils in pain!"
+			m_type = 2
 
 		if ("me")
 			..()
@@ -29,10 +32,6 @@
 
 		if ("moan","moans")
 			message = "<span class='name'>[src]</span> moans!"
-			m_type = 2
-
-		if ("hurt")
-			message = "<span class='name'>[src]</span> screeches and recoils in pain!"
 			m_type = 2
 
 		if ("roar","roars")
@@ -84,19 +83,19 @@
 			playsound(src.loc, 'sound/voice/hiss6.ogg', 80, 0, 16)
 
 		if (act == "screech")
-			playsound(src.loc, pick('sound/alien/Voice/screech1.ogg', 'sound/alien/Voice/screech2.ogg', 'sound/alien/Voice/screech3.ogg', 'sound/alien/Voice/screech4.ogg'), 100, 1, 16)
+			playsound(src.loc, pick('sound/alien/Voice/screech1.ogg', 'sound/alien/Voice/screech2.ogg', 'sound/alien/Voice/screech3.ogg', 'sound/alien/Voice/screech4.ogg'), 100, 0, 16)
 
 		if (act == "hiss")
-			playsound(src.loc, pick('sound/alien/Voice/hiss1.ogg', 'sound/alien/Voice/hiss2.ogg', 'sound/alien/Voice/hiss3.ogg', 'sound/alien/Voice/hiss4.ogg', 'sound/alien/Voice/hiss5.ogg'), 100, 1, 16)
+			playsound(src.loc, pick('sound/alien/Voice/hiss1.ogg', 'sound/alien/Voice/hiss2.ogg', 'sound/alien/Voice/hiss3.ogg', 'sound/alien/Voice/hiss4.ogg', 'sound/alien/Voice/hiss5.ogg'), 100, 0, 16)
 
 		if (act == "growl")
-			playsound(src.loc, pick('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl2.ogg', 'sound/alien/Voice/growl3.ogg', 'sound/alien/Voice/growl4.ogg', 'sound/alien/Voice/growl5.ogg', 'sound/alien/Voice/growl6.ogg', 'sound/alien/Voice/growl7.ogg', 'sound/alien/Voice/growl8.ogg', 'sound/alien/Voice/growl9.ogg', 'sound/alien/Voice/growl10.ogg'), 100, 1, 4)
+			playsound(src.loc, pick('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl2.ogg', 'sound/alien/Voice/growl3.ogg', 'sound/alien/Voice/growl4.ogg', 'sound/alien/Voice/growl5.ogg', 'sound/alien/Voice/growl6.ogg', 'sound/alien/Voice/growl7.ogg', 'sound/alien/Voice/growl8.ogg', 'sound/alien/Voice/growl9.ogg', 'sound/alien/Voice/growl10.ogg'), 100, 0, 4)
 
 		if (act == "gnarl")
 			playsound(src.loc, 'sound/alien/Voice/gnarl1.ogg', 100, 0, 6)
 
 		if (act == "hurt")
-			playsound(src.loc, pick('sound/alien/Voice/hurt1.ogg', 'sound/alien/Voice/hurt2.ogg'), 200, 1, 10)
+			playsound(src.loc, pick('sound/alien/Voice/hurt1.ogg', 'sound/alien/Voice/hurt2.ogg'), 200, 0, 10)
 
 		if (m_type & 1)
 			visible_message(message)

@@ -8,6 +8,8 @@
 			if (w_uniform)
 				w_uniform.add_fingerprint(M)
 			var/damage = (rand(5,15))
+			if(M.mob_size > 2)
+				damage = (rand(10,25))
 			if(!damage)
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
 				visible_message("<span class='danger'>[M] has lunged at [src]!</span>", \
@@ -15,13 +17,9 @@
 				return 0
 			var/obj/item/organ/limb/affecting = get_organ(ran_zone(M.zone_sel.selecting))
 			var/armor_block = run_armor_check(affecting, "melee","","",10)
-
 			playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
 			visible_message("<span class='danger'>[M] slashes at [src]!</span>", \
 				"<span class='userdanger'>[M] has slashed at [src]!</span>")
-			if (isalienravager(M))
-				damage = (rand(10,25))
-
 			apply_damage(damage, BRUTE, affecting, armor_block)
 
 			if (prob(10))
@@ -33,6 +31,8 @@
 
 		if(M.a_intent == "disarm")
 			var/randn = rand(1, 100)
+			if(M.mob_size > 2)
+				randn = rand(1, 65)
 			if (randn <= 25)
 				playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 				Weaken(2)
