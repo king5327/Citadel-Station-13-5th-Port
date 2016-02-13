@@ -379,19 +379,18 @@
 
 
 /obj/structure/alien/egg/attackby(obj/item/I, mob/user, params)
+	playsound(src.loc, pick('sound/alien/Effects/resinHit1.ogg', 'sound/alien/Effects/resinHit2.ogg', 'sound/alien/Effects/resinHit3.ogg'), 100, 1)
 	if(I.attack_verb.len)
 		visible_message("<span class='danger'>[user] has [pick(I.attack_verb)] [src] with [I]!</span>")
 	else
 		visible_message("<span class='danger'>[user] has attacked [src] with [I]!</span>")
 
-	var/damage = I.force / 4
+	var/damage = I.force
 	if(istype(I, /obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/WT = I
 
 		if(WT.remove_fuel(0, user))
 			damage = 15
-			playsound(loc, 'sound/items/Welder.ogg', 100, 1)
-
 	health -= damage
 	user.changeNext_move(CLICK_CD_MELEE)
 	healthcheck()
