@@ -9,8 +9,8 @@ Names of z-level do not matter, but order does greatly, for instances such as ch
         #include "map_files\DiscStation\DiscStation.dmm"
         #include "map_files\generic\z2.dmm"
         #include "map_files\generic\z3.dmm"
-        #include "map_files\DiscStation\z4.dmm"
-        #include "map_files\generic\z5.dmm"
+        #include "map_files\generic\z4sh.dmm"
+        #include "map_files\generic\z5new.dmm"
         #include "map_files\generic\z6.dmm"
         #include "map_files\generic\z7.dmm"
 
