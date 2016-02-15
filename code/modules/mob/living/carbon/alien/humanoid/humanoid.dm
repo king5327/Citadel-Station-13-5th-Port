@@ -19,7 +19,7 @@
 	. = ..()
 	if(health > 0 && !resting && !sleeping && !paralysis && !sneaking && !leaping && has_gravity(src)) //If you're sneaking you're quiet too.
 		if(footstep > 0 && src.loc == NewLoc)
-			playsound(src.loc, pick('sound/alien/Effects/step1.ogg', 'sound/alien/Effects/step2.ogg', 'sound/alien/Effects/step3.ogg', 'sound/alien/Effects/step4.ogg', 'sound/alien/Effects/step5.ogg', 'sound/alien/Effects/step6.ogg', 'sound/alien/Effects/step7.ogg'), 33, 1, 4)
+			playsound(src.loc, pick('sound/alien/Effects/step1.ogg', 'sound/alien/Effects/step2.ogg', 'sound/alien/Effects/step3.ogg', 'sound/alien/Effects/step4.ogg', 'sound/alien/Effects/step5.ogg', 'sound/alien/Effects/step6.ogg', 'sound/alien/Effects/step7.ogg'), 25, 0, 0)
 			footstep = 0
 		else if(src.loc == NewLoc)
 			footstep++
