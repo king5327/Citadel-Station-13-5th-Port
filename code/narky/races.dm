@@ -54,17 +54,16 @@ datum
 			tail=1
 			attack_verb = "tailslaps"
 			attack_sound = 'sound/items/dodgeball.ogg'
-		/*beholder // commented out until I fix up the sprites -- Iska
+		beholder
 			name="beholder"
 			id="beholder"
 			say_mod = "jibbers"
 			generic="body part"
 			adjective="all-seeing"
 			tail=0
-			attack_verb = "gazes balefully"
+			attack_verb = "visually assaults"
 			attack_sound = 'sound/magic/MM_Hit.ogg' // MAGIC MISSILE! MAGIC MISSILE!
 			restricted=1
-			*/
 		boar
 			name="boar"
 			id="boar"
@@ -637,6 +636,7 @@ var/list/mutant_wings = list(
 	"feathery"="feathery",
 	"moth"="moth",
 	"fairy"="fairy",
+	"tentacle"="tentacle"
 	)
 
 var/list/cock_list = list(
