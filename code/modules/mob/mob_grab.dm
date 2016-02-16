@@ -156,7 +156,7 @@
 		else
 			if(state < GRAB_UPGRADING)
 				if(isalienadult(assailant) && (ishuman(affecting) || ismonkey(affecting)))
-					assailant.visible_message("<span class='danger'>[assailant] starts coiling \his tail at [affecting]!</span>")
+					assailant.visible_message("<span class='danger'>[assailant] starts coiling \his tail...</span>")
 					hud.icon_state = "disarm/kill1"
 					state = GRAB_UPGRADING
 					if(do_after(assailant, UPGRADE_KILL_TIMER, target = affecting))
