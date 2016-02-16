@@ -163,7 +163,7 @@
 	anchored = 1
 	density = 0
 	layer = 2
-	var/health = 15
+	var/health = 10
 	var/obj/structure/alien/weeds/node/linked_node = null
 	var/static/list/weedImageCache
 
@@ -171,6 +171,7 @@
 /obj/structure/alien/weeds/New(pos, node)
 	..()
 	linked_node = node
+	playsound(src.loc, pick('sound/alien/Effects/weeds1.ogg', 'sound/alien/Effects/weeds2.ogg'), 100, 1)
 	if(istype(loc, /turf/space))
 		qdel(src)
 		return
@@ -214,17 +215,17 @@
 
 /obj/structure/alien/weeds/attackby(obj/item/I, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
+	playsound(src.loc, pick('sound/alien/Effects/resinHit1.ogg', 'sound/alien/Effects/resinHit2.ogg', 'sound/alien/Effects/resinHit3.ogg'), 50, 1, 7)
 	if(I.attack_verb.len)
 		visible_message("<span class='danger'>[user] has [pick(I.attack_verb)] [src] with [I]!</span>")
 	else
 		visible_message("<span class='danger'>[user] has attacked [src] with [I]!</span>")
 
-	var/damage = I.force / 4
+	var/damage = I.force
 	if(istype(I, /obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/WT = I
 		if(WT.remove_fuel(0, user))
-			damage = 15
-			playsound(loc, 'sound/items/Welder.ogg', 100, 1)
+			damage = 10
 
 	health -= damage
 	healthcheck()
@@ -356,7 +357,7 @@
 		icon_state = "egg_hatched"
 		flick("egg_opening", src)
 		status = BURSTING
-		playsound(src.loc, pick('sound/alien/Effects/hatch1.ogg', 'sound/alien/Effects/hatch2.ogg', 'sound/alien/Effects/hatch3.ogg', 'sound/alien/Effects/hatch4.ogg'), 100, 1)
+		playsound(src.loc, pick('sound/alien/Effects/hatch1.ogg', 'sound/alien/Effects/hatch2.ogg', 'sound/alien/Effects/hatch3.ogg', 'sound/alien/Effects/hatch4.ogg'), 200, 1)
 		spawn(15)
 			status = BURST
 			var/obj/item/clothing/mask/facehugger/child = GetFacehugger()
@@ -378,19 +379,18 @@
 
 
 /obj/structure/alien/egg/attackby(obj/item/I, mob/user, params)
+	playsound(src.loc, pick('sound/alien/Effects/resinHit1.ogg', 'sound/alien/Effects/resinHit2.ogg', 'sound/alien/Effects/resinHit3.ogg'), 100, 1)
 	if(I.attack_verb.len)
 		visible_message("<span class='danger'>[user] has [pick(I.attack_verb)] [src] with [I]!</span>")
 	else
 		visible_message("<span class='danger'>[user] has attacked [src] with [I]!</span>")
 
-	var/damage = I.force / 4
+	var/damage = I.force
 	if(istype(I, /obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/WT = I
 
 		if(WT.remove_fuel(0, user))
 			damage = 15
-			playsound(loc, 'sound/items/Welder.ogg', 100, 1)
-
 	health -= damage
 	user.changeNext_move(CLICK_CD_MELEE)
 	healthcheck()

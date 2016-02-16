@@ -12,6 +12,8 @@
 
 /mob/living/carbon/alien/humanoid/hunter/New()
 	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/small/tiny
+	AddAbility(new /obj/effect/proc_holder/alien/sneak)
+
 	..()
 
 /mob/living/carbon/alien/humanoid/hunter/handle_hud_icons_health()
@@ -92,6 +94,7 @@
 		leaping = 1
 		update_icons()
 		throw_at(A,MAX_ALIEN_LEAP_DIST,1, spin=0, diagonals_first = 1)
+		playsound(src, pick('sound/alien/Effects/step1.ogg', 'sound/alien/Effects/step2.ogg', 'sound/alien/Effects/step3.ogg', 'sound/alien/Effects/step4.ogg', 'sound/alien/Effects/step5.ogg', 'sound/alien/Effects/step6.ogg', 'sound/alien/Effects/step7.ogg'), 300, 0, 4)
 		leaping = 0
 		update_icons()
 		leap_on_click = 0
@@ -112,11 +115,14 @@
 				var/mob/living/carbon/human/H = A
 				if(H.check_shields(90, "the [name]", src, 1))
 					blocked = 1
-			if(!blocked)
+			if(!blocked && L.paralysis < 2)
 				L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
-				L.Weaken(2)
+				L.Weaken(3)
+				src.canmove = 0
 				sleep(2)//Runtime prevention (infinite bump() calls on hulks)
 				step_towards(src,L)
+				sleep(200)
+				src.canmove = 1
 
 		else if(A.density && !A.CanPass(src))
 			visible_message("<span class ='danger'>[src] smashes into [A]!</span>", "<span class ='alertalien'>[src] smashes into [A]!</span>")

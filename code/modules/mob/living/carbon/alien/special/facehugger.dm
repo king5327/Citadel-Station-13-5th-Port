@@ -30,7 +30,6 @@ var/const/MAX_ACTIVE_TIME = 400
 	var/attached = 0
 
 /obj/item/clothing/mask/facehugger/attack_alien(mob/user) //can be picked up by aliens
-	var/mob/living/carbon/alien/humanoid/A
 	if(isalienravager(user)) //can't be picked up by ravagers
 		user << text("<span class='warning'>Your claws are too sharp to safely pick this up.</span>")
 		return
