@@ -63,7 +63,6 @@ datum
 			tail=0
 			attack_verb = "visually assaults"
 			attack_sound = 'sound/magic/MM_Hit.ogg' // MAGIC MISSILE! MAGIC MISSILE!
-			restricted=1
 		boar
 			name="boar"
 			id="boar"
