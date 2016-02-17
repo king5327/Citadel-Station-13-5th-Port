@@ -92,7 +92,7 @@ Doesn't work on other aliens/AI.*/
 		return 0
 	for(var/mob/O in viewers(user, null))
 		O.show_message(text("<span class='alertalien'>[user] has planted some alien weeds!</span>"), 1)
-		playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
+		playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 50, 1)
 	new/obj/structure/alien/weeds/node(user.loc)
 	return 1
 
@@ -178,7 +178,7 @@ Doesn't work on other aliens/AI.*/
 			return 0
 		new /obj/effect/acid(get_turf(target), target)
 		user.visible_message("<span class='alertalien'>[user] vomits globs of vile stuff all over [target]. It begins to sizzle and melt under the bubbling mess of acid!</span>")
-		playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
+		playsound(target, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
 		return 1
 	else
 		src << "<span class='noticealien'>Target is too far away.</span>"
@@ -329,6 +329,7 @@ Doesn't work on other aliens/AI.*/
 /obj/effect/proc_holder/alien/sneak/fire(mob/living/carbon/alien/humanoid/user)
 	if(!active)
 		user.alpha = 75 //Still easy to see in lit areas with bright tiles, almost invisible on resin.
+		user.sneaking = 1
 		active = 1
 		user << "<span class='noticealien'>You blend into the shadows...</span>"
 	else

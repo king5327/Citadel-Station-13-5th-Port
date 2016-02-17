@@ -29,17 +29,20 @@ In all, this is a lot like the monkey code. /N
 			grabbedby(M)
 
 		else
-			if (health > 0)
-				M.do_attack_animation(src)
-				playsound(loc, 'sound/weapons/bite.ogg', 50, 1, -1)
-				var/damage = 1
-				visible_message("<span class='danger'>[M.name] bites [src]!</span>", \
-						"<span class='userdanger'>[M.name] bites [src]!</span>")
-				adjustBruteLoss(damage)
-				add_logs(M, src, "attacked")
-				updatehealth()
+			if (src.client == M.client) //No more biting yourself by accident.
+				return
 			else
-				M << "<span class='warning'>[name] is too injured for that.</span>"
+				if (health > 0)
+					M.do_attack_animation(src)
+					playsound(loc, 'sound/weapons/bite.ogg', 50, 1, -1)
+					var/damage = 1
+					visible_message("<span class='danger'>[M.name] bites [src]!</span>", \
+							"<span class='userdanger'>[M.name] bites [src]!</span>")
+					adjustBruteLoss(damage)
+					add_logs(M, src, "attacked")
+					updatehealth()
+				else
+					M << "<span class='warning'>[name] is too injured for that.</span>"
 	return
 
 
