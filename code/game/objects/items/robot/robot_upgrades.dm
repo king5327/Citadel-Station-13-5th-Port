@@ -31,8 +31,11 @@
 /obj/item/borg/upgrade/reset/action(mob/living/silicon/robot/R)
 	if(..()) return 0
 	R.uneq_all()
+	R.pixel_x = initial(pixel_x)
 	R.hands.icon_state = "nomod"
+	R.icon = 'icons/mob/robots.dmi'
 	R.icon_state = "robot"
+	R.update_icons()
 	qdel(R.module)
 	R.module = null
 	R.modtype = "robot"

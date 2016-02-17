@@ -18,6 +18,9 @@
 	else if(istype(O, /obj/item/weapon/storage/bag/tray/))
 		var/obj/item/weapon/storage/bag/tray/T = O
 		T.do_quick_empty()
+	else if(istype(O, /obj/item/weapon/storage/bag/borgdelivery/))
+		var/obj/item/weapon/storage/bag/borgdelivery/T = O
+		T.do_quick_empty()
 	if(client)
 		client.screen -= O
 	contents -= O

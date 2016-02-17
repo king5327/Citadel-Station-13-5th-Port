@@ -430,6 +430,36 @@
 	modules += new /obj/item/device/multitool(src)
 	modules += new /obj/item/device/t_scanner(src)
 	modules += new /obj/item/device/analyzer(src)
+	modules += new /obj/item/device/assembly/signaler
 	modules += new /obj/item/weapon/soap/nanotrasen(src)
 
+	fix_modules()
+
+/obj/item/weapon/robot_module/k9
+	name = "Security K-9 Unit module"
+/obj/item/weapon/robot_module/k9/New()
+	..()
+	modules += new /obj/item/weapon/restraints/handcuffs/cable/zipties/cyborg(src)
+	modules += new /obj/item/weapon/dogborg/jaws/big(src)
+	modules += new /obj/item/weapon/dogborg/pounce(src)
+	modules += new /obj/item/clothing/mask/gas/sechailer/cyborg(src)
+	modules += new /obj/item/weapon/soap/tongue(src)
+	modules += new /obj/item/device/analyzer/nose(src)
+	modules += new /obj/item/weapon/storage/bag/borgdelivery(src)
+	modules += new /obj/item/device/assembly/signaler(src)
+	modules += new /obj/item/device/detective_scanner(src)
+	fix_modules()
+
+/obj/item/weapon/robot_module/borgi
+	name = "Borgi module"
+
+/obj/item/weapon/robot_module/borgi/New()
+	..()
+	modules += new /obj/item/weapon/dogborg/jaws/small(src)
+	modules += new /obj/item/weapon/storage/bag/borgdelivery(src)
+	modules += new /obj/item/weapon/soap/tongue(src)
+	modules += new /obj/item/device/healthanalyzer(src)
+	modules += new /obj/item/device/analyzer/nose(src)
+	emag = new /obj/item/weapon/dogborg/pounce(src)
+	emag = new /obj/item/weapon/dogborg/jaws/big(src)
 	fix_modules()
