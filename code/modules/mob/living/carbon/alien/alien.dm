@@ -47,7 +47,7 @@
 /mob/living/carbon/alien/adjustFireLoss(amount) // Weak to Fire
 	if(amount > 0)
 		..(amount * 2)
-	if(amount > 19)
+	if(amount > 19 && health > 0)
 		src.say ("*hurt")
 	else
 		..(amount)
