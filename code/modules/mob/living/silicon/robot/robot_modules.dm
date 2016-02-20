@@ -450,6 +450,7 @@
 	modules += new /obj/item/device/detective_scanner(src)
 	modules += new /obj/item/weapon/gun/energy/disabler/cyborg(src)
 	emag = new /obj/item/weapon/gun/energy/laser/cyborg(src)
+	emag = new /obj/item/weapon/soap/tongue/emag(src)
 	fix_modules()
 
 /obj/item/weapon/robot_module/security/respawn_consumable(mob/living/silicon/robot/R, coeff = 1)
@@ -476,4 +477,5 @@
 	modules += new /obj/item/device/analyzer/nose(src)
 	emag = new /obj/item/weapon/dogborg/pounce(src)
 	emag = new /obj/item/weapon/dogborg/jaws/big(src)
+	emag = new /obj/item/weapon/soap/tongue/emag(src)
 	fix_modules()
