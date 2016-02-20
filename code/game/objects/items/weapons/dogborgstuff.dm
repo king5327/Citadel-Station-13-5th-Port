@@ -167,6 +167,8 @@
 	var/pounce_cooldown = 0
 	var/pounce_cooldown_time = 25
 	var/leap_at
+	var/disabler
+	var/laser
 
 #define MAX_K9_LEAP_DIST 7
 

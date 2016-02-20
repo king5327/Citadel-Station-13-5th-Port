@@ -448,6 +448,20 @@
 	modules += new /obj/item/weapon/storage/bag/borgdelivery(src)
 	modules += new /obj/item/device/assembly/signaler(src)
 	modules += new /obj/item/device/detective_scanner(src)
+	modules += new /obj/item/weapon/gun/energy/disabler/cyborg(src)
+	emag = new /obj/item/weapon/gun/energy/laser/cyborg(src)
+	fix_modules()
+
+/obj/item/weapon/robot_module/security/respawn_consumable(mob/living/silicon/robot/R, coeff = 1)
+	..()
+	var/obj/item/weapon/gun/energy/gun/advtaser/cyborg/T = locate(/obj/item/weapon/gun/energy/gun/advtaser/cyborg) in get_usable_modules()
+	if(T)
+		if(T.power_supply.charge < T.power_supply.maxcharge)
+			var/obj/item/ammo_casing/energy/S = T.ammo_type[T.select]
+			T.power_supply.give(S.e_cost * coeff)
+			T.update_icon()
+		else
+			T.charge_tick = 0
 	fix_modules()
 
 /obj/item/weapon/robot_module/borgi
