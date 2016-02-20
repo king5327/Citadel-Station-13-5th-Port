@@ -11,10 +11,14 @@ K-9. The official robopupdate.
  *Nose/Analyzer/Boop module. Analyzer basic functions, atmos check shows as "sniffing the air", booping people with it shows up as "nuzzling" etc.
  *Synthetic tongue. Can be used like soap to clean up things, custom tongue related action lines, can also be used to imitate Ian's cravings to nibble away at trash items. (Real food is for starving crew. Regenerates 250 cell charge.)
  *Pounce. Functionally similar to xeno hunter pounce. Stuns the target just enough to apply zipties. (Depletes 250 cell charge per use.)
--K-9 equipment: zipties, jaws, pounce, borg hailer, tongue, nose, fetch bag, signaler, forensic scanner.
--Borgi equipment: small jaws, fetch bag, tongue, health analyzer, nose. Emag adds big jaws and pounce.
+ *Emagged tongue. Has syndie soap stats, able to "eat" non-trash items, licking stuns people.
+-K-9 equipment: zipties, jaws, pounce, borg hailer, tongue, nose, fetch bag, signaler, forensic scanner, borg disabler. Emag adds borg laser and stun tongue.
+-Borgi equipment: small jaws, fetch bag, tongue, health analyzer, nose. Emag adds big jaws, stun tongue, and pounce.
 -Added "Robo Kibble" to mech fabricator misc section. "A novelty bowl of assorted mech fabricator byproducts. Mockingly feed this to the sec-dog to help it recharge."
 -Added functions for reverting to default icon file and reverting to default x offset in the borg reset module. (Resetting from K-9 caused temporary invisibility and wonked offset.)
+-Movement states for dogs and the old loader.
+-Added support for shown "inhands" for borg equipped disabler and laser. Only got those icons for K-9 for now.
+-Datacore ID photo thingamajig no longer constipates itself when a player has no special colors set up.
 
 #OCTODONG. Debuffs for biggies and air lag fixes etc.
 -Removed hunger related sizeplay tweaks.
