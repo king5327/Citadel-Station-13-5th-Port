@@ -439,7 +439,7 @@
 	name = "Security K-9 Unit module"
 /obj/item/weapon/robot_module/k9/New()
 	..()
-	modules += new /obj/item/weapon/restraints/handcuffs/cable/zipties/cyborg(src)
+	modules += new /obj/item/weapon/restraints/handcuffs/cable/zipties/cyborg/dog(src)
 	modules += new /obj/item/weapon/dogborg/jaws/big(src)
 	modules += new /obj/item/weapon/dogborg/pounce(src)
 	modules += new /obj/item/clothing/mask/gas/sechailer/cyborg(src)

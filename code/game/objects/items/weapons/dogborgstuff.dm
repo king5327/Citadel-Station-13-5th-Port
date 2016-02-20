@@ -24,6 +24,23 @@
 	hitsound = 'sound/weapons/bite.ogg'
 	attack_verb = list("nibbled", "bit", "gnawed", "chomped", "nommed")
 	w_class = 3
+	sharpness = IS_SHARP
+
+/obj/item/weapon/restraints/handcuffs/cable/zipties/cyborg/dog/attack(mob/living/carbon/C, mob/user)
+	if(isrobot(user))
+		if(!C.handcuffed)
+			playsound(loc, 'sound/weapons/cablecuff.ogg', 30, 1, -2)
+			C.visible_message("<span class='danger'>[user] is trying to put zipties on [C]!</span>", \
+								"<span class='userdanger'>[user] is trying to put zipties on [C]!</span>")
+			if(do_mob(user, C, 30))
+				if(!C.handcuffed)
+					C.handcuffed = new /obj/item/weapon/restraints/handcuffs/cable/zipties/used(C)
+					C.update_inv_handcuffed(0)
+					user << "<span class='notice'>You handcuff [C].</span>"
+					playsound(loc, pick('sound/voice/bgod.ogg', 'sound/voice/biamthelaw.ogg', 'sound/voice/bsecureday.ogg', 'sound/voice/bradio.ogg', 'sound/voice/binsult.ogg', 'sound/voice/bcreep.ogg'), 50, 0)
+					add_logs(user, C, "handcuffed")
+			else
+				user << "<span class='warning'>You fail to handcuff [C]!</span>"
 
 /obj/item/device/analyzer/nose
 	name = "boop module"
