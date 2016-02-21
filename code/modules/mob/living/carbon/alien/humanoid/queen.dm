@@ -67,7 +67,8 @@
 /mob/living/carbon/alien/humanoid/royal/queen/movement_delay()
 	. = ..()
 	. += 4
-
+	if(locate(/obj/structure/alien/weeds) in src.loc)
+		. += -1
 
 //Queen verbs
 /obj/effect/proc_holder/alien/lay_egg
@@ -82,6 +83,7 @@
 		user << "There's already an egg here."
 		return 0
 	user.visible_message("<span class='alertalien'>[user] has laid an egg!</span>")
+	playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
 	new /obj/structure/alien/egg(user.loc)
 	return 1
 
@@ -158,16 +160,14 @@
 
 /obj/effect/proc_holder/alien/royal/queen/screech/fire(mob/living/carbon/alien/humanoid/royal/queen/user)
 	user.visible_message("<span class='alertalien'>[user] emits an ear-splitting screech!!</span>")
+	playsound(user.loc, 'sound/voice/screech.ogg', 200, 0, 64)
 	for(var/mob/living/M in get_hearers_in_view(4, user))
 		if(ishuman(M))
 			M.confused += 6
 			M.Jitter(rand(5,10))
 			M.Weaken(rand(2,3))
 			shake_camera(M, 3, strength=2)
-		else
-			M << sound('sound/voice/screech.ogg')
-
-		if(issilicon(M))
+		else if(issilicon(M))
 			M << sound('sound/weapons/flash.ogg')
 			M.Weaken(rand(2,5))
 	for(var/obj/machinery/light/L in range(7, user))

@@ -5,6 +5,10 @@
 	. += ..()
 	. += config.human_delay
 
+	if(locate(/obj/structure/alien/weeds) in src.loc)
+		. += 2
+
+
 /mob/living/carbon/human/Process_Spacemove(movement_dir = 0)
 
 	if(..())

@@ -252,7 +252,10 @@ Pipelines + Other Objects -> Pipe network
 			user.client.eye = target_move  //Byond only updates the eye every tick, This smooths out the movement
 			if(world.time - user.last_played_vent > VENT_SOUND_DELAY)
 				user.last_played_vent = world.time
-				playsound(src, 'sound/machines/ventcrawl.ogg', 50, 1, -3)
+				if(isalienadult(user))
+					playsound(src, pick('sound/alien/Effects/ventcrawl1.ogg', 'sound/alien/Effects/ventcrawl1.ogg', 'sound/alien/Effects/ventcrawl1.ogg'), 100, 1, 0)
+				else
+					playsound(src, 'sound/machines/ventcrawl.ogg', 50, 1, -3)
 	else
 		if((direction & initialize_directions) || is_type_in_list(src, ventcrawl_machinery) && can_crawl_through()) //if we move in a way the pipe can connect, but doesn't - or we're in a vent
 			user.remove_ventcrawl()

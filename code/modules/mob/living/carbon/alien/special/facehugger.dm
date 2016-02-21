@@ -30,12 +30,8 @@ var/const/MAX_ACTIVE_TIME = 400
 	var/attached = 0
 
 /obj/item/clothing/mask/facehugger/attack_alien(mob/user) //can be picked up by aliens
-	var/mob/living/carbon/alien/humanoid/A
 	if(isalienravager(user)) //can't be picked up by ravagers
 		user << text("<span class='warning'>Your claws are too sharp to safely pick this up.</span>")
-		return
-	if(A.crawling)
-		user << text("<span class='warning'>You can't carry this while crawling!</span>")
 		return
 	else
 		attack_hand(user)
@@ -156,7 +152,7 @@ var/const/MAX_ACTIVE_TIME = 400
 		src.loc = target
 		target.equip_to_slot(src, slot_wear_mask,,0)
 		if(!sterile)
-			M.Paralyse(MAX_IMPREGNATION_TIME/6) //something like 25 ticks = 20 seconds with the default settings
+			M.Paralyse(MAX_IMPREGNATION_TIME/12) //something like 25 ticks = 20 seconds with the default settings
 	else if (iscorgi(M))
 		var/mob/living/simple_animal/pet/dog/corgi/C = M
 		loc = C
