@@ -141,6 +141,8 @@ Please contact me on #coderbus IRC. ~Carnie x
 
 	if(dna&&dna.taur)
 		t_standing+=generate_colour_icon('icons/mob/special/taur.dmi',"[kpcode_cantaur(dna.mutantrace())]_tail",dna.special_color,offset_x=-16,add_layer=-TAIL_LAYER)
+		if(src.vore_womb_datum.has_people()||src.vore_stomach_datum.has_people())
+			t_standing+=generate_colour_icon('icons/mob/special/taur.dmi',"[kpcode_cantaur(dna.mutantrace())]_tail_f",dna.special_color,offset_x=-16,add_layer=-TAIL_LAYER)
 
 	if(t_standing.len)
 		overlays_standing[TAIL_LAYER] =t_standing

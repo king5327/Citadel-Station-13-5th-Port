@@ -19,6 +19,9 @@ K-9. The official robopupdate.
 -Movement states for dogs and the old loader.
 -Added support for shown "inhands" for borg equipped disabler and laser. Only got those icons for K-9 for now.
 -Datacore ID photo thingamajig no longer constipates itself when a player has no special colors set up.
+-Added otie race with 3 color layers.
+-Fixed moth eyes.
+-Fixed naga/drider belly bulge clipping.
 
 #OCTODONG. Debuffs for biggies and air lag fixes etc.
 -Removed hunger related sizeplay tweaks.

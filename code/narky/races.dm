@@ -235,7 +235,7 @@ datum
 			id="moth"
 			generic="insect"
 			adjective="fluttery"
-			eyes=0
+			eyes="motheyes"
 		naga
 			name="naga"
 			id="naga"
