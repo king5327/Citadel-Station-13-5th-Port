@@ -229,23 +229,26 @@
 		s_click(hud)
 		return
 
-	/*if(M == assailant && state >= GRAB_AGGRESSIVE)
-		if( (ishuman(user) && (user.disabilities & FAT) && ismonkey(affecting) ) || ( isalien(user) && iscarbon(affecting) ) )
+	if(M == assailant && state >= GRAB_AGGRESSIVE)
+		if(isalien(user) && iscarbon(affecting))
 			var/mob/living/carbon/attacker = user
 			user.visible_message("<span class='danger'>[user] is attempting to devour [affecting]!</span>")
-			if(istype(user, /mob/living/carbon/alien/humanoid/hunter))
-				if(!do_mob(user, affecting)||!do_after(user, 30)) return
+			if(istype(user, /mob/living/carbon/alien/humanoid))
+				if(!do_mob(user, affecting)||!do_after(user, 100))
+					return
 			else
-				if(!do_mob(user, affecting)||!do_after(user, 100)) return
+				return
 			user.visible_message("<span class='danger'>[user] devours [affecting]!</span>")
 			affecting.loc = user
 			attacker.stomach_contents.Add(affecting)
-			qdel(src)*/
-	if(state >= GRAB_AGGRESSIVE)
+			qdel(src)
+	if(state >= GRAB_AGGRESSIVE && isguardian(affecting))
+		return
+
+	if(state >= GRAB_AGGRESSIVE && !isalien(user))
 		if(istype(M,/mob/living))
 			var/mob/living/predator=M
 			predator.vore_initiate(affecting,assailant)
-
 
 /obj/item/weapon/grab/dropped()
 	qdel(src)
