@@ -250,6 +250,13 @@ datum
 			generic="weasel"
 			adjective="slim"
 			tail=1
+		otusian
+			name="otusian"
+			id="otie"
+			say_mod ="churrs"
+			generic="something unnatural"
+			adjective="chunky"
+			tail=1
 		panther
 			name="panther"
 			id="panther"
