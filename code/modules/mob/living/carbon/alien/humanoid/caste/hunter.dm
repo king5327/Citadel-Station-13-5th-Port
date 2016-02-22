@@ -152,5 +152,27 @@
 	health = 150
 	icon_state = "alienlusty_s"
 	unique_name = 0
-	languages = 35
+	languages = -1
 	has_fine_manipulation = 1
+
+/mob/living/carbon/alien/humanoid/hunter/lusty/New()
+	internal_organs -= /obj/item/organ/internal/alien/plasmavessel/small/tiny
+	internal_organs += /obj/item/organ/internal/alien/plasmavessel/large
+	AddAbility(new /obj/effect/proc_holder/alien/sneak)
+
+	..()
+/mob/living/carbon/alien/humanoid/hunter/lusty/IsAdvancedToolUser()
+	return 1
+
+
+/mob/living/carbon/alien/humanoid/hunter/admin
+	languages = -1
+	has_fine_manipulation = 1
+
+/mob/living/carbon/alien/humanoid/hunter/lusty/New()
+	internal_organs -= /obj/item/organ/internal/alien/plasmavessel/small/tiny
+	internal_organs += /obj/item/organ/internal/alien/plasmavessel/large
+	AddAbility(new /obj/effect/proc_holder/alien/sneak)
+
+/mob/living/carbon/alien/humanoid/hunter/admin/IsAdvancedToolUser()
+	return 1

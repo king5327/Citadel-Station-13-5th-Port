@@ -137,7 +137,7 @@
 				unEquip(l_store)
 
 /mob/living/carbon/alien/humanoid/cuff_resist(obj/item/I)
-	playsound(src, 'sound/voice/hiss5.ogg', 40, 1, 1)  //Alien roars when starting to break free
+	playsound(src, 'sound/alien/Voice/screech1.ogg', 100, 1, 1)  //Alien roars when starting to break free
 	..(I, cuff_break = 1)
 
 /mob/living/carbon/alien/humanoid/get_standard_pixel_y_offset(lying = 0)
