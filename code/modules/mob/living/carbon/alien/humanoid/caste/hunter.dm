@@ -154,5 +154,3 @@
 	unique_name = 0
 	languages = 35
 	has_fine_manipulation = 1
-
-/mob/living/carbon/alien/humanoid/hunter/royale/megaegg
