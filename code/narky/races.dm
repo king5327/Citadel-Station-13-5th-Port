@@ -253,8 +253,8 @@ datum
 		otusian
 			name="otusian"
 			id="otie"
-			say_mod ="churrs"
-			generic="something unnatural"
+			say_mod ="growls"
+			generic="something artificial"
 			adjective="chunky"
 			tail=1
 		panther
