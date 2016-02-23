@@ -42,6 +42,9 @@
 	var/plasma_rate = 10
 
 /obj/item/organ/internal/alien/plasmavessel/sentinel
+	plasma_rate = 20
+	max_plasma = 400
+	storedPlasma = 250
 	alien_powers = list(/obj/effect/proc_holder/alien/transfer)
 
 /obj/item/organ/internal/alien/plasmavessel/prepare_eat()
