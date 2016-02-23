@@ -99,7 +99,7 @@
 "bU" = (/obj/item/weapon/storage/bag/ore{name = "suspicious looking mining satchel"},/turf/simulated/floor/plating/asteroid/airless/cave,/area/mine/explored)
 "bV" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 5},/turf/simulated/floor/plasteel/red/side{dir = 8},/area/mine/laborcamp/security)
 "bW" = (/obj/machinery/atmospherics/pipe/manifold/supply/hidden{dir = 4; initialize_directions = 11},/turf/simulated/floor/plasteel,/area/mine/laborcamp/security)
-"bX" = (/obj/machinery/computer/security{name = "Labor Camp Monitoring"; network = list("Labor")},/turf/simulated/floor/plasteel/red/side{dir = 4},/area/mine/laborcamp/security)
+"bX" = (/obj/machinery/computer/camera_advanced/security{name = "Labor Camp Camera Monitor"; networks = list("Labor")},/turf/simulated/floor/plasteel/red/side{dir = 4},/area/mine/laborcamp/security)
 "bY" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/structure/alien/weeds,/obj/structure/window/reinforced,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
 "bZ" = (/obj/item/weapon/shard{icon_state = "small"},/obj/item/stack/rods,/obj/structure/alien/weeds,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
 "ca" = (/obj/effect/decal/cleanable/xenoblood/xsplatter,/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 4},/obj/item/weapon/shard{icon_state = "medium"},/obj/structure/alien/weeds,/turf/simulated/floor/plasteel/black,/area/mine/abandoned)
@@ -871,4 +871,3 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
-
