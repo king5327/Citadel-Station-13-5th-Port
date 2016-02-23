@@ -38,7 +38,7 @@
 			healths.icon_state = "health7"
 
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
-	. += ..()	//but they still need to slow down on stun
+	. += ..()
 	. += 0
 
 
@@ -70,6 +70,11 @@
 
 /mob/living/carbon/alien/humanoid/hunter/proc/leap_at(atom/A)
 	var/plasma_cost = 25
+	if(istype(A, /mob/living))
+		var/mob/living/L = A
+		if(L.stat > 0)
+			src << "<span class='alertalien'>[A.name] is already knocked down!</span>"
+			return
 	if(pounce_cooldown)
 		src << "<span class='alertalien'>You are too fatigued to pounce right now!</span>"
 		return
@@ -115,7 +120,7 @@
 				var/mob/living/carbon/human/H = A
 				if(H.check_shields(90, "the [name]", src, 1))
 					blocked = 1
-			if(!blocked && L.paralysis < 2)
+			if(!blocked)
 				L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
 				L.Weaken(3)
 				src.canmove = 0
@@ -147,7 +152,26 @@
 	health = 150
 	icon_state = "alienlusty_s"
 	unique_name = 0
-	languages = 35
+	languages = -1
 	has_fine_manipulation = 1
 
-/mob/living/carbon/alien/humanoid/hunter/royale/megaegg
+/mob/living/carbon/alien/humanoid/hunter/lusty/New()
+	internal_organs += /obj/item/organ/internal/alien/plasmavessel/large
+	AddAbility(new /obj/effect/proc_holder/alien/sneak)
+	..()
+
+/mob/living/carbon/alien/humanoid/hunter/lusty/IsAdvancedToolUser()
+	return 1
+
+
+/mob/living/carbon/alien/humanoid/hunter/admin
+	languages = -1
+	has_fine_manipulation = 1
+
+/mob/living/carbon/alien/humanoid/hunter/lusty/New()
+	internal_organs += /obj/item/organ/internal/alien/plasmavessel/large
+	AddAbility(new /obj/effect/proc_holder/alien/sneak)
+	..()
+
+/mob/living/carbon/alien/humanoid/hunter/admin/IsAdvancedToolUser()
+	return 1
