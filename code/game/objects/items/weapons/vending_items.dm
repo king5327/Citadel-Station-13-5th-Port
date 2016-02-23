@@ -76,4 +76,4 @@
 	machine_name = "KinkMate"
 	icon_state = "refill_kink"
 	charges = list(5, 0, 1)// of 12 standard, 0 contraband, 2 premium
-	init_charges = list(4, 0, 1)
+	init_charges = list(5, 0, 1)
