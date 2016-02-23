@@ -96,6 +96,9 @@
 
 	else
 		adjustPlasma(-plasma_cost)
+		src.visible_message(
+			"<span class ='danger'>[src] pounces at [A]!</span>",\
+			"<span class ='danger'>You pounce at [A]</span>")
 		leaping = 1
 		update_icons()
 		throw_at(A,MAX_ALIEN_LEAP_DIST,1, spin=0, diagonals_first = 1)
@@ -105,6 +108,7 @@
 		leap_on_click = 0
 		pounce_cooldown = !pounce_cooldown
 		spawn(pounce_cooldown_time) //5s by default
+			src << "<span class='noticealien'>You're ready to pounce again.</span>"
 			pounce_cooldown = !pounce_cooldown
 
 /mob/living/carbon/alien/humanoid/hunter/throw_impact(atom/A, params)
