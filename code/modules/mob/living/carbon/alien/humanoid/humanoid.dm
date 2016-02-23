@@ -171,3 +171,13 @@ proc/alien_type_present(var/alienpath)
 			continue
 		return 1
 	return 0
+
+/turf/simulated/wall/attack_alien(mob/user)
+	if(isalienadult(user))
+		user.do_attack_animation(src)
+		visible_message("<span class='notice'>[user.name] smashes against [src].</span>")
+		playsound(src, pick('sound/alien/Effects/bang1.ogg', 'sound/alien/Effects/bang2.ogg', 'sound/alien/Effects/bang3.ogg', 'sound/alien/Effects/bang4.ogg', 'sound/alien/Effects/bang5.ogg', 'sound/alien/Effects/bang6.ogg', 'sound/alien/Effects/bang7.ogg', 'sound/alien/Effects/bang8.ogg'), 100, 0, 0)
+		user.changeNext_move(CLICK_CD_MELEE)
+		return
+	else
+		return

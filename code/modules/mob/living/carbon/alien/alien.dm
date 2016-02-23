@@ -218,7 +218,7 @@ Des: Removes all infected images from the alien.
 	playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
 	user.do_attack_animation(src)
 	user << text("<span class='notice'>You easily smash through and destroy the false wall.</span>")
-	user.say("*roar")
+	user.say("*screech")
 	qdel(src)
 
 /obj/structure/girder/attack_alien(mob/living/carbon/alien/humanoid/user)
@@ -227,7 +227,7 @@ Des: Removes all infected images from the alien.
 	user.do_attack_animation(src)
 	user << text("<span class='notice'>You easily smash through and destroy the flimsy girder.</span>")
 	state = GIRDER_DISASSEMBLED
-	user.say("*roar")
+	user.say("*screech")
 	qdel(src)
 */
 //XENO CRAFTING STUFF//
@@ -334,7 +334,7 @@ Des: Removes all infected images from the alien.
 //ARMOR
 /obj/item/clothing/suit/xeno_armor
 	name = "alien armor"
-	desc = "A suit made out of chitinous alien hide."
+	desc = "A suit of armor made out of chitinous alien hide."
 	icon_state = "xenos"
 	item_state = "alien_helm"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
