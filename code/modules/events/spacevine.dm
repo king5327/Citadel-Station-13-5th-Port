@@ -312,6 +312,15 @@
 	var/obj/effect/spacevine_controller/master = null
 	var/list/mutations = list()
 
+/obj/effect/spacevine/attack_alien(mob/living/carbon/alien/humanoid/user)
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.do_attack_animation(src)
+	playsound(src.loc, 'sound/weapons/bladeslice.ogg', 100)
+	for(var/datum/spacevine_mutation/SM in mutations)
+		SM.on_hit(src, user)
+	user_unbuckle_mob(user, user)
+	qdel(src)
+
 /obj/effect/spacevine/Destroy()
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_death(src)

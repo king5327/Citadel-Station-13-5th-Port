@@ -71,3 +71,9 @@
 	icon_state = "refill_clothes"
 	charges = list(33, 2, 2)// of 98 standard, 6 contraband, 6 premium
 	init_charges = list(33, 2, 2)
+
+/obj/item/weapon/vending_refill/kink
+	machine_name = "KinkMate"
+	icon_state = "refill_kink"
+	charges = list(5, 0, 1)// of 12 standard, 0 contraband, 2 premium
+	init_charges = list(5, 0, 1)

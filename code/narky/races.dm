@@ -235,7 +235,7 @@ datum
 			id="moth"
 			generic="insect"
 			adjective="fluttery"
-			eyes=0
+			eyes="motheyes"
 		naga
 			name="naga"
 			id="naga"
@@ -249,6 +249,13 @@ datum
 			say_mod = "squeaks"
 			generic="weasel"
 			adjective="slim"
+			tail=1
+		otusian
+			name="otusian"
+			id="otie"
+			say_mod ="growls"
+			generic="something artificial"
+			adjective="chunky"
 			tail=1
 		panther
 			name="panther"

@@ -156,7 +156,7 @@
 /mob/living/silicon/robot/proc/pick_module()
 	if(module)
 		return
-	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security", "Pleasure", "Loader")
+	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security", "Pleasure", "Loader", "Security K-9 Unit", "Borgi")
 	var/animation_length=0
 	if(module)
 		return
@@ -274,6 +274,23 @@
 			modtype = "Loader"
 			feedback_inc("cyborg_loader",1)
 
+		if("Security K-9 Unit")
+			module = new /obj/item/weapon/robot_module/k9(src)
+			icon = 'icons/mob/widerobot.dmi'
+			icon_state = "k9"
+			hands.icon_state = "k9"
+			animation_length = 37
+			modtype = "Security K-9 Unit"
+			feedback_inc("cyborg_k9",1)
+
+		if("Borgi")
+			module = new /obj/item/weapon/robot_module/borgi(src)
+			hands.icon_state = "borgi"
+			icon_state = "borgi"
+			animation_length = 37
+			modtype = "Borgi"
+			feedback_inc("cyborg_borgi",1)
+
 	transform_animation(animation_length)
 	notify_ai(2)
 	update_icons()
@@ -289,6 +306,10 @@
 	flick(icon_state, src)
 	sleep(animation_length+1)
 	notransform = 0
+	if(icon_state == "k9") //use for wide sprites
+		icon = 'icons/mob/widerobot.dmi'
+		pixel_x = -16
+		return
 	icon = 'icons/mob/robots.dmi'
 
 /mob/living/silicon/robot/proc/updatename()
@@ -836,6 +857,10 @@
 				overlays += "eyes-p_xeno"
 			if("loaderborg")
 				overlays += "eyes-loaderborg"
+			if("k9")
+				overlays += "eyes-k9"
+			if("borgi")
+				overlays += "eyes-borgi"
 			else
 				overlays += "eyes"
 				state_name = "serviceborg"
@@ -853,6 +878,11 @@
 	if(jetpackoverlay)
 		overlays += "minerjetpack"
 	update_fire()
+
+	if(laser == 1)
+		overlays += "laser"
+	if(disabler == 1)
+		overlays += "disabler"
 
 /mob/living/silicon/robot/proc/installed_modules()
 	if(!module)

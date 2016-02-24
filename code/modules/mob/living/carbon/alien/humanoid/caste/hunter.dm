@@ -38,7 +38,7 @@
 			healths.icon_state = "health7"
 
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
-	. += ..()	//but they still need to slow down on stun
+	. += ..()
 	. += 0
 
 
@@ -70,6 +70,11 @@
 
 /mob/living/carbon/alien/humanoid/hunter/proc/leap_at(atom/A)
 	var/plasma_cost = 25
+	if(istype(A, /mob/living))
+		var/mob/living/L = A
+		if(L.stat > 0 || L.weakened || L.paralysis)
+			src << "<span class='alertalien'>[A.name] is already knocked down!</span>"
+			return
 	if(pounce_cooldown)
 		src << "<span class='alertalien'>You are too fatigued to pounce right now!</span>"
 		return
@@ -91,6 +96,9 @@
 
 	else
 		adjustPlasma(-plasma_cost)
+		src.visible_message(
+			"<span class ='danger'>[src] pounces at [A]!</span>",\
+			"<span class ='danger'>You pounce at [A]</span>")
 		leaping = 1
 		update_icons()
 		throw_at(A,MAX_ALIEN_LEAP_DIST,1, spin=0, diagonals_first = 1)
@@ -100,6 +108,7 @@
 		leap_on_click = 0
 		pounce_cooldown = !pounce_cooldown
 		spawn(pounce_cooldown_time) //5s by default
+			src << "<span class='noticealien'>You're ready to pounce again.</span>"
 			pounce_cooldown = !pounce_cooldown
 
 /mob/living/carbon/alien/humanoid/hunter/throw_impact(atom/A, params)
@@ -115,8 +124,13 @@
 				var/mob/living/carbon/human/H = A
 				if(H.check_shields(90, "the [name]", src, 1))
 					blocked = 1
-			if(!blocked && L.paralysis < 2)
-				L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
+				if(weakened)
+					return
+			if(!blocked)
+				L.visible_message(
+					"<span class ='danger'>[src] pounces on [L]!</span>",\
+					"<span class ='userdanger'>[src] pounces on you!</span>",\
+					"<span class ='italics'>You hear a thud...</span>")
 				L.Weaken(3)
 				src.canmove = 0
 				sleep(2)//Runtime prevention (infinite bump() calls on hulks)
@@ -147,7 +161,26 @@
 	health = 150
 	icon_state = "alienlusty_s"
 	unique_name = 0
-	languages = 35
+	languages = -1
 	has_fine_manipulation = 1
 
-/mob/living/carbon/alien/humanoid/hunter/royale/megaegg
+/mob/living/carbon/alien/humanoid/hunter/lusty/New()
+	internal_organs += /obj/item/organ/internal/alien/plasmavessel/large
+	AddAbility(new /obj/effect/proc_holder/alien/sneak)
+	..()
+
+/mob/living/carbon/alien/humanoid/hunter/lusty/IsAdvancedToolUser()
+	return 1
+
+
+/mob/living/carbon/alien/humanoid/hunter/admin
+	languages = -1
+	has_fine_manipulation = 1
+
+/mob/living/carbon/alien/humanoid/hunter/lusty/New()
+	internal_organs += /obj/item/organ/internal/alien/plasmavessel/large
+	AddAbility(new /obj/effect/proc_holder/alien/sneak)
+	..()
+
+/mob/living/carbon/alien/humanoid/hunter/admin/IsAdvancedToolUser()
+	return 1

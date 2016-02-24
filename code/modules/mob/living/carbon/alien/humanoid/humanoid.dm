@@ -10,6 +10,10 @@
 	var/leap_on_click = 0
 	var/pounce_cooldown = 0
 	var/pounce_cooldown_time = 50
+	var/spit_cooldown = 0
+	var/spit_cooldown_time = 150
+	var/charge_cooldown = 0
+	var/charge_cooldown_time = 150
 	var/custom_pixel_x_offset = 0 //for admin fuckery.
 	var/custom_pixel_y_offset = 0
 	var/sneaking = 0 //For sneaky-sneaky mode and appropriate slowdown
@@ -17,7 +21,7 @@
 
 /mob/living/carbon/alien/humanoid/Move(NewLoc, direct)// Footstep sounds
 	. = ..()
-	if(health > 0 && !resting && !sleeping && !paralysis && !sneaking && !leaping && has_gravity(src)) //If you're sneaking you're quiet too.
+	if(health > 0 && !resting && !sleeping && !paralysis && !sneaking && !leaping && has_gravity(src) && !buckled) //If you're sneaking you're quiet too.
 		if(footstep > 0 && src.loc == NewLoc)
 			playsound(src.loc, pick('sound/alien/Effects/step1.ogg', 'sound/alien/Effects/step2.ogg', 'sound/alien/Effects/step3.ogg', 'sound/alien/Effects/step4.ogg', 'sound/alien/Effects/step5.ogg', 'sound/alien/Effects/step6.ogg', 'sound/alien/Effects/step7.ogg'), 25, 0, 0)
 			footstep = 0
@@ -137,7 +141,7 @@
 				unEquip(l_store)
 
 /mob/living/carbon/alien/humanoid/cuff_resist(obj/item/I)
-	playsound(src, 'sound/voice/hiss5.ogg', 40, 1, 1)  //Alien roars when starting to break free
+	playsound(src, 'sound/alien/Voice/screech1.ogg', 100, 1, 1)  //Alien roars when starting to break free
 	..(I, cuff_break = 1)
 
 /mob/living/carbon/alien/humanoid/get_standard_pixel_y_offset(lying = 0)
@@ -171,3 +175,13 @@ proc/alien_type_present(var/alienpath)
 			continue
 		return 1
 	return 0
+
+/turf/simulated/wall/attack_alien(mob/user)
+	if(isalienadult(user))
+		user.do_attack_animation(src)
+		visible_message("<span class='notice'>[user.name] smashes against [src].</span>")
+		playsound(src, pick('sound/alien/Effects/bang1.ogg', 'sound/alien/Effects/bang2.ogg', 'sound/alien/Effects/bang3.ogg', 'sound/alien/Effects/bang4.ogg', 'sound/alien/Effects/bang5.ogg', 'sound/alien/Effects/bang6.ogg', 'sound/alien/Effects/bang7.ogg', 'sound/alien/Effects/bang8.ogg'), 100, 0, 0)
+		user.changeNext_move(CLICK_CD_MELEE)
+		return
+	else
+		return

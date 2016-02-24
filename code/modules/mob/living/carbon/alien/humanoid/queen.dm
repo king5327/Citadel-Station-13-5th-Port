@@ -174,3 +174,41 @@
 		L.on = 1
 		L.broken()
 	return 1
+
+/mob/living/carbon/alien/humanoid/royal/queen/proc/spit_at(atom/A)
+	var/plasma_cost = 75
+	if(paralysis || stat || weakened)
+		src << "<span class ='noticetalien'>You can't spit right now!</span>"
+		return
+
+	if(!src.getorgan(/obj/item/organ/internal/alien/neurotoxin))
+		src << "<span class ='alertalien'>You don't have a neurotoxin gland!</span>"
+		return
+
+	if(spit_cooldown)
+		src << "<span class='noticealien'>You can't spit yet!</span>"
+		return
+
+	if(getPlasma() < plasma_cost)
+		if(!silent)
+			src << "<span class='noticealien'>Not enough plasma stored.</span>"
+		return
+	else
+		adjustPlasma(-plasma_cost)
+		src.visible_message(
+			"<span class ='danger'>[src] spits neurotoxin at [A]!</span>",\
+			"<span class ='danger'>You spit neurotoxin at [A]</span>",\
+			"<span class ='italics'>You hear squelching...</span>")
+		playsound(src.loc, 'sound/alien/Effects/spit1.ogg', 100, 1)
+		var/obj/item/projectile/bullet/neurotoxin/N = new /obj/item/projectile/bullet/neurotoxin(src.loc)
+		N.yo = A.y - src.y
+		N.xo = A.x - src.x
+		N.fire()
+		spit_cooldown = !spit_cooldown
+		spawn(spit_cooldown_time) //15s by default
+			src << "<span class='alertalien'>You're ready to spit again.</span>"
+			spit_cooldown = !spit_cooldown
+
+/mob/living/carbon/alien/humanoid/royal/queen/MiddleClickOn(atom/A, params, mob/user)
+	face_atom(A)
+	spit_at(A)
