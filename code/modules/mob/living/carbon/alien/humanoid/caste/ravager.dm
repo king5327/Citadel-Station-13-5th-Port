@@ -104,7 +104,6 @@
 			L.adjustBruteLoss(chargeDamage)
 			step_away(L,src)
 			step_away(L,src)
-
 		if(istype(A, /obj/mecha))
 			var/obj/mecha/M = A
 			M.visible_message(
@@ -124,13 +123,10 @@
 				playsound(src, pick('sound/alien/Effects/bang1.ogg', 'sound/alien/Effects/bang2.ogg', 'sound/alien/Effects/bang3.ogg', 'sound/alien/Effects/bang4.ogg', 'sound/alien/Effects/bang5.ogg', 'sound/alien/Effects/bang6.ogg', 'sound/alien/Effects/bang7.ogg', 'sound/alien/Effects/bang8.ogg'), 100, 0, 0)
 				step_away(S,src)
 				step_away(S,src)
-			else
-		else if(A.density && !A.CanPass(src))
+		else if(A.density && !A.CanPass(src) && (!istype(A, /obj/structure) || !istype(A, /obj/mecha)))
 			visible_message("<span class ='danger'>[src] smashes into [A]!</span>", "<span class ='alertalien'>[src] smashes into [A]!</span>")
 			playsound(A, pick('sound/alien/Effects/bang1.ogg', 'sound/alien/Effects/bang2.ogg', 'sound/alien/Effects/bang3.ogg', 'sound/alien/Effects/bang4.ogg', 'sound/alien/Effects/bang5.ogg', 'sound/alien/Effects/bang6.ogg', 'sound/alien/Effects/bang7.ogg', 'sound/alien/Effects/bang8.ogg'), 100, 0, 0)
-
 			weakened = 2
-
 		if(charging)
 			charging = 0
 			update_icons()
