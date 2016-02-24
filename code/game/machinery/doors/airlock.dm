@@ -1190,7 +1190,10 @@ About the new airlock wires panel:
 			user << text("<span class='notice'>The airlock is welded, you can't get a good grip!</span>")
 			return
 		else if(!locked && !welded && density)
-			visible_message("<span class='notice'>[user.name] begins prying open [src].</span>","<span class='notice'>You begin prying open [src].</span>")
+			visible_message(
+				"<span class='notice'>[user] begins prying open [src].</span>",\
+				"<span class='notice'>You begin prying open [src].</span>",\
+				"<span class='italics'>You hear prying...</span>")
 			playsound(src, 'sound/machines/airlockforced_alien.ogg', 100, 1)
 			sleep(40)
 			if(!locked && !welded && density && in_range(src, user) && user.stat < 1)

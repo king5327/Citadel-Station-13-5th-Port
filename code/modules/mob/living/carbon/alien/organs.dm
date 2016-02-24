@@ -42,6 +42,9 @@
 	var/plasma_rate = 10
 
 /obj/item/organ/internal/alien/plasmavessel/sentinel
+	plasma_rate = 20
+	max_plasma = 400
+	storedPlasma = 250
 	alien_powers = list(/obj/effect/proc_holder/alien/transfer)
 
 /obj/item/organ/internal/alien/plasmavessel/prepare_eat()
@@ -153,7 +156,7 @@
 	zone = "mouth"
 	slot = "neurotoxingland"
 	origin_tech = "biotech=5;combat=5"
-	alien_powers = list(/obj/effect/proc_holder/alien/neurotoxin)
+	alien_powers = list()//spitting neurotoxin isn't as simple as implanting a gland, silly oomans
 
 
 /obj/item/organ/internal/alien/eggsac
