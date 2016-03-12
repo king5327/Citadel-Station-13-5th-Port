@@ -25,6 +25,37 @@
 	attack_verb = list("nibbled", "bit", "gnawed", "chomped", "nommed")
 	w_class = 3
 	sharpness = IS_SHARP
+	var/emagged = 0
+
+/obj/item/weapon/dogborg/jaws/small/attack_self(mob/user)
+	var/mob/living/silicon/robot.R = user
+	if(R.emagged)
+		emagged = !emagged
+		if(emagged)
+			name = "combat jaws"
+			icon = 'icons/mob/dogborg.dmi'
+			icon_state = "jaws"
+			desc = "The jaws of the law."
+			flags = CONDUCT
+			force = 15
+			throwforce = 8
+			hitsound = 'sound/weapons/bite.ogg'
+			attack_verb = list("chomped", "bit", "ripped", "mauled", "enforced")
+			w_class = 3
+			sharpness = IS_SHARP
+		else
+			name = "puppy jaws"
+			icon = 'icons/mob/dogborg.dmi'
+			icon_state = "smalljaws"
+			desc = "The jaws of a small dog."
+			flags = CONDUCT
+			force = 5
+			throwforce = 2
+			hitsound = 'sound/weapons/bite.ogg'
+			attack_verb = list("nibbled", "bit", "gnawed", "chomped", "nommed")
+			w_class = 3
+			sharpness = IS_SHARP
+		update_icon()
 
 /obj/item/weapon/restraints/handcuffs/cable/zipties/cyborg/dog/attack(mob/living/carbon/C, mob/user)
 	if(isrobot(user))
@@ -123,21 +154,31 @@
 	icon_state = "synthtongue"
 	hitsound = 'sound/effects/attackblob.ogg'
 	cleanspeed = 40
-
-/obj/item/weapon/soap/tongue/emag
-	name = "eRR.syn**DIE tongue"
-	desc = "Your tongue has been upgraded successfully. Congratulations."
-	icon = 'icons/mob/dogborg.dmi'
-	icon_state = "syndietongue"
-	hitsound = 'sound/effects/attackblob.ogg'
-	cleanspeed = 10 //tator soap stat
-	var/stunforce = 5
+	var/emagged = 0
 
 /obj/item/trash/rkibble
 	name = "robo kibble"
 	desc = "A novelty bowl of assorted mech fabricator byproducts. Mockingly feed this to the sec-dog to help it recharge."
 	icon = 'icons/mob/dogborg.dmi'
 	icon_state= "kibble"
+
+/obj/item/weapon/soap/tongue/attack_self(mob/user)
+	var/mob/living/silicon/robot.R = user
+	if(R.emagged)
+		emagged = !emagged
+		if(emagged)
+			name = "eRR.syn**DIE tongue"
+			desc = "Your tongue has been upgraded successfully. Congratulations."
+			icon = 'icons/mob/dogborg.dmi'
+			icon_state = "syndietongue"
+			cleanspeed = 10 //tator soap stat
+		else
+			name = "synthetic tongue"
+			desc = "Useful for slurping mess off the floor before affectionally licking the crew members in the face."
+			icon = 'icons/mob/dogborg.dmi'
+			icon_state = "synthtongue"
+			cleanspeed = 40
+		update_icon()
 
 /obj/item/weapon/soap/tongue/afterattack(atom/target, mob/user, proximity)
 	if(!proximity || !check_allowed_items(target))
@@ -151,45 +192,8 @@
 		if(do_after(user, src.cleanspeed, target = target))
 			user << "<span class='notice'>You finish licking off \the [target.name].</span>"
 			qdel(target)
-	//eh why not. pretend to be that hop's fat puppy around snacks.
-	else if(istype(target,/obj/item/trash)) //only trash tho. you're not real ian and don't need real food and that'd be a pretty dick move to the starving crew.
-		user.visible_message("[user] nibbles away at \the [target.name].", "<span class='warning'>You begin to nibble away at \the [target.name]...</span>")
-		if(do_after(user, src.cleanspeed, target = target))
-			user << "<span class='notice'>You finish off \the [target.name].</span>"
-			qdel(target)
 			var/mob/living/silicon/robot.R = user
-			R.cell.charge = R.cell.charge + 250
-	else if(ishuman(target))
-		user.visible_message("<span class='warning'>\the [user] affectionally licks \the [target]'s face!</span>", "<span class='notice'>You affectionally lick \the [target]'s face!</span>")
-		playsound(src.loc, 'sound/effects/attackblob.ogg', 50, 1)
-		return
-	else if(istype(target, /obj/structure/window))
-		user.visible_message("[user] begins to lick \the [target.name] clean...", "<span class='notice'>You begin to lick \the [target.name] clean...</span>")
-		if(do_after(user, src.cleanspeed, target = target))
-			user << "<span class='notice'>You clean \the [target.name].</span>"
-			target.color = initial(target.color)
-			target.SetOpacity(initial(target.opacity))
-	else
-		user.visible_message("[user] begins to lick \the [target.name] clean...", "<span class='notice'>You begin to lick \the [target.name] clean...</span>")
-		if(do_after(user, src.cleanspeed, target = target))
-			user << "<span class='notice'>You clean \the [target.name].</span>"
-			var/obj/effect/decal/cleanable/C = locate() in target
-			qdel(C)
-			target.clean_blood()
-	return
-
-/obj/item/weapon/soap/tongue/emag/afterattack(atom/target, mob/user, proximity)
-	if(!proximity || !check_allowed_items(target))
-		return
-	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
-	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
-	if(user.client && (target in user.client.screen))
-		user << "<span class='warning'>You need to take that [target.name] off before cleaning it!</span>"
-	else if(istype(target,/obj/effect/decal/cleanable))
-		user.visible_message("[user] begins to lick off \the [target.name].", "<span class='warning'>You begin to lick off \the [target.name]...</span>")
-		if(do_after(user, src.cleanspeed, target = target))
-			user << "<span class='notice'>You finish licking off \the [target.name].</span>"
-			qdel(target)
+			R.cell.charge = R.cell.charge + 50
 	else if(istype(target,/obj/item)) //hoo boy. danger zone man
 		if(istype(target,/obj/item/trash))
 			user.visible_message("[user] nibbles away at \the [target.name].", "<span class='warning'>You begin to nibble away at \the [target.name]...</span>")
@@ -199,8 +203,17 @@
 				var/mob/living/silicon/robot.R = user
 				R.cell.charge = R.cell.charge + 250
 			return
+		if(istype(target,/obj/item/weapon/stock_parts/cell))
+			user.visible_message("[user] begins cramming \the [target.name] down its throat.", "<span class='warning'>You begin cramming \the [target.name] down your throat...</span>")
+			if(do_after(user, 50, target = target))
+				user << "<span class='notice'>You finish off \the [target.name].</span>"
+				var/mob/living/silicon/robot.R = user
+				var/obj/item/weapon/stock_parts/cell.C = target
+				R.cell.charge = R.cell.charge + (C.charge / 3) //Instant full cell upgrades op
+				qdel(target)
+			return
 		var/obj/item/I = target
-		if(!I.anchored)
+		if(!I.anchored && src.emagged)
 			user.visible_message("[user] begins chewing up \the [target.name]. Looks like it's trying to loophole around its diet restriction!", "<span class='warning'>You begin chewing up \the [target.name]...</span>")
 			if(do_after(user, 50, target = I))
 				visible_message("<span class='warning'>[user] has straight up devoured \the [target.name]!</span>")
@@ -216,17 +229,22 @@
 			qdel(C)
 			target.clean_blood()
 	else if(ishuman(target))
-		var/mob/living/silicon/robot.R = user
-		var/mob/living/L = target
-		if(R.cell.charge <= 500)
-			return
-		L.Stun(stunforce)
-		L.Weaken(stunforce)
-		L.apply_effect(STUTTER, stunforce)
-		L.visible_message("<span class='danger'>[user] has shocked [L] with its tongue!</span>", \
+		if(src.emagged)
+			var/mob/living/silicon/robot.R = user
+			var/mob/living/L = target
+			if(R.cell.charge <= 500)
+				return
+			L.Stun(5)
+			L.Weaken(5)
+			L.apply_effect(STUTTER, 5)
+			L.visible_message("<span class='danger'>[user] has shocked [L] with its tongue!</span>", \
 								"<span class='userdanger'>[user] has shocked you with its tongue! You can feel the betrayal.</span>")
-		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
-		R.cell.charge = R.cell.charge - 500
+			playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
+			R.cell.charge = R.cell.charge - 500
+		else
+			user.visible_message("<span class='warning'>\the [user] affectionally licks \the [target]'s face!</span>", "<span class='notice'>You affectionally lick \the [target]'s face!</span>")
+			playsound(src.loc, 'sound/effects/attackblob.ogg', 50, 1)
+			return
 	else if(istype(target, /obj/structure/window))
 		user.visible_message("[user] begins to lick \the [target.name] clean...", "<span class='notice'>You begin to lick \the [target.name] clean...</span>")
 		if(do_after(user, src.cleanspeed, target = target))
