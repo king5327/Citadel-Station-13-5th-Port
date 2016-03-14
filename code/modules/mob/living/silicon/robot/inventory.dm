@@ -21,6 +21,12 @@
 	else if(istype(O, /obj/item/weapon/storage/bag/borgdelivery/))
 		var/obj/item/weapon/storage/bag/borgdelivery/T = O
 		T.do_quick_empty()
+	else if(istype(O,/obj/item/weapon/gun/energy/laser/cyborg))
+		laser = 0
+		update_icons()
+	else if(istype(O,/obj/item/weapon/gun/energy/disabler/cyborg))
+		disabler = 0
+		update_icons()
 	if(client)
 		client.screen -= O
 	contents -= O
@@ -38,12 +44,6 @@
 	else if(module_state_3 == O)
 		module_state_3 = null
 		inv3.icon_state = "inv3"
-	if(istype(O,/obj/item/weapon/gun/energy/laser/cyborg))
-		laser = 0
-		update_icons()
-	if(istype(O,/obj/item/weapon/gun/energy/disabler/cyborg))
-		disabler = 0
-		update_icons()
 	hud_used.update_robot_modules_display()
 	return 1
 
@@ -53,6 +53,12 @@
 	if(activated(O))
 		src << "<span class='notice'>Already activated</span>"
 		return
+	if(istype(O,/obj/item/weapon/gun/energy/laser/cyborg))
+		laser = 1
+		update_icons()
+	if(istype(O,/obj/item/weapon/gun/energy/disabler/cyborg))
+		disabler = 1
+		update_icons()
 	if(!module_state_1)
 		O.mouse_opacity = initial(O.mouse_opacity)
 		module_state_1 = O
@@ -77,12 +83,6 @@
 		contents += O
 		if(istype(module_state_3,/obj/item/borg/sight))
 			sight_mode |= module_state_3:sight_mode
-	if(istype(O,/obj/item/weapon/gun/energy/laser/cyborg))
-		laser = 1
-		update_icons()
-	if(istype(O,/obj/item/weapon/gun/energy/disabler/cyborg))
-		disabler = 1
-		update_icons()
 	else
 		src << "<span class='warning'>You need to disable a module first!</span>"
 

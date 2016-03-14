@@ -237,3 +237,8 @@
 	name = "escape arm"
 	desc = "A direction sign, pointing out which way the escape shuttle dock is."
 	icon_state = "direction_evac"
+
+/obj/structure/sign/borgposter
+	name = "conveniently hinting borging license poster"
+	desc = "WhitelistCorp Borg licenses. Don't lose your brain. Get yours today!"
+	icon_state = "borgposter"
