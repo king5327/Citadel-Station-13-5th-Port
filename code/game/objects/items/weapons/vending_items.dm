@@ -75,5 +75,5 @@
 /obj/item/weapon/vending_refill/kink
 	machine_name = "KinkMate"
 	icon_state = "refill_kink"
-	charges = list(5, 0, 1)// of 12 standard, 0 contraband, 2 premium
-	init_charges = list(5, 0, 1)
+	charges = list(10, 0, 2)// of 29 standard, 0 contraband, 6 premium
+	init_charges = list(10, 0, 2)
