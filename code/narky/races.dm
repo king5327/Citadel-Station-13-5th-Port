@@ -29,7 +29,7 @@ datum
 			generic="xeno"
 			adjective="phallic"
 			tail=1
-		armadillo
+		/* armadillo
 			name="armadillo"
 			id="armadillo"
 			say_mod = "drawls"
@@ -37,7 +37,7 @@ datum
 			adjective = "varmint on a halfshell" // that's not an adjective
 			tail=1
 			attack_verb = "noms"
-			attack_sound = 'sound/weapons/bite.ogg'
+			attack_sound = 'sound/weapons/bite.ogg' */
 		anubis
 			name="anubis"
 			id="anubis"
@@ -63,7 +63,6 @@ datum
 			tail=0
 			attack_verb = "visually assaults"
 			attack_sound = 'sound/magic/MM_Hit.ogg' // MAGIC MISSILE! MAGIC MISSILE!
-			restricted=1
 		boar
 			name="boar"
 			id="boar"
@@ -131,6 +130,7 @@ datum
 			generic = "reptile"
 			adjective = "frilly"
 			tail=1 // i'd use lizard tails but drakes have frills included on the icons
+			taur=1
 		drider
 			name="drider"
 			id="drider"
@@ -236,7 +236,7 @@ datum
 			id="moth"
 			generic="insect"
 			adjective="fluttery"
-			eyes=0
+			eyes="motheyes"
 		naga
 			name="naga"
 			id="naga"
@@ -251,6 +251,14 @@ datum
 			generic="weasel"
 			adjective="slim"
 			tail=1
+		otusian
+			name="otusian"
+			id="otie"
+			say_mod ="growls"
+			generic="something artificial"
+			adjective="chunky"
+			tail=1
+			taur=1
 		panther
 			name="panther"
 			id="panther"
@@ -381,13 +389,13 @@ datum
 			taur=1
 
 
-		//zigzagoon
-			//name="zigzagoon"
-			//id="zigzagoon"
-			//generic="pokémon"
-			//adjective="curious"
-			//tail=1
-			//restricted="kotetsuredwood"
+		zig
+			name="zig"
+			id="zig"
+			generic="pokémon"
+			adjective="curious"
+			tail=1
+			restricted="kotetsuredwood"
 
 
 		narky
