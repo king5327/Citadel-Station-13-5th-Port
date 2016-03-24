@@ -1,5 +1,29 @@
 The ways a verk has been mangling these files.
 
+Number X.
+-Removed some unused/obsolete taur sprites from bloating around.
+-Drake taur w/ respective belly and color layers.
+-Otie taur w/ respective belly and color layers.
+-Updated sportier fox taur sprites.
+-Updated new-gen tajaran taur sprites.
+-Updated deluxo panther taur sprites.
+-Horse taur now has proper color layer.
+-Tajarans now have stripes on their 3rd layer. Taur included.
+-Drider color layers. 1st already for humie part, 2nd for spider bod, 3rd for a marking on top of the butt.
+-Fixed borg module disabling related message popping up when not needed.
+-Emagged dogborgs can now switch tongue states between normal and emagged. Merged to one module to make room for other toys.
+-Emagged Borgi can do the same to switch from puppy jaws to combat ones.
+-Dogborg tongue now adds a small amount of battery charge on licking up messes.
+-Dogborgs can now eat powercells to fuel up by the charge of the cell. Overcharge possible. How cool is that? (only 1/3 charge tho because instant full cell upgrades OP)
+-INCREASE DOGBORG POWERTRIPPING. Pretty sure I'll end up delivering the nerfs next.
+-Fixed pixel_y offsets going bork in zero-g and such.
+-Added latex maid dress, ready to be added into vending machines or wherever.
+-Added donator Zig race.
+-Added a new conveniently hinting poster/sign for the robotics lab. (Whitelist? The heck's a whitelist? Ain't nobody got time for that. Now off with my head you filthy peasant.)
+
+***PORT CHANGE***
+-Attempting to port earlier crap with Number X.
+
 K-9. The official robopupdate.
 -Added new borg module "Security K-9 Unit" with custom equipment and stuff.
 -Added new borg module "Borgi" with custom equipment and stuff.

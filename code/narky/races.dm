@@ -130,6 +130,7 @@ datum
 			generic = "reptile"
 			adjective = "frilly"
 			tail=1 // i'd use lizard tails but drakes have frills included on the icons
+			taur=1
 		drider
 			name="drider"
 			id="drider"
@@ -257,6 +258,7 @@ datum
 			generic="something artificial"
 			adjective="chunky"
 			tail=1
+			taur=1
 		panther
 			name="panther"
 			id="panther"
@@ -387,13 +389,13 @@ datum
 			taur=1
 
 
-		//zigzagoon
-			//name="zigzagoon"
-			//id="zigzagoon"
-			//generic="pokémon"
-			//adjective="curious"
-			//tail=1
-			//restricted="kotetsuredwood"
+		zig
+			name="zig"
+			id="zig"
+			generic="pokémon"
+			adjective="curious"
+			tail=1
+			restricted="kotetsuredwood"
 
 
 		narky

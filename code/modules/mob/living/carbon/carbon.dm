@@ -510,6 +510,14 @@ var/const/GALOSHES_DONT_HELP = 4
 /mob/living/carbon/get_standard_pixel_y_offset(lying = 0)
 	if(lying)
 		return -6
+	if(src.sizeplay_size==SIZEPLAY_TINY)
+		return (initial(pixel_y) - 8)
+	if(src.sizeplay_size==SIZEPLAY_MICRO)
+		return (initial(pixel_y) - 4)
+	if(src.sizeplay_size==SIZEPLAY_MACRO)
+		return (initial(pixel_y) + 8)
+	if(src.sizeplay_size==SIZEPLAY_HUGE)
+		return (initial(pixel_y) + 16)
 	else
 		return initial(pixel_y)
 

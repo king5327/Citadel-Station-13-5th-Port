@@ -598,3 +598,11 @@
 	item_state = "w_suit"
 	item_color = "sheettoga"
 
+/obj/item/clothing/under/latexmaid
+	name = "latex maid costume"
+	desc = "The shiny variant."
+	icon_state = "latexmaid"
+	item_state = "latexmaid"
+	item_color = "latexmaid"
+	body_parts_covered = CHEST|GROIN
+	fitted = FEMALE_UNIFORM_TOP
