@@ -32,6 +32,7 @@
 		icon_state = "[icon_living]"
 
 /mob/living/simple_animal/pokemon/New()
+	..()
 	verbs += /mob/living/simple_animal/pokemon/proc/simple_lay_down
 
 /*
