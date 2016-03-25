@@ -407,7 +407,6 @@ datum
 			generic="pokémon"
 			adjective="curious"
 			tail=1
-			restricted="kotetsuredwood"
 
 
 		/*narky
