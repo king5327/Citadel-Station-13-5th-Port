@@ -69,11 +69,11 @@
 /obj/item/weapon/vending_refill/clothing
 	machine_name = "ClothesMate"
 	icon_state = "refill_clothes"
-	charges = list(33, 2, 2)// of 98 standard, 6 contraband, 6 premium
-	init_charges = list(33, 2, 2)
+	charges = list(41, 2, 2)// of 122 standard, 6 contraband, 6 premium
+	init_charges = list(41, 2, 2)
 
 /obj/item/weapon/vending_refill/kink
 	machine_name = "KinkMate"
 	icon_state = "refill_kink"
-	charges = list(10, 0, 2)// of 29 standard, 0 contraband, 6 premium
-	init_charges = list(10, 0, 2)
+	charges = list(10, 0, 3)// of 29 standard, 0 contraband, 9 premium
+	init_charges = list(10, 0, 3)
