@@ -27,6 +27,8 @@
 			WARNING("[src] threw alert [category] with new_master [new_master] while already having that alert with master [alert.master]")
 			clear_alert(category)
 			return .()
+		else if(alert.type != type && category == category)
+			alert = PoolOrNew(type) // Ya moronic double dingus completely forgot to add something for same-category-different-type stuff!
 		else if(alert.type == type && (!severity || severity == alert.severity))
 			if(alert.timeout)
 				clear_alert(category)
@@ -34,8 +36,6 @@
 			else
 //				src << "threw alert not in need of update [category] [type] [severity]"
 				return 0
-		else
-			alert = PoolOrNew(type) // Ya moronic double dingus completely forgot to add something for same-category-different-type stuff!
 //		src << "updating alert [category] [type] [severity]"
 	else
 		alert = PoolOrNew(type)

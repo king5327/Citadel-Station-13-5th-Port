@@ -18,6 +18,15 @@
 	else if(istype(O, /obj/item/weapon/storage/bag/tray/))
 		var/obj/item/weapon/storage/bag/tray/T = O
 		T.do_quick_empty()
+	else if(istype(O, /obj/item/weapon/storage/bag/borgdelivery/))
+		var/obj/item/weapon/storage/bag/borgdelivery/T = O
+		T.do_quick_empty()
+	else if(istype(O,/obj/item/weapon/gun/energy/laser/cyborg))
+		laser = 0
+		update_icons()
+	else if(istype(O,/obj/item/weapon/gun/energy/disabler/cyborg))
+		disabler = 0
+		update_icons()
 	if(client)
 		client.screen -= O
 	contents -= O
@@ -44,6 +53,12 @@
 	if(activated(O))
 		src << "<span class='notice'>Already activated</span>"
 		return
+	if(istype(O,/obj/item/weapon/gun/energy/laser/cyborg))
+		laser = 1
+		update_icons()
+	if(istype(O,/obj/item/weapon/gun/energy/disabler/cyborg))
+		disabler = 1
+		update_icons()
 	if(!module_state_1)
 		O.mouse_opacity = initial(O.mouse_opacity)
 		module_state_1 = O

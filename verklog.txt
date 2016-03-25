@@ -1,5 +1,52 @@
 The ways a verk has been mangling these files.
 
+Number X.
+-Removed some unused/obsolete taur sprites from bloating around.
+-Drake taur w/ respective belly and color layers.
+-Otie taur w/ respective belly and color layers.
+-Updated sportier fox taur sprites.
+-Updated new-gen tajaran taur sprites.
+-Updated deluxo panther taur sprites.
+-Horse taur now has proper color layer.
+-Tajarans now have stripes on their 3rd layer. Taur included.
+-Drider color layers. 1st already for humie part, 2nd for spider bod, 3rd for a marking on top of the butt.
+-Fixed borg module disabling related message popping up when not needed.
+-Emagged dogborgs can now switch tongue states between normal and emagged. Merged to one module to make room for other toys.
+-Emagged Borgi can do the same to switch from puppy jaws to combat ones.
+-Dogborg tongue now adds a small amount of battery charge on licking up messes.
+-Dogborgs can now eat powercells to fuel up by the charge of the cell. Overcharge possible. How cool is that? (only 1/3 charge tho because instant full cell upgrades OP)
+-INCREASE DOGBORG POWERTRIPPING. Pretty sure I'll end up delivering the nerfs next.
+-Fixed pixel_y offsets going bork in zero-g and such.
+-Added latex maid dress, ready to be added into vending machines or wherever.
+-Added donator Zig race.
+-Added a new conveniently hinting poster/sign for the robotics lab. (Whitelist? The heck's a whitelist? Ain't nobody got time for that. Now off with my head you filthy peasant.)
+
+***PORT CHANGE***
+-Attempting to port earlier crap with Number X.
+
+K-9. The official robopupdate.
+-Added new borg module "Security K-9 Unit" with custom equipment and stuff.
+-Added new borg module "Borgi" with custom equipment and stuff.
+-Made a 64p wide borg icon possible.
+-Changed the attack animation function to revert its pixel-x/y changes instead of resetting them to default. Should likely fix more things than break.(likely the main cause of the earlier sizeplay issues)
+-Custom equipment for dogborgs:
+ *Jaws. Big variation for K-9 with 15 damage, smaller one for Borgi with 5 damage.
+ *Fetch/delivery storage. Can pick up and hold one large (w_class 4) item at a time, drops contents when deactivated like the serviceborg tray.
+ *Nose/Analyzer/Boop module. Analyzer basic functions, atmos check shows as "sniffing the air", booping people with it shows up as "nuzzling" etc.
+ *Synthetic tongue. Can be used like soap to clean up things, custom tongue related action lines, can also be used to imitate Ian's cravings to nibble away at trash items. (Real food is for starving crew. Regenerates 250 cell charge.)
+ *Pounce. Functionally similar to xeno hunter pounce. Stuns the target just enough to apply zipties. (Depletes 250 cell charge per use.)
+ *Emagged tongue. Has syndie soap stats, able to "eat" non-trash items, licking stuns people.
+-K-9 equipment: zipties, jaws, pounce, borg hailer, tongue, nose, fetch bag, signaler, forensic scanner, borg disabler. Emag adds borg laser and stun tongue.
+-Borgi equipment: small jaws, fetch bag, tongue, health analyzer, nose. Emag adds big jaws, stun tongue, and pounce.
+-Added "Robo Kibble" to mech fabricator misc section. "A novelty bowl of assorted mech fabricator byproducts. Mockingly feed this to the sec-dog to help it recharge."
+-Added functions for reverting to default icon file and reverting to default x offset in the borg reset module. (Resetting from K-9 caused temporary invisibility and wonked offset.)
+-Movement states for dogs and the old loader.
+-Added support for shown "inhands" for borg equipped disabler and laser. Only got those icons for K-9 for now.
+-Datacore ID photo thingamajig no longer constipates itself when a player has no special colors set up.
+-Added otie race with 3 color layers.
+-Fixed moth eyes.
+-Fixed naga/drider belly bulge clipping.
+
 #OCTODONG. Debuffs for biggies and air lag fixes etc.
 -Removed hunger related sizeplay tweaks.
 -Removed sizeplay related negative speed and damage nerfs.
