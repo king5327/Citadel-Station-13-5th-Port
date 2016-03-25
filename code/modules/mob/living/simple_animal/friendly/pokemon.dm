@@ -45,7 +45,7 @@
 	icon_dead = ""
 */
 
-/mob/living/simple_animal/pokemon/leg/
+/mob/living/simple_animal/pokemon/leg
 	icon = 'icons/mob/legendary.dmi'
 	pixel_x = -32
 	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab = 12)
