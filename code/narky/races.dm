@@ -387,8 +387,6 @@ datum
 			adjective="shaggy"
 			tail=1
 			taur=1
-			
-			
 		zig
 			name="zig"
 			id="zig"
