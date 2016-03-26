@@ -1,7 +1,5 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to WaveStation 82!</h1>
+<h1>Welcome to Space Station 13!</h1>
 
-<i>This server is running a modified version of Citadel code.</i>
-
-<h2> THERE IS VORE AND ERP ON THIS STATION. BY PLAYING ON THIS STATION, YOU AGREE YOU ARE OF 18 YEARS OF AGE OR OLDER.  </h2>
+<i>This server is running a /tg/station 13 Git build.</i>

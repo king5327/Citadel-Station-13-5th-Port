@@ -7,7 +7,4 @@
 # NOTE: if the rank-name cannot be found in admin_ranks.txt, they will not be adminned! ~Carn #
 # NOTE: syntax was changed to allow hyphenation of ranknames, since spaces are stripped.      #
 ###############################################################################################
-WestTheGamer = Host
-Monos = Game Master
-Krypton_Osmium = Game Master
-Greyton1 = Game Master
+JayEhh = Host
