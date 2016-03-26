@@ -387,8 +387,8 @@ datum
 			adjective="shaggy"
 			tail=1
 			taur=1
-  		  
-  		  
+
+
 		zig
 			name="zig"
 			id="zig"
@@ -396,8 +396,8 @@ datum
 			adjective="curious"
 			tail=1
 			restricted="kotetsuredwood"
-  		  
-  		  
+
+ 
 		narky
 			//name="narwhal kitty"
 			id="narky"
