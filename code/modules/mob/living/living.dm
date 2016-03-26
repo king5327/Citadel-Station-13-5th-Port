@@ -122,6 +122,25 @@ Sorry Giacom. Please don't be mad :(
 		now_pushing = 0
 		return 1
 
+	if(a_intent=="harm"&&canmove)//Check for macro stompage!
+		if(istype(M,/mob/living))
+			var/mob/living/L=M
+			if(sizeplay_size>L.sizeplay_size+1)
+				visible_message("<span class='warning'>[src] steps on [M]!</span>")
+				loc=M.loc
+				M.Stun(rand(2,4))//Make this falling later
+				playsound(src, "bodyfall", 50, 1)
+				now_pushing=0
+				return
+
+	/*if(istype(M,/mob/living))
+		var/mob/living/L=M
+		if(L.sizeplay_size>sizeplay_size+1)
+			if ( !(world.time % 5) )
+				src << "\red [M] is too big, you cannot push past!"
+			now_pushing = 0
+			return*/
+
 	//okay, so we didn't switch. but should we push?
 	//not if he's not CANPUSH of course
 	if(!(M.status_flags & CANPUSH))
