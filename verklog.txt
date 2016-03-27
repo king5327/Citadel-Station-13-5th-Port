@@ -1,5 +1,34 @@
 The ways a verk has been mangling these files.
 
+Salty dogs the update. (11.)
+-Delivered the nerfs for K9 equipment. Far from gutting though. Cry me a river.
+ *Jaws damage dropped to 10.
+ *Delivery storage holding ability dropped to w_class 2.
+ *Tongue clean time raised from 40 to 60.
+ *Traitor tongue clean time raised from 10 to 30.
+ *Bad dog diet ability in traitor tongue raised from 5s to 10s.
+ *Traitor tongue stun time reduced to 4, and stun power consumption increased to 666. (Normal stun baton is 7. Gimme a break good sir!)
+ *Pounce max distance dropped to 3 from 7. (Keep that at 7 on ayys I dare you.)
+ *Doubled the pounce energy consumption to 500.
+ *Pounce cooldown raised from 25 to 40.
+ *Pounce stun time reduced from 3 to 2. Good luck applying cuffs now! (NORMAL STUN BATON IS STILL 7. AND ALIENS, GOD KNOWS HOW BIG, AND LIKELY STILL RISING)
+ *However self stun against solid objects was also reduced to 2. Give the puppy a break.
+ *Removed signaler and detective scanner from K9 inventory.
+-Added MediHound.
+-Added borg-mounted sleeper belly for medihound.
+-Added high power consumption defib paws for medihound.
+-Current medihound inventory:
+ *Small jaws.
+ *Delivery.
+ *Tongue.
+ *Health analyzer.
+ *Mounted Sleeper, containing basic level 1 sleeper chems.
+ *Defib paws.
+ *Boop module.
+ *Pounce on EMAG.
+-Sleeper cousumes 10 battery charge per tick when operating and 250 on each injection.
+-Defib paws consume 1000 charge even if the attempt fails due to safety reasons.
+
 Number X.
 -Removed some unused/obsolete taur sprites from bloating around.
 -Drake taur w/ respective belly and color layers.
