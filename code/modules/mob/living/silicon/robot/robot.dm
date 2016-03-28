@@ -899,6 +899,19 @@
 	if(sleeper_r == 1)
 		overlays += "sleeper_r"
 
+	if(stat > 1 && icon_state == "k9")
+		icon_state = "k9-wreck"
+	if(stat < 2 && icon_state == "k9-wreck")
+		icon_state = "k9"
+	if(stat > 1 && icon_state == "borgi")
+		icon_state = "borgi-wreck"
+	if(stat < 2 && icon_state == "borgi-wreck")
+		icon_state = "borgi"
+	if(stat > 1 && icon_state == "medihound")
+		icon_state = "medihound-wreck"
+	if(stat < 2 && icon_state == "medihound-wreck")
+		icon_state = "medihound"
+
 /mob/living/silicon/robot/proc/installed_modules()
 	if(!module)
 		pick_module()
