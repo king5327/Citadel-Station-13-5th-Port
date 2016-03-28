@@ -911,6 +911,10 @@
 		icon_state = "medihound-wreck"
 	if(stat < 2 && icon_state == "medihound-wreck")
 		icon_state = "medihound"
+	if(stat > 1 && icon_state == "loaderborg")
+		icon_state = "loaderborg-wreck"
+	if(stat < 2 && icon_state == "loaderborg-wreck")
+		icon_state = "loaderborg"
 
 /mob/living/silicon/robot/proc/installed_modules()
 	if(!module)

@@ -28,6 +28,7 @@ Salty dogs the update. (11.)
  *Pounce on EMAG.
 -Sleeper cousumes 10 battery charge per tick when operating and 250 on each injection.
 -Defib paws consume 1000 charge even if the attempt fails due to safety reasons.
+-Added dead icons for wrecked dogborgs and loader. (No more walk anim when getting moved around)
 
 Number X.
 -Removed some unused/obsolete taur sprites from bloating around.
