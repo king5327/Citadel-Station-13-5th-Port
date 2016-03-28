@@ -37,7 +37,7 @@
 			icon_state = "jaws"
 			desc = "The jaws of the law."
 			flags = CONDUCT
-			force = 10
+			force = 15
 			throwforce = 8
 			hitsound = 'sound/weapons/bite.ogg'
 			attack_verb = list("chomped", "bit", "ripped", "mauled", "enforced")
