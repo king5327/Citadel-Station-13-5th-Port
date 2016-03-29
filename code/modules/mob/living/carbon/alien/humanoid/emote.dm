@@ -13,16 +13,16 @@
 			message = "<span class='name'>[src]</span> lets out a waning guttural screech, green blood bubbling from its maw..."
 			m_type = 2
 
-		if ("gnarl","gnarls")
+		if ("gnarl","gnarls","Gnarl","Gnarls")
 			if (!muzzled)
 				message = "<span class='name'>[src]</span> gnarls and shows its teeth.."
 				m_type = 2
 
-		if ("hiss","hisses")
+		if ("hiss","hisses","Hiss","Hisses")
 			if(!muzzled)
 				message = "<span class='name'>[src]</span> hisses."
 				m_type = 2
-		if ("hurt")
+		if ("hurt","Hurt")
 			message = "<span class='name'>[src]</span> screeches and recoils in pain!"
 			m_type = 2
 
@@ -34,7 +34,7 @@
 			message = "<span class='name'>[src]</span> moans!"
 			m_type = 2
 
-		if ("roar","roars")
+		if ("roar","roars","Roar","Roars")
 			if (!muzzled)
 				message = "<span class='name'>[src]</span> roars!"
 				m_type = 2
@@ -49,7 +49,7 @@
 				message = "<span class='name'>[src]</span> scratches."
 				m_type = 1
 
-		if ("screech","screeches")
+		if ("screech","screeches","Screech","Screeches")
 			if (!muzzled)
 				message = "<span class='name'>[src]</span> screeches!"
 				m_type = 2
@@ -62,7 +62,7 @@
 			if (!src.restrained())
 				message = text("<span class='name'>[src]</span> signs[].", (text2num(param) ? text(" the number []", text2num(param)) : null))
 				m_type = 1
-		if ("growl","growls")
+		if ("growl","growls","Growl","Growls")
 			if (!muzzled)
 				message = "<span class='name'>[src]</span> growls!"
 				m_type = 2
@@ -82,7 +82,7 @@
 		if (act == "deathgasp")
 			playsound(src.loc, 'sound/voice/hiss6.ogg', 80, 0, 16)
 
-		if (act == "screech")
+		if (act == "screech" || act == "roar")
 			playsound(src.loc, pick('sound/alien/Voice/screech1.ogg', 'sound/alien/Voice/screech2.ogg', 'sound/alien/Voice/screech3.ogg', 'sound/alien/Voice/screech4.ogg'), 100, 0, 16)
 
 		if (act == "hiss")
@@ -101,4 +101,3 @@
 			visible_message(message)
 		else
 			audible_message(message)
-	return

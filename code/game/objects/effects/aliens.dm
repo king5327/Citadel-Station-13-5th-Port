@@ -320,6 +320,8 @@
 	spawn(rand(MIN_GROWTH_TIME, MAX_GROWTH_TIME))
 		Grow()
 
+/obj/structure/alien/egg/Destroy()
+	..()
 
 /obj/structure/alien/egg/attack_paw(mob/living/user)
 	return attack_hand(user)
@@ -351,7 +353,6 @@
 	icon_state = "egg"
 	status = GROWN
 
-
 /obj/structure/alien/egg/proc/Burst(kill = 1)	//drops and kills the hugger if any is remaining
 	if(status == GROWN || status == GROWING)
 		icon_state = "egg_hatched"
@@ -371,6 +372,8 @@
 							child.Attach(M)
 							break
 
+/obj/structure/alien/egg/Move()
+	..()
 
 /obj/structure/alien/egg/bullet_act(obj/item/projectile/Proj)
 	health -= Proj.damage

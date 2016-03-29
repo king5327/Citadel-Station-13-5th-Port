@@ -29,13 +29,15 @@ datum
 			generic="xeno"
 			adjective="phallic"
 			tail=1
-		armadillo
+		/* armadillo
 			name="armadillo"
 			id="armadillo"
 			say_mod = "drawls"
 			generic = "cingulate" // Superorder Xenarthra, Order Cingulata
 			adjective = "protected"
 			tail=1
+			attack_verb = "noms"
+			attack_sound = 'sound/weapons/bite.ogg' */
 			attack_verb = "nom" // apparently attack verbs are just the verb, no S. shrug
 			attack_sound = 'sound/weapons/bite.ogg'
 		anubis
@@ -408,8 +410,8 @@ datum
 			adjective="curious"
 			tail=1
 
-
-		/*narky
+/*
+			narky
 			//name="narwhal kitty"
 			id="narky"
 			say_mod="nyars"
@@ -419,13 +421,15 @@ datum
 			tail=1
 			taur=1
 			attack_verb = "whack"
+
 		//husky/jordy  // obsolete with the addition of overlay sprites
 			//name="husky"
 			//id="jordy"
 			//generic="canine"
 			//adjective="hyper"
 			//tail=1
-			//restricted=1*/
+			//restricted=1
+*/
 		fly
 			//name="fly"
 			generic="insect"
