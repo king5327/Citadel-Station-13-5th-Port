@@ -386,7 +386,6 @@ datum
 			generic="reptile"
 			adjective="hard-shelled"
 			tail=1
-/*
 		ursine
 			name="bear"
 			id="ursine"
@@ -396,7 +395,6 @@ datum
 			tail=1
 			attack_verb = "claw"
 			attack_sound = 'sound/weapons/bladeslice.ogg'
-*/
 		wolf
 			name="wolf"
 			id="wolf"
