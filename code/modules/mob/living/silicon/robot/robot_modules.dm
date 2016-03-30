@@ -446,8 +446,8 @@
 	modules += new /obj/item/weapon/soap/tongue(src)
 	modules += new /obj/item/device/analyzer/nose(src)
 	modules += new /obj/item/weapon/storage/bag/borgdelivery(src)
-	modules += new /obj/item/device/assembly/signaler(src)
-	modules += new /obj/item/device/detective_scanner(src)
+	//modules += new /obj/item/device/assembly/signaler(src)
+	//modules += new /obj/item/device/detective_scanner(src)
 	modules += new /obj/item/weapon/gun/energy/disabler/cyborg(src)
 	emag = new /obj/item/weapon/gun/energy/laser/cyborg(src)
 	fix_modules()
@@ -474,5 +474,19 @@
 	modules += new /obj/item/weapon/soap/tongue(src)
 	modules += new /obj/item/device/healthanalyzer(src)
 	modules += new /obj/item/device/analyzer/nose(src)
+	emag = new /obj/item/weapon/dogborg/pounce(src)
+	fix_modules()
+
+/obj/item/weapon/robot_module/medihound
+	name = "MediHound module"
+
+/obj/item/weapon/robot_module/medihound/New()
+	..()
+	modules += new /obj/item/weapon/dogborg/jaws/small(src)
+	modules += new /obj/item/weapon/storage/bag/borgdelivery(src)
+	modules += new /obj/item/weapon/soap/tongue(src)
+	modules += new /obj/item/device/healthanalyzer(src)
+	modules += new /obj/item/weapon/dogborg/sleeper(src)
+	modules += new /obj/item/weapon/twohanded/shockpaddles/hound(src)
 	emag = new /obj/item/weapon/dogborg/pounce(src)
 	fix_modules()

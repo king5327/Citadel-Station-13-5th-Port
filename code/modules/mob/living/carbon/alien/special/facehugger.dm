@@ -16,7 +16,7 @@ var/const/MAX_ACTIVE_TIME = 400
 	item_state = "facehugger"
 	w_class = 1 //note: can be picked up by aliens unlike most other items of w_class below 4
 	flags = MASKINTERNALS
-	throw_range = 1
+	throw_range = 2
 	tint = 3
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH
 	layer = MOB_LAYER
@@ -30,12 +30,14 @@ var/const/MAX_ACTIVE_TIME = 400
 	var/attached = 0
 
 /obj/item/clothing/mask/facehugger/attack_alien(mob/user) //can be picked up by aliens
-	if(isalienravager(user)) //can't be picked up by ravagers
-		user << text("<span class='warning'>Your claws are too sharp to safely pick this up.</span>")
+	if(isalienadult(user))
+		var/mob/living/carbon/alien/humanoid/A = user
+		if(A.crawling)
+			return
+	if(isalienravager(user))
 		return
-	else
-		attack_hand(user)
-		return
+	attack_hand(user)
+	return
 
 /obj/item/clothing/mask/facehugger/attack_hand(mob/user)
 	if((stat == CONSCIOUS && !sterile) && !isalien(user))
@@ -88,7 +90,7 @@ var/const/MAX_ACTIVE_TIME = 400
 	return 0
 
 /obj/item/clothing/mask/facehugger/HasProximity(atom/movable/AM as mob|obj)
-	if(CanHug(AM))
+	if(CanHug(AM) && Adjacent(AM))
 		return Attach(AM)
 	return 0
 
@@ -139,7 +141,10 @@ var/const/MAX_ACTIVE_TIME = 400
 	if(iscarbon(M))
 		var/mob/living/carbon/target = M
 		if(target.wear_mask)
+			var/obj/item/clothing/mask/facehugger/FH = target.wear_mask
 			if(prob(20))
+				return 0
+			if(target.wear_mask == FH)
 				return 0
 			var/obj/item/clothing/W = target.wear_mask
 			if(W.flags & NODROP)
@@ -229,14 +234,16 @@ var/const/MAX_ACTIVE_TIME = 400
 		return 0
 	if(M.getorgan(/obj/item/organ/internal/alien/hivenode))
 		return 0
-
 	if(iscorgi(M) || ismonkey(M))
 		return 1
-
 	var/mob/living/carbon/C = M
-	if(ishuman(C))
+	if(ishuman(C) && !(slot_wear_mask in C.dna.species.no_equip))
 		var/mob/living/carbon/human/H = C
 		if(H.is_mouth_covered(head_only = 1))
 			return 0
+		if(H.wear_mask)
+			var/obj/item/clothing/mask/facehugger/FH = H.wear_mask
+			if(H.wear_mask == FH)
+				return 0
 		return 1
 	return 0

@@ -33,14 +33,14 @@
 			var/randn = rand(1, 100)
 			if(M.mob_size > 2)
 				randn = rand(1, 65)
-			if (randn <= 30)
+			if (randn <= 40)
 				playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 				Weaken(2)
 				add_logs(M, src, "tackled")
 				visible_message("<span class='danger'>[M] has tackled down [src]!</span>", \
 					"<span class='userdanger'>[M] has tackled down [src]!</span>")
 			else
-				if (randn <= 60)
+				if (randn <= 75)
 					playsound(loc, 'sound/weapons/thudswoosh.ogg', 25, 1, -1)
 					drop_item()
 					visible_message("<span class='danger'>[M] disarmed [src]!</span>", \

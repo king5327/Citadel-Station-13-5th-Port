@@ -8,6 +8,21 @@
 	if(locate(/obj/structure/alien/weeds) in src.loc)
 		. += 2
 
+/mob/living/carbon/human/Move(NewLoc, direct)// Footstep sounds
+	. = ..()
+	if(health > 0 && !resting && !sleeping && !paralysis && has_gravity(src) && !buckled && !stat && isturf(loc) && alpha > 0)
+		if(footstep > 0 && src.loc == NewLoc && (m_intent == "run"))
+			if(shoes)
+				playsound(src, pick('code/cactus/sound/misc/step/stepShoes1.ogg', 'code/cactus/sound/misc/step/stepShoes2.ogg', 'code/cactus/sound/misc/step/stepShoes3.ogg', 'code/cactus/sound/misc/step/stepShoes4.ogg', 'code/cactus/sound/misc/step/stepShoes5.ogg', 'code/cactus/sound/misc/step/stepShoes6.ogg', 'code/cactus/sound/misc/step/stepShoes7.ogg'), 50, 1, 0)
+				footstep = 0
+			if(!shoes)
+				playsound(src, pick('code/cactus/sound/misc/step/stepBare1.ogg', 'code/cactus/sound/misc/step/stepBare2.ogg', 'code/cactus/sound/misc/step/stepBare3.ogg', 'code/cactus/sound/misc/step/stepBare4.ogg', 'code/cactus/sound/misc/step/stepBare5.ogg'),25, 1, 0)
+				footstep = 0
+		else if(src.loc == NewLoc)
+			footstep++
+	else
+		return
+
 
 /mob/living/carbon/human/Process_Spacemove(movement_dir = 0)
 
