@@ -25,6 +25,7 @@ Salty dogs the update. (11.)
  *Mounted Sleeper, containing basic level 1 sleeper chems.
  *Defib paws.
  *Boop module.
+ *Crew monitor.
  *Pounce on EMAG.
 -Sleeper cousumes 10 battery charge per tick when operating and 250 on each injection.
 -Defib paws consume 1000 charge even if the attempt fails due to safety reasons.
