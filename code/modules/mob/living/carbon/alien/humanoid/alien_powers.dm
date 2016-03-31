@@ -92,6 +92,7 @@ Doesn't work on other aliens/AI.*/
 		return 0
 	for(var/mob/O in viewers(user, null))
 		O.show_message(text("<span class='alertalien'>[user] has planted some alien weeds!</span>"), 1)
+		playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 50, 1)
 	new/obj/structure/alien/weeds/node(user.loc)
 	return 1
 
@@ -116,7 +117,6 @@ Doesn't work on other aliens/AI.*/
 	else
 		return 0
 	return 1
-
 /obj/effect/proc_holder/alien/transfer
 	name = "Transfer Plasma"
 	desc = "Transfer Plasma to another alien"
@@ -178,6 +178,7 @@ Doesn't work on other aliens/AI.*/
 			return 0
 		new /obj/effect/acid(get_turf(target), target)
 		user.visible_message("<span class='alertalien'>[user] vomits globs of vile stuff all over [target]. It begins to sizzle and melt under the bubbling mess of acid!</span>")
+		playsound(target, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
 		return 1
 	else
 		src << "<span class='noticealien'>Target is too far away.</span>"
@@ -209,7 +210,7 @@ Doesn't work on other aliens/AI.*/
 
 /obj/effect/proc_holder/alien/neurotoxin/fire(mob/living/carbon/alien/user)
 	user.visible_message("<span class='danger'>[user] spits neurotoxin!", "<span class='alertalien'>You spit neurotoxin.</span>")
-
+	playsound(user.loc, 'sound/alien/Effects/spit1.ogg', 100, 1)
 	var/turf/T = user.loc
 	var/turf/U = get_step(user, user.dir) // Get the tile infront of the move, based on their direction
 	if(!isturf(U) || !isturf(T))
@@ -244,6 +245,7 @@ Doesn't work on other aliens/AI.*/
 
 	user << "<span class='notice'>You shape a [choice].</span>"
 	user.visible_message("<span class='notice'>[user] vomits up a thick purple substance and begins to shape it.</span>")
+	playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
 
 	choice = structures[choice]
 	new choice(user.loc)
@@ -287,6 +289,35 @@ Doesn't work on other aliens/AI.*/
 		user.hud_used.nightvisionicon.icon_state = "nightvision0"
 
 	return 1
+/obj/effect/proc_holder/alien/toggleCrawl
+	name = "Toggle Crawling"
+	desc = "If you're not crawling, start crawling. If you're crawling, stop crawling. Got it? Good."
+	plasma_cost = 0
+	action_icon_state  = "alien_crawl"
+	var/active = 0
+/obj/effect/proc_holder/alien/toggleCrawl/fire(mob/living/carbon/alien/humanoid/user)
+	active = !active
+	if(active)
+		user << "<span class='noticealien'>You get down on all fours, ready to sprint.</span>"
+		user.crawling = 1
+		user.drop_r_hand()
+		user.drop_l_hand()
+		user.icon = 'icons/mob/aliencrawl.dmi'
+		user.custom_pixel_x_offset = -16
+		if(isalienhunter(user))
+			user.icon_state = "alienh_crawling"
+		if(isaliendrone(user))
+			user.icon_state = "aliend_crawling"
+		if(isaliensentinel(user))
+			user.icon_state = "aliens_crawling"
+		else
+			user.icon_state = "[icon_state]_crawling"
+	else
+		user << "<span class='noticealien'>You stand on your hind legs, freeing up your hands.</span>"
+		user.crawling = 0
+		user.icon = 'icons/mob/alien.dmi'
+		user.icon_state = initial(user.icon_state)
+		user.custom_pixel_x_offset = 0
 
 /obj/effect/proc_holder/alien/sneak
 	name = "Sneak"

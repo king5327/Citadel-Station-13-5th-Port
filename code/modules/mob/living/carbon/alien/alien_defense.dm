@@ -14,9 +14,9 @@ In all, this is a lot like the monkey code. /N
 	if (istype(loc, /turf) && istype(loc.loc, /area/start))
 		M << "No attacking people at spawn, you jackass."
 		return
-
+	if (src.client == M.client) //No more biting yourself by accident.
+		return
 	switch(M.a_intent)
-
 		if ("help")
 			sleeping = max(0,sleeping-5)
 			resting = 0

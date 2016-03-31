@@ -16,7 +16,17 @@
 
 #define isalienadult(A) (istype(A, /mob/living/carbon/alien/humanoid))
 
+#define isalienhunter(A) (istype(A, /mob/living/carbon/alien/humanoid/hunter))
+
+#define isaliendrone(A) (istype(A, /mob/living/carbon/alien/humanoid/drone))
+
+#define isaliensentinel(A) (istype(A, /mob/living/carbon/alien/humanoid/sentinel))
+
 #define isalienroyal(A) (istype(A, /mob/living/carbon/alien/humanoid/royal))
+
+#define isalienpraetorian(A) (istype(A, /mob/living/carbon/alien/humanoid/royal/praetorian))
+
+#define isalienqueen(A) (istype(A, /mob/living/carbon/alien/humanoid/royal/queen))
 
 #define isalienravager(A) (istype(A, /mob/living/carbon/alien/humanoid/ravager))
 

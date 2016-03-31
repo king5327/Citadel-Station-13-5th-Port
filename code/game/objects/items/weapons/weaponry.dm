@@ -121,6 +121,18 @@
 		qdel(I)
 		qdel(src)
 
+	if(istype(I, /obj/item/weapon/xenos_tail))
+		var/obj/item/weapon/twohanded/spear/xeno/S = new /obj/item/weapon/twohanded/spear/xeno
+
+		if(!remove_item_from_storage(user))
+			user.unEquip(src)
+		user.unEquip(I)
+
+		user.put_in_hands(S)
+		user << "<span class='notice'>You fasten the alien tail barb to the top of the rod with the cable.</span>"
+		qdel(I)
+		qdel(src)
+
 	else if(istype(I, /obj/item/weapon/wirecutters) && !(I.flags & NODROP))
 		var/obj/item/weapon/melee/baton/cattleprod/P = new /obj/item/weapon/melee/baton/cattleprod
 

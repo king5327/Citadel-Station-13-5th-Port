@@ -13,7 +13,7 @@
 
 /datum/round_event/alien_infestation/setup()
 	announceWhen = rand(announceWhen, announceWhen + 50)
-	spawncount = rand(1, 2)
+	spawncount = rand(4, 6)
 
 /datum/round_event/alien_infestation/kill()
 	if(!successSpawn && control)

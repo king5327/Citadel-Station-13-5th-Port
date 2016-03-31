@@ -725,3 +725,12 @@
 	construction_time=150
 	build_path = /obj/item/drone_shell
 	category = list("Misc")
+
+/datum/design/rkibble
+	name = "Robo Kibble"
+	id = "rkibble"
+	build_type = MECHFAB
+	build_path = /obj/item/trash/rkibble
+	materials = list(MAT_METAL=15)
+	construction_time = 15
+	category = list("Misc")

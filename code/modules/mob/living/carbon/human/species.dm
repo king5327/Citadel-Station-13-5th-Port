@@ -670,16 +670,14 @@
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !H.dna.species.need_nutrition)
-		var/hunger_rate = H.sizeplay_size / 3 * HUNGER_FACTOR // character size multiplier tiny=.33 normal=1 huge=1.66
+		var/hunger_rate = HUNGER_FACTOR
 		if(H.satiety > 0)
 			H.satiety--
 		if(H.satiety < 0)
 			H.satiety++
 			if(prob(round(-H.satiety/40)))
 				H.Jitter(5)
-			hunger_rate = H.sizeplay_size * HUNGER_FACTOR
-		if(H.dna.taur == 1) // taurs kinda gotta eat for 2 bods right?
-			hunger_rate = 1.5 * HUNGER_FACTOR * H.sizeplay_size / 3
+			hunger_rate = 3 * HUNGER_FACTOR
 		H.nutrition = max (0, H.nutrition - hunger_rate)
 
 
@@ -880,6 +878,9 @@
 
 /datum/species/proc/movement_delay(mob/living/carbon/human/H)
 	. = 1 - H.sizeplay_size / 3
+	if(H.sizeplay_size > 3)
+		. = 0
+
 
 	if(!(H.status_flags & IGNORESLOWDOWN))
 
@@ -975,6 +976,8 @@
 					atk_verb = "kick"
 
 				var/damage = (rand(0, 9) + M.dna.species.punchmod) * H.sizeplay_size / 3
+				if(H.sizeplay_size > 3)
+					damage = rand(0, 9) + M.dna.species.punchmod
 
 				if(H.stat==DEAD && damage >= 4)
 					if(H.stomach_contents.len)
