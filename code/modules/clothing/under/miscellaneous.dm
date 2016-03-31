@@ -600,7 +600,7 @@
 
 /obj/item/clothing/under/latexmaid
 	name = "latex maid costume"
-	desc = "The shiny variant."
+	desc = "Squeaky!"
 	icon_state = "latexmaid"
 	item_state = "latexmaid"
 	item_color = "latexmaid"

@@ -952,7 +952,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this free swag!;Why leave style up to fate? Use the ClothesMate!"
 	vend_delay = 15
 	vend_reply = "Thank you for using the ClothesMate!"
-	products = list(/obj/item/clothing/head/that=2,/obj/item/clothing/head/fedora=1,/obj/item/clothing/glasses/monocle=1,
+	products = list(/obj/item/clothing/head/that=2,/obj/item/clothing/head/fedora=1,/obj/item/clothing/glasses/monocle=1, /obj/item/clothing/glasses/hipster=2,
 	/obj/item/clothing/suit/jacket=2, /obj/item/clothing/suit/jacket/puffer/vest=2, /obj/item/clothing/suit/jacket/puffer=2,
 	/obj/item/clothing/under/suit_jacket/navy=1,/obj/item/clothing/under/suit_jacket/really_black=1,/obj/item/clothing/under/suit_jacket/burgundy=1,
 	/obj/item/clothing/under/suit_jacket/charcoal=1, /obj/item/clothing/under/suit_jacket/white=1,/obj/item/clothing/under/kilt=1,/obj/item/clothing/under/overalls=1,
@@ -971,9 +971,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/obj/item/clothing/under/plaid_skirt=1,/obj/item/clothing/under/plaid_skirt/blue=1,/obj/item/clothing/under/plaid_skirt/purple=1,
 	/obj/item/clothing/glasses/regular=2,/obj/item/clothing/head/sombrero=1,/obj/item/clothing/suit/poncho=1,
 	/obj/item/clothing/suit/ianshirt=1,/obj/item/clothing/shoes/laceup=2,/obj/item/clothing/shoes/sneakers/black=4,
-	/obj/item/clothing/shoes/sandal=1, /obj/item/clothing/gloves/fingerless=2,/obj/item/clothing/glasses/orange=1,/obj/item/clothing/glasses/red=1,
+	/obj/item/clothing/shoes/sandal=1, /obj/item/clothing/shoes/workboots=2, /obj/item/clothing/gloves/fingerless=2,/obj/item/clothing/glasses/orange=1,/obj/item/clothing/glasses/red=1,
 	/obj/item/weapon/storage/belt/fannypack=1, /obj/item/weapon/storage/belt/fannypack/blue=1, /obj/item/weapon/storage/belt/fannypack/red=1,
-	/obj/item/clothing/under/bb=2,/obj/item/clothing/under/bb/sweater=2,/obj/item/clothing/under/bb/sweater/red=2,/obj/item/clothing/under/bb/sweater/blue=2,/obj/item/clothing/under/bb/sweater/green=2,/obj/item/clothing/under/bb/sweater/purple=2, /obj/item/clothing/under/toga=1)
+	/obj/item/clothing/under/bb=2,/obj/item/clothing/under/bb/sweater=2,/obj/item/clothing/under/bb/sweater/red=2,/obj/item/clothing/under/bb/sweater/blue=2,/obj/item/clothing/under/bb/sweater/green=2,/obj/item/clothing/under/bb/sweater/purple=2, /obj/item/clothing/under/toga=1,
+	/obj/item/clothing/gloves/weddingring=10,/obj/item/clothing/gloves/weddingring/silver=10)
 	contraband = list(/obj/item/clothing/under/syndicate/tacticool=1,/obj/item/clothing/mask/balaclava=1,/obj/item/clothing/head/ushanka=1,/obj/item/clothing/under/soviet=1,/obj/item/weapon/storage/belt/fannypack/black=2)
 	premium = list(/obj/item/clothing/under/suit_jacket/checkered=1,/obj/item/clothing/head/mailman=1,/obj/item/clothing/under/rank/mailman=1,/obj/item/clothing/suit/jacket/leather=1,/obj/item/clothing/suit/jacket/leather/overcoat=1,/obj/item/clothing/under/pants/mustangjeans=1)
 	refill_canister = /obj/item/weapon/vending_refill/clothing
@@ -989,10 +990,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/obj/item/clothing/tie/petcollar=5, /obj/item/clothing/ears/earmuffs=2,/obj/item/clothing/glasses/sunglasses/blindfold=2,
 	/obj/item/clothing/mask/muzzle=2)
 	contraband = list()
-	premium = list(/obj/item/weapon/dildo/psych=2,/obj/item/weapon/restraints/handcuffs/kink=2,
+	premium = list(/obj/item/clothing/under/latexmaid=3,/obj/item/weapon/dildo/psych=2,/obj/item/weapon/restraints/handcuffs/kink=2,
 	/obj/item/clothing/head/wizard/fake=1,/obj/item/clothing/suit/wizrobe/fake=1)
 	refill_canister = /obj/item/weapon/vending_refill/kink
-
 /*
 
 /obj/machinery/sec/equipment_vendor
