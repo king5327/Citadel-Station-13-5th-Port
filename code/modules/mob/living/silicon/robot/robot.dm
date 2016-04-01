@@ -315,7 +315,11 @@
 	flick(icon_state, src)
 	sleep(animation_length+1)
 	notransform = 0
-	if(icon_state == "k9" || "medihound") //use for wide sprites
+	if(icon_state == "k9") //use for wide sprites
+		icon = 'icons/mob/widerobot.dmi'
+		pixel_x = -16
+		return
+	if(icon_state == "medihound") //use for wide sprites
 		icon = 'icons/mob/widerobot.dmi'
 		pixel_x = -16
 		return
