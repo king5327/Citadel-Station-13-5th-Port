@@ -43,10 +43,13 @@
 				message_say = "VIVA LA REVOLUTION!"
 			else if(user.mind.gang_datum)
 				message_say = "[uppertext(user.mind.gang_datum.name)] RULES!"
+		var/mob/living/carbon/C = user
+		if(C.getorgan(/obj/item/organ/internal/body_egg/alien_embryo))
+			message_say = "FUCK YOU, XENO SCUM!"
 	user.say(message_say)
 	target = user
-	message_admins("[key_name_admin(user)](<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A>) (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[user]'>FLW</A>) suicided with [src.name] at ([x],[y],[z] - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)",0,1)
-	message_admins("[key_name(user)] suicided with [src.name] at ([x],[y],[z])")
+	message_admins("[key_name_admin(user)](<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A>) (<A HREF='?_src_=holder;adminplayerobservefollow=\ref[user]'>FLW</A>) suicided with [src.name] at ([user.x],[user.y],[user.z] - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)",0,1)
+	message_admins("[key_name(user)] suicided with [src.name] at ([user.x],[user.y],[user.z])")
 	sleep(10)
 	explode(get_turf(user))
 	user.gib()
