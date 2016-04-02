@@ -36,3 +36,24 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	burn_state = -1 //Won't burn in fires
+
+/obj/item/clothing/gloves/weddingring
+	name = "golden wedding ring"
+	desc = "For showing your devotion to another. Or yourself."
+	icon_state = "wedring_g"
+	item_state = "wedring_g"
+	strip_delay = 60 //why are you trying to strip people of a ring.
+	burn_state = -1 //Won't burn. It's a METAL RIIIIING.
+	transfer_prints = TRUE //it doesn't cover your fingertips.
+	var/partnername = ""
+
+/obj/item/clothing/gloves/weddingring/attack_self(mob/user)
+	partnername = copytext(sanitize(input(user, "Would you like to change the holoengraving on the ring?", "Name your betrothed", "Bae") as null|text),1,MAX_NAME_LEN)
+	name = "[initial(name)] - [partnername]"
+
+/obj/item/clothing/gloves/weddingring/silver
+	name = "silver wedding ring"
+	icon_state = "wedring_s"
+	item_state = "wedring_s"
+
+//Maybe some other wedding ring types? Like, a plasma one, or a ring pop.

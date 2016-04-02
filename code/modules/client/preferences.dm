@@ -105,7 +105,7 @@ var/list/preferences_datums = list()
 	var/current_tab = 0
 
 		// OOC Metadata:
-	var/metadata = ""
+	var/flavor_text = ""
 
 	var/unlock_content = 0
 
@@ -238,6 +238,16 @@ var/list/preferences_datums = list()
 			dat += "<b>Undershirt:</b><BR><a href ='?_src_=prefs;preference=undershirt;task=input'>[undershirt]</a><BR>"
 			dat += "<b>Socks:</b><BR><a href ='?_src_=prefs;preference=socks;task=input'>[socks]</a><BR>"
 			dat += "<b>Backpack:</b><BR><a href ='?_src_=prefs;preference=bag;task=input'>[backbaglist[backbag]]</a><BR></td>"
+
+			dat += "<a href='byond://?src=\ref[user];preference=flavor_text;task=input'><b>Set Flavor Text</b></a><br>"
+			if(lentext(flavor_text) <= 40)
+				if(!lentext(flavor_text))
+					dat += "\[...\]"
+				else
+					dat += "[flavor_text]"
+			else
+				dat += "[TextPreview(flavor_text)]...<br>"
+			dat += "<br>"
 
 			if(pref_species.use_skintones)
 
@@ -796,10 +806,13 @@ var/list/preferences_datums = list()
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
 
-				if("metadata")
-					var/new_metadata = input(user, "Enter any information you'd like others to see, such as Roleplay-preferences:", "Game Preference" , metadata)  as message|null
-					if(new_metadata)
-						metadata = sanitize(copytext(new_metadata,1,MAX_MESSAGE_LEN))
+				if("flavor_text")
+					var/msg = input(usr,"Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!","Flavor Text",html_decode(flavor_text)) as message
+					if(msg != null)
+						msg = copytext(msg, 1, MAX_MESSAGE_LEN)
+						msg = html_encode(msg)
+
+						flavor_text = msg
 
 				if("hair")
 					var/new_hair = input(user, "Choose your character's hair colour:", "Character Preference") as null|color
@@ -1217,6 +1230,8 @@ var/list/preferences_datums = list()
 	character.underwear = underwear
 	character.undershirt = undershirt
 	character.socks = socks
+
+	character.flavor_text = flavor_text
 
 	character.backbag = backbag
 

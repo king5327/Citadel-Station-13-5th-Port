@@ -165,7 +165,7 @@
 	icon = 'icons/mob/dogborg.dmi'
 	icon_state = "synthtongue"
 	hitsound = 'sound/effects/attackblob.ogg'
-	cleanspeed = 60
+	cleanspeed = 80
 	var/emagged = 0
 
 /obj/item/trash/rkibble
@@ -183,13 +183,13 @@
 			desc = "Your tongue has been upgraded successfully. Congratulations."
 			icon = 'icons/mob/dogborg.dmi'
 			icon_state = "syndietongue"
-			cleanspeed = 30 //(nerf'd)tator soap stat
+			cleanspeed = 60 //(nerf'd)tator soap stat
 		else
 			name = "synthetic tongue"
 			desc = "Useful for slurping mess off the floor before affectionally licking the crew members in the face."
 			icon = 'icons/mob/dogborg.dmi'
 			icon_state = "synthtongue"
-			cleanspeed = 60
+			cleanspeed = 80
 		update_icon()
 
 /obj/item/weapon/soap/tongue/afterattack(atom/target, mob/user, proximity)
@@ -303,7 +303,7 @@
 	var/mob/living/carbon/patient = null
 	var/mob/living/silicon/hound = null
 	var/inject_amount = 10
-	var/min_health = 25
+	var/min_health = -100
 	var/occupied = 0
 	var/list/injection_chems = list("morphine", "salbutamol", "bicaridine", "kelotane","antitoxin")
 
@@ -311,6 +311,8 @@
 	return 0
 
 /obj/item/weapon/dogborg/sleeper/afterattack(mob/living/carbon/target, mob/living/silicon/user, proximity)
+	if(!proximity)
+		return
 	if(!ishuman(target))
 		return
 	if(!patient_insertion_check(target))
@@ -362,6 +364,7 @@
 	patient.reset_view()
 	patient = null
 	src.occupied = 0
+	src.occupied = 0 //double check just in case
 
 /obj/item/weapon/dogborg/sleeper/proc/drain()
 	var/mob/living/silicon/robot.R = hound
