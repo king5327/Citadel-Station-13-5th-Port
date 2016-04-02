@@ -138,7 +138,7 @@ var/const/MAX_ACTIVE_TIME = 200
 		var/obj/item/clothing/suit/space/hardsuit/hsuit = H.wear_suit
 		var/obj/item/clothing/head/helmet/space/hardsuit/hhelm = H.head
 		if(H.is_mouth_covered(head_only = 1))
-			if(H.head && H.head != hhelm)
+			if(H.head && H.head != hhelm && (helm.flags & NODROP))
 				H.unEquip(helm)
 				H.visible_message("<span class='danger'>[src] tears [helm] off of [H]!</span>", \
 							"<span class='userdanger'>[src] tears [helm] off of [H]!</span>")
