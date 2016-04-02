@@ -11,7 +11,28 @@
 		update_icons()
 		status_flags |=CANPUSH
 
+	if(!gibbed && (fireloss >= (maxHealth*-0.75)))
+		visible_message("<span class='warning'>[src] starts shaking...</span>")
+		spawn(25)
+			src.gib()
+
 	tod = worldtime2text() //weasellos time of death patch
 	if(mind) 	mind.store_memory("Time of death: [tod]", 0)
 
 	return ..(gibbed)
+
+/mob/living/carbon/alien/humanoid/gib()
+	visible_message("<span class='danger'>[src] explodes in a shower of acid blood and gibs!</span>")
+	for(var/mob/living/M in viewers(2, src))
+		if(ishuman(M))
+			M << "<span class='userdanger'>You're sprayed with acid blood!</span>"
+			M.adjustFireLoss(15)
+			M.reagents.add_reagent("sacid",5)
+		else if(ismonkey(M))
+			M << "<span class='userdanger'>You're sprayed with acid blood!</span>"
+			M.adjustFireLoss(15)
+			M.reagents.add_reagent("sacid",5)
+		else if(!isalien(M))
+			M << "<span class='userdanger'>You're sprayed with acid blood!</span>"
+			M.adjustFireLoss(20)
+	..()
