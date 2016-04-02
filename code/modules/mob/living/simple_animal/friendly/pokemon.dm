@@ -13,7 +13,7 @@
 	layer = 4
 	response_help = "pets"
 	wander = 1
-	turns_per_move = 5
+	turns_per_move = 2
 	pass_flags = PASSTABLE | PASSMOB
 
 /mob/living/simple_animal/pokemon/proc/simple_lay_down()
