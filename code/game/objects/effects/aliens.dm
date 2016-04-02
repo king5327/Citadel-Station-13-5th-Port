@@ -163,7 +163,7 @@
 	anchored = 1
 	density = 0
 	layer = 2
-	var/health = 10
+	var/health = 15
 	var/obj/structure/alien/weeds/node/linked_node = null
 	var/static/list/weedImageCache
 
@@ -309,7 +309,7 @@
 	icon_state = "egg_growing"
 	density = 0
 	anchored = 1
-	var/health = 100
+	var/health = 60
 	var/status = GROWING	//can be GROWING, GROWN or BURST; all mutually exclusive
 	layer = MOB_LAYER
 
@@ -417,7 +417,6 @@
 	if(status == GROWN)
 		if(!CanHug(AM))
 			return
-
 		var/mob/living/carbon/C = AM
 		if(C.stat == CONSCIOUS && C.getorgan(/obj/item/organ/internal/body_egg/alien_embryo))
 			return
