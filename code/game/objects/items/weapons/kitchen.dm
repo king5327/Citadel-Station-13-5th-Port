@@ -76,6 +76,30 @@
 	icon_state = "render"
 	w_class = 3
 
+/obj/item/weapon/kitchen/knife/ritual/suicide_act(mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.getorgan(/obj/item/organ/internal/body_egg/alien_embryo))
+			user.visible_message("<span class='suicide'>[user] is slitting \his stomach open with the [src.name]!</span>")
+			sleep(10)
+			H.visible_message("<span class='suicide'>[H] reaches into his stomach...</span>")
+			sleep(10)
+			var/burstedoverlay = image('icons/mob/alien.dmi', loc = H, icon_state = "bursted_stand")
+			var/obj/item/organ/internal/body_egg/alien_embryo/alien = H.getorgan(/obj/item/organ/internal/body_egg/alien_embryo)
+			H.say("*scream")
+			H.visible_message("<span class='suicide'>[H] rips [alien] out of their stomach!</span>")
+			H.overlays += burstedoverlay
+			alien.loc = H.loc
+			alien.owner = null
+			H.internal_organs -= alien
+			alien.visible_message("<span class='name'>[alien]</span> lets out a waning guttural screech, green blood bubbling from its maw...")
+			playsound(alien.loc, 'sound/voice/hiss6.ogg', 30, 1, 1)
+		else
+			..()
+	else
+		..()
+	return (BRUTELOSS)
+
 /obj/item/weapon/kitchen/knife/butcher
 	name = "butcher's cleaver"
 	icon_state = "butch"
