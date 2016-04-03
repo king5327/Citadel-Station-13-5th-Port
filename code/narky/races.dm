@@ -667,11 +667,8 @@ var/list/cock_list = list(
 	"human",
 	"canine",
 	"feline",
-//	"murid",
-//	"leporid",
 	"reptilian",
-	//"custom",
-	)
+	"equine")
 
 
 proc/kpcode_hastail(var/S)
