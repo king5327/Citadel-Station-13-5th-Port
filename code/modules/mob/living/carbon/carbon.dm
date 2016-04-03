@@ -386,7 +386,7 @@ var/const/GALOSHES_DONT_HELP = 4
 	return
 
 /mob/living/carbon/resist_buckle()
-	if(restrained())
+	if(restrained() && !istype(buckled, /obj/structure/bed/nest))
 		changeNext_move(CLICK_CD_BREAKOUT)
 		last_special = world.time + CLICK_CD_BREAKOUT
 		visible_message("<span class='warning'>[src] attempts to unbuckle themself!</span>", \
