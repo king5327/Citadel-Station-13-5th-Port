@@ -652,7 +652,7 @@ var/list/mutant_tails = list(
 	"cow"="cow",
 	"kangaroo"="kangaroo",
 	"kangaroo"="kangaroo",
-	)
+	"pony"="pony")
 
 var/list/mutant_wings = list(
 	"none"=0,
