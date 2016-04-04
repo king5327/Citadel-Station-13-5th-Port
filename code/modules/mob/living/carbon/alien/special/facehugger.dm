@@ -128,38 +128,29 @@ var/const/MAX_ACTIVE_TIME = 200
 		return 0
 	if(stat != CONSCIOUS)
 		return 0
-	if(!sterile) M.take_organ_damage(strength,0) //done here so that even borgs and humans in helmets take damage
+//	if(!sterile) M.take_organ_damage(strength,0) //done here so that even borgs and humans in helmets take damage
 	M.visible_message("<span class='danger'>[src] leaps at [M]'s face!</span>", \
 						"<span class='userdanger'>[src] leaps at [M]'s face!</span>")
 	src.Move(M.loc)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/clothing/helm = H.head
-		var/obj/item/clothing/suit/space/hardsuit/hsuit = H.wear_suit
-		var/obj/item/clothing/head/helmet/space/hardsuit/hhelm = H.head
-		if(H.is_mouth_covered(head_only = 1))
-			if(H.head && H.head != hhelm && (helm.flags & NODROP))
-				H.unEquip(helm)
-				H.visible_message("<span class='danger'>[src] tears [helm] off of [H]!</span>", \
+		if(H.head && istype(helm, /obj/item/clothing/head/helmet/space/hardsuit))
+			var/obj/item/clothing/suit/space/hardsuit/hsuit = H.wear_suit
+			hsuit.ToggleHelmet()
+			H.visible_message("<span class='danger'>[src] tears [helm] off of [H]!</span>", \
 							"<span class='userdanger'>[src] tears [helm] off of [H]!</span>")
-				GoIdle()
-				return 0
-			else if((H.head && H.head == hhelm) && (H.wear_suit && H.wear_suit == hsuit))
-				hsuit.ToggleHelmet()
-				H.visible_message("<span class='danger'>[src] tears [hhelm] off of [H]!</span>", \
-								"<span class='userdanger'>[src] tears [hhelm] off of [H]!</span>")
-				GoIdle()
-				return 0
-			if(H.wear_mask)
-				var/obj/item/clothing/W = H.wear_mask
-				if(W.flags & NODROP)
-					return 0
-				H.unEquip(W)
-				H.visible_message("<span class='danger'>[src] tears [W] off of [H]'s face!</span>", \
-									"<span class='userdanger'>[src] tears [W] off of [H]'s face!</span>")
-				H.equip_to_slot(src, slot_wear_mask,,0)
-				if(!sterile)
-					M.Paralyse(MAX_IMPREGNATION_TIME/12)
+			GoIdle()
+			return 0
+		else if(H.head && (helm.flags & NODROP))
+			return 0
+		else if(H.head)
+			H.unEquip(helm)
+			H.visible_message("<span class='danger'>[src] tears [helm] off of [H]!</span>", \
+							"<span class='userdanger'>[src] tears [helm] off of [H]!</span>")
+			GoIdle()
+			return 0
+
 	if(iscarbon(M))
 		var/mob/living/carbon/target = M
 		if(target.wear_mask)
