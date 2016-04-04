@@ -128,7 +128,7 @@ var/const/MAX_ACTIVE_TIME = 200
 		return 0
 	if(stat != CONSCIOUS)
 		return 0
-//	if(!sterile) M.take_organ_damage(strength,0) //done here so that even borgs and humans in helmets take damage
+	if(!sterile) M.take_organ_damage(strength,0) //done here so that even borgs and humans in helmets take damage
 	M.visible_message("<span class='danger'>[src] leaps at [M]'s face!</span>", \
 						"<span class='userdanger'>[src] leaps at [M]'s face!</span>")
 	src.Move(M.loc)
