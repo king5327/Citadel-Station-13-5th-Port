@@ -186,24 +186,28 @@
 
 /mob/living/simple_animal/pokemon/dratini/dragonair
 	name = "dragonair"
+	desc = "A Dragonair stores an enormous amount of energy inside its body. It is said to alter the weather around it by loosing energy from the crystals on its neck and tail."
 	icon_state = "dragonair"
 	icon_living = "dragonair"
 	icon_dead = "dragonair_d"
 
 /mob/living/simple_animal/pokemon/dratini/dragonair/dragonite
 	name = "dragonite"
+	desc = "It can circle the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land."
 	icon_state = "dragonite"
 	icon_living = "dragonite"
 	icon_dead = "dragonite_d"
 
 /mob/living/simple_animal/pokemon/dratini
 	name = "dratini"
+	desc = "A Dratini continually molts and sloughs off its old skin. It does so because the life energy within its body steadily builds to reach uncontrollable levels."
 	icon_state = "dratini"
 	icon_living = "dratini"
 	icon_dead = "dratini_d"
 
 /mob/living/simple_animal/pokemon/eevee
 	name = "eevee"
+	desc = "Eevee has an unstable genetic makeup that suddenly mutates due to its environment. Radiation from various stones causes this Pokémon to evolve."
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
@@ -213,6 +217,7 @@
 
 /mob/living/simple_animal/pokemon/eevee/espeon
 	name = "espeon"
+	desc = "Espeon is extremely loyal to any trainer it considers to be worthy. It is said to have developed precognitive powers to protect its trainer from harm."
 	icon_state = "espeon"
 	icon_living = "espeon"
 	icon_dead = "espeon_d"
@@ -225,6 +230,7 @@
 
 /mob/living/simple_animal/pokemon/eevee/flareon
 	name = "flareon"
+	desc = "Flareon's fluffy fur releases heat into the air so that its body does not get excessively hot. Its body temperature can rise to a maximum of 1,650 degrees F."
 	icon_state = "flareon"
 	icon_living = "flareon"
 	icon_dead = "flareon_d"
@@ -232,6 +238,7 @@
 
 /mob/living/simple_animal/pokemon/eevee/glaceon
 	name = "glaceon"
+	desc = "By controlling its body heat, it can freeze the atmosphere around it to make a diamond-dust flurry."
 	icon_state = "glaceon"
 	icon_living = "glaceon"
 	icon_dead = "glaceon_d"
@@ -239,6 +246,7 @@
 
 /mob/living/simple_animal/pokemon/eevee/jolteon
 	name = "jolteon"
+	desc = "Its cells generate weak power that is amplified by its fur's static electricity to drop thunderbolts. The bristling fur is made of electrically charged needles."
 	icon_state = "jolteon"
 	icon_living = "jolteon"
 	icon_dead = "jolteon_d"
@@ -246,6 +254,7 @@
 
 /mob/living/simple_animal/pokemon/larvitar
 	name = "larvitar"
+	desc = "It is born deep underground. It can't emerge until it has entirely consumed the soil around it."
 	icon_state = "larvitar"
 	icon_living = "larvitar"
 	icon_dead = "larvitar_d"
