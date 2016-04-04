@@ -234,7 +234,7 @@
 			var/mob/living/carbon/attacker = user
 			user.visible_message("<span class='danger'>[user] is attempting to devour [affecting]!</span>")
 			if(istype(user, /mob/living/carbon/alien/humanoid))
-				if(!do_mob(user, affecting)||!do_after(user, 100))
+				if(!do_mob(user, affecting)||!do_after(user, 50))
 					return
 			else
 				return
