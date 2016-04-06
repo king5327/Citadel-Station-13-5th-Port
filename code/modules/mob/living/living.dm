@@ -125,7 +125,7 @@ Sorry Giacom. Please don't be mad :(
 	if(a_intent=="harm"&&canmove)//Check for macro stompage!
 		if(istype(M,/mob/living))
 			var/mob/living/L=M
-			if(sizeplay_size>L.sizeplay_size+1)
+			if(sizeplay_size>L.sizeplay_size+1 && L.sizeplay_size<3)
 				visible_message("<span class='warning'>[src] steps on [M]!</span>")
 				loc=M.loc
 				M.Stun(rand(2,4))//Make this falling later
