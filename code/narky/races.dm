@@ -652,7 +652,7 @@ var/list/mutant_tails = list(
 	"cow"="cow",
 	"kangaroo"="kangaroo",
 	"kangaroo"="kangaroo",
-	)
+	"pony"="pony")
 
 var/list/mutant_wings = list(
 	"none"=0,
@@ -667,11 +667,8 @@ var/list/cock_list = list(
 	"human",
 	"canine",
 	"feline",
-//	"murid",
-//	"leporid",
 	"reptilian",
-	//"custom",
-	)
+	"equine")
 
 
 proc/kpcode_hastail(var/S)

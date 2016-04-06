@@ -83,7 +83,6 @@
 	storedPlasma = 50
 	max_plasma = 100
 	plasma_rate = 5
-	heal_rate = 2.5
 	alien_powers = list(/obj/effect/proc_holder/alien/transfer)
 
 /obj/item/organ/internal/alien/plasmavessel/on_life()

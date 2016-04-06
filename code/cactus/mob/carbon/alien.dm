@@ -83,7 +83,7 @@
 		return
 	else
 		return
-
+/*
 /obj/structure/closet/attack_alien(mob/user)
 	if(isalienadult(user))
 		playsound(src, pick('sound/alien/Effects/bang1.ogg', 'sound/alien/Effects/bang2.ogg', 'sound/alien/Effects/bang3.ogg', 'sound/alien/Effects/bang4.ogg', 'sound/alien/Effects/bang5.ogg', 'sound/alien/Effects/bang6.ogg', 'sound/alien/Effects/bang7.ogg', 'sound/alien/Effects/bang8.ogg'), 100, 0, 0)
@@ -98,7 +98,7 @@
 
 	else
 		return
-
+*/
 /obj/structure/barricade/wooden/attack_alien(mob/user)
 	if(isalienadult(user))
 		playsound(src, 'sound/weapons/bladeslice.ogg', 100, 0, 0)
@@ -224,7 +224,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	allowed = list(/obj/item/clothing/mask/facehugger)
-	armor = list(melee = 35, bullet = 10, laser = -50, energy = 0, bomb = 10, bio = 10, rad = 30)
+	armor = list(melee = 35, bullet = 10, laser = -25, energy = 0, bomb = 10, bio = 10, rad = 30)
 //HELMET
 /obj/item/clothing/head/xeno_helm
 	name = "alien helmet"
@@ -233,7 +233,7 @@
 	item_state = "alien_helm"
 	desc = "An armored helmet made out of chitinous alien hide."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
-	armor = list(melee = 35, bullet = 10, laser = -50, energy = 0, bomb = 10, bio = 10, rad = 30)
+	armor = list(melee = 35, bullet = 10, laser = -25, energy = 0, bomb = 10, bio = 10, rad = 30)
 //CRAFTING RECIPES//
 /datum/table_recipe/xenoshield
 	name = "alien shield"

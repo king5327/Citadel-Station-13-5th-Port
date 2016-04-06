@@ -66,7 +66,7 @@
 
 /mob/living/carbon/alien/humanoid/royal/queen/movement_delay()
 	. = ..()
-	. += 4
+	. += 3
 	if(locate(/obj/structure/alien/weeds) in src.loc)
 		. += -1
 

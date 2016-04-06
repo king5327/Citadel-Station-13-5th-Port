@@ -21,7 +21,6 @@
 	var/charging = 0
 /mob/living/carbon/alien/humanoid/ravager/movement_delay()
 	. = ..()
-	. += 1
 
 /mob/living/carbon/alien/humanoid/ravager/New()
 	real_name = name
@@ -50,13 +49,6 @@
 			healths.icon_state = "health7"
 
 #define MAX_ALIEN_CHARGE_DIST 5
-
-/mob/living/carbon/alien/humanoid/ravager/adjustFireLoss(amount)
-	if(amount > 0)
-		..(amount * 0.5) //normal fire damage, 1/2 double damage
-	else
-		..(amount)
-	return
 
 /mob/living/carbon/alien/humanoid/ravager/proc/charge_at(atom/A)
 	var/plasma_cost = 45
@@ -100,7 +92,7 @@
 				"<span class ='italics'>You hear a thud...</span>")
 			L.Weaken(3)
 			playsound(L.loc, 'sound/weapons/punch3.ogg', 100, 0, 7)
-			var/chargeDamage = rand(10,20)
+			var/chargeDamage = rand(15,30)
 			L.adjustBruteLoss(chargeDamage)
 			step_away(L,src)
 			step_away(L,src)

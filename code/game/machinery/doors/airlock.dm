@@ -1172,34 +1172,3 @@ About the new airlock wires panel:
 		locked = 1
 		loseMainPower()
 		loseBackupPower()
-
-
-/obj/machinery/door/airlock/attack_alien(mob/user) //PRYING OPEN AIRLOCKS AS AN ALIEN
-	user.changeNext_move(CLICK_CD_MELEE)
-	if(isalienadult(user))
-
-		if(secondsElectrified != 0 && src.shock(user, 100))
-			return
-		if(locked && welded)
-			user << text("<span class='notice'>The airlock is bolted and welded, no way you're getting through that!</span>")
-			return
-		else if(locked)
-			user << text("<span class='notice'>The airlock is bolted, it won't budge!</span>")
-			return
-		else if(welded)
-			user << text("<span class='notice'>The airlock is welded, you can't get a good grip!</span>")
-			return
-		else if(!locked && !welded && density)
-			visible_message(
-				"<span class='notice'>[user] begins prying open [src].</span>",\
-				"<span class='notice'>You begin prying open [src].</span>",\
-				"<span class='italics'>You hear prying...</span>")
-			playsound(src, 'sound/machines/airlockforced_alien.ogg', 100, 1)
-			sleep(40)
-			if(!locked && !welded && density && in_range(src, user) && user.stat < 1)
-				open(2)
-		return
-
-	else
-
-		return

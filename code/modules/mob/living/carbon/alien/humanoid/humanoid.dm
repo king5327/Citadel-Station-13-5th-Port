@@ -11,9 +11,9 @@
 	var/pounce_cooldown = 0
 	var/pounce_cooldown_time = 50
 	var/spit_cooldown = 0
-	var/spit_cooldown_time = 150
+	var/spit_cooldown_time = 100
 	var/charge_cooldown = 0
-	var/charge_cooldown_time = 150
+	var/charge_cooldown_time = 100
 	var/custom_pixel_x_offset = 0 //for admin fuckery.
 	var/custom_pixel_y_offset = 0
 	var/sneaking = 0 //For sneaky-sneaky mode and appropriate slowdown
@@ -23,7 +23,7 @@
 	. = ..()
 	if(health > 0 && !resting && !sleeping && !paralysis && !sneaking && !leaping && has_gravity(src) && !buckled) //If you're sneaking you're quiet too.
 		if(footstep > 0 && src.loc == NewLoc)
-			playsound(src.loc, pick('sound/alien/Effects/step1.ogg', 'sound/alien/Effects/step2.ogg', 'sound/alien/Effects/step3.ogg', 'sound/alien/Effects/step4.ogg', 'sound/alien/Effects/step5.ogg', 'sound/alien/Effects/step6.ogg', 'sound/alien/Effects/step7.ogg'), 25, 0, 0)
+			playsound(src.loc, pick('sound/alien/Effects/step1.ogg', 'sound/alien/Effects/step2.ogg', 'sound/alien/Effects/step3.ogg', 'sound/alien/Effects/step4.ogg', 'sound/alien/Effects/step5.ogg', 'sound/alien/Effects/step6.ogg', 'sound/alien/Effects/step7.ogg'), 15, 0, -1)
 			footstep = 0
 		else if(src.loc == NewLoc)
 			footstep++
