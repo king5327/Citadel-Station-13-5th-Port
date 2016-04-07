@@ -40,6 +40,7 @@
 /obj/item/clothing/gloves/weddingring
 	name = "golden wedding ring"
 	desc = "For showing your devotion to another. Or yourself."
+	gender = NEUTER //there's only 1 ring so this'd make more sense!
 	icon_state = "wedring_g"
 	item_state = "wedring_g"
 	strip_delay = 60 //why are you trying to strip people of a ring.
