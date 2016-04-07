@@ -105,6 +105,7 @@ var/const/ALIEN_AFK_BRACKET = 450 // 45 seconds
 			owner.overlays -= overlay
 			var/burstedoverlay = image('icons/mob/alien.dmi', loc = owner, icon_state = "bursted_stand")
 			owner.overlays += burstedoverlay
+			owner.adjustBruteloss(215)
 		qdel(src)
 		return (BRUTELOSS)
 
