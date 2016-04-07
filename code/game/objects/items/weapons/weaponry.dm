@@ -94,12 +94,12 @@
 		var/mob/living/carbon/human/H = user
 		if(H.getorgan(/obj/item/organ/internal/body_egg/alien_embryo))
 			sleep(10)
-			H.visible_message("<span class='suicide'>[H] reaches into his stomach...</span>")
+			H.visible_message("<span class='suicide'>[H] reaches into \his stomach...</span>")
 			sleep(10)
 			var/burstedoverlay = image('icons/mob/alien.dmi', loc = H, icon_state = "bursted_stand")
 			var/obj/item/organ/internal/body_egg/alien_embryo/alien = H.getorgan(/obj/item/organ/internal/body_egg/alien_embryo)
 			H.say("*scream")
-			H.visible_message("<span class='suicide'>[H] rips [alien] out of their stomach!</span>")
+			H.visible_message("<span class='suicide'>[H] rips [alien] out of \his stomach!</span>")
 			H.overlays += burstedoverlay
 			alien.loc = H.loc
 			alien.owner = null
