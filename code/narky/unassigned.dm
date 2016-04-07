@@ -2052,12 +2052,12 @@ var/list/traitor_test_list = null
 		if(C.prefs.toggles & CHAT_OOC)
 			var/display_name = src.key
 			if(holder)
-				if(holder.fakekey)
-					if(C.holder)
-						display_name = "[holder.fakekey]/([src.key])"
-					else
-						display_name = holder.fakekey
-			C << "<font color='#6699CC'><span class='ooc'><span class='prefix'>LOOC:</span> <EM>[display_name]:</EM> <span class='message'>[msg]</span></span></font>"
+//				if(holder.fakekey)
+//					if(C.holder)
+//						display_name = "[holder.fakekey]/([src.key])"
+//				else
+//					display_name = holder.fakekey
+			C << "<font color='#6699CC'><span class='ooc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></span></font>"
 
 	for(var/client/C in admins)
 		if(C.prefs.toggles & CHAT_OOC)
