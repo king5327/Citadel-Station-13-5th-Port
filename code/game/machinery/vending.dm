@@ -988,10 +988,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	vend_reply = "Have fun, you shameless pervert!"
 	products = list(/obj/item/weapon/dildo=10,/obj/item/clothing/under/maid=5,/obj/item/clothing/under/schoolgirl=3,
 	/obj/item/clothing/tie/petcollar=5, /obj/item/clothing/ears/earmuffs=2,/obj/item/clothing/glasses/sunglasses/blindfold=2,
-	/obj/item/clothing/mask/muzzle=2, /obj/item/weapon/melee/leatherwhip=2)
+	/obj/item/clothing/mask/muzzle=2)
 	contraband = list()
 	premium = list(/obj/item/clothing/under/latexmaid=3,/obj/item/weapon/dildo/psych=2,/obj/item/weapon/restraints/handcuffs/kink=2,
-	/obj/item/clothing/head/wizard/fake=1,/obj/item/clothing/suit/wizrobe/fake=1)
+	/obj/item/clothing/head/wizard/fake=1,/obj/item/clothing/suit/wizrobe/fake=1, /obj/item/weapon/melee/leatherwhip=2)
 	refill_canister = /obj/item/weapon/vending_refill/kink
 /*
 
