@@ -29,8 +29,8 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
 	damtype = "stamina"
-	force = 10
-	throwforce = 7
+	force = 5
+	throwforce = 5
 	w_class = 3
 	origin_tech = "combat=4"
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
