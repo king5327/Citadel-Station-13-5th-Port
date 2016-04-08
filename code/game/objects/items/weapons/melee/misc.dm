@@ -21,7 +21,21 @@
 		user.visible_message("<span class='suicide'>[user] is strangling \himself with the [src.name]! It looks like \he's trying to commit suicide.</span>")
 		return (OXYLOSS)
 
-
+/obj/item/weapon/melee/leatherwhip
+	name = "rawhide whip"
+	desc = "Be glad this isn't the 1700's."
+	icon_state = "chain"
+	item_state = "chain"
+	flags = CONDUCT
+	slot_flags = SLOT_BELT
+	damtype = "stamina"
+	force = 10
+	throwforce = 7
+	w_class = 3
+	origin_tech = "combat=4"
+	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	hitsound = 'sound/weapons/flog.ogg'
+	needs_permit = 0
 
 /obj/item/weapon/melee/classic_baton
 	name = "police baton"
