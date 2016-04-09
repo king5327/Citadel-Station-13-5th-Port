@@ -2,7 +2,7 @@
 	if (src.z != 2) //so admins can fuck around in the thunderdome
 		for(var/mob/living/carbon/alien/A in world)
 			if (!A.stat)
-				A << "<span class='userdanger'>[src.name] has died in [src.loc.loc.name]! </span>"
+				A << "<span class='userdanger'>[src.name] has died at [src.loc.loc.name]! </span>"
 			else
 				return
 
