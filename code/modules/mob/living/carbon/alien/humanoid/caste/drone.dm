@@ -14,7 +14,6 @@
 	internal_organs += new /obj/item/organ/internal/alien/plasmavessel/large
 	internal_organs += new /obj/item/organ/internal/alien/resinspinner
 	AddAbility(new /obj/effect/proc_holder/alien/sneak)
-
 	AddAbility(new/obj/effect/proc_holder/alien/evolve(null))
 	..()
 

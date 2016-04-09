@@ -2050,8 +2050,8 @@ var/list/traitor_test_list = null
 			continue //Also handled later.
 
 		if(C.prefs.toggles & CHAT_OOC)
-			var/display_name = src.key
-			if(holder)
+//			var/display_name = src.key
+//			if(holder)
 //				if(holder.fakekey)
 //					if(C.holder)
 //						display_name = "[holder.fakekey]/([src.key])"
