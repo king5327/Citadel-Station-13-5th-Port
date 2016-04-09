@@ -1,4 +1,5 @@
 /mob/living/carbon/alien/larva/death(gibbed)
+	deathNotice()
 	if(stat == DEAD)	return
 	if(healths)			healths.icon_state = "health6"
 	stat = DEAD
