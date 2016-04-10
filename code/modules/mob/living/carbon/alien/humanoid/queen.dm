@@ -18,8 +18,8 @@
 /mob/living/carbon/alien/humanoid/royal/queen
 	name = "alien queen"
 	caste = "q"
-	maxHealth = 400
-	health = 400
+	maxHealth = 325
+	health = 325
 	icon_state = "alienq"
 
 /mob/living/carbon/alien/humanoid/royal/queen/New()
@@ -47,13 +47,13 @@
 	if (src.healths)
 		if (src.stat != 2)
 			switch(health)
-				if(400 to INFINITY)
+				if(325 to INFINITY)
 					src.healths.icon_state = "health0"
-				if(320 to 400)
+				if(275 to 325)
 					src.healths.icon_state = "health1"
-				if(240 to 320)
+				if(200 to 275)
 					src.healths.icon_state = "health2"
-				if(160 to 240)
+				if(160 to 200)
 					src.healths.icon_state = "health3"
 				if(80 to 160)
 					src.healths.icon_state = "health4"
