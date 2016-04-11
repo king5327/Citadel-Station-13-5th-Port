@@ -4282,7 +4282,7 @@
 "bEr" = (/obj/machinery/computer/mecha,/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/plasteel{icon_state = "cafeteria"},/area/crew_quarters/hor)
 "bEs" = (/obj/structure/rack,/obj/item/device/taperecorder{pixel_x = -3},/obj/item/device/paicard{pixel_x = 4},/turf/simulated/floor/plasteel{dir = 10; icon_state = "warnwhite"},/area/crew_quarters/hor)
 "bEt" = (/turf/simulated/floor/plasteel{dir = 2; icon_state = "warnwhite"},/area/crew_quarters/hor)
-"bEu" = (/turf/simulated/floor/plasteel{dir = 6; icon_state = "warnwhite"},/area/crew_quarters/hor)
+"bEu" = (/obj/machinery/computer/security/telescreen{desc = "Used for watching the RD's goons from the safety of his office."; name = "Xenomorph Biology Monitor"; network = list("xenomorph_biolab"); pixel_x = 30; pixel_y = 0},/turf/simulated/floor/plasteel{dir = 6; icon_state = "warnwhite"},/area/crew_quarters/hor)
 "bEv" = (/turf/simulated/floor/engine,/area/toxins/explab)
 "bEw" = (/obj/machinery/camera{c_tag = "Experimentor Lab - Chamber"; dir = 2; network = list("SS13","RD")},/turf/simulated/floor/engine,/area/toxins/explab)
 "bEx" = (/obj/machinery/door/poddoor/preopen{id = "telelab"; name = "test chamber blast door"},/obj/structure/grille,/obj/structure/window/reinforced/fulltile,/obj/machinery/atmospherics/pipe/simple/supply/hidden,/turf/simulated/floor/plating,/area/toxins/explab)
