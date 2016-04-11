@@ -107,7 +107,6 @@ var/const/ALIEN_AFK_BRACKET = 450 // 45 seconds
 			owner.overlays += burstedoverlay
 			owner.adjustBruteLoss(215)
 		qdel(src)
-		return (BRUTELOSS)
 
 
 /*----------------------------------------
