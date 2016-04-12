@@ -1,0 +1,16 @@
+author: "TalkingCactus"
+
+delete-after: True
+
+changes: 
+  - bugfix: "Facehugger bugfixes, will no longer rip off head gear that doesn't cover the face."
+  - bugfix: "Chestbursters actually kill you again."
+  - rscadd: "Research Shuttle Added, currently can dock at the Xenobiology outpost on the asteroid(possibly more locations in the future)."
+  - rscadd: "Fully functional Xenobiology station added to Z level 5, north west of the mining outpost."
+  - rscadd: "New camera console for managing xenomorphs."
+  - rscadd: "Aliens broadcast a death notice to the rest of the hive on death."
+  - rscadd: "More disposal bins added to the hallways and other areas, various disposal piping fixes as well."
+  - tweak: "Cyborg roundstart spots increased from 1 to 3."
+  - tweak: "LOOC will display their in game name for normal players instead of ckey."
+  - bugfix: "Cutebold base sprite added, prevents 'invisible' character bug."
+  - tweak: "Queen health reduced to 325, forgot to push this last week."
