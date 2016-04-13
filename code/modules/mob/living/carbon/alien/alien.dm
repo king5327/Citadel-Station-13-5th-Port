@@ -18,7 +18,7 @@
 	var/obj/item/weapon/card/id/wear_id = null // Fix for station bounced radios -- Skie
 	var/has_fine_manipulation = 0
 	var/move_delay_add = 0 // movement delay to add
-
+	var/deathNotified = 0
 	status_flags = CANPARALYSE|CANPUSH
 
 	var/heat_protection = 0.5
