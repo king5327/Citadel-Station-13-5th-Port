@@ -2135,7 +2135,7 @@
 "aPc" = (/turf/simulated/floor/plasteel{icon_state = "L4"},/area/hallway/primary/central)
 "aPd" = (/obj/machinery/navbeacon{codes_txt = "patrol;next_patrol=Lockers"; location = "EVA"},/turf/simulated/floor/plasteel{icon_state = "L6"},/area/hallway/primary/central)
 "aPe" = (/turf/simulated/floor/plasteel{icon_state = "L8"},/area/hallway/primary/central)
-"aPf" = (/turf/simulated/floor/plasteel{icon_state = "L10"},/area/hallway/primary/central)
+"aPf" = (/obj/machinery/navbeacon{codes_txt = "patrol;next_patrol=Security"; location = "EVA2"},/turf/simulated/floor/plasteel{icon_state = "L10"},/area/hallway/primary/central)
 "aPg" = (/turf/simulated/floor/plasteel{icon_state = "L12"},/area/hallway/primary/central)
 "aPh" = (/turf/simulated/floor/plasteel{desc = ""; icon_state = "L14"},/area/hallway/primary/central)
 "aPi" = (/obj/machinery/navbeacon{codes_txt = "patrol;next_patrol=EVA2"; location = "Dorm"},/turf/simulated/floor/plasteel,/area/hallway/primary/central)
