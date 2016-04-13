@@ -3,6 +3,8 @@
 	if(healths)			healths.icon_state = "health6"
 	stat = DEAD
 	icon_state = "larva_dead"
+	if(!deathNotified)
+		deathNotice()
 
 	if(!gibbed)
 		visible_message("<span class='name'>[src]</span> lets out a waning high-pitched cry.")

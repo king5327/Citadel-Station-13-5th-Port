@@ -144,7 +144,7 @@ var/const/MAX_ACTIVE_TIME = 200
 			return 0
 		else if(H.head && (helm.flags & NODROP))
 			return 0
-		else if(H.head)
+		else if(H.head && H.is_mouth_covered(head_only = 1))
 			H.unEquip(helm)
 			H.visible_message("<span class='danger'>[src] tears [helm] off of [H]!</span>", \
 							"<span class='userdanger'>[src] tears [helm] off of [H]!</span>")

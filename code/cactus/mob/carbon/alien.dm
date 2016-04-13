@@ -1,3 +1,10 @@
+/mob/living/carbon/alien/proc/deathNotice()
+	src.deathNotified = 1
+	if (src.z != 2) //so admins can fuck around in the thunderdome
+		var/mob/living/carbon/alien/A
+		for(A in world)
+			A << "<span class='userdanger'>[src.name] has died at [src.loc.loc.name]! </span>"
+
 /obj/machinery/door/airlock/attack_alien(mob/user) //PRYING OPEN AIRLOCKS AS AN ALIEN
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(isalienadult(user))

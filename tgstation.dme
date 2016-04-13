@@ -220,6 +220,7 @@
 #include "code\ATMOSPHERICS\pipes\heat_exchange\junction.dm"
 #include "code\ATMOSPHERICS\pipes\heat_exchange\manifold.dm"
 #include "code\ATMOSPHERICS\pipes\heat_exchange\simple.dm"
+#include "code\cactus\xenobio.dm"
 #include "code\cactus\mob\carbon\alien.dm"
 #include "code\cactus\mob\carbon\human.dm"
 #include "code\cactus\mob\carbon\monkey.dm"
