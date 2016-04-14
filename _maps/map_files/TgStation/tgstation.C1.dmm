@@ -5886,7 +5886,7 @@
 "cjj" = (/obj/structure/disposalpipe/segment,/turf/simulated/floor/plating,/area/maintenance/asmaint)
 "cjk" = (/obj/structure/disposalpipe/segment,/obj/machinery/door/airlock/maintenance{req_access_txt = "12"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/atmospherics/pipe/simple/supply/hidden,/turf/simulated/floor/plating,/area/maintenance/asmaint2)
 "cjl" = (/obj/structure/grille,/obj/structure/window/reinforced/fulltile,/obj/machinery/door/firedoor,/turf/simulated/floor/plating,/area/toxins/xenobiology)
-"cjm" = (/obj/structure/disposalpipe/segment,/obj/structure/grille,/obj/structure/window/reinforced/fulltile,/obj/machinery/door/firedoor,/turf/simulated/floor/plating,/area/toxins/xenobiology)
+"cjm" = (/obj/structure/disposalpipe/segment,/obj/machinery/door/window/northleft{name = "Slime Kill Chamber"; req_access_txt = "55"},/obj/machinery/door/window/southleft{name = "Slime Kill Chamber"; req_access_txt = "55"},/turf/simulated/floor/plasteel{icon_state = "white"},/area/toxins/xenobiology)
 "cjn" = (/obj/machinery/portable_atmospherics/pump,/turf/simulated/floor/plasteel{dir = 2; icon_state = "bot"},/area/toxins/misc_lab)
 "cjo" = (/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/supply/hidden,/turf/simulated/floor/plasteel{icon_state = "floorgrime"},/area/toxins/misc_lab)
 "cjp" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/turf/simulated/floor/plasteel{icon_state = "floorgrime"},/area/toxins/misc_lab)
