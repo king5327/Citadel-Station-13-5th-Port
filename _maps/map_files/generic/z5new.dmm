@@ -362,6 +362,7 @@
 "gX" = (/obj/structure/reagent_dispensers/fueltank,/turf/simulated/floor/plating,/area/toxins/xenobiology_alien)
 "gY" = (/obj/structure/closet/firecloset,/turf/simulated/floor/plating,/area/toxins/xenobiology_alien)
 "gZ" = (/turf/simulated/wall/r_wall,/area/toxins/xenobiology_alien)
+"ha" = (/obj/machinery/door/poddoor/preopen{id = "x_lockdown"},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/door/firedoor,/obj/machinery/door/airlock/security{name = "Prisoner Education Center"; req_access_txt = "55;2"},/turf/simulated/floor/plasteel{icon_state = "floorgrime"},/area/toxins/xenobiology_alien)
 "hb" = (/obj/structure/disposalpipe/segment,/turf/simulated/wall/r_wall,/area/toxins/xenobiology_alien)
 "hc" = (/obj/structure/toilet{dir = 4},/turf/simulated/floor/plasteel/freezer,/area/toxins/xenobiology_alien)
 "hd" = (/turf/simulated/floor/plasteel/freezer,/area/toxins/xenobiology_alien)
