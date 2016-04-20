@@ -360,6 +360,8 @@ About the new airlock wires panel:
 			update_icon(AIRLOCK_CLOSING)
 		if("deny")
 			update_icon(AIRLOCK_DENY)
+			if(hasPower())
+				playsound(src.loc, 'sound/machines/airlockdeny.ogg', 30, 0)
 			sleep(6)
 			update_icon(AIRLOCK_CLOSED)
 			icon_state = "closed"
@@ -981,7 +983,7 @@ About the new airlock wires panel:
 		if(istype(src, /obj/machinery/door/airlock/clown))
 			playsound(src.loc, 'sound/items/bikehorn.ogg', 30, 1)
 		else
-			playsound(src.loc, 'sound/machines/airlock.ogg', 30, 1)
+			playsound(src.loc, 'sound/machines/airlockopen.ogg', 30, 0)
 		if(src.closeOther != null && istype(src.closeOther, /obj/machinery/door/airlock/) && !src.closeOther.density)
 			src.closeOther.close()
 	else
@@ -1036,7 +1038,7 @@ About the new airlock wires panel:
 		if(istype(src, /obj/machinery/door/airlock/clown))
 			playsound(src.loc, 'sound/items/bikehorn.ogg', 30, 1)
 		else
-			playsound(src.loc, 'sound/machines/airlock.ogg', 30, 1)
+			playsound(src.loc, 'sound/machines/airlockclose.ogg', 30, 0)
 	else
 		playsound(src.loc, 'sound/machines/airlockforced.ogg', 30, 1)
 
