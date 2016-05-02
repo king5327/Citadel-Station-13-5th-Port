@@ -61,7 +61,8 @@ var/list/admin_verbs_admin = list(
 	/client/proc/cmd_admin_local_narrate,	/*sends text to all mobs within view of atom*/
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/toggle_antag_hud,		/*toggle display of the admin antag hud*/
-	/client/proc/doorfix				/* door fixings */
+	/client/proc/doorfix,				/* door fixings */
+	/client/proc/panicbunker
 	)
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -113,7 +114,6 @@ var/list/admin_verbs_server = list(
 	/client/proc/forcerandomrotate,
 	/client/proc/adminchangemap,
 #endif
-	/client/proc/panicbunker
 
 	)
 var/list/admin_verbs_debug = list(
