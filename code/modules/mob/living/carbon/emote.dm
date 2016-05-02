@@ -105,6 +105,13 @@
 				message = "<B>[src]</B> makes a noise."
 				m_type = 2
 
+		if ("insult")
+			if(!muzzled)
+				..(act)
+			else
+				message = "<B>[src]</B> makes a noise."
+				m_type = 2
+
 		if ("laugh","laughs")
 			if (!muzzled)
 				..(act)
