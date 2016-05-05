@@ -293,7 +293,7 @@
 // JonathanHybrid's tweak
 
 /obj/item/clothing/tie/petcollar/New()
-		icon_state = pick("petcollar","petcollar_red","petcollar_purple","petcollar_black","petcollar_pink")
+		icon_state = pick("petcollar","petcollar_red","petcollar_purple","petcollar_black","petcollar_pink","petcollar_choker")
 		item_color = icon_state
 
 /obj/item/clothing/tie/spikecollar
@@ -323,3 +323,9 @@
 	desc = "A Centcomm. mantelet with gold buttons. Great for asserting oneself at important meetings, or costume parties."
 	icon_state = "mant-c"
 	item_color = "mant-c"
+
+/obj/item/clothing/tie/necklace/locust
+	name = "Locust Sigil Necklace"
+	desc = "FOR HORDE!!!"
+	icon_state = "locust"
+	item_color = "locust"

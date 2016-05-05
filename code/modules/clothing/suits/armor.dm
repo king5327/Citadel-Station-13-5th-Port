@@ -180,6 +180,12 @@
 	src.item_state = "reactiveoff"
 	..()
 
+/obj/item/clothing/suit/armor/knight_templar
+	name = "Templar Armor"
+	desc = "Deus Vult! A small tag inside reads 'This is a theater prop, not for physical protection!!!'  "
+	icon_state = "knight_templar"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	armor = list(melee = 30, bullet = 15, laser = 3, energy = 2, bomb = 0, bio = 0, rad = 0)
 
 //All of the armor below is mostly unused
 
