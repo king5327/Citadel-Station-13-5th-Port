@@ -260,7 +260,7 @@
 					message = "<B>[src]</b> salutes."
 			m_type = 1
 
-		if ("scream")
+		if ("scream","screams")
 			if (miming)
 				message = "<B>[src]</B> acts out a scream!"
 			else

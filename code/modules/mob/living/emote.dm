@@ -190,7 +190,7 @@
 					pointed(M)
 			m_type = 1
 
-		if ("scream")
+		if ("scream","screams")
 		/*	switch(gender)
 				if(MALE)
 					if(prob(50))
