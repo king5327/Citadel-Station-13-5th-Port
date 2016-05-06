@@ -156,7 +156,7 @@
 	list_reagents = list("hot_coco" = 30, "sugar" = 5)
 
 /obj/item/weapon/reagent_containers/food/drinks/dry_ramen
-	name = "Cup Ramen"
+	name = "Cup of Ramen"
 	desc = "Just add 10ml of water, self heats! A taste that reminds you of your school years."
 	icon_state = "ramen"
 	list_reagents = list("dry_ramen" = 30)

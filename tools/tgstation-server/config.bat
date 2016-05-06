@@ -7,8 +7,8 @@ set PROJECTNAME=tgstation
 
 
 REM location of the repo.
-set REPO_URL=https://github.com/tgstation/-tg-station.git
-REM set REPO_URL=git@github.com:tgstation/-tg-station.git
+set REPO_URL=https://github.com/Citadel-Station-13/Citadel-Station-13-5th-Port.git
+REM set REPO_URL=git@github.com:Citadel-Station-13/Citadel-Station-13-5th-Port.git
 
 
 REM What branch of the repo to use.
@@ -42,7 +42,7 @@ set PUSHCHANGELOGTOGIT=
 REM location of git. The script will attempt to auto detect this, but if it fails, you can set it manually.
 REM This will be added to the end of path as is (only for the batch file, not the whole system)
 REM github for windows users see http://www.chambaud.com/2013/07/08/adding-git-to-path-when-using-github-for-windows/ (an example is provided below)
-set GIT_LOCATION_PATH=
+set GIT_LOCATION_PATH=C:\Users\Jay\AppData\Local\Programs\Git
 REM set GIT_LOCATION_PATH=C:\Users\<user>\AppData\Local\GitHub\PortableGit_<GUID>\bin;C:\Users\<USER>\AppData\Local\GitHub\PortableGit_<GUID>\cmd
 
 

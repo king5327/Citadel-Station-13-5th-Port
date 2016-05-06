@@ -264,7 +264,32 @@
 			if (miming)
 				message = "<B>[src]</B> acts out a scream!"
 			else
-				..(act)
+				message = "<B>[src]</B> screams!"
+				m_type = 2
+				src.adjustOxyLoss(5)
+
+//				if(prob(5))
+//					playsound(src.loc, 'sound/misc/scream_wilhelm.ogg', 50, 1, 5) //do i need to explain this
+//					..(act)
+//				else
+				if(src.gender == MALE)
+					if(prob(50))
+						playsound(src.loc, 'sound/misc/scream_m1.ogg', 50, 1, 5)
+					else if(prob(25))
+						playsound(src.loc, 'sound/misc/scream_m2.ogg', 50, 1, 5)
+					else
+						playsound(src.loc, 'sound/misc/scream_m.ogg', 35, 1, 5)
+					..(act)
+				if(src.gender == FEMALE)
+					if(prob(50))
+						playsound(src.loc, 'sound/misc/scream_f1.ogg', 50, 1, 5)
+					else if(prob(25))
+						playsound(src.loc, 'sound/misc/scream_f2.ogg', 50, 1, 5)
+					else
+						playsound(src.loc, 'sound/misc/scream_f.ogg', 35, 1, 5)
+					..(act)
+				else if(src.gender == !MALE || !FEMALE) //fail safe or something
+					..(act)
 
 		if ("shiver","shivers")
 			message = "<B>[src]</B> shivers."
