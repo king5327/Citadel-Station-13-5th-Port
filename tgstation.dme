@@ -151,6 +151,7 @@
 #include "code\cactus\obj\guns.dm"
 #include "code\cactus\obj\hardsuits.dm"
 #include "code\cactus\obj\misc.dm"
+#include "code\cactus\obj\motionTracker.dm"
 #include "code\cactus\obj\tools.dm"
 #include "code\cactus\obj\weapons.dm"
 #include "code\controllers\configuration.dm"
