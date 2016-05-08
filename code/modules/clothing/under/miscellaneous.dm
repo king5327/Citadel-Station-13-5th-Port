@@ -552,7 +552,7 @@
 	desc = "A compressed water pack used to refill plasma-man jumpsuit auto-extinguishers."
 	icon_state = "multitool"
 
-/obj/item/clothing/under/bb/
+/obj/item/clothing/under/bb
 	name = "bare butt pajamas"
 	desc = "Why trade style for comfort? Now you can go commando down south and still be cozy up north."
 	icon_state = "barebutt"
@@ -597,3 +597,12 @@
 	icon_state = "sheettoga"
 	item_state = "w_suit"
 	item_color = "sheettoga"
+
+/obj/item/clothing/under/latexmaid
+	name = "latex maid costume"
+	desc = "Squeaky!"
+	icon_state = "latexmaid"
+	item_state = "latexmaid"
+	item_color = "latexmaid"
+	body_parts_covered = CHEST|GROIN
+	fitted = FEMALE_UNIFORM_TOP

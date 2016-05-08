@@ -255,7 +255,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//	S["mutant_color"]	<< "#FFF"
 
 	//Character
-	S["OOC_Notes"]			>> metadata
 	S["real_name"]			>> real_name
 	S["name_is_always_random"] >> be_random_name
 	S["body_is_always_random"] >> be_random_body
@@ -271,6 +270,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["undershirt"]			>> undershirt
 	S["socks"]				>> socks
 	S["backbag"]			>> backbag
+	S["flavor_text"]		>> flavor_text
 	S["feature_mcolor"]					>> features["mcolor"]
 	S["feature_lizard_tail"]			>> features["tail_lizard"]
 	S["feature_lizard_snout"]			>> features["snout"]
@@ -324,7 +324,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		update_character(needs_update)		//needs_update == savefile_version if we need an update (positive integer)
 
 	//Sanitize
-	metadata		= sanitize_text(metadata, initial(metadata))
+	flavor_text		= sanitize_text(flavor_text, initial(flavor_text))
 	real_name		= reject_bad_name(real_name)
 	//if(!(pref_species in species_list))
 	if(!(pref_species))
@@ -404,7 +404,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["version"]			<< SAVEFILE_VERSION_MAX	//load_character will sanitize any bad data, so assume up-to-date.
 
 	//Character
-	S["OOC_Notes"]			<< metadata
 	S["real_name"]			<< real_name
 	S["name_is_always_random"] << be_random_name
 	S["body_is_always_random"] << be_random_body
@@ -420,6 +419,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["undershirt"]			<< undershirt
 	S["socks"]				<< socks
 	S["backbag"]			<< backbag
+	S["flavor_text"]		<< flavor_text
 	S["species"]			<< pref_species.name
 	S["feature_mcolor"]					<< features["mcolor"]
 	S["feature_lizard_tail"]			<< features["tail_lizard"]

@@ -167,6 +167,15 @@
 	// Offer about the same protection as a hardhat.
 	flags_inv = HIDEEARS|HIDEEYES
 
+	/obj/item/clothing/head/helmet/knight_templar
+	name = "Templar Helmet"
+	desc = "Deus Vult! A small tag on the inside reads ' This is a theatre prop, not for physical protection!!!"
+	flags_cover = HEADCOVERSEYES
+	armor = list(melee = 25, bullet = 5, laser = 25, energy = 10, bomb = 10, bio = 0, rad = 0)
+	icon_state = "knight_templar"
+	item_state = "knight_templar"
+	strip_delay = 100
+
 //LightToggle
 
 /obj/item/clothing/head/helmet/update_icon()

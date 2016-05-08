@@ -10,7 +10,7 @@
 	health = 25
 
 	var/amount_grown = 0
-	var/max_grown = 200
+	var/max_grown = 100
 	var/time_of_birth
 
 	rotate_on_lying = 0
@@ -32,7 +32,7 @@
 
 /mob/living/carbon/alien/larva/adjustPlasma(amount)
 	if(stat != DEAD && amount > 0)
-		amount_grown = min(amount_grown + 1, max_grown)
+		amount_grown = min(amount_grown + 2, max_grown)
 	..(amount)
 
 //can't equip anything

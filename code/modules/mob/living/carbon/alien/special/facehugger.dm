@@ -1,12 +1,12 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
 
 //TODO: Make these simple_animals
+#define isfacehugger(A) (istype(A, /obj/item/clothing/mask/facehugger))
+var/const/MIN_IMPREGNATION_TIME = 300 //time it takes to impregnate someone
+var/const/MAX_IMPREGNATION_TIME = 400
 
-var/const/MIN_IMPREGNATION_TIME = 200 //time it takes to impregnate someone
-var/const/MAX_IMPREGNATION_TIME = 300
-
-var/const/MIN_ACTIVE_TIME = 200 //time between being dropped and going idle
-var/const/MAX_ACTIVE_TIME = 400
+var/const/MIN_ACTIVE_TIME = 100 //time between being dropped and going idle
+var/const/MAX_ACTIVE_TIME = 200
 
 /obj/item/clothing/mask/facehugger
 	name = "alien"
@@ -16,7 +16,7 @@ var/const/MAX_ACTIVE_TIME = 400
 	item_state = "facehugger"
 	w_class = 1 //note: can be picked up by aliens unlike most other items of w_class below 4
 	flags = MASKINTERNALS
-	throw_range = 1
+	throw_range = 2
 	tint = 3
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH
 	layer = MOB_LAYER
@@ -30,12 +30,14 @@ var/const/MAX_ACTIVE_TIME = 400
 	var/attached = 0
 
 /obj/item/clothing/mask/facehugger/attack_alien(mob/user) //can be picked up by aliens
-	if(isalienravager(user)) //can't be picked up by ravagers
-		user << text("<span class='warning'>Your claws are too sharp to safely pick this up.</span>")
+	if(isalienadult(user))
+		var/mob/living/carbon/alien/humanoid/A = user
+		if(A.crawling)
+			return
+	if(isalienravager(user))
 		return
-	else
-		attack_hand(user)
-		return
+	attack_hand(user)
+	return
 
 /obj/item/clothing/mask/facehugger/attack_hand(mob/user)
 	if((stat == CONSCIOUS && !sterile) && !isalien(user))
@@ -88,7 +90,7 @@ var/const/MAX_ACTIVE_TIME = 400
 	return 0
 
 /obj/item/clothing/mask/facehugger/HasProximity(atom/movable/AM as mob|obj)
-	if(CanHug(AM))
+	if(CanHug(AM) && Adjacent(AM))
 		return Attach(AM)
 	return 0
 
@@ -129,30 +131,40 @@ var/const/MAX_ACTIVE_TIME = 400
 	if(!sterile) M.take_organ_damage(strength,0) //done here so that even borgs and humans in helmets take damage
 	M.visible_message("<span class='danger'>[src] leaps at [M]'s face!</span>", \
 						"<span class='userdanger'>[src] leaps at [M]'s face!</span>")
+	src.Move(M.loc)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.is_mouth_covered(head_only = 1))
-			H.visible_message("<span class='danger'>[src] smashes against [H]'s [H.head]!</span>", \
-								"<span class='userdanger'>[src] smashes against [H]'s [H.head]!</span>")
-			Die()
+		var/obj/item/clothing/helm = H.head
+		if(H.head && istype(helm, /obj/item/clothing/head/helmet/space/hardsuit))
+			var/obj/item/clothing/suit/space/hardsuit/hsuit = H.wear_suit
+			hsuit.ToggleHelmet()
+			H.visible_message("<span class='danger'>[src] tears [helm] off of [H]!</span>", \
+							"<span class='userdanger'>[src] tears [helm] off of [H]!</span>")
+			GoIdle()
 			return 0
+		else if(H.head && (helm.flags & NODROP))
+			return 0
+		else if(H.head && H.is_mouth_covered(head_only = 1))
+			H.unEquip(helm)
+			H.visible_message("<span class='danger'>[src] tears [helm] off of [H]!</span>", \
+							"<span class='userdanger'>[src] tears [helm] off of [H]!</span>")
+			GoIdle()
+			return 0
+
 	if(iscarbon(M))
 		var/mob/living/carbon/target = M
 		if(target.wear_mask)
-			if(prob(20))
-				return 0
 			var/obj/item/clothing/W = target.wear_mask
 			if(W.flags & NODROP)
 				return 0
 			target.unEquip(W)
-
 			target.visible_message("<span class='danger'>[src] tears [W] off of [target]'s face!</span>", \
 									"<span class='userdanger'>[src] tears [W] off of [target]'s face!</span>")
 
 		src.loc = target
 		target.equip_to_slot(src, slot_wear_mask,,0)
 		if(!sterile)
-			M.Paralyse(MAX_IMPREGNATION_TIME/6) //something like 25 ticks = 20 seconds with the default settings
+			M.Paralyse(MAX_IMPREGNATION_TIME/12) //something like 25 ticks = 20 seconds with the default settings
 	else if (iscorgi(M))
 		var/mob/living/simple_animal/pet/dog/corgi/C = M
 		loc = C
@@ -229,14 +241,13 @@ var/const/MAX_ACTIVE_TIME = 400
 		return 0
 	if(M.getorgan(/obj/item/organ/internal/alien/hivenode))
 		return 0
-
-	if(iscorgi(M) || ismonkey(M))
+	if(iscorgi(M))
 		return 1
-
 	var/mob/living/carbon/C = M
-	if(ishuman(C))
-		var/mob/living/carbon/human/H = C
-		if(H.is_mouth_covered(head_only = 1))
-			return 0
+	if((ismonkey(C) || ishuman(C)) && isfacehugger(C.wear_mask))
+		return 0
+	if(ishuman(C) && !(slot_wear_mask in C.dna.species.no_equip))
+		return 1
+	if(ismonkey(C))
 		return 1
 	return 0

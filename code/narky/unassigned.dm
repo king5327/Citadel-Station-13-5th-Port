@@ -83,16 +83,16 @@ var/const/VORE_SIZEDIFF_ANY=5
 	VORE_METHOD_INSOLE=VORE_SIZEDIFF_TINY,
 	VORE_METHOD_ABSORB=VORE_SIZEDIFF_DISABLED)*/
 
-	var/list/vore_ability=list(
-	"1"=2,
-	"2"=0,
-	"4"=0,
-	"8"=0,
-	"16"=0,
-	"32"=0,
-	"64"=1,
-	"128"=0,
-	"256"=1) //BAAAAD way to do this
+	var/list/vore_ability=list( // This list is the initial list of what size differences people can vore at.
+	"1"=2, // Oral starts at one-size smaller.
+	"2"=0, // Anal starts disabled.
+	"4"=0, // Cock starts disabled.
+	"8"=0, // Unbirth starts disabled.
+	"16"=0, // Breast starts disabled.
+	"32"=0, // Tail starts disabled.
+	"64"=1, // Insole is 2 size differences.
+	"128"=0, // Absorption... isn't a thing.
+	"256"=2) // Insuit is 1 size difference. Previous comment = BAAAAD way to do this.
 
 	var/vore_datums_initialized=0
 	var/datum/vore_organ/stomach/vore_stomach_datum=new()
@@ -2050,21 +2050,21 @@ var/list/traitor_test_list = null
 			continue //Also handled later.
 
 		if(C.prefs.toggles & CHAT_OOC)
-			var/display_name = src.key
-			if(holder)
-				if(holder.fakekey)
-					if(C.holder)
-						display_name = "[holder.fakekey]/([src.key])"
-					else
-						display_name = holder.fakekey
-			C << "<font color='#6699CC'><span class='ooc'><span class='prefix'>LOOC:</span> <EM>[display_name]:</EM> <span class='message'>[msg]</span></span></font>"
+//			var/display_name = src.key
+//			if(holder)
+//				if(holder.fakekey)
+//					if(C.holder)
+//						display_name = "[holder.fakekey]/([src.key])"
+//				else
+//					display_name = holder.fakekey
+			C << "<font color='#6699CC'><span class='ooc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></span></font>"
 
 	for(var/client/C in admins)
 		if(C.prefs.toggles & CHAT_OOC)
 			var/prefix = "(R)LOOC"
 			if (C.mob in heard)
 				prefix = "LOOC"
-			C << "<font color='#6699CC'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.key]:</EM> <span class='message'>[msg]</span></span></font>"
+			C << "<font color='#6699CC'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></span></font>"
 
 	for(var/mob/dead/observer/G in world)
 		if(!G.client)
@@ -2076,7 +2076,7 @@ var/list/traitor_test_list = null
 			var/prefix = "(G)LOOC"
 			if (C.mob in heard)
 				prefix = "LOOC"
-			C << "<font color='#6699CC'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.key]:</EM> <span class='message'>[msg]</span></span></font>"
+			C << "<font color='#6699CC'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></span></font>"
 
 
 

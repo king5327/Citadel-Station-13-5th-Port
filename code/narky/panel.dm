@@ -290,7 +290,7 @@ obj/vore_preferences
 					dat += "<BR>"
 				orgch=GetOrgan("insuit")
 				if(orgch.has_people())
-					dat += "[orgch.has_people()>1 ? "Tiny people" : "A tiny person"] squirm[orgch.has_people()>1 ? "" : "s"] in your clothes, against your form."
+					dat += "[orgch.has_people()>1 ? "Smaller people" : "A smaller person"] squirm[orgch.has_people()>1 ? "" : "s"] in your clothes, against your form."
 					dat += "<BR>"
 
 			if (2) //Vore Abilities
@@ -636,7 +636,7 @@ proc/sanitize_vore_list(var/list/lst=null)
 		"32"=0,
 		"64"=1,
 		"128"=0,
-		"256"=1)
+		"256"=2)
 	lst[num2text(VORE_METHOD_INSOLE)]=1
-	lst[num2text(VORE_METHOD_INSUIT)]=1
+	lst[num2text(VORE_METHOD_INSUIT)]=2
 	return lst

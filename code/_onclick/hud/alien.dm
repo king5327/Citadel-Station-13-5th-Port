@@ -54,24 +54,6 @@
 	inv_box.slot_id = slot_l_hand
 	l_hand_hud_object = inv_box
 	adding += inv_box
-//pockets
-	inv_box = new /obj/screen/inventory()
-	inv_box.name = "storage1"
-	inv_box.icon = 'icons/mob/screen_alien.dmi'
-	inv_box.icon_state = "pocket"
-	inv_box.screen_loc = ui_storage1
-	inv_box.slot_id = slot_l_store
-	inv_box.layer = 19
-	adding += inv_box
-
-	inv_box = new /obj/screen/inventory()
-	inv_box.name = "storage2"
-	inv_box.icon = 'icons/mob/screen_alien.dmi'
-	inv_box.icon_state = "pocket"
-	inv_box.screen_loc = ui_storage2
-	inv_box.slot_id = slot_r_store
-	inv_box.layer = 19
-	adding += inv_box
 //begin buttons
 	using = new /obj/screen/inventory()
 	using.name = "hand"
@@ -98,7 +80,7 @@
 
 	if(istype(mymob, /mob/living/carbon/alien/humanoid/hunter))
 		mymob.leap_icon = new /obj/screen/alien/leap()
-		mymob.leap_icon.screen_loc = ui_borg_lamp
+		mymob.leap_icon.screen_loc = ui_storage1
 		adding += mymob.leap_icon
 
 	using = new /obj/screen/drop()

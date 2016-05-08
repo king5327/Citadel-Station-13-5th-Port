@@ -157,3 +157,7 @@
 	var/obj/machinery/camera/final = T[camera]
 	if(final)
 		remote_eye.setLoc(get_turf(final))
+
+/obj/machinery/computer/camera_advanced/security
+	name = "security camera console"
+	req_access_txt = "2"

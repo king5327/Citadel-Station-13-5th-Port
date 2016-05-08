@@ -11,7 +11,7 @@ var/const/ALIEN_AFK_BRACKET = 450 // 45 seconds
 /obj/item/organ/internal/body_egg/alien_embryo/on_find(mob/living/finder)
 	..()
 	if(stage < 4)
-		finder << "It's small and weak, barely the size of a foetus."
+		finder << "It's small and weak, barely the size of a fetus." //america
 	else
 		finder << "It's grown quite large, and writhes slightly as you look at it."
 		if(prob(10))
@@ -65,7 +65,7 @@ var/const/ALIEN_AFK_BRACKET = 450 // 45 seconds
 
 
 
-/obj/item/organ/internal/body_egg/alien_embryo/proc/AttemptGrow(gib_on_success = 1)
+/obj/item/organ/internal/body_egg/alien_embryo/proc/AttemptGrow(gib_on_success = 0)
 	if(!owner) return
 	var/list/candidates = get_candidates(ROLE_ALIEN, ALIEN_AFK_BRACKET, "alien candidate")
 	var/client/C = null
@@ -82,27 +82,30 @@ var/const/ALIEN_AFK_BRACKET = 450 // 45 seconds
 	else
 		stage = 4 // Let's try again later.
 		return
-
-	var/overlay = image('icons/mob/alien.dmi', loc = owner, icon_state = "burst_lie")
+	var/overlay = image('icons/mob/alien.dmi', loc = owner, icon_state = "burst_stand")
 	owner.overlays += overlay
+	owner.Weaken(5)
 
 	var/atom/xeno_loc = get_turf(owner)
 	var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
 	new_xeno.key = C.key
-	new_xeno << sound('sound/voice/hiss5.ogg',0,0,0,100)	//To get the player's attention
+//	new_xeno << sound('sound/voice/hiss5.ogg',0,0,0,100)	//To get the player's attention
+	playsound(owner.loc, 'sound/alien/Effects/burst.ogg', 200, 0, 5)
 	new_xeno.canmove = 0 //so we don't move during the bursting animation
 	new_xeno.notransform = 1
-	new_xeno.invisibility = INVISIBILITY_MAXIMUM
-	spawn(6)
+	new_xeno.alpha = 0
+	spawn(12)
 		if(new_xeno)
 			new_xeno.canmove = 1
 			new_xeno.notransform = 0
-			new_xeno.invisibility = 0
+			new_xeno.alpha = 255
 		if(gib_on_success)
 			owner.gib()
 		else
-			owner.adjustBruteLoss(40)
 			owner.overlays -= overlay
+			var/burstedoverlay = image('icons/mob/alien.dmi', loc = owner, icon_state = "bursted_stand")
+			owner.overlays += burstedoverlay
+			owner.adjustBruteLoss(215)
 		qdel(src)
 
 

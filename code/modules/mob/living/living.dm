@@ -122,6 +122,25 @@ Sorry Giacom. Please don't be mad :(
 		now_pushing = 0
 		return 1
 
+	if(a_intent=="harm"&&canmove)//Check for macro stompage!
+		if(istype(M,/mob/living))
+			var/mob/living/L=M
+			if(sizeplay_size>L.sizeplay_size+1 && L.sizeplay_size<3)
+				visible_message("<span class='warning'>[src] steps on [M]!</span>")
+				loc=M.loc
+				M.Stun(rand(2,4))//Make this falling later
+				playsound(src, "bodyfall", 50, 1)
+				now_pushing=0
+				return
+
+	/*if(istype(M,/mob/living))
+		var/mob/living/L=M
+		if(L.sizeplay_size>sizeplay_size+1)
+			if ( !(world.time % 5) )
+				src << "\red [M] is too big, you cannot push past!"
+			now_pushing = 0
+			return*/
+
 	//okay, so we didn't switch. but should we push?
 	//not if he's not CANPUSH of course
 	if(!(M.status_flags & CANPUSH))
@@ -488,22 +507,6 @@ Sorry Giacom. Please don't be mad :(
 /mob/living/proc/update_damage_overlays()
 	return
 
-
-/mob/living/proc/Examine_OOC()
-	set name = "Examine Meta-Info (OOC)"
-	set category = "OOC"
-	set src in view()
-
-	if(config.allow_Metadata)
-		if(client)
-			src << "[src]'s Metainfo:<br>[client.prefs.metadata]"
-		else
-			src << "[src] does not have any stored infomation!"
-	else
-		src << "OOC Metadata is not supported by this server!"
-
-	return
-
 /mob/living/Move(atom/newloc, direct)
 	if (buckled && buckled.loc != newloc) //not updating position
 		if (!buckled.anchored)
@@ -771,12 +774,11 @@ Sorry Giacom. Please don't be mad :(
 	return
 
 
-/atom/movable/proc/do_attack_animation(atom/A, end_pixel_y)
+/atom/movable/proc/do_attack_animation(atom/A, final_pixel_y)
 	var/pixel_x_diff = 0
 	var/pixel_y_diff = 0
-	var/final_pixel_y = initial(pixel_y)
-	if(end_pixel_y)
-		final_pixel_y = end_pixel_y
+	if(!final_pixel_y)
+		final_pixel_y = initial(pixel_y)
 	var/direction = get_dir(src, A)
 	switch(direction)
 		if(NORTH)
@@ -801,7 +803,8 @@ Sorry Giacom. Please don't be mad :(
 			pixel_y_diff = -8
 
 	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, time = 2)
-	animate(pixel_x = initial(pixel_x), pixel_y = final_pixel_y, time = 2)
+	//animate(pixel_x = initial(pixel_x), pixel_y = final_pixel_y, time = 2)
+	animate(pixel_x = pixel_x - pixel_x_diff, pixel_y = final_pixel_y, time = 2) //Why reset when you can just reverse? 99% less shit-breaking.
 
 
 /mob/living/do_attack_animation(atom/A)
@@ -867,7 +870,16 @@ Sorry Giacom. Please don't be mad :(
 	return initial(pixel_x)
 
 /mob/living/proc/get_standard_pixel_y_offset(lying = 0)
-	return initial(pixel_y)
+	if(src.sizeplay_size==SIZEPLAY_TINY)
+		return (initial(pixel_y) - 8)
+	if(src.sizeplay_size==SIZEPLAY_MICRO)
+		return (initial(pixel_y) - 4)
+	if(src.sizeplay_size==SIZEPLAY_MACRO)
+		return (initial(pixel_y) + 8)
+	if(src.sizeplay_size==SIZEPLAY_HUGE)
+		return (initial(pixel_y) + 16)
+	else
+		return initial(pixel_y)
 
 /mob/living/Stat()
 	..()

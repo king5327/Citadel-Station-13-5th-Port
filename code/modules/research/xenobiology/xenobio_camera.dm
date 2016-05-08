@@ -7,7 +7,7 @@
 
 /mob/camera/aiEye/remote/xenobio/setLoc(var/t)
 	var/area/new_area = get_area(t)
-	if(new_area && new_area.name == "Xenobiology Lab" || istype(new_area, /area/toxins/xenobiology ))
+	if(new_area && new_area.name == "Slime Biology Lab" || istype(new_area, /area/toxins/xenobiology ))
 		return ..()
 	else
 		return
@@ -71,10 +71,6 @@
 	C.remote_view = 0
 	origin.current_user = null
 	origin.jump_action.Remove(C)
-	origin.slime_place_action.Remove(C)
-	origin.slime_up_action.Remove(C)
-	origin.feed_slime_action.Remove(C)
-	origin.monkey_recycle_action.Remove(C)
 	//All of this stuff below could probably be a proc for all advanced cameras, only the action removal needs to be camera specific
 	remote_eye.user = null
 	if(C.client)

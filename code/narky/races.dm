@@ -29,23 +29,32 @@ datum
 			generic="xeno"
 			adjective="phallic"
 			tail=1
-		armadillo
+		/* armadillo
 			name="armadillo"
 			id="armadillo"
 			say_mod = "drawls"
-			generic = "protected"
-			adjective = "varmint on a halfshell" // that's not an adjective
+			generic = "cingulate" // Superorder Xenarthra, Order Cingulata
+			adjective = "protected"
 			tail=1
 			attack_verb = "noms"
+			attack_sound = 'sound/weapons/bite.ogg' */
+			attack_verb = "nom" // apparently attack verbs are just the verb, no S. shrug
 			attack_sound = 'sound/weapons/bite.ogg'
+		anubis
+			name="anubis"
+			id="anubis"
+			say_mod = "intones"
+			generic="jackal" // mmm...jackal or canine? i'll leave it for now
+			adjective="cold"
+			attack_verb = "claw"
 		beaver
 			name="beaver"
 			id="beaver"
 			say_mod = "chitters"
-			generic="woody" // that's not a generic
+			generic="rodent"
 			adjective="damnable"
 			tail=1
-			attack_verb = "tailslaps"
+			attack_verb = "tailslap"
 			attack_sound = 'sound/items/dodgeball.ogg'
 		beholder
 			name="beholder"
@@ -54,9 +63,8 @@ datum
 			generic="body part"
 			adjective="all-seeing"
 			tail=0
-			attack_verb = "gazes balefully"
+			attack_verb = "visually assault"
 			attack_sound = 'sound/magic/MM_Hit.ogg' // MAGIC MISSILE! MAGIC MISSILE!
-			restricted=1
 		boar
 			name="boar"
 			id="boar"
@@ -75,7 +83,8 @@ datum
 			generic = "abomination"
 			adjective = "violently fishy"
 			tail=1
-			attack_verb = "noms"
+			eyes=0
+			attack_verb = "nom"
 			attack_sound = 'sound/weapons/bite.ogg'
 		corgi
 			name="corgi"
@@ -96,7 +105,7 @@ datum
 			name="cow"
 			id="cow"
 			say_mod = "moos"
-			generic="cow"
+			generic="bovine"
 			adjective="wise"
 			tail=1
 			taur=1
@@ -111,10 +120,10 @@ datum
 			name="deer"
 			id="deer"
 			say_mod = "grunts"
-			generic = "open season"
+			generic = "cervid"
 			adjective = "skittish"
 			tail=1 // that's better
-			attack_verb = "gores"
+			attack_verb = "gore"
 			attack_sound = 'sound/weapons/bladeslice.ogg'
 		drake
 			name="drake"
@@ -123,6 +132,7 @@ datum
 			generic = "reptile"
 			adjective = "frilly"
 			tail=1 // i'd use lizard tails but drakes have frills included on the icons
+			taur=1
 		drider
 			name="drider"
 			id="drider"
@@ -130,6 +140,7 @@ datum
 			adjective="big and hairy"
 			taur=1
 			tail=1
+			eyes="spidereyes"
 		fennec
 			name="fennec"
 			id="fennec"
@@ -153,6 +164,8 @@ datum
 			name="gremlin"
 			id="gremlin"
 			generic="creature"
+			tail=1
+			attack_verb = "thwack"
 		hawk
 			name="hawk"
 			id="hawk"
@@ -160,7 +173,7 @@ datum
 			generic="bird"
 			adjective="feathery"
 			tail=1
-			attack_verb = "whacks"
+			attack_verb = "whack"
 		hippo
 			name="hippo"
 			id="hippo"
@@ -180,7 +193,7 @@ datum
 			id="jackalope"
 			generic="leporid"
 			adjective="hoppy and horny" //hue
-			attack_verb = "kicks"
+			attack_verb = "kick"
 			tail=1
 		jelly
 			name="jelly"
@@ -190,9 +203,10 @@ datum
 		kangaroo
 			name="kangaroo"
 			id="kangaroo"
-			generic="kangaroo"
+			generic="marsupial"
 			adjective="bouncy"
 			tail=1
+			attack_verb = "kick"
 		lab
 			name="lab"
 			id="lab"
@@ -207,7 +221,7 @@ datum
 			generic="leporid"
 			adjective="hoppy"
 			tail=1
-			attack_verb = "kicks"
+			attack_verb = "kick"
 		lizard
 			name="lizard"
 			id="lizard"
@@ -215,7 +229,7 @@ datum
 			adjective="scaled"
 			taur="naga"
 			tail=1
-		murid
+		murid // i have no idea what this is
 			name="murid"
 			id="murid"
 			say_mod = "squeaks"
@@ -227,10 +241,11 @@ datum
 			id="moth"
 			generic="insect"
 			adjective="fluttery"
+			eyes="motheyes" // this SHOULD work after i've updated human_face.dmi -- iska
 		naga
 			name="naga"
 			id="naga"
-			generic="human"
+			generic="humanoid"
 			adjective="noodly"
 			taur=1
 			tail=1
@@ -238,9 +253,17 @@ datum
 			name="otter"
 			id="otter"
 			say_mod = "squeaks"
-			generic="weasel"
+			generic="mustelid"
 			adjective="slim"
 			tail=1
+		otusian
+			name="otusian"
+			id="otie"
+			say_mod ="growls"
+			generic="feline-canine"
+			adjective="chunky" // ??? are otusians fat????
+			tail=1
+			taur=1
 		panther
 			name="panther"
 			id="panther"
@@ -265,43 +288,45 @@ datum
 			name="porcupine"
 			id="porcupine"
 			say_mod = "snuffles"
-			generic = "pointy"
-			adjective = "quill-y"
+			generic = "rodent"
+			adjective = "quilly"
 			tail=1
-			attack_verb = "quill whacks"
+			attack_verb = "quill-whack"
 			attack_sound = 'sound/weapons/slash.ogg'
 		possum
 			name="possum"
 			id="possum"
 			say_mod = "chitters"
-			generic = "rumager"
-			adjective = "varmint"
+			generic = "marsupial"
+			adjective = "rumaging"
 			tail=1
-			attack_verb = "viciously noms"
+			attack_verb = "nom"
 			attack_sound = 'sound/weapons/bite.ogg'
 		raccoon
 			name="raccoon"
 			id="raccoon"
 			say_mod="churrs"
-			generic="raccoon"
+			generic="procyonid" // Family Procyonidae
 			adjective="stripy"
 			tail=1
 		roorat
 			name="kangaroo rat"
 			id="roorat"
-			generic="roorat"
-			adjective="bouncy rat"
+			generic="hybrid marsupial" // ...marsupial rat???
+			adjective="bouncy"
 			tail=1
+			attack_verb = "kick"
 		seaslug
 			name="sea slug"
 			id="seaslug"
 			generic="slug"
 			adjective="salty"
 			tail=1
+			attack_verb = "smack"
 		shark
 			name="shark"
 			id="shark"
-			generic="fish"
+			generic="selachimorph" // Superorder Selachimorpha
 			adjective="fishy"
 			tail=1
 		shepherd
@@ -336,8 +361,9 @@ datum
 			generic="beast"
 			adjective="snippy and snarly"
 			tail=1
-			attack_verb = "chomps"
+			attack_verb = "chomp"
 			attack_sound = 'sound/weapons/bite.ogg'
+			eyes=0
 			//restricted=2 // so that the choice is there whether you want it more snowflakey
 		squirrel
 			name="squirrel"
@@ -357,9 +383,18 @@ datum
 		turtle
 			name="turtle"
 			id="turtle"
-			generic="turtle"
+			generic="reptile"
 			adjective="hard-shelled"
 			tail=1
+		ursine
+			name="bear"
+			id="ursine"
+			generic="ursine"
+			adjective="husky"
+			say_mod = "grunts"
+			tail=1
+			attack_verb = "claw"
+			attack_sound = 'sound/weapons/bladeslice.ogg'
 		wolf
 			name="wolf"
 			id="wolf"
@@ -368,18 +403,16 @@ datum
 			adjective="shaggy"
 			tail=1
 			taur=1
+		zig
+			name="zig"
+			id="zig"
+			generic="pokémon"
+			adjective="curious"
+			tail=1
 
 
-		//zigzagoon
-			//name="zigzagoon"
-			//id="zigzagoon"
-			//generic="pokémon"
-			//adjective="curious"
-			//tail=1
-			//restricted="kotetsuredwood"
-
-
-		narky
+/*
+			narky
 			//name="narwhal kitty"
 			id="narky"
 			say_mod="nyars"
@@ -389,6 +422,7 @@ datum
 			tail=1
 			taur=1
 			attack_verb = "whack"
+
 		//husky/jordy  // obsolete with the addition of overlay sprites
 			//name="husky"
 			//id="jordy"
@@ -396,6 +430,7 @@ datum
 			//adjective="hyper"
 			//tail=1
 			//restricted=1
+*/
 		fly
 			//name="fly"
 			generic="insect"
@@ -410,7 +445,7 @@ datum
 		cosmetic_skeleton
 			//name="skeleton"
 			generic="skeleton"
-			adjective="not as boney"
+			adjective="boney"
 			restricted=2
 			attack_verb = "bone"
 		shadow
@@ -458,6 +493,30 @@ datum
 			generic="beverage"
 			adjective="refreshing"
 			restricted=2 // don't want half the station to be running around with soda cans on their heads
+		cutebold
+			name="cutebold"
+			id="cutebold"
+			say_mod = "yips"
+			generic = "kobo"
+			adjective = "cute"
+			tail=1
+			attack_verb = "nom"
+			attack_sound = 'sound/weapons/bite.ogg'
+		pony // of the "my little" variety
+			name="pony"
+			id="pony"
+			generic="equine"
+			adjective="little"
+			tail=1
+			attack_verb= "kick"
+		hylotl
+			name="hylotl"
+			id="hylotl"
+			say_mod = "glubs"
+			generic="amphibian"
+			adjective="fishy"
+			tail=0
+			eyes="jelleyes"
 /*var/list/kpcode_race_list
 
 proc/kpcode_race_genlist()
@@ -593,7 +652,7 @@ var/list/mutant_tails = list(
 	"cow"="cow",
 	"kangaroo"="kangaroo",
 	"kangaroo"="kangaroo",
-	)
+	"pony"="pony")
 
 var/list/mutant_wings = list(
 	"none"=0,
@@ -601,17 +660,15 @@ var/list/mutant_wings = list(
 	"feathery"="feathery",
 	"moth"="moth",
 	"fairy"="fairy",
+	"tentacle"="tentacle"
 	)
 
 var/list/cock_list = list(
 	"human",
 	"canine",
 	"feline",
-//	"murid",
-//	"leporid",
 	"reptilian",
-	//"custom",
-	)
+	"equine")
 
 
 proc/kpcode_hastail(var/S)

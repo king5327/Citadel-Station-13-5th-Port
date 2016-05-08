@@ -22,7 +22,7 @@
 
 /obj/effect/proc_holder/alien/larva_evolve
 	name = "Evolve"
-	desc = "Evolve into a fully grown Alien."
+	desc = "Evolve into a basic alien caste."
 	plasma_cost = 0
 
 	action_icon_state = "alien_evolve_larva"
@@ -40,9 +40,9 @@
 	if(L.amount_grown >= L.max_grown)	//TODO ~Carn
 		L << "<span class='name'>You are growing into a beautiful alien! It is time to choose a caste.</span>"
 		L << "<span class='info'>There are three to choose from:"
-		L << "<span class='name'>Hunters</span> <span class='info'>are the most agile caste tasked with hunting for hosts. They are faster than a human and can even pounce, but are not much tougher than a drone.</span>"
-		L << "<span class='name'>Sentinels</span> <span class='info'>are tasked with protecting the hive. With their ranged spit, invisibility, and high health, they make formidable guardians and acceptable secondhand hunters.</span>"
-		L << "<span class='name'>Drones</span> <span class='info'>are the weakest and slowest of the castes, but can grow into the queen if there is none, and are vital to maintaining a hive with their resin secretion abilities.</span>"
+		L << "<span class='name'>Hunters</span> <span class='info'>are the most agile caste and can pounce on enemies to stun them for a short time. They boast moderate health but have no other special abilities.</span>"
+		L << "<span class='name'>Sentinels</span> <span class='info'>are slower than hunters and can spit neurotoxin on incoming attackers to stun them for a long period of time. Sentinels are tasked with keeping the nest safe and the nested hosts safe.</span>"
+		L << "<span class='name'>Drones</span> <span class='info'>are the weakest and slowest of the three basic castes. However, the hive needs drones to survive as they're the only one of the three castes that can plant weeds and shape resin. Spreading weeds far and wide will ensure your sisters have plenty of places to heal and retreat to.</span>"
 		var/alien_caste = alert(L, "Please choose which alien caste you shall belong to.",,"Hunter","Sentinel","Drone")
 
 		var/mob/living/carbon/alien/humanoid/new_xeno

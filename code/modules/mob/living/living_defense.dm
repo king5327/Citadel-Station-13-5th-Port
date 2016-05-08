@@ -286,11 +286,11 @@
 	switch(M.a_intent)
 		if ("help")
 			if(istype(M, /mob/living/carbon/alien/humanoid/hunter/royale/megaegg))
-				visible_message("<span class='notice'>[M] apex bears her arms around [src] and suplexes them into a good old squeeze. Godspeed for their bones.</span>")
+				visible_message("<span class='notice'>[M] engages huge bear arms and suplexes [src] into the floor with a tight grip hold. Is this even a hug or just an attempt to squeeze one's guts out?</span>")
 				playsound(loc, "hiss", 25, 1, 1)
-				playsound(loc, 'sound/effects/explosionfar.ogg', 20, 1)
+				playsound(loc, 'sound/effects/explosionfar.ogg', 25, 1)
 				return 0
-			visible_message("<span class='notice'>[M] caresses [src] with its scythe like arm.</span>")
+			visible_message("<span class='notice'>[M] caresses [src] with its scythe like claws.</span>")
 			return 0
 
 		if ("grab")

@@ -827,7 +827,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						/obj/item/seeds/limeseed = 3,/obj/item/seeds/orangeseed = 3,/obj/item/seeds/potatoseed = 3,/obj/item/seeds/poppyseed = 3,
 						/obj/item/seeds/pumpkinseed = 3,/obj/item/seeds/replicapod = 3,/obj/item/seeds/soyaseed = 3,/obj/item/seeds/sunflowerseed = 3,
 						/obj/item/seeds/tea_aspera_seed = 3,/obj/item/seeds/tobacco_seed = 3,/obj/item/seeds/tomatoseed = 3,
-						/obj/item/seeds/towermycelium = 3,/obj/item/seeds/watermelonseed = 3,/obj/item/seeds/wheatseed = 3,/obj/item/seeds/whitebeetseed = 3)
+						/obj/item/seeds/towermycelium = 3,/obj/item/seeds/watermelonseed = 3,/obj/item/seeds/wheatseed = 3,/obj/item/seeds/whitebeetseed = 3,/obj/item/seeds/vanillapodseed = 3)
 	contraband = list(/obj/item/seeds/amanitamycelium = 2,/obj/item/seeds/glowshroom = 2,/obj/item/seeds/libertymycelium = 2,/obj/item/seeds/nettleseed = 2,
 						/obj/item/seeds/plumpmycelium = 2,/obj/item/seeds/reishimycelium = 2)
 	premium = list(/obj/item/weapon/reagent_containers/spray/waterflower = 1)
@@ -877,7 +877,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					/obj/item/clothing/suit/hooded/carp_costume = 1,
 					/obj/item/clothing/suit/hooded/ian_costume = 1)
 	contraband = list(/obj/item/clothing/suit/judgerobe = 1,/obj/item/clothing/head/powdered_wig = 1,/obj/item/weapon/gun/magic/wand = 2,/obj/item/clothing/glasses/sunglasses/garb = 2)
-	premium = list(/obj/item/clothing/suit/hgpirate = 2, /obj/item/clothing/head/hgpiratecap = 2, /obj/item/clothing/head/helmet/roman = 1, /obj/item/clothing/head/helmet/roman/legionaire = 1, /obj/item/clothing/under/roman = 1, /obj/item/clothing/shoes/roman = 1, /obj/item/weapon/shield/riot/roman = 1, /obj/item/clothing/head/hunter = 3, /obj/item/clothing/tie/mantelet = 3, /obj/item/clothing/tie/mantelet/white = 3, /obj/item/clothing/tie/mantelet/cc = 3)
+	premium = list(/obj/item/clothing/suit/hgpirate = 2, /obj/item/clothing/head/hgpiratecap = 2, /obj/item/clothing/head/helmet/roman = 1, /obj/item/clothing/head/helmet/roman/legionaire = 1, /obj/item/clothing/under/roman = 1, /obj/item/clothing/shoes/roman = 1, /obj/item/weapon/shield/riot/roman = 1,/obj/item/clothing/suit/armor/knight_templar = 1, /obj/item/clothing/head/helmet/knight_templar = 1, /obj/item/clothing/head/hunter = 3, /obj/item/clothing/tie/mantelet = 3, /obj/item/clothing/tie/mantelet/white = 3, /obj/item/clothing/tie/mantelet/cc = 3)
 	refill_canister = /obj/item/weapon/vending_refill/autodrobe
 
 /obj/machinery/vending/dinnerware
@@ -952,7 +952,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this free swag!;Why leave style up to fate? Use the ClothesMate!"
 	vend_delay = 15
 	vend_reply = "Thank you for using the ClothesMate!"
-	products = list(/obj/item/clothing/head/that=2,/obj/item/clothing/head/fedora=1,/obj/item/clothing/glasses/monocle=1,
+	products = list(/obj/item/clothing/head/that=2,/obj/item/clothing/head/fedora=1,/obj/item/clothing/glasses/monocle=1,/obj/item/clothing/glasses/regular/hipster=2,
 	/obj/item/clothing/suit/jacket=2, /obj/item/clothing/suit/jacket/puffer/vest=2, /obj/item/clothing/suit/jacket/puffer=2,
 	/obj/item/clothing/under/suit_jacket/navy=1,/obj/item/clothing/under/suit_jacket/really_black=1,/obj/item/clothing/under/suit_jacket/burgundy=1,
 	/obj/item/clothing/under/suit_jacket/charcoal=1, /obj/item/clothing/under/suit_jacket/white=1,/obj/item/clothing/under/kilt=1,/obj/item/clothing/under/overalls=1,
@@ -971,12 +971,28 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/obj/item/clothing/under/plaid_skirt=1,/obj/item/clothing/under/plaid_skirt/blue=1,/obj/item/clothing/under/plaid_skirt/purple=1,
 	/obj/item/clothing/glasses/regular=2,/obj/item/clothing/head/sombrero=1,/obj/item/clothing/suit/poncho=1,
 	/obj/item/clothing/suit/ianshirt=1,/obj/item/clothing/shoes/laceup=2,/obj/item/clothing/shoes/sneakers/black=4,
-	/obj/item/clothing/shoes/sandal=1, /obj/item/clothing/gloves/fingerless=2,/obj/item/clothing/glasses/orange=1,/obj/item/clothing/glasses/red=1,
+	/obj/item/clothing/shoes/sandal=1, /obj/item/clothing/shoes/workboots=2, /obj/item/clothing/gloves/fingerless=2,/obj/item/clothing/glasses/orange=1,/obj/item/clothing/glasses/red=1,
 	/obj/item/weapon/storage/belt/fannypack=1, /obj/item/weapon/storage/belt/fannypack/blue=1, /obj/item/weapon/storage/belt/fannypack/red=1,
-	/obj/item/clothing/under/bb=2,/obj/item/clothing/under/bb/sweater=2,/obj/item/clothing/under/bb/sweater/red=2,/obj/item/clothing/under/bb/sweater/blue=2,/obj/item/clothing/under/bb/sweater/green=2,/obj/item/clothing/under/bb/sweater/purple=2, /obj/item/clothing/under/toga=1)
+	/obj/item/clothing/under/bb=2,/obj/item/clothing/under/bb/sweater=2,/obj/item/clothing/under/bb/sweater/red=2,/obj/item/clothing/under/bb/sweater/blue=2,/obj/item/clothing/under/bb/sweater/green=2,/obj/item/clothing/under/bb/sweater/purple=2, /obj/item/clothing/under/toga=1,
+	/obj/item/clothing/gloves/weddingring=10,/obj/item/clothing/gloves/weddingring/silver=10)
 	contraband = list(/obj/item/clothing/under/syndicate/tacticool=1,/obj/item/clothing/mask/balaclava=1,/obj/item/clothing/head/ushanka=1,/obj/item/clothing/under/soviet=1,/obj/item/weapon/storage/belt/fannypack/black=2)
-	premium = list(/obj/item/clothing/under/suit_jacket/checkered=1,/obj/item/clothing/head/mailman=1,/obj/item/clothing/under/rank/mailman=1,/obj/item/clothing/suit/jacket/leather=1,/obj/item/clothing/suit/jacket/leather/overcoat=1,/obj/item/clothing/under/pants/mustangjeans=1)
+	premium = list(/obj/item/clothing/under/suit_jacket/checkered=1,/obj/item/clothing/head/mailman=1,/obj/item/clothing/under/rank/mailman=1,/obj/item/clothing/suit/jacket/leather=1,/obj/item/clothing/suit/jacket/leather/overcoat=1,/obj/item/clothing/under/pants/mustangjeans=1,/obj/item/clothing/tie/necklace/locust=5)
 	refill_canister = /obj/item/weapon/vending_refill/clothing
+
+/obj/machinery/vending/kink
+	name = "KinkMate"
+	desc = "A vending machine for all your unmentionable desires."
+	icon_state = "kink"
+	product_slogans = "Kinky!;Sexy!;Check me out, big boy!"
+	vend_delay = 15
+	vend_reply = "Have fun, you shameless pervert!"
+	products = list(/obj/item/weapon/dildo=10,/obj/item/clothing/under/maid=5,/obj/item/clothing/under/schoolgirl=3,
+	/obj/item/clothing/tie/petcollar=5,/obj/item/clothing/tie/spikecollar=3, /obj/item/clothing/ears/earmuffs=2,/obj/item/clothing/glasses/sunglasses/blindfold=2,
+	/obj/item/clothing/mask/muzzle=2)
+	contraband = list()
+	premium = list(/obj/item/clothing/under/latexmaid=3,/obj/item/weapon/dildo/psych=2,/obj/item/weapon/restraints/handcuffs/kink=2,
+	/obj/item/clothing/head/wizard/fake=1,/obj/item/clothing/suit/wizrobe/fake=1)
+	refill_canister = /obj/item/weapon/vending_refill/kink
 /*
 
 /obj/machinery/sec/equipment_vendor
