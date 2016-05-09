@@ -300,6 +300,16 @@
 										else
 											playsound(src.loc, 'sound/misc/scream_f.ogg', 35, 1, 5)
 											..(act)
+							if("drake")
+								if(prob(50))
+									playsound(src.loc, 'sound/misc/drake_1.ogg', 50, 1, 5)
+								else
+									if(prob(25))
+										playsound(src.loc, 'sound/misc/drake_2.ogg', 50, 1, 5)
+									else
+										playsound(src.loc, 'sound/misc/drake_1.ogg', 35, 1, 5)
+										..(act)
+
 							// add whatever other race here
 
 
