@@ -246,8 +246,11 @@ var/const/MAX_ACTIVE_TIME = 200
 	var/mob/living/carbon/C = M
 	if((ismonkey(C) || ishuman(C)) && isfacehugger(C.wear_mask))
 		return 0
-	if(ishuman(C) && !(slot_wear_mask in C.dna.species.no_equip))
-		return 1
 	if(ismonkey(C))
+		return 1
+	var/mob/living/carbon/human/H = C
+	if(ishuman(H) && istype(H.head, /obj/item/clothing/head/hazmat) && istype(H.wear_suit, /obj/item/clothing/suit/hazmat))
+		return 0
+	if(ishuman(H) && !(slot_wear_mask in H.dna.species.no_equip))
 		return 1
 	return 0
