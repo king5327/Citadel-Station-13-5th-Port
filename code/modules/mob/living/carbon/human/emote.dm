@@ -6,13 +6,13 @@
 		param = copytext(act, t1 + 1, length(act) + 1)
 		act = copytext(act, 1, t1)
 
-
 	var/muzzled = is_muzzled()
 	//var/m_type = 1
 
 	for (var/obj/item/weapon/implant/I in src)
 		if (I.implanted)
 			I.trigger(act, src)
+
 
 	var/miming=0
 	if(mind)
@@ -272,24 +272,51 @@
 //					playsound(src.loc, 'sound/misc/scream_wilhelm.ogg', 50, 1, 5) //do i need to explain this
 //					..(act)
 //				else
-				if(src.gender == MALE)
-					if(prob(50))
-						playsound(src.loc, 'sound/misc/scream_m1.ogg', 50, 1, 5)
-					else if(prob(25))
-						playsound(src.loc, 'sound/misc/scream_m2.ogg', 50, 1, 5)
-					else
-						playsound(src.loc, 'sound/misc/scream_m.ogg', 35, 1, 5)
-					..(act)
-				if(src.gender == FEMALE)
-					if(prob(50))
-						playsound(src.loc, 'sound/misc/scream_f1.ogg', 50, 1, 5)
-					else if(prob(25))
-						playsound(src.loc, 'sound/misc/scream_f2.ogg', 50, 1, 5)
-					else
-						playsound(src.loc, 'sound/misc/scream_f.ogg', 35, 1, 5)
-					..(act)
-				else if(src.gender == !MALE || !FEMALE) //fail safe or something
-					..(act)
+
+				if(src.dna)
+					var/DNA = src.dna.species.id
+
+					switch(DNA)
+						if("moth")
+							playsound(src.loc, 'sound/misc/moth.ogg', 50, 1, 5)
+						if("human")
+							if(src.gender == MALE)
+								if(prob(50))
+									playsound(src.loc, 'sound/misc/scream_m1.ogg', 50, 1, 5)
+								else
+									if(prob(25))
+										playsound(src.loc, 'sound/misc/scream_m2.ogg', 50, 1, 5)
+									else
+										playsound(src.loc, 'sound/misc/scream_m.ogg', 35, 1, 5)
+										..(act)
+							else
+
+								if(src.gender == FEMALE)
+									if(prob(50))
+										playsound(src.loc, 'sound/misc/scream_f1.ogg', 50, 1, 5)
+									else
+										if(prob(25))
+											playsound(src.loc, 'sound/misc/scream_f2.ogg', 50, 1, 5)
+										else
+											playsound(src.loc, 'sound/misc/scream_f.ogg', 35, 1, 5)
+											..(act)
+						if("drake")
+							if(prob(50))
+								playsound(src.loc, 'sound/misc/drake_1.ogg', 50, 1, 5)
+							else
+								if(prob(25))
+									playsound(src.loc, 'sound/misc/drake_2.ogg', 50, 1, 5)
+								else
+									playsound(src.loc, 'sound/misc/drake_1.ogg', 35, 1, 5)
+									..(act)
+
+							// add whatever other race here
+
+
+
+
+
+
 
 		if ("shiver","shivers")
 			message = "<B>[src]</B> shivers."
