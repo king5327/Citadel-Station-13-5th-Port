@@ -191,20 +191,7 @@
 			m_type = 1
 
 		if ("scream","screams")
-		/*	switch(gender)
-				if(MALE)
-					if(prob(50))
-						playsound(src.loc, 'sound/misc/scream_m1.ogg', 50, 1, 5)
-					else
-						playsound(src.loc, 'sound/misc/scream_m2.ogg', 50, 1, 5)
-				if(FEMALE)
-					if(prob(50))
-						playsound(src.loc, 'sound/misc/scream_f1.ogg', 50, 1, 5)
-					else
-						playsound(src.loc, 'sound/misc/scream_f2.ogg', 50, 1, 5)*/
-		//	message = "<B>[src]</B> screams!"
 			m_type = 2
-		//	src.adjustOxyLoss(5)
 
 		if ("shake","shakes")
 			message = "<B>[src]</B> shakes its head."
