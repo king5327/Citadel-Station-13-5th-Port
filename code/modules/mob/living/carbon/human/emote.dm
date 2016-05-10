@@ -309,6 +309,10 @@
 								else
 									playsound(src.loc, 'sound/misc/drake_1.ogg', 35, 1, 5)
 									..(act)
+						if("alien")
+							playsound(src.loc, pick('sound/alien/Voice/screech1.ogg', 'sound/alien/Voice/screech2.ogg', 'sound/alien/Voice/screech3.ogg', 'sound/alien/Voice/screech4.ogg'), 50, 0, 5)
+							if(prob(33))
+								..(act)
 
 							// add whatever other race here
 
