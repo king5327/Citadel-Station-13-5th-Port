@@ -3,7 +3,7 @@ author: TalkingCactus
 delete-after: True
 
 changes: 
-  - rscadd: "Ministation: Added a 'space' bar."
+  - rscadd: "Ministation: Added a space bar."
   - tweak: "Ministation: Moved the telecommunications satellite closer to the station."
   - rscadd: "Ministation: Added solitary confinement cells to security."
   - tweak: "Ministation: Fixed the mounted flashers and cell doors in the brig."
@@ -12,3 +12,6 @@ changes:
   - rscadd: "Ministation: Added several missing antag spawn points."
   - tweak: "Ministation: Modified the contents of the armory to better suit the server's needs."
   - rscdel: "Ministation: Disabled several events which were too destructive and/or gamebreaking for Ministation."
+  - rscadd: "Ministation: Added an autolathe and chemical dispenser to Research & Development."
+  - tweak: "Derelict: Added fire extinguishers, removed wooden structures, renamed cabin airlocks."
+  - rscdel: "Removed the floor."
