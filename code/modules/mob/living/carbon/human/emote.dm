@@ -264,38 +264,22 @@
 			if (miming)
 				message = "<B>[src]</B> acts out a scream!"
 			else
+				message = "<B>[src]</B> screams!"
+				m_type = 2
+				src.adjustOxyLoss(5)
+
 //				if(prob(5))
 //					playsound(src.loc, 'sound/misc/scream_wilhelm.ogg', 50, 1, 5) //do i need to explain this
 //					..(act)
 //				else
+
 				if(src.dna)
 					var/DNA = src.dna.species.id
 
 					switch(DNA)
-
 						if("moth")
 							playsound(src.loc, 'sound/misc/moth.ogg', 50, 1, 5)
-
-						if("drake")
-							if(prob(50))
-								playsound(src.loc, 'sound/misc/drake_1.ogg', 50, 1, 5)
-							else
-								if(prob(25))
-									playsound(src.loc, 'sound/misc/drake_2.ogg', 50, 1, 5)
-								else
-									playsound(src.loc, 'sound/misc/drake_1.ogg', 35, 1, 5)
-									..(act)
-						if("corvid")
-							if(prob(50))
-								playsound(src.loc, 'sound/misc/bird_1.ogg', 50, 1, 5)
-							else
-								if(prob(25))
-									playsound(src.loc, 'sound/misc/bird_2.ogg', 50, 1, 5)
-								else
-									playsound(src.loc, 'sound/misc/bird_1.ogg', 35, 1, 5)
-									..(act)
-						else
-
+						if("human")
 							if(src.gender == MALE)
 								if(prob(50))
 									playsound(src.loc, 'sound/misc/scream_m1.ogg', 50, 1, 5)
@@ -316,10 +300,22 @@
 										else
 											playsound(src.loc, 'sound/misc/scream_f.ogg', 35, 1, 5)
 											..(act)
+						if("drake")
+							if(prob(50))
+								playsound(src.loc, 'sound/misc/drake_1.ogg', 50, 1, 5)
+							else
+								if(prob(25))
+									playsound(src.loc, 'sound/misc/drake_2.ogg', 50, 1, 5)
+								else
+									playsound(src.loc, 'sound/misc/drake_1.ogg', 35, 1, 5)
+									..(act)
+
 							// add whatever other race here
-			message = "<B>[src]</B> screams!"
-			m_type = 2
-			src.adjustOxyLoss(5)
+
+
+
+
+
 
 
 		if ("shiver","shivers")
