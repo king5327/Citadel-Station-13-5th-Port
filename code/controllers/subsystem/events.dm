@@ -116,7 +116,9 @@ var/datum/subsystem/events/SSevent
 	/area/engine,
 	/area/solar,
 	/area/holodeck,
-	/area/shuttle
+	/area/shuttle,
+	/area/security,
+	/area/bridge
 	)
 
 	//These are needed because /area/engine has to be removed from the list, but we still want these areas to get fucked up.
