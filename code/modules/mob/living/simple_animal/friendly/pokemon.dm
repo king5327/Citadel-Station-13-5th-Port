@@ -283,6 +283,16 @@
 	icon_living = "poochyena"
 	icon_dead = "poochyena_d"
 
+/mob/living/simple_animal/pokemon/eevee/sylveon
+	name = "Sylveon"
+	desc = "Sylveon, the Intertwining Pokémon. Sylveon affectionately wraps its ribbon-like feelers around its Trainer's arm as they walk together."
+	icon_state = "sylveon"
+	icon_living = "sylveon"
+	icon_dead = "sylveon_d"
+	speak = list("Sylveon!", "Syl!")
+	response_help  = "pets"
+	response_harm   = "hits"
+
 /mob/living/simple_animal/pokemon/eevee/umbreon
 	name = "umbreon"
 	icon_state = "umbreon"
