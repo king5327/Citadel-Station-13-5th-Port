@@ -1,0 +1,7 @@
+author: Codethme
+
+delete-after: True
+
+changes: 
+  - tweak: "Exceptions for undefined race screams."
+  - soundadd: "EAGLES SCREAM."
