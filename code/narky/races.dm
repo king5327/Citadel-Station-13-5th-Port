@@ -260,6 +260,7 @@ datum
 			id="fung"
 			generic="fungi"
 			adjective="sporey"
+			say_mod = "mushes"
 			tail=0
 		naga
 			name="naga"
