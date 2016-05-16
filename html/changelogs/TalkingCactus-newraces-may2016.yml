@@ -1,0 +1,13 @@
+author: TK420634
+
+delete-after: True
+
+changes: 
+  - rscadd: "Added fungus people as a human subspecies."
+  - rscadd: "Added coyotes as a human subspecies."
+  - rscadd: "Added crocodiles as a human subspecies."
+  - rscadd: "Added a special race for players with a high concentration of sodium chloride."
+  - tweak: "Added color layers for corgi tails."
+  - bugfix: "Fixed the outline on the possum sprites."
+  - bugfix: "Fixed porcupine spines not showing through clothing."
+  - bugfix: "Fixed beaver tails not appearing."
