@@ -122,12 +122,15 @@
 	*/
 
 /obj/item/weapon/bikehorn/attack_self(mob/user)
-    if(!spam_flag)
-        spam_flag = 1
-        playsound(src.loc, honksound, 50, 1)
-        src.add_fingerprint(user)
-        spawn(cooldowntime)
-            spam_flag = 0
+	if(!spam_flag)
+		spam_flag = 1
+		playsound(src.loc, honksound, 50, 1)
+		src.add_fingerprint(user)
+		spawn(cooldowntime)
+			spam_flag = 0
+	return
+
+
     /*else
         if(emagged)
             usr << "<span class='warning'>You dun goofed!</span>"
