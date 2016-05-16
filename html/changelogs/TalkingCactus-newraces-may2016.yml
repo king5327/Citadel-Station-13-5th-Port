@@ -11,3 +11,4 @@ changes:
   - bugfix: "Fixed the outline on the possum sprites."
   - bugfix: "Fixed porcupine spines not showing through clothing."
   - bugfix: "Fixed beaver tails not appearing."
+  - bugfix: "Fixed snarby eyes."
