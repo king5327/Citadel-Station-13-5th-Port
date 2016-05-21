@@ -48,7 +48,7 @@ Changes to the uplinks were made to discourage murderboning, the rest is the sam
 
 #if !defined(MAP_FILE)
 
-        #include "map_files\MiniStation\MicroStation.dmm"
+        #include "map_files\MiniStation\MiniStation.dmm"
         #include "map_files\generic\z2.dmm"
         #include "map_files\generic\z3.dmm"
         #include "map_files\generic\z4.dmm"
@@ -56,8 +56,8 @@ Changes to the uplinks were made to discourage murderboning, the rest is the sam
         #include "map_files\generic\z6.dmm"
         #include "map_files\generic\z7.dmm"
 
-        #define MAP_FILE "MicroStation.dmm"
-        #define MAP_NAME "MicroStation"
+        #define MAP_FILE "MiniStation.dmm"
+        #define MAP_NAME "MiniStation"
 
         #define MAP_TRANSITION_CONFIG	list(MAIN_STATION = CROSSLINKED, CENTCOMM = SELFLOOPING, ABANDONED_SATELLITE = CROSSLINKED, DERELICT = CROSSLINKED, MINING = CROSSLINKED, EMPTY_AREA_1 = CROSSLINKED, EMPTY_AREA_2 = CROSSLINKED)
 
