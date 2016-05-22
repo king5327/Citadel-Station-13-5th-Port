@@ -179,6 +179,14 @@ datum
 			generic="creature"
 			tail=1
 			attack_verb = "thwack"
+		halfdragon
+			name="half-dragon"
+			id="halfdragon"
+			generic="reptile"
+			adjective="scaled"
+			tail=1
+			attack_verb = "claw"
+			attack_sound = 'sound/weapons/bladeslice.ogg'
 		hawk
 			name="hawk"
 			id="hawk"
