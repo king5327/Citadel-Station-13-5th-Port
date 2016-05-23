@@ -83,7 +83,7 @@ datum
 			generic = "abomination"
 			adjective = "violently fishy"
 			tail=1
-			eyes=0
+			eyes = "carpeyes"
 			attack_verb = "nom"
 			attack_sound = 'sound/weapons/bite.ogg'
 		corgi
@@ -109,6 +109,19 @@ datum
 			adjective="wise"
 			tail=1
 			taur=1
+		coyote
+			name="coyote"
+			id="coyote"
+			say_mod = "yips"
+			generic="canine"
+			adjective="mangy"
+			tail=1
+		crocodile
+			name="crocodile"
+			id="croc"
+			generic="water reptile"
+			adjective="scaled"
+			tail=1
 		dalmatian
 			name="dalmatian"
 			id="dalmatian"
@@ -166,6 +179,14 @@ datum
 			generic="creature"
 			tail=1
 			attack_verb = "thwack"
+		halfdragon
+			name="half-dragon"
+			id="halfdragon"
+			generic="reptile"
+			adjective="scaled"
+			tail=1
+			attack_verb = "claw"
+			attack_sound = 'sound/weapons/bladeslice.ogg'
 		hawk
 			name="hawk"
 			id="hawk"
@@ -242,6 +263,13 @@ datum
 			generic="insect"
 			adjective="fluttery"
 			eyes="motheyes" // this SHOULD work after i've updated human_face.dmi -- iska
+		mushman
+			name="mushroom"
+			id="fung"
+			generic="fungi"
+			adjective="sporey"
+			say_mod = "mushes"
+			tail=0
 		naga
 			name="naga"
 			id="naga"
@@ -312,10 +340,16 @@ datum
 		roorat
 			name="kangaroo rat"
 			id="roorat"
-			generic="hybrid marsupial" // ...marsupial rat???
+			generic="Heteromyidae" // ...marsupial rat?  Have you tried a google search?  They're a real thing.
 			adjective="bouncy"
 			tail=1
 			attack_verb = "kick"
+		saltman
+			name="salt"
+			id="salt"
+			generic="NaCl"
+			adjective="salty"
+			restricted=2
 		seaslug
 			name="sea slug"
 			id="seaslug"
@@ -363,8 +397,7 @@ datum
 			tail=1
 			attack_verb = "chomp"
 			attack_sound = 'sound/weapons/bite.ogg'
-			eyes=0
-			//restricted=2 // so that the choice is there whether you want it more snowflakey
+			eyes = "snarbyeyes"
 		squirrel
 			name="squirrel"
 			id="squirrel"
