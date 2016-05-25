@@ -606,3 +606,69 @@
 	item_color = "latexmaid"
 	body_parts_covered = CHEST|GROIN
 	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/pmc/dd
+	name = "Diamond-Dog Uniform"
+	desc = "THEY CALL THEM THE DIAMOND DOGS!"
+	icon_state = "BDU"
+	item_state = "BDU"
+	item_color = "BDU"
+	has_sensor = 0
+	can_adjust = 0
+	armor = list(melee = 10, bullet = 5, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+
+
+/obj/item/clothing/under/pmc/red
+	name = "pmc uniform"
+	desc = "War has changed. It's no longer about nations, ideologies, or ethnicity. It's an endless series of proxy battles fought by mercenaries and machines. War - and its consumption of life - has become a well-oiled machine. War has changed. ID-tagged soldiers carry ID-tagged weapons, use ID-tagged gear. Nanomachines inside their bodies enhance and regulate their abilities. Genetic control. Information control. Emotion control. Battlefiled control. Everything is monitored and kept under control. War has changed. The age of deterrence has become the age of control...All in the name of averting catastrophe from weapons of mass destruction. And he who controls the battlefield...controls history. War has changed. When the battlefield is under total control...War becomes routine"
+	icon_state = "BDU_RED"
+	item_state = "BDU_RED"
+	item_color = "BDU_RED"
+	has_sensor = 0
+	can_adjust = 0
+	armor = list(melee = 10, bullet = 5, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+
+
+/obj/item/clothing/under/pmc/purple
+	name = "pmc uniform"
+	desc = "War has changed. It's no longer about nations, ideologies, or ethnicity. It's an endless series of proxy battles fought by mercenaries and machines. War - and its consumption of life - has become a well-oiled machine. War has changed. ID-tagged soldiers carry ID-tagged weapons, use ID-tagged gear. Nanomachines inside their bodies enhance and regulate their abilities. Genetic control. Information control. Emotion control. Battlefiled control. Everything is monitored and kept under control. War has changed. The age of deterrence has become the age of control...All in the name of averting catastrophe from weapons of mass destruction. And he who controls the battlefield...controls history. War has changed. When the battlefield is under total control...War becomes routine"
+	icon_state = "BDU_PURPLE"
+	item_state = "BDU_PURPLE"
+	item_color = "BDU_PURPLE"
+	has_sensor = 0
+	can_adjust = 0
+	armor = list(melee = 10, bullet = 5, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+
+
+/obj/item/clothing/under/pmc/pink
+	name = "pmc uniform"
+	desc = "War has changed. It's no longer about nations, ideologies, or ethnicity. It's an endless series of proxy battles fought by mercenaries and machines. War - and its consumption of life - has become a well-oiled machine. War has changed. ID-tagged soldiers carry ID-tagged weapons, use ID-tagged gear. Nanomachines inside their bodies enhance and regulate their abilities. Genetic control. Information control. Emotion control. Battlefiled control. Everything is monitored and kept under control. War has changed. The age of deterrence has become the age of control...All in the name of averting catastrophe from weapons of mass destruction. And he who controls the battlefield...controls history. War has changed. When the battlefield is under total control...War becomes routine"
+	icon_state = "BDU_PINK"
+	item_state = "BDU_PINK"
+	item_color = "BDU_PINK"
+	has_sensor = 0
+	can_adjust = 0
+	armor = list(melee = 10, bullet = 5, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+
+
+/obj/item/clothing/under/pmc/green
+	name = "pmc uniform"
+	desc = "War has changed. It's no longer about nations, ideologies, or ethnicity. It's an endless series of proxy battles fought by mercenaries and machines. War - and its consumption of life - has become a well-oiled machine. War has changed. ID-tagged soldiers carry ID-tagged weapons, use ID-tagged gear. Nanomachines inside their bodies enhance and regulate their abilities. Genetic control. Information control. Emotion control. Battlefiled control. Everything is monitored and kept under control. War has changed. The age of deterrence has become the age of control...All in the name of averting catastrophe from weapons of mass destruction. And he who controls the battlefield...controls history. War has changed. When the battlefield is under total control...War becomes routine"
+	icon_state = "BDU_GREEN"
+	item_state = "BDU_GREEN"
+	item_color = "BDU_GREEN"
+	has_sensor = 0
+	can_adjust = 0
+	armor = list(melee = 10, bullet = 5, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+
+
+/obj/item/clothing/under/pmc/blue
+	name = "pmc uniform"
+	desc = "War has changed. It's no longer about nations, ideologies, or ethnicity. It's an endless series of proxy battles fought by mercenaries and machines. War - and its consumption of life - has become a well-oiled machine. War has changed. ID-tagged soldiers carry ID-tagged weapons, use ID-tagged gear. Nanomachines inside their bodies enhance and regulate their abilities. Genetic control. Information control. Emotion control. Battlefiled control. Everything is monitored and kept under control. War has changed. The age of deterrence has become the age of control...All in the name of averting catastrophe from weapons of mass destruction. And he who controls the battlefield...controls history. War has changed. When the battlefield is under total control...War becomes routine"
+	icon_state = "BDU_BLUE"
+	item_state = "BDU_BLUE"
+	item_color = "BDU_BLUE"
+	has_sensor = 0
+	can_adjust = 0
+	armor = list(melee = 10, bullet = 5, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+// Added Diamond dogs BDU at long last.
