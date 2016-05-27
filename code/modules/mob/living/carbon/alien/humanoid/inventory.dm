@@ -20,10 +20,6 @@
 			return wear_id
 		if(slot_head)
 			return head
-		if(slot_l_store)
-			return l_store
-		if(slot_r_store)
-			return r_store
 	return null
 
 /mob/living/carbon/alien/humanoid/equip_to_slot(obj/item/I, slot)

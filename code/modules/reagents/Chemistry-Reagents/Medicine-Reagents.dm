@@ -171,6 +171,11 @@
 	M.adjustFireLoss(-2*REM)
 	..()
 
+/datum/reagent/medicine/silver_sulfadiazine/overdose_process(mob/living/M)
+	M.adjustFireLoss(1.5*REM)
+	..()
+	return
+
 /datum/reagent/medicine/oxandrolone
 	name = "Oxandrolone"
 	id = "oxandrolone"
@@ -218,6 +223,11 @@
 /datum/reagent/medicine/styptic_powder/on_mob_life(mob/living/M)
 	M.adjustBruteLoss(-2*REM)
 	..()
+
+/datum/reagent/medicine/styptic_powder/overdose_process(mob/living/M)
+	M.adjustBruteLoss(1.5*REM)
+	..()
+	return
 
 /datum/reagent/medicine/salglu_solution
 	name = "Saline-Glucose Solution"
@@ -283,6 +293,7 @@
 	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal one point of damage. Touch application only."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
+	overdose_threshold = 100
 
 /datum/reagent/medicine/synthflesh/reaction_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -292,6 +303,12 @@
 			if(show_message)
 				M << "<span class='danger'>You feel your burns and bruises healing! It stings like hell!</span>"
 	..()
+
+/datum/reagent/medicine/synthflesh/overdose_process(mob/living/M)
+	M.adjustBruteLoss(1*REM)
+	M.adjustFireLoss(1*REM)
+	..()
+	return
 
 /datum/reagent/medicine/charcoal
 	name = "Charcoal"
@@ -904,10 +921,11 @@ datum/reagent/medicine/tricordrazine/on_mob_life(mob/living/M)
 	return
 
 datum/reagent/medicine/tricordrazine/overdose_process(mob/living/M)
-	M.adjustToxLoss(2*REM)
-	M.adjustOxyLoss(2*REM)
-	M.adjustBruteLoss(2*REM)
-	M.adjustFireLoss(2*REM)
+	if(prob(80)) // to decrease the fatality of medbot stack rampage
+		M.adjustToxLoss(0.5*REM)
+		M.adjustOxyLoss(1*REM)
+		M.adjustBruteLoss(1*REM)
+		M.adjustFireLoss(1*REM)
 	..()
 	return
 

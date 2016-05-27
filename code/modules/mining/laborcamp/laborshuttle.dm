@@ -3,7 +3,7 @@
 	desc = "Used to call and send the labor camp shuttle."
 	circuit = /obj/item/weapon/circuitboard/labor_shuttle
 	shuttleId = "laborcamp"
-	possible_destinations = "laborcamp_home;laborcamp_away"
+	possible_destinations = "laborcamp_home;laborcamp_away;laborcamp_away2"
 	req_access = list(access_brig)
 
 
@@ -21,7 +21,7 @@
 			usr << "<span class='warning'>Cannot locate shuttle!</span>"
 			return 0
 		var/obj/docking_port/stationary/S = M.get_docked()
-		if(S && S.name == "laborcamp_away")
+		if(S && (S.name == "laborcamp_away" || S.name == "laborcamp_away2"))
 			usr << "<span class='warning'>Shuttle is already at the outpost!</span>"
 			return 0
 	..()

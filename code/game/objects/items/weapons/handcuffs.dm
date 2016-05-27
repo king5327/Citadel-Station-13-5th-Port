@@ -257,3 +257,11 @@
 
 /obj/item/weapon/restraints/legcuffs/beartrap/energy/attack_hand(mob/user)
 	Crossed(user) //honk
+
+/obj/item/weapon/restraints/handcuffs/kink
+	name = "fuzzy handcuffs"
+	desc = "Use this to keep naughty pets in line."
+	icon_state = "handcuff_kink"
+	materials = null
+	origin_tech = null
+	breakouttime = 6

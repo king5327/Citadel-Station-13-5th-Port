@@ -66,7 +66,7 @@
  */
 /obj/item/weapon/pen/sleepy
 	origin_tech = "materials=2;syndicate=5"
-	flags = OPENCONTAINER
+	//flags = OPENCONTAINER
 
 
 /obj/item/weapon/pen/sleepy/attack(mob/living/M, mob/user)

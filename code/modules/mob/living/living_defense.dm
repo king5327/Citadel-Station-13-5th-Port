@@ -290,7 +290,7 @@
 				playsound(loc, "hiss", 25, 1, 1)
 				playsound(loc, 'sound/effects/explosionfar.ogg', 25, 1)
 				return 0
-			visible_message("<span class='notice'>[M] caresses [src] with its scythe like arm.</span>")
+			visible_message("<span class='notice'>[M] caresses [src] with its scythe like claws.</span>")
 			return 0
 
 		if ("grab")

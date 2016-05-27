@@ -14,7 +14,7 @@ Bonus
 
 //////////////////////////////////////
 */
-
+/*
 /datum/symptom/genetic_mutation
 
 	name = "Deoxyribonucleic Acid Saboteur"
@@ -57,3 +57,4 @@ Bonus
 			return
 		M.dna.struc_enzymes = archived_dna
 		M.domutcheck()
+*/

@@ -18,8 +18,8 @@
 /mob/living/carbon/alien/humanoid/royal/queen
 	name = "alien queen"
 	caste = "q"
-	maxHealth = 400
-	health = 400
+	maxHealth = 325
+	health = 325
 	icon_state = "alienq"
 
 /mob/living/carbon/alien/humanoid/royal/queen/New()
@@ -47,13 +47,13 @@
 	if (src.healths)
 		if (src.stat != 2)
 			switch(health)
-				if(400 to INFINITY)
+				if(325 to INFINITY)
 					src.healths.icon_state = "health0"
-				if(320 to 400)
+				if(275 to 325)
 					src.healths.icon_state = "health1"
-				if(240 to 320)
+				if(200 to 275)
 					src.healths.icon_state = "health2"
-				if(160 to 240)
+				if(160 to 200)
 					src.healths.icon_state = "health3"
 				if(80 to 160)
 					src.healths.icon_state = "health4"
@@ -66,8 +66,9 @@
 
 /mob/living/carbon/alien/humanoid/royal/queen/movement_delay()
 	. = ..()
-	. += 4
-
+	. += 3
+	if(locate(/obj/structure/alien/weeds) in src.loc)
+		. += -1
 
 //Queen verbs
 /obj/effect/proc_holder/alien/lay_egg
@@ -82,6 +83,7 @@
 		user << "There's already an egg here."
 		return 0
 	user.visible_message("<span class='alertalien'>[user] has laid an egg!</span>")
+	playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
 	new /obj/structure/alien/egg(user.loc)
 	return 1
 
@@ -158,19 +160,55 @@
 
 /obj/effect/proc_holder/alien/royal/queen/screech/fire(mob/living/carbon/alien/humanoid/royal/queen/user)
 	user.visible_message("<span class='alertalien'>[user] emits an ear-splitting screech!!</span>")
+	playsound(user.loc, 'sound/voice/screech.ogg', 200, 0, 64)
 	for(var/mob/living/M in get_hearers_in_view(4, user))
 		if(ishuman(M))
 			M.confused += 6
 			M.Jitter(rand(5,10))
 			M.Weaken(rand(2,3))
 			shake_camera(M, 3, strength=2)
-		else
-			M << sound('sound/voice/screech.ogg')
-
-		if(issilicon(M))
+		else if(issilicon(M))
 			M << sound('sound/weapons/flash.ogg')
 			M.Weaken(rand(2,5))
 	for(var/obj/machinery/light/L in range(7, user))
 		L.on = 1
 		L.broken()
 	return 1
+
+/mob/living/carbon/alien/humanoid/royal/queen/proc/spit_at(atom/A)
+	var/plasma_cost = 75
+	if(paralysis || stat || weakened)
+		src << "<span class ='noticetalien'>You can't spit right now!</span>"
+		return
+
+	if(!src.getorgan(/obj/item/organ/internal/alien/neurotoxin))
+		src << "<span class ='alertalien'>You don't have a neurotoxin gland!</span>"
+		return
+
+	if(spit_cooldown)
+		src << "<span class='noticealien'>You can't spit yet!</span>"
+		return
+
+	if(getPlasma() < plasma_cost)
+		if(!silent)
+			src << "<span class='noticealien'>Not enough plasma stored.</span>"
+		return
+	else
+		adjustPlasma(-plasma_cost)
+		src.visible_message(
+			"<span class ='danger'>[src] spits neurotoxin at [A]!</span>",\
+			"<span class ='danger'>You spit neurotoxin at [A]</span>",\
+			"<span class ='italics'>You hear squelching...</span>")
+		playsound(src.loc, 'sound/alien/Effects/spit1.ogg', 100, 1)
+		var/obj/item/projectile/bullet/neurotoxin/N = new /obj/item/projectile/bullet/neurotoxin(src.loc)
+		N.yo = A.y - src.y
+		N.xo = A.x - src.x
+		N.fire()
+		spit_cooldown = !spit_cooldown
+		spawn(spit_cooldown_time) //15s by default
+			src << "<span class='alertalien'>You're ready to spit again.</span>"
+			spit_cooldown = !spit_cooldown
+
+/mob/living/carbon/alien/humanoid/royal/queen/MiddleClickOn(atom/A, params, mob/user)
+	face_atom(A)
+	spit_at(A)

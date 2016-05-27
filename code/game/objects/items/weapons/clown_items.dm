@@ -102,6 +102,7 @@
 	var/spam_flag = 0
 	var/honksound = 'sound/items/bikehorn.ogg'
 	var/cooldowntime = 20
+	var/emagged = 0
 
 /obj/item/weapon/bikehorn/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] solemnly points the horn at \his temple! It looks like \he's trying to commit suicide..</span>")
@@ -113,6 +114,13 @@
 		playsound(loc, honksound, 50, 1, -1) //plays instead of tap.ogg!
 	return ..()
 
+/*
+
+/obj/item/weapon/bikehorn/emag_act(mob/user)
+	user << "<span class='warning'>Oh shit...</span>"
+	emagged = 1
+	*/
+
 /obj/item/weapon/bikehorn/attack_self(mob/user)
 	if(!spam_flag)
 		spam_flag = 1
@@ -121,6 +129,23 @@
 		spawn(cooldowntime)
 			spam_flag = 0
 	return
+
+
+    /*else
+        if(emagged)
+            usr << "<span class='warning'>You dun goofed!</span>"
+            playsound(loc, honksound, 50, 1, -1)
+            //qdel(src)
+            var/obj/singularity/singulo = new /obj/singularity (get_turf(src))
+            singulo.energy = 300 //should make it a bit bigger~
+            message_admins("[key_name_admin(user)] used an emagged horn.")
+            log_game("[key_name(user)] used an emagged horn.")
+            //qdel(src)
+            singulo.process()
+            return
+	   ..()*/
+
+
 
 /obj/item/weapon/bikehorn/Crossed(mob/living/L)
 	if(isliving(L))

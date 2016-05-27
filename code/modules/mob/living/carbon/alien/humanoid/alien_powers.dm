@@ -92,6 +92,7 @@ Doesn't work on other aliens/AI.*/
 		return 0
 	for(var/mob/O in viewers(user, null))
 		O.show_message(text("<span class='alertalien'>[user] has planted some alien weeds!</span>"), 1)
+		playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 50, 1)
 	new/obj/structure/alien/weeds/node(user.loc)
 	return 1
 
@@ -177,6 +178,7 @@ Doesn't work on other aliens/AI.*/
 			return 0
 		new /obj/effect/acid(get_turf(target), target)
 		user.visible_message("<span class='alertalien'>[user] vomits globs of vile stuff all over [target]. It begins to sizzle and melt under the bubbling mess of acid!</span>")
+		playsound(target, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
 		return 1
 	else
 		src << "<span class='noticealien'>Target is too far away.</span>"
@@ -208,7 +210,7 @@ Doesn't work on other aliens/AI.*/
 
 /obj/effect/proc_holder/alien/neurotoxin/fire(mob/living/carbon/alien/user)
 	user.visible_message("<span class='danger'>[user] spits neurotoxin!", "<span class='alertalien'>You spit neurotoxin.</span>")
-
+	playsound(user.loc, 'sound/alien/Effects/spit1.ogg', 100, 1)
 	var/turf/T = user.loc
 	var/turf/U = get_step(user, user.dir) // Get the tile infront of the move, based on their direction
 	if(!isturf(U) || !isturf(T))
@@ -243,6 +245,7 @@ Doesn't work on other aliens/AI.*/
 
 	user << "<span class='notice'>You shape a [choice].</span>"
 	user.visible_message("<span class='notice'>[user] vomits up a thick purple substance and begins to shape it.</span>")
+	playsound(user.loc, pick('sound/alien/Effects/resin1.ogg', 'sound/alien/Effects/resin2.ogg', 'sound/alien/Effects/resin3.ogg', 'sound/alien/Effects/resin4.ogg'), 100, 1)
 
 	choice = structures[choice]
 	new choice(user.loc)
@@ -326,6 +329,7 @@ Doesn't work on other aliens/AI.*/
 /obj/effect/proc_holder/alien/sneak/fire(mob/living/carbon/alien/humanoid/user)
 	if(!active)
 		user.alpha = 75 //Still easy to see in lit areas with bright tiles, almost invisible on resin.
+		user.sneaking = 1
 		active = 1
 		user << "<span class='noticealien'>You blend into the shadows...</span>"
 	else

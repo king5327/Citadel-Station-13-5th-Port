@@ -6,13 +6,13 @@
 		param = copytext(act, t1 + 1, length(act) + 1)
 		act = copytext(act, 1, t1)
 
-
 	var/muzzled = is_muzzled()
 	//var/m_type = 1
 
 	for (var/obj/item/weapon/implant/I in src)
 		if (I.implanted)
 			I.trigger(act, src)
+
 
 	var/miming=0
 	if(mind)
@@ -264,7 +264,72 @@
 			if (miming)
 				message = "<B>[src]</B> acts out a scream!"
 			else
-				..(act)
+//				if(prob(5))
+//					playsound(src.loc, 'sound/misc/scream_wilhelm.ogg', 50, 1, 5) //do i need to explain this
+//					..(act)
+//				else
+				if(src.dna)
+					var/DNA = src.dna.species.id
+
+					switch(DNA)
+
+						if("alien")
+							playsound(src.loc, pick('sound/alien/Voice/screech1.ogg', 'sound/alien/Voice/screech2.ogg', 'sound/alien/Voice/screech3.ogg', 'sound/alien/Voice/screech4.ogg'), 50, 0, 5)
+							if(prob(33))
+								..(act)
+
+						if("moth")
+							playsound(src.loc, 'sound/misc/moth.ogg', 50, 1, 5)
+
+						if("drake")
+							if(prob(50))
+								playsound(src.loc, 'sound/misc/drake_1.ogg', 50, 1, 5)
+							else
+								if(prob(25))
+									playsound(src.loc, 'sound/misc/drake_2.ogg', 50, 1, 5)
+								else
+									playsound(src.loc, 'sound/misc/drake_1.ogg', 35, 1, 5)
+									..(act)
+
+						if("corvid")
+							if(prob(50))
+								playsound(src.loc, 'sound/misc/bird_1.ogg', 50, 1, 5)
+							else
+								if(prob(25))
+									playsound(src.loc, 'sound/misc/bird_2.ogg', 50, 1, 5)
+								else
+									playsound(src.loc, 'sound/misc/bird_1.ogg', 35, 1, 5)
+									..(act)
+						else
+
+							if(src.gender == MALE)
+								if(prob(50))
+									playsound(src.loc, 'sound/misc/scream_m1.ogg', 50, 1, 5)
+								else
+									if(prob(25))
+										playsound(src.loc, 'sound/misc/scream_m2.ogg', 50, 1, 5)
+									else
+										playsound(src.loc, 'sound/misc/scream_m.ogg', 35, 1, 5)
+										..(act)
+							else
+
+								if(src.gender == FEMALE)
+									if(prob(50))
+										playsound(src.loc, 'sound/misc/scream_f1.ogg', 50, 1, 5)
+									else
+										if(prob(25))
+											playsound(src.loc, 'sound/misc/scream_f2.ogg', 50, 1, 5)
+										else
+											playsound(src.loc, 'sound/misc/scream_f.ogg', 35, 1, 5)
+
+							// add whatever other race here
+
+			message = "<B>[src]</B> screams!"
+			m_type = 2
+			src.adjustOxyLoss(5)
+
+
+
 
 		if ("shiver","shivers")
 			message = "<B>[src]</B> shivers."
@@ -389,3 +454,10 @@
 		dna.species.mutant_bodyparts -= "waggingtail_human"
 		dna.species.mutant_bodyparts |= "tail_human"
 	update_body()
+
+/mob/living/carbon/human/verb/set_flavor()
+	set name = "Set Flavor Text"
+	set desc = "Sets an extended description of your character's features."
+	set category = "IC"
+
+	flavor_text =  copytext(sanitize(input(usr, "Please enter your new flavor text.", "Flavor text", null)  as text), 1)

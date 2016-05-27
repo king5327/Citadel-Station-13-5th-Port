@@ -137,7 +137,7 @@ Bonus
 
 //////////////////////////////////////
 */
-
+/*
 /datum/symptom/heal/dna
 
 	name = "Deoxyribonucleic Acid Restoration"
@@ -156,3 +156,4 @@ Bonus
 	M.dna.remove_mutation_group(unclean_mutations)
 	M.radiation = max(M.radiation - 3, 0)
 	return 1
+*/

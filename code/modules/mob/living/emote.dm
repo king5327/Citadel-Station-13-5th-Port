@@ -191,7 +191,6 @@
 			m_type = 1
 
 		if ("scream","screams")
-			message = "<B>[src]</B> screams!"
 			m_type = 2
 
 		if ("shake","shakes")

@@ -289,6 +289,19 @@
 	item_color = "petcollar"
 	var/tagname = null
 
+
+// JonathanHybrid's tweak
+
+/obj/item/clothing/tie/petcollar/New()
+		icon_state = pick("petcollar","petcollar_red","petcollar_purple","petcollar_black","petcollar_pink","petcollar_choker")
+		item_color = icon_state
+
+/obj/item/clothing/tie/spikecollar
+		name = "spiked collar"
+		desc = "A spiked collar for ominous pets. Though you probably could wear it yourself, you'd doubtless be the subject of ridicule."
+		icon_state = "spikecollar" //Sprited by Krypton
+		item_color = "spikecollar"
+
 /obj/item/clothing/tie/petcollar/attack_self(mob/user)
 	tagname = copytext(sanitize(input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot") as null|text),1,MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
@@ -310,3 +323,9 @@
 	desc = "A Centcomm. mantelet with gold buttons. Great for asserting oneself at important meetings, or costume parties."
 	icon_state = "mant-c"
 	item_color = "mant-c"
+
+/obj/item/clothing/tie/necklace/locust
+	name = "Locust Sigil Necklace"
+	desc = "FOR HORDE!!!"
+	icon_state = "locust"
+	item_color = "locust"
