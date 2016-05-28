@@ -7,7 +7,7 @@
 	config_tag = "nuclear"
 	required_players = 10 // 20 players - 5 players to be the nuke ops = 15 players remaining
 	required_enemies = 2
-	recommended_enemies = 5
+	recommended_enemies = 3
 	antag_flag = ROLE_OPERATIVE
 	enemy_minimum_age = 14
 
