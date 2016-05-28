@@ -1043,7 +1043,7 @@
 "auc" = (/obj/machinery/atmospherics/components/unary/vent_scrubber{on = 1; scrub_N2O = 0; scrub_Toxins = 0},/turf/simulated/floor/carpet,/area/security/detectives_office)
 "aud" = (/obj/machinery/alarm{dir = 8; icon_state = "alarm0"; pixel_x = 24},/obj/machinery/computer/secure_data,/turf/simulated/floor/plasteel{icon_state = "grimy"},/area/security/detectives_office)
 "aue" = (/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{dir = 8},/turf/simulated/floor/plating,/area/maintenance/fpmaint)
-"auf" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{dir = 4},/obj/machinery/door/airlock/maintenance{name = "Emergency Storage Maintenance"; req_access_txt = "12"},/turf/simulated/floor/plating,/area/ai_monitored/storage/emergency)
+"auf" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{dir = 4},/obj/machinery/door/airlock/maintenance{name = "Emergency Storage Maintenance"; req_access_txt = "19"},/turf/simulated/floor/plating,/area/ai_monitored/storage/emergency)
 "aug" = (/obj/machinery/atmospherics/components/unary/vent_scrubber{dir = 8; on = 1; scrub_Toxins = 0},/turf/simulated/floor/plasteel,/area/ai_monitored/storage/emergency)
 "auh" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/simulated/floor/plasteel{icon_state = "redcorner"; dir = 4},/area/hallway/primary/fore)
 "aui" = (/obj/structure/bed/stool{pixel_y = 8},/obj/machinery/atmospherics/components/unary/vent_scrubber{dir = 4; on = 1; scrub_N2O = 0; scrub_Toxins = 0},/turf/simulated/floor/carpet,/area/crew_quarters/sleep)
