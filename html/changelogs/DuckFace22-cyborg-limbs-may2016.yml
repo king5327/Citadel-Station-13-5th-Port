@@ -5,3 +5,4 @@ delete-after: True
 changes: 
   - rscadd: "Added lizard tails as a human tail."
   - rscadd: "Added cyborg limbs as a human tail."
+  - tweak: "Renamed half-dragons to gria."
