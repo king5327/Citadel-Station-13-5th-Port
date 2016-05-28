@@ -1,0 +1,6 @@
+author: TalkingCactus
+
+delete-after: True
+
+changes:
+  - tweak: "Fixed access restrictions on the maintenance airlock for the emergency storage room."
