@@ -4,3 +4,6 @@ delete-after: True
 
 changes:
   - tweak: "Fixed access restrictions on the maintenance airlock for the emergency storage room."
+  - tweak: "Modified the construction site."
+  - tweak: "Small modifications to the derelict, mostly replacing walls and floors with different variants."
+  - tweak: "Modified the maintenance loot list. Expect different types of gloves, moldy pizza, and more."
