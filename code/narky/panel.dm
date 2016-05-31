@@ -403,9 +403,9 @@ obj/vore_preferences
 				dat += "Due to issues with griefers, we have whitelisted a few features. This is only to prevent one-shot griefing, and the list will not be difficult to get into."
 				dat += "<BR><b>Status:</b> "
 				if(is_whitelisted(target.ckey))
-					dat +="<img src=tick-circle.png>You are whitelisted. You will be able to respawn and play as head roles."
+					dat +="<img src=large_stamp-deny.png>You are whitelisted. You will be able to respawn and play as head roles."
 				else
-					dat +="<img src=cross-circle.png>You are not whitelisted. You will not be able to use head roles while the head whitelisting is toggled on. To become whitelisted, keep playing until we know you're not around just to cause trouble. You can also have someone trusted vouch for you."
+					dat +="<img src=large_stamp-ok.png>You are not whitelisted. You will not be able to use head roles while the head whitelisting is toggled on. To become whitelisted, keep playing until we know you're not around just to cause trouble. You can also have someone trusted vouch for you."
 				dat += "<BR><h2>Donations</h2>"
 				dat += "In order to keep the server running, payment is required monthly. It is greatly appreciated for even the smallest amount of donations. Without them, it becomes difficult to keep the server afloat."
 				dat += "By donating you can prevent this issue and allow it to continue running. As well as helping out the server, your name will be added to the donator list and you will be priority in having suggestions, ideas, and <b>certain</b> cosmetics added for personal use."
