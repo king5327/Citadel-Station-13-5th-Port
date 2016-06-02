@@ -179,9 +179,9 @@ datum
 			generic="creature"
 			tail=1
 			attack_verb = "thwack"
-		halfdragon
-			name="half-dragon"
-			id="halfdragon"
+		gria
+			name="gria"
+			id="gria"
 			generic="reptile"
 			adjective="scaled"
 			tail=1
@@ -685,7 +685,9 @@ var/list/mutant_tails = list(
 	"cow"="cow",
 	"kangaroo"="kangaroo",
 	"kangaroo"="kangaroo",
-	"pony"="pony")
+	"pony"="pony",
+	"lizard"="lizard",
+	"cyborg"="cyborg")
 
 var/list/mutant_wings = list(
 	"none"=0,

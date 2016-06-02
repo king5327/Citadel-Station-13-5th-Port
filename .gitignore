@@ -11,3 +11,4 @@
 *.backup
 *.int
 config/admins.txt
+*.db
