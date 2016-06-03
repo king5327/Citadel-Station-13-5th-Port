@@ -995,7 +995,8 @@
 
 				<h3>Optional Equipment</h3>
 				Drinks & snacks<br>
-				Extra clothing
+				Extra clothing<br>
+				Pen & paper
 
 				<h2>How To Play</h2>
 				<ol>
