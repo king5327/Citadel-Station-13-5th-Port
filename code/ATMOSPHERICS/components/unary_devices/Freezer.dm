@@ -31,6 +31,7 @@
 		H += M.rating
 	for(var/obj/item/weapon/stock_parts/micro_laser/M in component_parts)
 		T += M.rating
+	min_temperature = T0C - (170 + (T*12.75))
 	current_heat_capacity = 1000 * ((H - 1) ** 2)
 
 /obj/machinery/atmospherics/components/unary/cold_sink/freezer/attackby(obj/item/I, mob/user, params)

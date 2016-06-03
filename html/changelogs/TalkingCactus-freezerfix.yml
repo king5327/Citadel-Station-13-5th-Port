@@ -4,3 +4,4 @@ delete-after: True
 
 changes: 
   - bugfix: "Freezers/Heaters no longer consume extremely large quantities of electricity when upgraded."
+  - bugfix: "Fixed upgraded freezers cooling gas below 0 kelvin."
