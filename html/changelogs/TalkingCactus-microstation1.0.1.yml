@@ -1,0 +1,18 @@
+author: TalkingCactus
+
+delete-after: True
+
+changes: 
+  - rscadd: "Micro Station: Added a maintenance tunnel above the showers and common room."
+  - bugfix: "Micro Station: Added some missing equipment in the garden."
+  - bugfix: "Micro Station: Fixed the Captain's Office APC & air supply pipes not being connected.
+  - rscdel: "Micro Station: Removed a shitty easter egg for now."
+  - bugfix: "Micro Station: Fixed the diner shutters not working."
+  - bugfix: "Micro Station: Fixed the space bar's air vents not being on by default."
+  - bugfix: "Micro Station: Fixed the exterior EVA airlock being unpowered."
+  - rscadd: "Micro Station: Added more asteroids to mine."
+  - rscadd: "Micro Station: Added mirrors to the restroom, cloning, and common room."
+  - rscadd: "Micro Station: Added some missing fire alarms."
+  - tweak: "Micro Station: Chemistry redone. One station instead of two, more table space, grinder, and a trash bin."
+  - tweak: "Micro Station: Replaced RCDs in the engineer lockers with loaded RCDs."
+  - bugfix: "Fixes a missing sprite for the bartender's damp rag."
