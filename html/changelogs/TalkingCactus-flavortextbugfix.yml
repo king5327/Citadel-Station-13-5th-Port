@@ -1,0 +1,6 @@
+author: TalkingCactus
+
+delete-after: True
+
+changes: 
+  - bugfix: "Fixes the distance and observer issues when viewing flavor text."
