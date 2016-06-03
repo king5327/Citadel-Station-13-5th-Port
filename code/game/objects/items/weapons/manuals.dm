@@ -998,12 +998,13 @@
 				Extra clothing
 
 				<h2>How To Play</h2>
+				<ol>
 				<li>To start the game, one player chosen by any means starts by rolling the game die. This player then passes the die to the player next to them, traveling clockwise. Make sure to remember the number you rolled!</li>
 				<li>The die continues around the table until it reaches the first player again.</li>
 				<li>The players with the highest and lowest rolled numbers are selected as the 'darer' and the 'dared' respectively.</li>
-				<li>If the dared player finishes the dare, they receive <b>1</b> point.</li>
-
-				<li>Repeat the cycle until a player reaches <b>5</b> points, then they win! The winner decides who starts rolling first in the next game and gives/receives a dare from every other player.</li>
+				<li>If the dared player finishes the dare sufficiently, they receive <b>1</b> point.</li>
+				</ol>
+				Repeat the cycle until a player reaches <b>5</b> points, then they win! The winner decides who starts rolling first in the next game and can give/receive a dare from every other player if they so choose.
 
 				<h3>Ties</h3>
 				Ties between two or more players can usually be ignored. In a case where two or more players tie for the position of the darer or dared, the tied players can reroll until there is one darer and one dared.<br>
@@ -1012,7 +1013,7 @@
 				<h3>Special Rules</h3>
 				<li>Dares which break the law are automatically invalid. The dared should ask the darer for a different one.</li>
 				<li>Dares which are impossible to complete are automatically invalid. The dared should ask the darer for a different one. </li>
-				<li>If the dared cannot complete a dare fully, but the table agrees that they still deserve the point then they receive it.</li>
+				<li>If the dared cannot complete a dare fully, but the table unanimously agrees that they still deserve the point then they receive it.</li>
 				<li>All dares must take place within the general vicinity of the table or game space so all players can see.</li>
 				<li>Depending on the amount of players, the amount of points required to win can vary. Adjust as needed.</li>
 
