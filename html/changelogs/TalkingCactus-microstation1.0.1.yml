@@ -16,3 +16,4 @@ changes:
   - tweak: "Micro Station: Chemistry redone. One station instead of two, more table space, grinder, and a trash bin."
   - tweak: "Micro Station: Replaced RCDs in the engineer lockers with loaded RCDs."
   - bugfix: "Fixes a missing sprite for the bartender's damp rag."
+  - rscadd: "Added a manual for dice & card games. Currently only has Dare Dice."
