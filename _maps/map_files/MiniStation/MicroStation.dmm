@@ -1600,7 +1600,7 @@
 "EN" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{tag = "icon-intact (EAST)"; icon_state = "intact"; dir = 4},/obj/machinery/door/airlock/research{name = "Research Lab"; req_access_txt = "7"},/turf/simulated/floor/plasteel,/area/medical/research)
 "EO" = (/obj/machinery/atmospherics/components/unary/vent_scrubber{dir = 8; on = 1},/obj/item/device/radio/beacon,/turf/simulated/floor/plasteel,/area/medical/research)
 "EP" = (/turf/simulated/floor/plasteel/delivery,/area/medical/research)
-"EQ" = (/obj/machinery/mineral/ore_redemption{input_dir = 4; output_dir = 8; req_access = null; req_access_txt = "48"},/turf/simulated/floor/plating,/area/quartermaster/office)
+"EQ" = (/obj/machinery/mineral/ore_redemption{input_dir = 4; output_dir = 8; req_access = null; req_access_txt = "64"},/turf/simulated/floor/plating,/area/quartermaster/office)
 "ER" = (/obj/machinery/door/airlock/glass_mining{name = "Ore Redemption"; req_access_txt = "48"},/turf/simulated/floor/plasteel,/area/quartermaster/office)
 "ES" = (/obj/machinery/atmospherics/pipe/simple/general/hidden{icon_state = "intact"; dir = 4},/turf/simulated/floor/plasteel,/area/quartermaster/office)
 "ET" = (/obj/machinery/atmospherics/pipe/simple/general/hidden{icon_state = "intact"; dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/turf/simulated/floor/plasteel,/area/quartermaster/office)

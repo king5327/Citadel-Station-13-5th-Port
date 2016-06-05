@@ -64,8 +64,8 @@
 	..()
 	total_positions = 4
 	spawn_positions = 4
-	access = list(access_robotics, access_tox, access_tox_storage, access_research, access_xenobiology)
-	minimal_access = list(access_tox, access_tox_storage, access_research, access_xenobiology, access_robotics)
+	access = list(access_robotics, access_tox, access_tox_storage, access_research, access_xenobiology, access_mineral_storeroom)
+	minimal_access = list(access_tox, access_tox_storage, access_research, access_xenobiology, access_robotics, access_mineral_storeroom)
 
 // Security
 
