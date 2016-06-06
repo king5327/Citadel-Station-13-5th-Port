@@ -12,5 +12,9 @@
 *.int
 config
 config/admins.txt
+<<<<<<< HEAD
 config/whitelist.txt
 
+=======
+*.db
+>>>>>>> c7d25fe523121013b6dea7723b3b61951f42dd1c
