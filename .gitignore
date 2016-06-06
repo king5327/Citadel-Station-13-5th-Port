@@ -10,4 +10,7 @@
 *.int
 *.backup
 *.int
+config
 config/admins.txt
+config/whitelist.txt
+
