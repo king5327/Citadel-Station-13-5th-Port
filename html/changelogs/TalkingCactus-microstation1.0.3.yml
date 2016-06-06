@@ -28,3 +28,4 @@ changes:
   - tweak: "Micro Station: Moved the AI chambers to the bridge."
   - bugfix: "Micro Station: Fixed the scrubber piping in the space bar."
   - tweak: "Micro Station: Atmospherics layout changed to make space for xenobiology."
+  - bugfix: "Micro Station: Fixed the tables under the booze/soda dispensers in the (space) bar not working."
