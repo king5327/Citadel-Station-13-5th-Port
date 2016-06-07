@@ -1,0 +1,11 @@
+ 
+author: Leon-Leonardo
+
+delete-after: True
+
+changes: 
+  - rscadd: "Adds 'laser pistol' and 'advanced laser pistol'
+  - wip "Adds 'box of laser pistols'
+  - rscadd: "Replaces energy gun in Captain's locker with an advanced laser pistol
+  - wip: Adds box of laser pistols to the warden's locker
+  - soundadd: laser_pistol.ogg
