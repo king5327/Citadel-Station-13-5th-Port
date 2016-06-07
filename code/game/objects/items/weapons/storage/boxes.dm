@@ -86,6 +86,22 @@
 	new /obj/item/weapon/reagent_containers/hypospray/medipen(src)
 	return
 
+/obj/item/weapon/storage/box/security/laser_pistol
+	name = "box of laser pistols"
+	desc = "Contains seven laser pistols"
+
+/obj/item/weapon/storage/box/security/laser_pistol/New()
+	..()
+	contents = list()
+	new /obj/item/weapon/gun/energy/gun/pistol_laser(src)
+	new /obj/item/weapon/gun/energy/gun/pistol_laser(src)
+	new /obj/item/weapon/gun/energy/gun/pistol_laser(src)
+	new /obj/item/weapon/gun/energy/gun/pistol_laser(src)
+	new /obj/item/weapon/gun/energy/gun/pistol_laser(src)
+	new /obj/item/weapon/gun/energy/gun/pistol_laser(src)
+	new /obj/item/weapon/gun/energy/gun/pistol_laser(src)
+	return
+
 /obj/item/weapon/storage/box/gloves
 	name = "box of latex gloves"
 	desc = "Contains sterile latex gloves."

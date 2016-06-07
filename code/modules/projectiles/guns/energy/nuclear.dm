@@ -23,7 +23,25 @@
 	pin = /obj/item/device/firing_pin/implant/loyalty
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 4
-	
+
+/obj/item/weapon/gun/energy/gun/pistol_advance
+	name = "advanced laser pistol"
+	desc = "A gutted pusle pistol refitted for general-purpose use. This one has a better battery life and also fires an electrode."
+	icon_state = "advlaser_pistol"
+	w_class = 2
+	pin = /obj/item/device/firing_pin/implant/loyalty
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/advpistol, /obj/item/ammo_casing/energy/electrode/pistol)
+	ammo_x_offset = 2
+
+/obj/item/weapon/gun/energy/gun/pistol_laser
+	name = "laser pistol"
+	desc = "A gutted pusle pistol refitted for general-purpose use."
+	icon_state = "laser_pistol"
+	w_class = 2
+	pin = /obj/item/device/firing_pin/implant/loyalty
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol)
+	ammo_x_offset = 2
+
 /obj/item/weapon/gun/energy/gun/dragnet
 	name = "\improper DRAGnet"
 	desc = "The \"Dynamic Rapid-Apprehension of the Guilty\" net is a revolution in law enforcement technology."
