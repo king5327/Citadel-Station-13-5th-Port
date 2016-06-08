@@ -34,6 +34,12 @@
 	desc = "Worn only by Captains with an abundance of class."
 	icon_state = "capcap"
 
+//Lieutenant
+/obj/item/clothing/head/caphat/lieutenant
+	name = "lieutenant's cap"
+	desc = "Worn by the Lieutenant. Not compensating."
+	icon_state = "lieutenant"
+
 
 //Head of Personnel
 /obj/item/clothing/head/hopcap

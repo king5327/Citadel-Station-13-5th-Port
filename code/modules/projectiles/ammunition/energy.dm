@@ -19,6 +19,18 @@
 /obj/item/ammo_casing/energy/laser/hos
 	e_cost = 50
 
+/obj/item/ammo_casing/energy/laser/advpistol
+	projectile_type = /obj/item/projectile/beam/pistol
+	e_cost = 50
+	fire_sound = 'sound/weapons/laser_pistol.ogg'
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/laser/pistol
+	projectile_type = /obj/item/projectile/beam/pistol
+	e_cost = 100
+	fire_sound = 'sound/weapons/laser_pistol.ogg'
+	select_name = "kill"
+
 /obj/item/ammo_casing/energy/laser/practice
 	projectile_type = /obj/item/projectile/beam/practice
 	select_name = "practice"
@@ -65,6 +77,9 @@
 
 /obj/item/ammo_casing/energy/electrode/hos
 	e_cost = 100
+
+/obj/item/ammo_casing/energy/electrode/pistol
+	e_cost = 200
 
 /obj/item/ammo_casing/energy/ion
 	projectile_type = /obj/item/projectile/ion

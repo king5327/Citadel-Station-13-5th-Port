@@ -42,6 +42,10 @@
 	hitsound = 'sound/weapons/tap.ogg'
 	eyeblur = 0
 
+/obj/item/projectile/beam/pistol
+	damage = 10
+	icon_state = "ibeam"
+
 /obj/item/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
@@ -92,3 +96,4 @@
 /obj/item/projectile/beam/lasertag/bluetag
 	icon_state = "bluelaser"
 	suit_types = list(/obj/item/clothing/suit/redtag)
+
