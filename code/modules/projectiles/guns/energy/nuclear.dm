@@ -28,6 +28,7 @@
 	name = "advanced laser pistol"
 	desc = "A gutted pusle pistol refitted for general-purpose use. This one has a better battery life and also fires an electrode."
 	icon_state = "advlaser_pistol"
+	item_state = "gun"
 	w_class = 2
 	pin = /obj/item/device/firing_pin/implant/loyalty
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/advpistol, /obj/item/ammo_casing/energy/electrode/pistol)
@@ -37,6 +38,7 @@
 	name = "laser pistol"
 	desc = "A gutted pusle pistol refitted for general-purpose use."
 	icon_state = "laser_pistol"
+	item_state = "gun"
 	w_class = 2
 	pin = /obj/item/device/firing_pin/implant/loyalty
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol)
