@@ -45,6 +45,7 @@
 
 
 /obj/structure/closet/hazmat
+	name = "level-6 biohazard gear closet"
 	icon_state = "hazmat"
 /obj/structure/closet/hazmat/New()
 	..()
