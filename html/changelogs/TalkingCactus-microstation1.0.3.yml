@@ -16,7 +16,9 @@ delete-after: True
 
 changes: 
   - rscadd: "Micro Station: Added xenobiology to the research wing."
-  - tweak: "Micro Station: Moved the AI chambers to the bridge."
+  - tweak: "Micro Station: Moved the AI chamber to the bridge."
   - bugfix: "Micro Station: Fixed the scrubber piping in the space bar."
   - tweak: "Micro Station: Atmospherics layout changed to make space for xenobiology."
   - bugfix: "Micro Station: Fixed the tables under the booze/soda dispensers in the (space) bar not working."
+  - rscadd: "Micro Station: Added dispensers for transit tubes, atmospherics pipes, and disposal pipes to engineering."
+  - rscadd: "Micro Station: Added an exit button for the ER/Cloning Lab."
