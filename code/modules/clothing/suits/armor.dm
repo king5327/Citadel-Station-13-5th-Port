@@ -72,6 +72,18 @@
 	desc = "A navy-blue armored jacket with blue shoulder designations and '/Warden/' stitched into one of the chest pockets."
 	icon_state = "warden_alt"
 
+/obj/item/clothing/suit/armor/vest/lieutenant
+	name = "lieutenant's jacket"
+	desc = "A navy-blue armored jacket with silver shoulder designations and '/Lieutenant/' stitched into one of the chest pockets."
+	icon_state = "lieutenant"
+	item_state = "armor"
+	armor = list(melee = 45, bullet = 45, laser = 35, energy = 15, bomb = 25, bio = 0, rad = 0)
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS|HANDS
+	heat_protection = CHEST|GROIN|ARMS|HANDS
+	strip_delay = 70
+	burn_state = 0 //Burnable
+
 /obj/item/clothing/suit/armor/vest/leather
 	name = "security overcoat"
 	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security."

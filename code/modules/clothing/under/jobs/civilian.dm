@@ -16,6 +16,13 @@
 	item_state = "b_suit"
 	item_color = "captain"
 
+/obj/item/clothing/under/rank/lieutenant
+	desc = "It's a blue jumpsuit with some silver markings denoting the rank of \"Lieutenant\"."
+	name = "lieutenant's jumpsuit"
+	icon_state = "lieutenant"
+	item_state = "b_suit"
+	item_color = "lieutenant"
+
 
 /obj/item/clothing/under/rank/cargo
 	name = "quartermaster's jumpsuit"
