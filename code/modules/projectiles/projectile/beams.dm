@@ -44,6 +44,7 @@
 
 /obj/item/projectile/beam/pistol
 	damage = 10
+	icon_state = "ibeam"
 
 /obj/item/projectile/beam/pulse
 	name = "pulse"
