@@ -49,6 +49,7 @@
 	new /obj/item/weapon/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/weapon/gun/energy/gun(src)
 	new /obj/item/clothing/tie/petcollar(src)
+	new /obj/item/clothing/cloak/hop(src)
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"
