@@ -42,6 +42,26 @@
 	icon_state = "rdcloak"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 10, bio = 10, rad = 0)
 
+/obj/item/clothing/cloak/hop
+	name = "head of personnel's cloak."
+	desc = "Worn by the Republic of Ian, masters of the ID card and of Borks. It's slightly shielded from lasers."
+	icon_state = "hopcloak"
+	var/icon_stash = "hopcloak"
+	armor = list(melee = 0, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/cloak/hop/AltClick()
+	..()
+	if(ismob(loc))
+		var/mob/M = loc
+		if(icon_state == "hopcloak1")
+			icon_state = icon_stash
+			M << "Your cloak fades into the boringness."
+		else
+			icon_stash = icon_state
+			icon_state = "hopcloak1"
+			M << "You flip the cloak so its good side is showing."
+		M.update_inv_back() //Flip the cloak while wearing it.
+
 /obj/item/clothing/cloak/cap
 	name = "captain's cloak"
 	desc = "Worm by the commander of Space Station 13."
