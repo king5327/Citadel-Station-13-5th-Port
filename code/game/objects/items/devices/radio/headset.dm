@@ -171,6 +171,27 @@
 	item_state = "headset"
 	keyslot = new /obj/item/device/encryptionkey/heads/hop
 
+/obj/item/device/radio/headset/heads/lieutenant
+	name = "\proper the lieutenant's headset"
+	desc = "The headset of the guy who will one day be captain. \nChannels are as follows: :c - command, :s - security, :e - engineering, :u - supply, :v - service, :m - medical, :n - science."
+	icon_state = "com_headset"
+	item_state = "headset"
+	keyslot = new /obj/item/device/encryptionkey/heads/captain
+
+/obj/item/device/radio/headset/heads/lieutenant/alt
+	name = "\proper the lieutenant's headset"
+	desc = "The headset of the guy who will one day be captain. Protects ears from flashbangs. \nChannels are as follows: :c - command, :s - security, :e - engineering, :u - supply, :v - service, :m - medical, :n - science."
+	flags = EARBANGPROTECT
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
+
+/obj/item/device/radio/headset/heads/manager
+	name = "\proper the service manager's headset"
+	desc = "The headset used by the slave driver -- er, service manager. \nChannels are as follows: :c - command, :u - supply, :v - service."
+	icon_state = "com_headset"
+	item_state = "headset"
+	keyslot = new /obj/item/device/encryptionkey/heads/hop
+
 /obj/item/device/radio/headset/headset_cargo
 	name = "supply radio headset"
 	desc = "A headset used by the QM and his slaves. \nTo access the supply channel, use :u."

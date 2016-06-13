@@ -5,12 +5,12 @@ Chaplain
 /datum/job/chaplain
 	title = "Chaplain"
 	flag = CHAPLAIN
-	department_head = list("Head of Personnel")
+	department_head = list("Service Manager")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
+	supervisors = "the Service Manager"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/chaplain

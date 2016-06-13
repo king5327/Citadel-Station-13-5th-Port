@@ -30,11 +30,13 @@ var/time_last_changed_position = 0
 		"Assistant",
 		"Cyborg",
 		"Captain",
-		"Head of Personnel",
+		/*"Head of Personnel",*/
+		"Lieutenant",
 		"Head of Security",
 		"Chief Engineer",
 		"Research Director",
 		"Chief Medical Officer",
+		"Service Manager",
 		"Chaplain")
 
 	//The scaling factor of max total positions in relation to the total amount of people on board the station in %
@@ -349,10 +351,11 @@ var/time_last_changed_position = 0
 							authenticated = 2
 
 					else
-						if((access_hop in scan.access) && ((target_dept==1) || !target_dept))
+						if((access_manager in scan.access) && ((target_dept==1) || !target_dept))
 							region_access |= 1
 							region_access |= 6
-							get_subordinates("Head of Personnel")
+							get_subordinates("Service Manager")
+							//get_subordinates("Head of Personnel")
 						if((access_hos in scan.access) && ((target_dept==2) || !target_dept))
 							region_access |= 2
 							get_subordinates("Head of Security")
@@ -512,3 +515,6 @@ var/time_last_changed_position = 0
 
 /obj/machinery/computer/card/minor/ce
 	target_dept = 5
+
+/obj/machinery/computer/card/minor/manager
+	target_dept = 1
