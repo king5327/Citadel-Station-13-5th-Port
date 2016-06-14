@@ -59,7 +59,7 @@
 	..()
 	new /obj/item/clothing/under/rank/lieutenant(src)
 	new /obj/item/clothing/head/caphat/lieutenant(src)
-	new /obj/item/weapon/cartridge/hop(src)
+	new /obj/item/weapon/cartridge/captain(src)
 	new /obj/item/device/radio/headset/heads/lieutenant(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/weapon/storage/box/ids(src)
