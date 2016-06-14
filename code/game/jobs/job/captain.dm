@@ -91,7 +91,7 @@ Lieutenant
 	head = /obj/item/clothing/head/caphat/lieutenant
 	backpack_contents = list(/obj/item/weapon/melee/classic_baton/telescopic=1)
 
-/datum/outfit/job/captain/post_equip(mob/living/carbon/human/H)
+/datum/outfit/job/lieutenant/post_equip(mob/living/carbon/human/H)
 	..()
 
 	var/obj/item/clothing/under/U = H.w_uniform
