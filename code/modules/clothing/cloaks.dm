@@ -43,7 +43,7 @@
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 10, bio = 10, rad = 0)
 
 /obj/item/clothing/cloak/hop
-	name = "head of personnel's cloak."
+	name = "lieutenant's cloak."
 	desc = "Worn by the Republic of Ian, masters of the ID card and of Borks. It's slightly shielded from lasers."
 	icon_state = "hopcloak"
 	var/icon_stash = "hopcloak"
