@@ -6,7 +6,7 @@ var/time_last_changed_position = 0
 
 /obj/machinery/computer/card
 	name = "identification console"
-	desc = "You can use this to manage jobs and ID access."
+	desc = "You can use this to manage jobs and ID access. The ghost of the HoP still lingers around it."
 	icon_screen = "id"
 	icon_keyboard = "id_key"
 	req_one_access = list(access_heads, access_change_ids)
@@ -30,7 +30,8 @@ var/time_last_changed_position = 0
 		"Assistant",
 		"Cyborg",
 		"Captain",
-		"Head of Personnel",
+		"Lieutenant",
+		"Service Manager",
 		"Head of Security",
 		"Chief Engineer",
 		"Research Director",
@@ -349,10 +350,9 @@ var/time_last_changed_position = 0
 							authenticated = 2
 
 					else
-						if((access_hop in scan.access) && ((target_dept==1) || !target_dept))
+						if((access_sm in scan.access) && ((target_dept==1) || !target_dept))
 							region_access |= 1
-							region_access |= 6
-							get_subordinates("Head of Personnel")
+							get_subordinates("Service Manager")
 						if((access_hos in scan.access) && ((target_dept==2) || !target_dept))
 							region_access |= 2
 							get_subordinates("Head of Security")
