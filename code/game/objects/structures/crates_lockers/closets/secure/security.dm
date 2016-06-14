@@ -27,7 +27,7 @@
 	new /obj/item/weapon/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/weapon/gun/energy/gun/pistol_advance(src)
 
-/obj/structure/closet/secure_closet/hop
+/*/obj/structure/closet/secure_closet/hop
 	name = "\proper head of personnel's locker"
 	req_access = list(access_hop)
 	icon_state = "hop"
@@ -48,6 +48,28 @@
 	new /obj/item/weapon/mining_voucher(src)
 	new /obj/item/weapon/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/weapon/gun/energy/gun(src)
+	new /obj/item/clothing/tie/petcollar(src)*/
+
+/obj/structure/closet/secure_closet/hop/lieutenant
+	name = "\proper lieutenant's locker"
+	req_access = list(access_lieutenant)
+	icon_state = "hop"
+
+/obj/structure/closet/secure_closet/lieutenant/New()
+	..()
+	new /obj/item/clothing/under/rank/lieutenant(src)
+	new /obj/item/clothing/head/caphat/lieutenant(src)
+	new /obj/item/weapon/cartridge/hop(src)
+	new /obj/item/device/radio/headset/heads/lieutenant(src)
+	new /obj/item/clothing/shoes/sneakers/brown(src)
+	new /obj/item/weapon/storage/box/ids(src)
+	new /obj/item/weapon/storage/box/ids(src)
+	new /obj/item/device/megaphone/command(src)
+	new /obj/item/clothing/suit/armor/vest/lieutenant(src)
+	new /obj/item/device/assembly/flash/handheld(src)
+	new /obj/item/clothing/glasses/red(src)
+	new /obj/item/weapon/restraints/handcuffs/cable/zipties(src)
+	new /obj/item/weapon/gun/energy/gun/pistol_advance(src)
 	new /obj/item/clothing/tie/petcollar(src)
 	new /obj/item/clothing/cloak/hop(src)
 

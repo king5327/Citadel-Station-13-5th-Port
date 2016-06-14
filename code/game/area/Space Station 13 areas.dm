@@ -498,6 +498,10 @@ var/list/teleportlocs = list()
 	name = "Head of Personnel's Office"
 	icon_state = "head_quarters"
 
+/area/crew_quarters/heads/lieutenant
+	name = "Lieutenant's Office"
+	icon_state = "head_quarters"
+
 /area/crew_quarters/hor
 	name = "Research Director's Office"
 	icon_state = "head_quarters"
@@ -877,6 +881,10 @@ var/list/teleportlocs = list()
 
 /area/quartermaster
 	name = "Quartermasters"
+	icon_state = "quart"
+
+/area/quartermaster/manager
+	name = "Service Manager's"
 	icon_state = "quart"
 
 ///////////WORK IN PROGRESS//////////

@@ -1,6 +1,6 @@
 /*
 Quartermaster
-*/
+
 /datum/job/qm
 	title = "Quartermaster"
 	flag = QUARTERMASTER
@@ -26,6 +26,7 @@ Quartermaster
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/weapon/clipboard
+*/
 
 /*
 Cargo Technician
@@ -33,12 +34,12 @@ Cargo Technician
 /datum/job/cargo_tech
 	title = "Cargo Technician"
 	flag = CARGOTECH
-	department_head = list("Head of Personnel")
+	department_head = list("Service Manager")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 2
-	supervisors = "the quartermaster and the head of personnel"
+	supervisors = "the Service Manager"
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/cargo_tech
@@ -60,12 +61,12 @@ Shaft Miner
 /datum/job/mining
 	title = "Shaft Miner"
 	flag = MINER
-	department_head = list("Head of Personnel")
+	department_head = list("Service Manager")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the quartermaster and the head of personnel"
+	supervisors = "the Service Manager"
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/miner
@@ -95,12 +96,12 @@ Bartender
 /datum/job/bartender
 	title = "Bartender"
 	flag = BARTENDER
-	department_head = list("Head of Personnel")
+	department_head = list("Service Manager")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
+	supervisors = "the Service Manager"
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/bartender
@@ -125,12 +126,12 @@ Cook
 /datum/job/cook
 	title = "Cook"
 	flag = COOK
-	department_head = list("Head of Personnel")
+	department_head = list("Service Manager")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 1
-	supervisors = "the head of personnel"
+	supervisors = "the Service Manager"
 	selection_color = "#bbe291"
 	var/cooks = 0 //Counts cooks amount
 
@@ -163,12 +164,12 @@ Botanist
 /datum/job/hydro
 	title = "Botanist"
 	flag = BOTANIST
-	department_head = list("Head of Personnel")
+	department_head = list("Service Manager")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 2
-	supervisors = "the head of personnel"
+	supervisors = "the Service Manager"
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/botanist
@@ -193,12 +194,12 @@ Janitor
 /datum/job/janitor
 	title = "Janitor"
 	flag = JANITOR
-	department_head = list("Head of Personnel")
+	department_head = list("Service Manager")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 1
-	supervisors = "the head of personnel"
+	supervisors = "the Service Manager"
 	selection_color = "#bbe291"
 	var/global/janitors = 0
 

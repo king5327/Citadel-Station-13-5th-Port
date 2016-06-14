@@ -75,6 +75,14 @@
 	item_color = "hop"
 	can_adjust = 0
 
+/obj/item/clothing/under/rank/head_of_personnel/manager
+	desc = "It's a jumpsuit worn by someone who works in the position of \"Service Manager\"."
+	name = "service manager's jumpsuit"
+	icon_state = "hop"
+	item_state = "b_suit"
+	item_color = "hop"
+	can_adjust = 0
+
 
 /obj/item/clothing/under/rank/hydroponics
 	desc = "It's a jumpsuit designed to protect against minor plant-related hazards."
