@@ -239,7 +239,7 @@
 		if(0)
 			return get_all_accesses()
 		if(1) //station general
-			return list(access_kitchen,access_bar, access_hydroponics, access_janitor, access_chapel_office, access_crematorium, access_library, access_theatre, access_lawyer)
+			return list(access_kitchen,access_bar, access_hydroponics, access_janitor, access_chapel_office, access_crematorium, access_library, access_theatre, access_lawyer, access_manager)
 		if(2) //security
 			return list(access_sec_doors, access_weapons, access_security, access_brig, access_armory, access_forensics_lockers, access_court, access_hos)
 		if(3) //medbay
@@ -249,7 +249,7 @@
 		if(5) //engineering and maintenance
 			return list(access_construction, access_maint_tunnels, access_engine, access_engine_equip, access_external_airlocks, access_tech_storage, access_atmospherics, access_tcomsat, access_minisat, access_ce)
 		if(6) //supply
-			return list(access_mailsorting, access_mining, access_mining_station, access_mineral_storeroom, access_cargo, access_qm)
+			return list(access_mailsorting, access_mining, access_mining_station, access_mineral_storeroom, access_cargo, access_qm, access_manager)
 		if(7) //command
 			return list(access_heads, access_RC_announce, access_keycard_auth, access_change_ids, access_ai_upload, access_teleporter, access_eva, access_gateway, access_all_personal_lockers, access_heads_vault, access_lieutenant, /*access_hop,*/ access_captain)
 
@@ -356,6 +356,8 @@
 			return "CMO Office"
 		if(access_qm)
 			return "Quartermaster"
+		if(access_manager)
+			return "Service Manager"
 		if(access_surgery)
 			return "Surgery"
 		if(access_theatre)
@@ -425,7 +427,8 @@
 			return "Code Gold"
 
 /proc/get_all_jobs()
-	return list("Assistant", "Captain", /*"Head of Personnel",*/ "Lieutenant", "Bartender", "Cook", "Botanist", "Quartermaster", "Cargo Technician",
+	return list("Assistant", "Captain", /*"Head of Personnel",*/ "Lieutenant", "Service Manager",
+				 "Bartender", "Cook", "Botanist", "Quartermaster", "Cargo Technician",
 				"Shaft Miner", "Clown", "Mime", "Janitor", "Librarian", "Lawyer", "Chaplain", "Chief Engineer", "Station Engineer",
 				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist",
 				"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer")

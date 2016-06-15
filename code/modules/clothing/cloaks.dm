@@ -21,7 +21,7 @@
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/cloak/qm
-	name = "quartermaster's cloak"
+	name = "service manager's cloak"
 	desc = "Worn by Cargonia, supplying the station with the necessary tools for survival."
 
 /obj/item/clothing/cloak/cmo
@@ -43,7 +43,7 @@
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 10, bio = 10, rad = 0)
 
 /obj/item/clothing/cloak/hop
-	name = "head of personnel's cloak."
+	name = "lieutenant's cloak."
 	desc = "Worn by the Republic of Ian, masters of the ID card and of Borks. It's slightly shielded from lasers."
 	icon_state = "hopcloak"
 	var/icon_stash = "hopcloak"

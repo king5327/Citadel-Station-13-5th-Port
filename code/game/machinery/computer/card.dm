@@ -46,6 +46,11 @@ var/time_last_changed_position = 0
 	//Assoc array: "JobName" = (int)<Opened Positions>
 	var/list/opened_positions = list();
 
+/obj/machinery/computer/card/New()
+	..()
+	if(prob(10))
+		desc = "An HoP's loving touch once made this console sing a melody of all-access."
+
 /obj/machinery/computer/card/attackby(obj/O, mob/user, params)//TODO:SANITY
 	if(istype(O, /obj/item/weapon/card/id))
 		var/obj/item/weapon/card/id/idcard = O
@@ -104,7 +109,7 @@ var/time_last_changed_position = 0
 
 	user.set_machine(src)
 	var/dat
-	if(!ticker)	return
+	if(!ticker) return
 	if (mode == 1) // accessing crew manifest
 		var/crew = ""
 		for(var/datum/data/record/t in sortRecord(data_core.general))
@@ -219,7 +224,9 @@ var/time_last_changed_position = 0
 
 			var/carddesc = text("")
 			var/jobs = text("")
-			if( authenticated == 2)
+			if( authenticated == 2 /*|| ((access_manager in scan.access || access_change_ids in scan.access) && target_dept == 1)*/)
+			//The commented out bit would normally let the SM access this too on a service console.
+			//For the time being, however, I can't do that without preventing the SM from selecting jobs, not merely messing with the title. So down it stays.
 				carddesc += {"<script type="text/javascript">
 									function markRed(){
 										var nameField = document.getElementById('namefield');
@@ -241,7 +248,7 @@ var/time_last_changed_position = 0
 				carddesc += "<form name='cardcomp' action='?src=\ref[src]' method='get'>"
 				carddesc += "<input type='hidden' name='src' value='\ref[src]'>"
 				carddesc += "<input type='hidden' name='choice' value='reg'>"
-				carddesc += "<b>registered name:</b> <input type='text' id='namefield' name='reg' value='[target_owner]' style='width:250px; background-color:white;' onchange='markRed()'>"
+				carddesc += "<b>Registered Name:</b> <input type='text' id='namefield' name='reg' value='[target_owner]' style='width:250px; background-color:white;' onchange='markRed()'>"
 				carddesc += "<input type='submit' value='Rename' onclick='markGreen()'>"
 				carddesc += "</form>"
 				carddesc += "<b>Assignment:</b> "
@@ -249,7 +256,7 @@ var/time_last_changed_position = 0
 				jobs += "<span id='alljobsslot'><a href='#' onclick='showAll()'>[target_rank]</a></span>" //CHECK THIS
 
 			else
-				carddesc += "<b>registered_name:</b> [target_owner]</span>"
+				carddesc += "<b>Registered Name:</b> [target_owner]</span>"
 				jobs += "<b>Assignment:</b> [target_rank] (<a href='?src=\ref[src];choice=demote'>Demote</a>)</span>"
 
 			var/accesses = ""
@@ -346,6 +353,8 @@ var/time_last_changed_position = 0
 						if(target_dept)
 							head_subordinates = get_all_jobs()
 							region_access |= target_dept
+							if(target_dept == 1)
+								region_access |= 6
 							authenticated = 1
 						else
 							authenticated = 2
@@ -386,7 +395,7 @@ var/time_last_changed_position = 0
 						if(access_allowed == 1)
 							modify.access += access_type
 		if ("assign")
-			if (authenticated == 2)
+			if (authenticated == 2 || ((access_manager in scan.access || access_change_ids in scan.access) && target_dept == 1))
 				var/t1 = href_list["assign_target"]
 				if(t1 == "Custom")
 					var/newJob = reject_bad_text(input("Enter a custom job assignment.", "Assignment", modify ? modify.assignment : "Unassigned"), MAX_NAME_LEN)
@@ -418,7 +427,7 @@ var/time_last_changed_position = 0
 		if ("reg")
 			if (authenticated)
 				var/t2 = modify
-				//var/t1 = input(usr, "What name?", "ID computer", null)  as text
+				//var/t1 = input(usr, "What name?", "ID computer", null)	as text
 				if ((authenticated && modify == t2 && (in_range(src, usr) || (istype(usr, /mob/living/silicon))) && istype(loc, /turf)))
 					var/newName = reject_bad_name(href_list["reg"])
 					if(newName)
@@ -501,8 +510,11 @@ var/time_last_changed_position = 0
 		typed_circuit.target_dept = target_dept
 	else
 		target_dept = typed_circuit.target_dept
-	var/list/dept_list = list("general","security","medical","science","engineering")
+	var/list/dept_list = list("service","security","medical","science","engineering")
 	name = "[dept_list[target_dept]] department console"
+
+/obj/machinery/computer/card/minor/manager
+	target_dept = 1
 
 /obj/machinery/computer/card/minor/hos
 	target_dept = 2
@@ -515,6 +527,3 @@ var/time_last_changed_position = 0
 
 /obj/machinery/computer/card/minor/ce
 	target_dept = 5
-
-/obj/machinery/computer/card/minor/manager
-	target_dept = 1
