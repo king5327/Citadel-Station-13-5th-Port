@@ -167,3 +167,53 @@
 			spawn(100)
 				M.disabilities &= ~NEARSIGHT
 	..()
+
+/obj/item/clothing/glasses/hud/tristate
+	name = "Tri-State HUD Glasses"
+	desc = "A Security HUD which can be switched to Medical and Diagnostic."
+	icon_state = "triphase_sec"
+	hud_type = DATA_HUD_SECURITY_ADVANCED
+
+	darkness_view = 1 //These are sunglasses too.
+	flash_protect = 1
+	tint = 1
+
+	var/descsec = "A Security HUD which can be switched to Medical and Diagnostic."
+	var/descmed = "A Medical HUD which can be switched to Security and Diagnostic."
+	var/descdia = "A Diagnostic HUD which can be switched to Security and Medical."
+	var/iconsec = "triphase_sec"
+	var/iconmed = "triphase_med"
+	var/icondia = "triphase_dia"
+
+/obj/item/clothing/glasses/hud/tristate/AltClick(var/mob/user)
+	attack_self(user)
+
+/obj/item/clothing/glasses/hud/tristate/attack_self(var/mob/user)
+	var/input_glasses = input(user, "Pick the HUD you want to change to.", "Choose HUD.") as null|anything in list("Security", "Medical", "Diagnostic")
+
+	if(user && src in user.contents)
+		switch(input_glasses)
+			if("Security")
+				desc = descsec
+				icon_state = iconsec
+				hud_type = DATA_HUD_SECURITY_ADVANCED
+			if("Medical")
+				desc = descmed
+				icon_state = iconmed
+				hud_type = DATA_HUD_MEDICAL_ADVANCED
+			if("Diagnostic")
+				desc = descdia
+				icon_state = icondia
+				hud_type = DATA_HUD_DIAGNOSTIC
+		user.update_inv_glasses();
+
+/obj/item/clothing/glasses/hud/tristate/supergars
+	..()
+	name = "Giga Tri-HUD Glasses"
+	icon_state = "trisupergar_sec"
+	descsec = "A Security HUD which emanates power from its every edge."
+	descmed = "A Medical HUD which promises healing, despite is sharp contours."
+	descdia = "A Diagnostic HUD which offers wisdom, even to synthetics."
+	iconsec = "trisupergar_sec"
+	iconmed = "trisupergar_med"
+	icondia = "trisupergar_dia"

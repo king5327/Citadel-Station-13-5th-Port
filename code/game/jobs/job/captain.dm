@@ -127,13 +127,13 @@ Service Manager
 		access_qm, access_mining, access_mining_station, access_mineral_storeroom,
 		access_hydroponics, access_bar, access_kitchen, access_morgue, access_weapons,
 		access_janitor, access_chapel_office, access_crematorium, access_medical,
-		access_sec_doors, access_all_personnel_lockers, access_RC_announce, access_keycard_auth)
+		access_sec_doors, access_all_personal_lockers, access_RC_announce, access_keycard_auth)
 	minimal_access = list(access_manager, access_heads, access_theatre, access_library,
 		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm,
 		access_mining, access_mining_station, access_mineral_storeroom, access_hydroponics,
 		access_bar, access_kitchen, access_morgue, access_weapons, access_janitor,
 		access_chapel_office, access_crematorium, access_medical, access_sec_doors,
-		access_all_personnel_lockers, access_RC_announce, access_keycard_auth)
+		access_all_personal_lockers, access_RC_announce, access_keycard_auth)
 
 /datum/outfit/job/manager
 	name = "Service Manager"

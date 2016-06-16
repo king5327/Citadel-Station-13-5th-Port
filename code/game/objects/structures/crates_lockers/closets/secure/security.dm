@@ -55,7 +55,7 @@
 	req_access = list(access_lieutenant)
 	icon_state = "hop"
 
-/obj/structure/closet/secure_closet/lieutenant/New()
+/obj/structure/closet/secure_closet/hop/lieutenant/New()
 	..()
 	new /obj/item/clothing/under/rank/lieutenant(src)
 	new /obj/item/clothing/head/caphat/lieutenant(src)
@@ -71,6 +71,7 @@
 	new /obj/item/weapon/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/weapon/gun/energy/gun/pistol_advance(src)
 	new /obj/item/clothing/tie/petcollar(src)
+	new /obj/item/clothing/glasses/hud/tristate/supergars(src)
 	new /obj/item/clothing/cloak/hop(src)
 
 /obj/structure/closet/secure_closet/hos
